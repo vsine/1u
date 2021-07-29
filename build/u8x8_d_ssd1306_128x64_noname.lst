@@ -1,0 +1,1590 @@
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccEMBpdj.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"u8x8_d_ssd1306_128x64_noname.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.u8x8_d_ssd1306_sh1106_generic,"ax",%progbits
+  20              		.align	2
+  21              		.thumb
+  22              		.thumb_func
+  24              	u8x8_d_ssd1306_sh1106_generic:
+  25              	.LFB0:
+  26              		.file 1 "u8g2_lib/u8x8_d_ssd1306_128x64_noname.c"
+   1:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** /*
+   2:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+   3:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   u8x8_d_ssd1306_128x64_noname.c
+   4:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+   5:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   Universal 8bit Graphics Library (https://github.com/olikraus/u8g2/)
+   6:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+   7:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   Copyright (c) 2016, olikraus@gmail.com
+   8:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   All rights reserved.
+   9:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+  10:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   Redistribution and use in source and binary forms, with or without modification, 
+  11:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   are permitted provided that the following conditions are met:
+  12:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+  13:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   * Redistributions of source code must retain the above copyright notice, this list 
+  14:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     of conditions and the following disclaimer.
+  15:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     
+  16:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   * Redistributions in binary form must reproduce the above copyright notice, this 
+  17:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     list of conditions and the following disclaimer in the documentation and/or other 
+  18:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     materials provided with the distribution.
+  19:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+  20:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND 
+  21:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, 
+  22:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF 
+  23:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE 
+  24:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR 
+  25:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+  26:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+  27:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; 
+  28:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER 
+  29:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, 
+  30:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+  31:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
+  32:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.  
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccEMBpdj.s 			page 2
+
+
+  33:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+  34:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** */
+  35:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+  36:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+  37:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** #include "u8x8.h"
+  38:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+  39:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+  40:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+  41:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** /* more or less generic setup of all these small OLEDs */
+  42:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** static const uint8_t u8x8_d_ssd1306_128x64_noname_init_seq[] = {
+  43:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     
+  44:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_START_TRANSFER(),             	/* enable chip, delay is part of the transfer start */
+  45:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+  46:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+  47:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0x0ae),		                /* display off */
+  48:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0x0d5, 0x080),		/* clock divide ratio (0x00=1) and oscillator frequency (0x8) */
+  49:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0x0a8, 0x03f),		/* multiplex ratio */
+  50:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0x0d3, 0x000),		/* display offset */
+  51:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0x040),		                /* set display start line to 0 */
+  52:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0x08d, 0x014),		/* [2] charge pump setting (p62): 0x014 enable, 0x010 disable, SSD1306 on
+  53:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0x020, 0x000),		/* horizontal addressing mode */
+  54:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+  55:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0x0a1),				/* segment remap a0/a1*/
+  56:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0x0c8),				/* c0: scan dir normal, c8: reverse */
+  57:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   // Flipmode
+  58:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   // U8X8_C(0x0a0),				/* segment remap a0/a1*/
+  59:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   // U8X8_C(0x0c0),				/* c0: scan dir normal, c8: reverse */
+  60:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+  61:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0x0da, 0x012),		/* com pin HW config, sequential com pin config (bit 4), disable left/rig
+  62:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+  63:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0x081, 0x0cf), 		/* [2] set contrast control */
+  64:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0x0d9, 0x0f1), 		/* [2] pre-charge period 0x022/f1*/
+  65:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0x0db, 0x040), 		/* vcomh deselect level */  
+  66:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   // if vcomh is 0, then this will give the biggest range for contrast control issue #98
+  67:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   // restored the old values for the noname constructor, because vcomh=0 will not work for all OLED
+  68:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+  69:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0x02e),				/* Deactivate scroll */ 
+  70:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0x0a4),				/* output ram to display */
+  71:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0x0a6),				/* none inverted normal display mode */
+  72:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     
+  73:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_END_TRANSFER(),             	/* disable chip */
+  74:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_END()             			/* end of sequence */
+  75:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** };
+  76:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+  77:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** /* this setup maximizes the brightness range, that can be set with setContrast() */
+  78:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** /* Drawback: VCOMH deselect level is set to 0, which das not work so good with all OLEDs, issue #11
+  79:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** static const uint8_t u8x8_d_ssd1306_128x64_vcomh0_init_seq[] = {
+  80:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     
+  81:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_START_TRANSFER(),             	/* enable chip, delay is part of the transfer start */
+  82:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+  83:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+  84:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0x0ae),		                /* display off */
+  85:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0x0d5, 0x080),		/* clock divide ratio (0x00=1) and oscillator frequency (0x8) */
+  86:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0x0a8, 0x03f),		/* multiplex ratio */
+  87:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0x0d3, 0x000),		/* display offset */
+  88:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0x040),		                /* set display start line to 0 */
+  89:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0x08d, 0x014),		/* [2] charge pump setting (p62): 0x014 enable, 0x010 disable */
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccEMBpdj.s 			page 3
+
+
+  90:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0x020, 0x000),		/* horizontal addressing mode */
+  91:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+  92:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0x0a1),				/* segment remap a0/a1*/
+  93:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0x0c8),				/* c0: scan dir normal, c8: reverse */
+  94:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   // Flipmode
+  95:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   // U8X8_C(0x0a0),				/* segment remap a0/a1*/
+  96:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   // U8X8_C(0x0c0),				/* c0: scan dir normal, c8: reverse */
+  97:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+  98:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0x0da, 0x012),		/* com pin HW config, sequential com pin config (bit 4), disable left/rig
+  99:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0x081, 0x0ef),		/* [2] set contrast control,  */
+ 100:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0x0d9, 0x0a1),		/* [2] pre-charge period 0x022/f1*/
+ 101:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0x0db, 0x000),		/* vcomh deselect level 0x000 .. 0x070, low nibble always 0 */
+ 102:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   // if vcomh is 0, then this will give the biggest range for contrast control issue #98
+ 103:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+ 104:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0x02e),				/* Deactivate scroll */ 
+ 105:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0x0a4),				/* output ram to display */
+ 106:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0x0a6),				/* none inverted normal display mode */
+ 107:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     
+ 108:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_END_TRANSFER(),             	/* disable chip */
+ 109:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_END()             			/* end of sequence */
+ 110:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** };
+ 111:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+ 112:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+ 113:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** /* same as u8x8_d_ssd1306_128x64_noname_init_seq, but 0x0da bit 4 is set to 0 */
+ 114:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** /* this will disable the alternative COM configuration */
+ 115:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** static const uint8_t u8x8_d_ssd1306_128x64_alt0_init_seq[] = {
+ 116:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     
+ 117:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_START_TRANSFER(),             	/* enable chip, delay is part of the transfer start */
+ 118:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+ 119:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+ 120:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0x0ae),		                /* display off */
+ 121:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0x0d5, 0x080),		/* clock divide ratio (0x00=1) and oscillator frequency (0x8) */
+ 122:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0x0a8, 0x03f),		/* multiplex ratio */
+ 123:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0x0d3, 0x000),		/* display offset */
+ 124:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0x040),		                /* set display start line to 0 */
+ 125:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0x08d, 0x014),		/* [2] charge pump setting (p62): 0x014 enable, 0x010 disable, SSD1306 on
+ 126:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0x020, 0x000),		/* horizontal addressing mode */
+ 127:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+ 128:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0x0a1),				/* segment remap a0/a1*/
+ 129:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0x0c8),				/* c0: scan dir normal, c8: reverse */
+ 130:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   // Flipmode
+ 131:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   // U8X8_C(0x0a0),				/* segment remap a0/a1*/
+ 132:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   // U8X8_C(0x0c0),				/* c0: scan dir normal, c8: reverse */
+ 133:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+ 134:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0x0da, 0x002),		/* com pin HW config, sequential com pin config (bit 4), disable left/rig
+ 135:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+ 136:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0x081, 0x0cf), 		/* [2] set contrast control */
+ 137:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0x0d9, 0x0f1), 		/* [2] pre-charge period 0x022/f1*/
+ 138:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0x0db, 0x040), 		/* vcomh deselect level */  
+ 139:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   // if vcomh is 0, then this will give the biggest range for contrast control issue #98
+ 140:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   // restored the old values for the noname constructor, because vcomh=0 will not work for all OLED
+ 141:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+ 142:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0x02e),				/* Deactivate scroll */ 
+ 143:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0x0a4),				/* output ram to display */
+ 144:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0x0a6),				/* none inverted normal display mode */
+ 145:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     
+ 146:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_END_TRANSFER(),             	/* disable chip */
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccEMBpdj.s 			page 4
+
+
+ 147:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_END()             			/* end of sequence */
+ 148:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** };
+ 149:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+ 150:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+ 151:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+ 152:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** /* issue 316: a special sh1106 setup, https://www.mikrocontroller.net/topic/431371?goto=5087807#508
+ 153:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** static const uint8_t u8x8_d_sh1106_128x64_winstar_init_seq[] = {
+ 154:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     
+ 155:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_START_TRANSFER(),             	/* enable chip, delay is part of the transfer start */
+ 156:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+ 157:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0xae),                 // Display OFF/ON: off (POR = 0xae)
+ 158:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0xa4),                 // Set Entire Display OFF/ON: off (POR = 0xa4)
+ 159:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0xd5, 0x50),       // Divide Ratio/Oscillator FrequencyData Set: divide ratio = 1 (POR = 
+ 160:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0xa8, 0x3f),       // Multiplex Ratio Data Set: 64 (POR = 0x3f, 64)
+ 161:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0xd3, 0x00),       // Display OffsetData Set: 0 (POR = 0x00)
+ 162:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0x40),                 // Set Display Start Line: 0  
+ 163:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0xad, 0x8b),       // DC-DC ON/OFF Mode Set: Built-in DC-DC is used, Normal Display (POR 
+ 164:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0xd9, 0x22),       // Dis-charge/Pre-charge PeriodData Set: pre-charge 2 DCLKs, dis-charg
+ 165:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0xdb, 0x35),       // VCOM Deselect LevelData Set: 0,770V (POR = 0x35, 0,770 V)
+ 166:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0x32), // Set Pump voltage value: 8,0 V (POR = 0x32, 8,0 V)
+ 167:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0x81, 0xff),       // Contrast Data Register Set: 255 (large) (POR = 0x80)
+ 168:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0x0a6),			// Set Normal/Reverse Display: normal (POR = 0xa6)
+ 169:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_CA(0x0da, 0x012),		// com pin HW config, sequential com pin config (bit 4), disable left/rig
+ 170:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       
+ 171:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_END_TRANSFER(),             	/* disable chip */
+ 172:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_END()             			/* end of sequence */
+ 173:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** };
+ 174:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+ 175:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+ 176:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** static const uint8_t u8x8_d_ssd1306_128x64_noname_powersave0_seq[] = {
+ 177:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_START_TRANSFER(),             	/* enable chip, delay is part of the transfer start */
+ 178:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0x0af),		                /* display on */
+ 179:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_END_TRANSFER(),             	/* disable chip */
+ 180:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_END()             			/* end of sequence */
+ 181:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** };
+ 182:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+ 183:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** static const uint8_t u8x8_d_ssd1306_128x64_noname_powersave1_seq[] = {
+ 184:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_START_TRANSFER(),             	/* enable chip, delay is part of the transfer start */
+ 185:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0x0ae),		                /* display off */
+ 186:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_END_TRANSFER(),             	/* disable chip */
+ 187:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_END()             			/* end of sequence */
+ 188:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** };
+ 189:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+ 190:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** static const uint8_t u8x8_d_ssd1306_128x64_noname_flip0_seq[] = {
+ 191:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_START_TRANSFER(),             	/* enable chip, delay is part of the transfer start */
+ 192:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0x0a1),				/* segment remap a0/a1*/
+ 193:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0x0c8),				/* c0: scan dir normal, c8: reverse */
+ 194:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_END_TRANSFER(),             	/* disable chip */
+ 195:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_END()             			/* end of sequence */
+ 196:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** };
+ 197:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+ 198:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** static const uint8_t u8x8_d_ssd1306_128x64_noname_flip1_seq[] = {
+ 199:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_START_TRANSFER(),             	/* enable chip, delay is part of the transfer start */
+ 200:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0x0a0),				/* segment remap a0/a1*/
+ 201:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_C(0x0c0),				/* c0: scan dir normal, c8: reverse */
+ 202:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_END_TRANSFER(),             	/* disable chip */
+ 203:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   U8X8_END()             			/* end of sequence */
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccEMBpdj.s 			page 5
+
+
+ 204:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** };
+ 205:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+ 206:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+ 207:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** static uint8_t u8x8_d_ssd1306_sh1106_generic(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *arg_
+ 208:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** {
+  27              		.loc 1 208 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              	.LVL0:
+  32 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 24
+  35              		.cfi_offset 3, -24
+  36              		.cfi_offset 4, -20
+  37              		.cfi_offset 5, -16
+  38              		.cfi_offset 6, -12
+  39              		.cfi_offset 7, -8
+  40              		.cfi_offset 14, -4
+  41 0002 0546     		mov	r5, r0
+  42 0004 1446     		mov	r4, r2
+  43 0006 1E46     		mov	r6, r3
+ 209:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   uint8_t x, c;
+ 210:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   uint8_t *ptr;
+ 211:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   switch(msg)
+  44              		.loc 1 211 0
+  45 0008 0B39     		subs	r1, r1, #11
+  46              	.LVL1:
+  47 000a 0429     		cmp	r1, #4
+  48 000c 60D8     		bhi	.L11
+  49 000e DFE801F0 		tbb	[pc, r1]
+  50              	.LVL2:
+  51              	.L4:
+  52 0012 03       		.byte	(.L3-.L4)/2
+  53 0013 5F       		.byte	(.L11-.L4)/2
+  54 0014 0E       		.byte	(.L5-.L4)/2
+  55 0015 21       		.byte	(.L6-.L4)/2
+  56 0016 30       		.byte	(.L7-.L4)/2
+  57 0017 00       		.p2align 1
+  58              	.L3:
+ 212:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   {
+ 213:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     /* handled by the calling function
+ 214:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     case U8X8_MSG_DISPLAY_SETUP_MEMORY:
+ 215:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_d_helper_display_setup_memory(u8x8, &u8x8_ssd1306_128x64_noname_display_info);
+ 216:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 217:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     */
+ 218:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     /* handled by the calling function
+ 219:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     case U8X8_MSG_DISPLAY_INIT:
+ 220:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_d_helper_display_init(u8x8);
+ 221:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_cad_SendSequence(u8x8, u8x8_d_ssd1306_128x64_noname_init_seq);    
+ 222:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 223:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     */
+ 224:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     case U8X8_MSG_DISPLAY_SET_POWER_SAVE:
+ 225:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       if ( arg_int == 0 )
+  59              		.loc 1 225 0
+  60 0018 22B9     		cbnz	r2, .L8
+ 226:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 	u8x8_cad_SendSequence(u8x8, u8x8_d_ssd1306_128x64_noname_powersave0_seq);
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccEMBpdj.s 			page 6
+
+
+  61              		.loc 1 226 0
+  62 001a 2E49     		ldr	r1, .L13
+  63 001c FFF7FEFF 		bl	u8x8_cad_SendSequence
+  64              	.LVL3:
+ 227:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       else
+ 228:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 	u8x8_cad_SendSequence(u8x8, u8x8_d_ssd1306_128x64_noname_powersave1_seq);
+ 229:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 230:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     case U8X8_MSG_DISPLAY_SET_FLIP_MODE:
+ 231:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       if ( arg_int == 0 )
+ 232:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       {
+ 233:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 	u8x8_cad_SendSequence(u8x8, u8x8_d_ssd1306_128x64_noname_flip0_seq);
+ 234:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 	u8x8->x_offset = u8x8->display_info->default_x_offset;
+ 235:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       }
+ 236:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       else
+ 237:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       {
+ 238:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 	u8x8_cad_SendSequence(u8x8, u8x8_d_ssd1306_128x64_noname_flip1_seq);
+ 239:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 	u8x8->x_offset = u8x8->display_info->flipmode_x_offset;
+ 240:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       }
+ 241:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 242:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** #ifdef U8X8_WITH_SET_CONTRAST
+ 243:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     case U8X8_MSG_DISPLAY_SET_CONTRAST:
+ 244:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_cad_StartTransfer(u8x8);
+ 245:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_cad_SendCmd(u8x8, 0x081 );
+ 246:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_cad_SendArg(u8x8, arg_int );	/* ssd1306 has range from 0 to 255 */
+ 247:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_cad_EndTransfer(u8x8);
+ 248:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 249:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** #endif
+ 250:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     case U8X8_MSG_DISPLAY_DRAW_TILE:
+ 251:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_cad_StartTransfer(u8x8);
+ 252:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       x = ((u8x8_tile_t *)arg_ptr)->x_pos;    
+ 253:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       x *= 8;
+ 254:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       x += u8x8->x_offset;
+ 255:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     
+ 256:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_cad_SendCmd(u8x8, 0x040 );	/* set line offset to 0 */
+ 257:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     
+ 258:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_cad_SendCmd(u8x8, 0x010 | (x>>4) );
+ 259:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_cad_SendArg(u8x8, 0x000 | ((x&15)));					/* probably wrong, should be SendCmd */
+ 260:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_cad_SendArg(u8x8, 0x0b0 | (((u8x8_tile_t *)arg_ptr)->y_pos));	/* probably wrong, should 
+ 261:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+ 262:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     
+ 263:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       do
+ 264:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       {
+ 265:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 	c = ((u8x8_tile_t *)arg_ptr)->cnt;
+ 266:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 	ptr = ((u8x8_tile_t *)arg_ptr)->tile_ptr;
+ 267:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 	u8x8_cad_SendData(u8x8, c*8, ptr); 	/* note: SendData can not handle more than 255 bytes */
+ 268:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 	/*
+ 269:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 	do
+ 270:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 	{
+ 271:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 	  u8x8_cad_SendData(u8x8, 8, ptr);
+ 272:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 	  ptr += 8;
+ 273:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 	  c--;
+ 274:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 	} while( c > 0 );
+ 275:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 	*/
+ 276:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 	arg_int--;
+ 277:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       } while( arg_int > 0 );
+ 278:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       
+ 279:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_cad_EndTransfer(u8x8);
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccEMBpdj.s 			page 7
+
+
+ 280:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 281:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     default:
+ 282:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       return 0;
+ 283:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   }
+ 284:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   return 1;
+  65              		.loc 1 284 0
+  66 0020 0120     		movs	r0, #1
+  67 0022 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+  68              	.LVL4:
+  69              	.L8:
+ 228:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+  70              		.loc 1 228 0
+  71 0024 2C49     		ldr	r1, .L13+4
+  72 0026 FFF7FEFF 		bl	u8x8_cad_SendSequence
+  73              	.LVL5:
+  74              		.loc 1 284 0
+  75 002a 0120     		movs	r0, #1
+  76 002c F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+  77              	.LVL6:
+  78              	.L5:
+ 231:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       {
+  79              		.loc 1 231 0
+  80 002e 42B9     		cbnz	r2, .L9
+ 233:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 	u8x8->x_offset = u8x8->display_info->default_x_offset;
+  81              		.loc 1 233 0
+  82 0030 2A49     		ldr	r1, .L13+8
+  83 0032 FFF7FEFF 		bl	u8x8_cad_SendSequence
+  84              	.LVL7:
+ 234:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       }
+  85              		.loc 1 234 0
+  86 0036 2B68     		ldr	r3, [r5]
+  87 0038 9B7C     		ldrb	r3, [r3, #18]	@ zero_extendqisi2
+  88 003a 85F82230 		strb	r3, [r5, #34]
+  89              		.loc 1 284 0
+  90 003e 0120     		movs	r0, #1
+  91 0040 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+  92              	.LVL8:
+  93              	.L9:
+ 238:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 	u8x8->x_offset = u8x8->display_info->flipmode_x_offset;
+  94              		.loc 1 238 0
+  95 0042 2749     		ldr	r1, .L13+12
+  96 0044 FFF7FEFF 		bl	u8x8_cad_SendSequence
+  97              	.LVL9:
+ 239:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       }
+  98              		.loc 1 239 0
+  99 0048 2B68     		ldr	r3, [r5]
+ 100 004a DB7C     		ldrb	r3, [r3, #19]	@ zero_extendqisi2
+ 101 004c 85F82230 		strb	r3, [r5, #34]
+ 102              		.loc 1 284 0
+ 103 0050 0120     		movs	r0, #1
+ 104 0052 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 105              	.LVL10:
+ 106              	.L6:
+ 244:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_cad_SendCmd(u8x8, 0x081 );
+ 107              		.loc 1 244 0
+ 108 0054 FFF7FEFF 		bl	u8x8_cad_StartTransfer
+ 109              	.LVL11:
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccEMBpdj.s 			page 8
+
+
+ 245:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_cad_SendArg(u8x8, arg_int );	/* ssd1306 has range from 0 to 255 */
+ 110              		.loc 1 245 0
+ 111 0058 8121     		movs	r1, #129
+ 112 005a 2846     		mov	r0, r5
+ 113 005c FFF7FEFF 		bl	u8x8_cad_SendCmd
+ 114              	.LVL12:
+ 246:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_cad_EndTransfer(u8x8);
+ 115              		.loc 1 246 0
+ 116 0060 2146     		mov	r1, r4
+ 117 0062 2846     		mov	r0, r5
+ 118 0064 FFF7FEFF 		bl	u8x8_cad_SendArg
+ 119              	.LVL13:
+ 247:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 120              		.loc 1 247 0
+ 121 0068 2846     		mov	r0, r5
+ 122 006a FFF7FEFF 		bl	u8x8_cad_EndTransfer
+ 123              	.LVL14:
+ 124              		.loc 1 284 0
+ 125 006e 0120     		movs	r0, #1
+ 248:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** #endif
+ 126              		.loc 1 248 0
+ 127 0070 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 128              	.LVL15:
+ 129              	.L7:
+ 251:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       x = ((u8x8_tile_t *)arg_ptr)->x_pos;    
+ 130              		.loc 1 251 0
+ 131 0072 FFF7FEFF 		bl	u8x8_cad_StartTransfer
+ 132              	.LVL16:
+ 252:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       x *= 8;
+ 133              		.loc 1 252 0
+ 134 0076 7779     		ldrb	r7, [r6, #5]	@ zero_extendqisi2
+ 135              	.LVL17:
+ 253:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       x += u8x8->x_offset;
+ 136              		.loc 1 253 0
+ 137 0078 FF00     		lsls	r7, r7, #3
+ 138              	.LVL18:
+ 139 007a FFB2     		uxtb	r7, r7
+ 140              	.LVL19:
+ 254:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     
+ 141              		.loc 1 254 0
+ 142 007c 95F82230 		ldrb	r3, [r5, #34]	@ zero_extendqisi2
+ 143 0080 1F44     		add	r7, r7, r3
+ 144              	.LVL20:
+ 145 0082 FFB2     		uxtb	r7, r7
+ 146              	.LVL21:
+ 256:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     
+ 147              		.loc 1 256 0
+ 148 0084 4021     		movs	r1, #64
+ 149 0086 2846     		mov	r0, r5
+ 150 0088 FFF7FEFF 		bl	u8x8_cad_SendCmd
+ 151              	.LVL22:
+ 258:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_cad_SendArg(u8x8, 0x000 | ((x&15)));					/* probably wrong, should be SendCmd */
+ 152              		.loc 1 258 0
+ 153 008c 3909     		lsrs	r1, r7, #4
+ 154 008e 41F01001 		orr	r1, r1, #16
+ 155 0092 2846     		mov	r0, r5
+ 156 0094 FFF7FEFF 		bl	u8x8_cad_SendCmd
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccEMBpdj.s 			page 9
+
+
+ 157              	.LVL23:
+ 259:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_cad_SendArg(u8x8, 0x0b0 | (((u8x8_tile_t *)arg_ptr)->y_pos));	/* probably wrong, should 
+ 158              		.loc 1 259 0
+ 159 0098 07F00F01 		and	r1, r7, #15
+ 160 009c 2846     		mov	r0, r5
+ 161 009e FFF7FEFF 		bl	u8x8_cad_SendArg
+ 162              	.LVL24:
+ 260:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+ 163              		.loc 1 260 0
+ 164 00a2 B179     		ldrb	r1, [r6, #6]	@ zero_extendqisi2
+ 165 00a4 41F0B001 		orr	r1, r1, #176
+ 166 00a8 2846     		mov	r0, r5
+ 167 00aa FFF7FEFF 		bl	u8x8_cad_SendArg
+ 168              	.LVL25:
+ 169              	.L10:
+ 265:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 	ptr = ((u8x8_tile_t *)arg_ptr)->tile_ptr;
+ 170              		.loc 1 265 0 discriminator 1
+ 171 00ae 3179     		ldrb	r1, [r6, #4]	@ zero_extendqisi2
+ 172              	.LVL26:
+ 267:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 	/*
+ 173              		.loc 1 267 0 discriminator 1
+ 174 00b0 C900     		lsls	r1, r1, #3
+ 175              	.LVL27:
+ 176 00b2 3268     		ldr	r2, [r6]
+ 177 00b4 01F0F801 		and	r1, r1, #248
+ 178 00b8 2846     		mov	r0, r5
+ 179 00ba FFF7FEFF 		bl	u8x8_cad_SendData
+ 180              	.LVL28:
+ 276:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       } while( arg_int > 0 );
+ 181              		.loc 1 276 0 discriminator 1
+ 182 00be 621E     		subs	r2, r4, #1
+ 183              	.LVL29:
+ 277:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       
+ 184              		.loc 1 277 0 discriminator 1
+ 185 00c0 12F0FF04 		ands	r4, r2, #255
+ 186 00c4 F3D1     		bne	.L10
+ 279:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 187              		.loc 1 279 0
+ 188 00c6 2846     		mov	r0, r5
+ 189 00c8 FFF7FEFF 		bl	u8x8_cad_EndTransfer
+ 190              	.LVL30:
+ 191              		.loc 1 284 0
+ 192 00cc 0120     		movs	r0, #1
+ 280:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     default:
+ 193              		.loc 1 280 0
+ 194 00ce F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 195              	.LVL31:
+ 196              	.L11:
+ 282:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   }
+ 197              		.loc 1 282 0
+ 198 00d0 0020     		movs	r0, #0
+ 199              	.LVL32:
+ 285:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** }
+ 200              		.loc 1 285 0
+ 201 00d2 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 202              	.LVL33:
+ 203              	.L14:
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccEMBpdj.s 			page 10
+
+
+ 204              		.align	2
+ 205              	.L13:
+ 206 00d4 00000000 		.word	.LANCHOR0
+ 207 00d8 00000000 		.word	.LANCHOR1
+ 208 00dc 00000000 		.word	.LANCHOR2
+ 209 00e0 00000000 		.word	.LANCHOR3
+ 210              		.cfi_endproc
+ 211              	.LFE0:
+ 213              		.section	.text.u8x8_d_ssd1306_128x64_noname,"ax",%progbits
+ 214              		.align	2
+ 215              		.global	u8x8_d_ssd1306_128x64_noname
+ 216              		.thumb
+ 217              		.thumb_func
+ 219              	u8x8_d_ssd1306_128x64_noname:
+ 220              	.LFB1:
+ 286:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+ 287:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+ 288:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** static const u8x8_display_info_t u8x8_ssd1306_128x64_noname_display_info =
+ 289:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** {
+ 290:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* chip_enable_level = */ 0,
+ 291:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* chip_disable_level = */ 1,
+ 292:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+ 293:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* post_chip_enable_wait_ns = */ 20,
+ 294:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* pre_chip_disable_wait_ns = */ 10,
+ 295:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* reset_pulse_width_ms = */ 100, 	/* SSD1306: 3 us */
+ 296:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* post_reset_wait_ms = */ 100, /* far east OLEDs need much longer setup time */
+ 297:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* sda_setup_time_ns = */ 50,		/* SSD1306: 15ns, but cycle time is 100ns, so use 100/2 */
+ 298:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* sck_pulse_width_ns = */ 50,	/* SSD1306: 20ns, but cycle time is 100ns, so use 100/2, AVR: belo
+ 299:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* sck_clock_hz = */ 8000000UL,	/* since Arduino 1.6.0, the SPI bus speed in Hz. Should be  10000
+ 300:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* spi_mode = */ 0,		/* active high, rising edge */
+ 301:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* i2c_bus_clock_100kHz = */ 4,
+ 302:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* data_setup_time_ns = */ 40,
+ 303:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* write_pulse_width_ns = */ 150,	/* SSD1306: cycle time is 300ns, so use 300/2 = 150 */
+ 304:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* tile_width = */ 16,
+ 305:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* tile_hight = */ 8,
+ 306:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* default_x_offset = */ 0,
+ 307:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* flipmode_x_offset = */ 0,
+ 308:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* pixel_width = */ 128,
+ 309:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* pixel_height = */ 64
+ 310:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** };
+ 311:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+ 312:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** uint8_t u8x8_d_ssd1306_128x64_noname(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *arg_ptr)
+ 313:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** {
+ 221              		.loc 1 313 0
+ 222              		.cfi_startproc
+ 223              		@ args = 0, pretend = 0, frame = 0
+ 224              		@ frame_needed = 0, uses_anonymous_args = 0
+ 225              	.LVL34:
+ 226 0000 38B5     		push	{r3, r4, r5, lr}
+ 227              	.LCFI1:
+ 228              		.cfi_def_cfa_offset 16
+ 229              		.cfi_offset 3, -16
+ 230              		.cfi_offset 4, -12
+ 231              		.cfi_offset 5, -8
+ 232              		.cfi_offset 14, -4
+ 233 0002 0546     		mov	r5, r0
+ 234 0004 0C46     		mov	r4, r1
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccEMBpdj.s 			page 11
+
+
+ 314:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     
+ 315:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   if ( u8x8_d_ssd1306_sh1106_generic(u8x8, msg, arg_int, arg_ptr) != 0 )
+ 235              		.loc 1 315 0
+ 236 0006 FFF7FEFF 		bl	u8x8_d_ssd1306_sh1106_generic
+ 237              	.LVL35:
+ 238 000a 98B9     		cbnz	r0, .L19
+ 239 000c 0346     		mov	r3, r0
+ 316:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     return 1;
+ 317:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+ 318:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   switch(msg)
+ 240              		.loc 1 318 0
+ 241 000e 092C     		cmp	r4, #9
+ 242 0010 0AD0     		beq	.L17
+ 243 0012 0A2C     		cmp	r4, #10
+ 244 0014 0FD1     		bne	.L16
+ 319:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   {
+ 320:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     case U8X8_MSG_DISPLAY_INIT:
+ 321:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_d_helper_display_init(u8x8);
+ 245              		.loc 1 321 0
+ 246 0016 2846     		mov	r0, r5
+ 247 0018 FFF7FEFF 		bl	u8x8_d_helper_display_init
+ 248              	.LVL36:
+ 322:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_cad_SendSequence(u8x8, u8x8_d_ssd1306_128x64_noname_init_seq);    
+ 249              		.loc 1 322 0
+ 250 001c 0749     		ldr	r1, .L21
+ 251 001e 2846     		mov	r0, r5
+ 252 0020 FFF7FEFF 		bl	u8x8_cad_SendSequence
+ 253              	.LVL37:
+ 323:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 324:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     case U8X8_MSG_DISPLAY_SETUP_MEMORY:
+ 325:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_d_helper_display_setup_memory(u8x8, &u8x8_ssd1306_128x64_noname_display_info);
+ 326:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 327:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     default:
+ 328:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       return 0;
+ 329:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   }
+ 330:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   return 1;
+ 254              		.loc 1 330 0
+ 255 0024 0123     		movs	r3, #1
+ 323:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 256              		.loc 1 323 0
+ 257 0026 06E0     		b	.L16
+ 258              	.L17:
+ 325:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 259              		.loc 1 325 0
+ 260 0028 0549     		ldr	r1, .L21+4
+ 261 002a 2846     		mov	r0, r5
+ 262 002c FFF7FEFF 		bl	u8x8_d_helper_display_setup_memory
+ 263              	.LVL38:
+ 264              		.loc 1 330 0
+ 265 0030 0123     		movs	r3, #1
+ 326:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     default:
+ 266              		.loc 1 326 0
+ 267 0032 00E0     		b	.L16
+ 268              	.L19:
+ 316:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+ 269              		.loc 1 316 0
+ 270 0034 0123     		movs	r3, #1
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccEMBpdj.s 			page 12
+
+
+ 271              	.L16:
+ 331:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** }
+ 272              		.loc 1 331 0
+ 273 0036 1846     		mov	r0, r3
+ 274 0038 38BD     		pop	{r3, r4, r5, pc}
+ 275              	.LVL39:
+ 276              	.L22:
+ 277 003a 00BF     		.align	2
+ 278              	.L21:
+ 279 003c 00000000 		.word	.LANCHOR4
+ 280 0040 00000000 		.word	.LANCHOR5
+ 281              		.cfi_endproc
+ 282              	.LFE1:
+ 284              		.section	.text.u8x8_d_ssd1306_128x64_vcomh0,"ax",%progbits
+ 285              		.align	2
+ 286              		.global	u8x8_d_ssd1306_128x64_vcomh0
+ 287              		.thumb
+ 288              		.thumb_func
+ 290              	u8x8_d_ssd1306_128x64_vcomh0:
+ 291              	.LFB2:
+ 332:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+ 333:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** uint8_t u8x8_d_ssd1306_128x64_vcomh0(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *arg_ptr)
+ 334:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** {
+ 292              		.loc 1 334 0
+ 293              		.cfi_startproc
+ 294              		@ args = 0, pretend = 0, frame = 0
+ 295              		@ frame_needed = 0, uses_anonymous_args = 0
+ 296              	.LVL40:
+ 297 0000 38B5     		push	{r3, r4, r5, lr}
+ 298              	.LCFI2:
+ 299              		.cfi_def_cfa_offset 16
+ 300              		.cfi_offset 3, -16
+ 301              		.cfi_offset 4, -12
+ 302              		.cfi_offset 5, -8
+ 303              		.cfi_offset 14, -4
+ 304 0002 0546     		mov	r5, r0
+ 305 0004 0C46     		mov	r4, r1
+ 335:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     
+ 336:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   if ( u8x8_d_ssd1306_sh1106_generic(u8x8, msg, arg_int, arg_ptr) != 0 )
+ 306              		.loc 1 336 0
+ 307 0006 FFF7FEFF 		bl	u8x8_d_ssd1306_sh1106_generic
+ 308              	.LVL41:
+ 309 000a 98B9     		cbnz	r0, .L27
+ 310 000c 0346     		mov	r3, r0
+ 337:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     return 1;
+ 338:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+ 339:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   switch(msg)
+ 311              		.loc 1 339 0
+ 312 000e 092C     		cmp	r4, #9
+ 313 0010 0AD0     		beq	.L25
+ 314 0012 0A2C     		cmp	r4, #10
+ 315 0014 0FD1     		bne	.L24
+ 340:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   {
+ 341:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     case U8X8_MSG_DISPLAY_INIT:
+ 342:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_d_helper_display_init(u8x8);
+ 316              		.loc 1 342 0
+ 317 0016 2846     		mov	r0, r5
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccEMBpdj.s 			page 13
+
+
+ 318 0018 FFF7FEFF 		bl	u8x8_d_helper_display_init
+ 319              	.LVL42:
+ 343:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_cad_SendSequence(u8x8, u8x8_d_ssd1306_128x64_vcomh0_init_seq);    
+ 320              		.loc 1 343 0
+ 321 001c 0749     		ldr	r1, .L29
+ 322 001e 2846     		mov	r0, r5
+ 323 0020 FFF7FEFF 		bl	u8x8_cad_SendSequence
+ 324              	.LVL43:
+ 344:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 345:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     case U8X8_MSG_DISPLAY_SETUP_MEMORY:
+ 346:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_d_helper_display_setup_memory(u8x8, &u8x8_ssd1306_128x64_noname_display_info);
+ 347:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 348:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     default:
+ 349:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       return 0;
+ 350:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   }
+ 351:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   return 1;
+ 325              		.loc 1 351 0
+ 326 0024 0123     		movs	r3, #1
+ 344:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 327              		.loc 1 344 0
+ 328 0026 06E0     		b	.L24
+ 329              	.L25:
+ 346:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 330              		.loc 1 346 0
+ 331 0028 0549     		ldr	r1, .L29+4
+ 332 002a 2846     		mov	r0, r5
+ 333 002c FFF7FEFF 		bl	u8x8_d_helper_display_setup_memory
+ 334              	.LVL44:
+ 335              		.loc 1 351 0
+ 336 0030 0123     		movs	r3, #1
+ 347:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     default:
+ 337              		.loc 1 347 0
+ 338 0032 00E0     		b	.L24
+ 339              	.L27:
+ 337:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+ 340              		.loc 1 337 0
+ 341 0034 0123     		movs	r3, #1
+ 342              	.L24:
+ 352:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** }
+ 343              		.loc 1 352 0
+ 344 0036 1846     		mov	r0, r3
+ 345 0038 38BD     		pop	{r3, r4, r5, pc}
+ 346              	.LVL45:
+ 347              	.L30:
+ 348 003a 00BF     		.align	2
+ 349              	.L29:
+ 350 003c 00000000 		.word	.LANCHOR6
+ 351 0040 00000000 		.word	.LANCHOR5
+ 352              		.cfi_endproc
+ 353              	.LFE2:
+ 355              		.section	.text.u8x8_d_ssd1306_128x64_alt0,"ax",%progbits
+ 356              		.align	2
+ 357              		.global	u8x8_d_ssd1306_128x64_alt0
+ 358              		.thumb
+ 359              		.thumb_func
+ 361              	u8x8_d_ssd1306_128x64_alt0:
+ 362              	.LFB3:
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccEMBpdj.s 			page 14
+
+
+ 353:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+ 354:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** uint8_t u8x8_d_ssd1306_128x64_alt0(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *arg_ptr)
+ 355:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** {
+ 363              		.loc 1 355 0
+ 364              		.cfi_startproc
+ 365              		@ args = 0, pretend = 0, frame = 0
+ 366              		@ frame_needed = 0, uses_anonymous_args = 0
+ 367              	.LVL46:
+ 368 0000 38B5     		push	{r3, r4, r5, lr}
+ 369              	.LCFI3:
+ 370              		.cfi_def_cfa_offset 16
+ 371              		.cfi_offset 3, -16
+ 372              		.cfi_offset 4, -12
+ 373              		.cfi_offset 5, -8
+ 374              		.cfi_offset 14, -4
+ 375 0002 0546     		mov	r5, r0
+ 376 0004 0C46     		mov	r4, r1
+ 356:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+ 357:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   if ( u8x8_d_ssd1306_sh1106_generic(u8x8, msg, arg_int, arg_ptr) != 0 )
+ 377              		.loc 1 357 0
+ 378 0006 FFF7FEFF 		bl	u8x8_d_ssd1306_sh1106_generic
+ 379              	.LVL47:
+ 380 000a 98B9     		cbnz	r0, .L35
+ 381 000c 0346     		mov	r3, r0
+ 358:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     return 1;
+ 359:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+ 360:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   switch(msg)
+ 382              		.loc 1 360 0
+ 383 000e 092C     		cmp	r4, #9
+ 384 0010 0AD0     		beq	.L33
+ 385 0012 0A2C     		cmp	r4, #10
+ 386 0014 0FD1     		bne	.L32
+ 361:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   {
+ 362:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     case U8X8_MSG_DISPLAY_INIT:
+ 363:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_d_helper_display_init(u8x8);
+ 387              		.loc 1 363 0
+ 388 0016 2846     		mov	r0, r5
+ 389 0018 FFF7FEFF 		bl	u8x8_d_helper_display_init
+ 390              	.LVL48:
+ 364:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_cad_SendSequence(u8x8, u8x8_d_ssd1306_128x64_alt0_init_seq);    
+ 391              		.loc 1 364 0
+ 392 001c 0749     		ldr	r1, .L37
+ 393 001e 2846     		mov	r0, r5
+ 394 0020 FFF7FEFF 		bl	u8x8_cad_SendSequence
+ 395              	.LVL49:
+ 365:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 366:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     case U8X8_MSG_DISPLAY_SETUP_MEMORY:
+ 367:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_d_helper_display_setup_memory(u8x8, &u8x8_ssd1306_128x64_noname_display_info);
+ 368:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 369:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     default:
+ 370:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       return 0;
+ 371:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   }
+ 372:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   return 1;
+ 396              		.loc 1 372 0
+ 397 0024 0123     		movs	r3, #1
+ 365:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 398              		.loc 1 365 0
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccEMBpdj.s 			page 15
+
+
+ 399 0026 06E0     		b	.L32
+ 400              	.L33:
+ 367:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 401              		.loc 1 367 0
+ 402 0028 0549     		ldr	r1, .L37+4
+ 403 002a 2846     		mov	r0, r5
+ 404 002c FFF7FEFF 		bl	u8x8_d_helper_display_setup_memory
+ 405              	.LVL50:
+ 406              		.loc 1 372 0
+ 407 0030 0123     		movs	r3, #1
+ 368:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     default:
+ 408              		.loc 1 368 0
+ 409 0032 00E0     		b	.L32
+ 410              	.L35:
+ 358:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+ 411              		.loc 1 358 0
+ 412 0034 0123     		movs	r3, #1
+ 413              	.L32:
+ 373:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** }
+ 414              		.loc 1 373 0
+ 415 0036 1846     		mov	r0, r3
+ 416 0038 38BD     		pop	{r3, r4, r5, pc}
+ 417              	.LVL51:
+ 418              	.L38:
+ 419 003a 00BF     		.align	2
+ 420              	.L37:
+ 421 003c 00000000 		.word	.LANCHOR7
+ 422 0040 00000000 		.word	.LANCHOR5
+ 423              		.cfi_endproc
+ 424              	.LFE3:
+ 426              		.section	.text.u8x8_d_sh1106_128x64_noname,"ax",%progbits
+ 427              		.align	2
+ 428              		.global	u8x8_d_sh1106_128x64_noname
+ 429              		.thumb
+ 430              		.thumb_func
+ 432              	u8x8_d_sh1106_128x64_noname:
+ 433              	.LFB4:
+ 374:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+ 375:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+ 376:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** static const u8x8_display_info_t u8x8_sh1106_128x64_noname_display_info =
+ 377:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** {
+ 378:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* chip_enable_level = */ 0,
+ 379:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* chip_disable_level = */ 1,
+ 380:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+ 381:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* post_chip_enable_wait_ns = */ 20,
+ 382:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* pre_chip_disable_wait_ns = */ 10,
+ 383:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* reset_pulse_width_ms = */ 100, 	/* SSD1306: 3 us */
+ 384:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* post_reset_wait_ms = */ 100, /* far east OLEDs need much longer setup time */
+ 385:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* sda_setup_time_ns = */ 50,		/* SSD1306: 15ns, but cycle time is 100ns, so use 100/2 */
+ 386:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* sck_pulse_width_ns = */ 50,	/* SSD1306: 20ns, but cycle time is 100ns, so use 100/2, AVR: belo
+ 387:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* sck_clock_hz = */ 4000000UL,	/* since Arduino 1.6.0, the SPI bus speed in Hz. Should be  10000
+ 388:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* spi_mode = */ 3,		/* active low (clock is high by default), rising edge, this seems to be a di
+ 389:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* i2c_bus_clock_100kHz = */ 4,
+ 390:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* data_setup_time_ns = */ 40,
+ 391:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* write_pulse_width_ns = */ 150,	/* SSD1306: cycle time is 300ns, so use 300/2 = 150 */
+ 392:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* tile_width = */ 16,
+ 393:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* tile_hight = */ 8,
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccEMBpdj.s 			page 16
+
+
+ 394:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* default_x_offset = */ 2,
+ 395:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* flipmode_x_offset = */ 2,
+ 396:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* pixel_width = */ 128,
+ 397:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   /* pixel_height = */ 64
+ 398:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** };
+ 399:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+ 400:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** uint8_t u8x8_d_sh1106_128x64_noname(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *arg_ptr)
+ 401:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** {
+ 434              		.loc 1 401 0
+ 435              		.cfi_startproc
+ 436              		@ args = 0, pretend = 0, frame = 0
+ 437              		@ frame_needed = 0, uses_anonymous_args = 0
+ 438              	.LVL52:
+ 439 0000 38B5     		push	{r3, r4, r5, lr}
+ 440              	.LCFI4:
+ 441              		.cfi_def_cfa_offset 16
+ 442              		.cfi_offset 3, -16
+ 443              		.cfi_offset 4, -12
+ 444              		.cfi_offset 5, -8
+ 445              		.cfi_offset 14, -4
+ 446 0002 0546     		mov	r5, r0
+ 447 0004 0C46     		mov	r4, r1
+ 402:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   if ( u8x8_d_ssd1306_sh1106_generic(u8x8, msg, arg_int, arg_ptr) != 0 )
+ 448              		.loc 1 402 0
+ 449 0006 FFF7FEFF 		bl	u8x8_d_ssd1306_sh1106_generic
+ 450              	.LVL53:
+ 451 000a 98B9     		cbnz	r0, .L43
+ 452 000c 0346     		mov	r3, r0
+ 403:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     return 1;
+ 404:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+ 405:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   switch(msg)
+ 453              		.loc 1 405 0
+ 454 000e 092C     		cmp	r4, #9
+ 455 0010 0AD0     		beq	.L41
+ 456 0012 0A2C     		cmp	r4, #10
+ 457 0014 0FD1     		bne	.L40
+ 406:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   {
+ 407:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     case U8X8_MSG_DISPLAY_INIT:
+ 408:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_d_helper_display_init(u8x8);
+ 458              		.loc 1 408 0
+ 459 0016 2846     		mov	r0, r5
+ 460 0018 FFF7FEFF 		bl	u8x8_d_helper_display_init
+ 461              	.LVL54:
+ 409:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       /* maybe use a better init sequence */
+ 410:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       /* https://www.mikrocontroller.net/topic/431371 */
+ 411:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       /* the new sequence is added in the winstar constructor (see below), this is kept untouched *
+ 412:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_cad_SendSequence(u8x8, u8x8_d_ssd1306_128x64_noname_init_seq);    
+ 462              		.loc 1 412 0
+ 463 001c 0749     		ldr	r1, .L45
+ 464 001e 2846     		mov	r0, r5
+ 465 0020 FFF7FEFF 		bl	u8x8_cad_SendSequence
+ 466              	.LVL55:
+ 413:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 414:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     case U8X8_MSG_DISPLAY_SETUP_MEMORY:
+ 415:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_d_helper_display_setup_memory(u8x8, &u8x8_sh1106_128x64_noname_display_info);
+ 416:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 417:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     default:
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccEMBpdj.s 			page 17
+
+
+ 418:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       return 0;
+ 419:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   }
+ 420:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   return 1;
+ 467              		.loc 1 420 0
+ 468 0024 0123     		movs	r3, #1
+ 413:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 469              		.loc 1 413 0
+ 470 0026 06E0     		b	.L40
+ 471              	.L41:
+ 415:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 472              		.loc 1 415 0
+ 473 0028 0549     		ldr	r1, .L45+4
+ 474 002a 2846     		mov	r0, r5
+ 475 002c FFF7FEFF 		bl	u8x8_d_helper_display_setup_memory
+ 476              	.LVL56:
+ 477              		.loc 1 420 0
+ 478 0030 0123     		movs	r3, #1
+ 416:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     default:
+ 479              		.loc 1 416 0
+ 480 0032 00E0     		b	.L40
+ 481              	.L43:
+ 403:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+ 482              		.loc 1 403 0
+ 483 0034 0123     		movs	r3, #1
+ 484              	.L40:
+ 421:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     
+ 422:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** }
+ 485              		.loc 1 422 0
+ 486 0036 1846     		mov	r0, r3
+ 487 0038 38BD     		pop	{r3, r4, r5, pc}
+ 488              	.LVL57:
+ 489              	.L46:
+ 490 003a 00BF     		.align	2
+ 491              	.L45:
+ 492 003c 00000000 		.word	.LANCHOR4
+ 493 0040 00000000 		.word	.LANCHOR8
+ 494              		.cfi_endproc
+ 495              	.LFE4:
+ 497              		.section	.text.u8x8_d_sh1106_128x64_vcomh0,"ax",%progbits
+ 498              		.align	2
+ 499              		.global	u8x8_d_sh1106_128x64_vcomh0
+ 500              		.thumb
+ 501              		.thumb_func
+ 503              	u8x8_d_sh1106_128x64_vcomh0:
+ 504              	.LFB5:
+ 423:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+ 424:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** uint8_t u8x8_d_sh1106_128x64_vcomh0(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *arg_ptr)
+ 425:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** {
+ 505              		.loc 1 425 0
+ 506              		.cfi_startproc
+ 507              		@ args = 0, pretend = 0, frame = 0
+ 508              		@ frame_needed = 0, uses_anonymous_args = 0
+ 509              	.LVL58:
+ 510 0000 38B5     		push	{r3, r4, r5, lr}
+ 511              	.LCFI5:
+ 512              		.cfi_def_cfa_offset 16
+ 513              		.cfi_offset 3, -16
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccEMBpdj.s 			page 18
+
+
+ 514              		.cfi_offset 4, -12
+ 515              		.cfi_offset 5, -8
+ 516              		.cfi_offset 14, -4
+ 517 0002 0546     		mov	r5, r0
+ 518 0004 0C46     		mov	r4, r1
+ 426:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   if ( u8x8_d_ssd1306_sh1106_generic(u8x8, msg, arg_int, arg_ptr) != 0 )
+ 519              		.loc 1 426 0
+ 520 0006 FFF7FEFF 		bl	u8x8_d_ssd1306_sh1106_generic
+ 521              	.LVL59:
+ 522 000a 98B9     		cbnz	r0, .L51
+ 523 000c 0346     		mov	r3, r0
+ 427:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     return 1;
+ 428:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+ 429:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   switch(msg)
+ 524              		.loc 1 429 0
+ 525 000e 092C     		cmp	r4, #9
+ 526 0010 0AD0     		beq	.L49
+ 527 0012 0A2C     		cmp	r4, #10
+ 528 0014 0FD1     		bne	.L48
+ 430:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   {
+ 431:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     case U8X8_MSG_DISPLAY_INIT:
+ 432:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_d_helper_display_init(u8x8);
+ 529              		.loc 1 432 0
+ 530 0016 2846     		mov	r0, r5
+ 531 0018 FFF7FEFF 		bl	u8x8_d_helper_display_init
+ 532              	.LVL60:
+ 433:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_cad_SendSequence(u8x8, u8x8_d_ssd1306_128x64_vcomh0_init_seq);    
+ 533              		.loc 1 433 0
+ 534 001c 0749     		ldr	r1, .L53
+ 535 001e 2846     		mov	r0, r5
+ 536 0020 FFF7FEFF 		bl	u8x8_cad_SendSequence
+ 537              	.LVL61:
+ 434:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 435:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     case U8X8_MSG_DISPLAY_SETUP_MEMORY:
+ 436:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_d_helper_display_setup_memory(u8x8, &u8x8_sh1106_128x64_noname_display_info);
+ 437:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 438:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     default:
+ 439:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       return 0;
+ 440:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   }
+ 441:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   return 1;
+ 538              		.loc 1 441 0
+ 539 0024 0123     		movs	r3, #1
+ 434:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 540              		.loc 1 434 0
+ 541 0026 06E0     		b	.L48
+ 542              	.L49:
+ 436:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 543              		.loc 1 436 0
+ 544 0028 0549     		ldr	r1, .L53+4
+ 545 002a 2846     		mov	r0, r5
+ 546 002c FFF7FEFF 		bl	u8x8_d_helper_display_setup_memory
+ 547              	.LVL62:
+ 548              		.loc 1 441 0
+ 549 0030 0123     		movs	r3, #1
+ 437:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     default:
+ 550              		.loc 1 437 0
+ 551 0032 00E0     		b	.L48
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccEMBpdj.s 			page 19
+
+
+ 552              	.L51:
+ 427:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+ 553              		.loc 1 427 0
+ 554 0034 0123     		movs	r3, #1
+ 555              	.L48:
+ 442:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     
+ 443:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** }
+ 556              		.loc 1 443 0
+ 557 0036 1846     		mov	r0, r3
+ 558 0038 38BD     		pop	{r3, r4, r5, pc}
+ 559              	.LVL63:
+ 560              	.L54:
+ 561 003a 00BF     		.align	2
+ 562              	.L53:
+ 563 003c 00000000 		.word	.LANCHOR6
+ 564 0040 00000000 		.word	.LANCHOR8
+ 565              		.cfi_endproc
+ 566              	.LFE5:
+ 568              		.section	.text.u8x8_d_sh1106_128x64_winstar,"ax",%progbits
+ 569              		.align	2
+ 570              		.global	u8x8_d_sh1106_128x64_winstar
+ 571              		.thumb
+ 572              		.thumb_func
+ 574              	u8x8_d_sh1106_128x64_winstar:
+ 575              	.LFB6:
+ 444:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** 
+ 445:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** uint8_t u8x8_d_sh1106_128x64_winstar(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *arg_ptr)
+ 446:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** {
+ 576              		.loc 1 446 0
+ 577              		.cfi_startproc
+ 578              		@ args = 0, pretend = 0, frame = 0
+ 579              		@ frame_needed = 0, uses_anonymous_args = 0
+ 580              	.LVL64:
+ 581 0000 38B5     		push	{r3, r4, r5, lr}
+ 582              	.LCFI6:
+ 583              		.cfi_def_cfa_offset 16
+ 584              		.cfi_offset 3, -16
+ 585              		.cfi_offset 4, -12
+ 586              		.cfi_offset 5, -8
+ 587              		.cfi_offset 14, -4
+ 588 0002 0546     		mov	r5, r0
+ 589 0004 0C46     		mov	r4, r1
+ 447:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   if ( u8x8_d_ssd1306_sh1106_generic(u8x8, msg, arg_int, arg_ptr) != 0 )
+ 590              		.loc 1 447 0
+ 591 0006 FFF7FEFF 		bl	u8x8_d_ssd1306_sh1106_generic
+ 592              	.LVL65:
+ 593 000a 98B9     		cbnz	r0, .L59
+ 594 000c 0346     		mov	r3, r0
+ 448:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     return 1;
+ 449:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+ 450:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   switch(msg)
+ 595              		.loc 1 450 0
+ 596 000e 092C     		cmp	r4, #9
+ 597 0010 0AD0     		beq	.L57
+ 598 0012 0A2C     		cmp	r4, #10
+ 599 0014 0FD1     		bne	.L56
+ 451:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   {
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccEMBpdj.s 			page 20
+
+
+ 452:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     case U8X8_MSG_DISPLAY_INIT:
+ 453:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_d_helper_display_init(u8x8);
+ 600              		.loc 1 453 0
+ 601 0016 2846     		mov	r0, r5
+ 602 0018 FFF7FEFF 		bl	u8x8_d_helper_display_init
+ 603              	.LVL66:
+ 454:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_cad_SendSequence(u8x8, u8x8_d_sh1106_128x64_winstar_init_seq);    
+ 604              		.loc 1 454 0
+ 605 001c 0749     		ldr	r1, .L61
+ 606 001e 2846     		mov	r0, r5
+ 607 0020 FFF7FEFF 		bl	u8x8_cad_SendSequence
+ 608              	.LVL67:
+ 455:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 456:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     case U8X8_MSG_DISPLAY_SETUP_MEMORY:
+ 457:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       u8x8_d_helper_display_setup_memory(u8x8, &u8x8_sh1106_128x64_noname_display_info);
+ 458:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 459:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     default:
+ 460:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       return 0;
+ 461:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   }
+ 462:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   return 1;
+ 609              		.loc 1 462 0
+ 610 0024 0123     		movs	r3, #1
+ 455:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 611              		.loc 1 455 0
+ 612 0026 06E0     		b	.L56
+ 613              	.L57:
+ 457:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****       break;
+ 614              		.loc 1 457 0
+ 615 0028 0549     		ldr	r1, .L61+4
+ 616 002a 2846     		mov	r0, r5
+ 617 002c FFF7FEFF 		bl	u8x8_d_helper_display_setup_memory
+ 618              	.LVL68:
+ 619              		.loc 1 462 0
+ 620 0030 0123     		movs	r3, #1
+ 458:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     default:
+ 621              		.loc 1 458 0
+ 622 0032 00E0     		b	.L56
+ 623              	.L59:
+ 448:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****   
+ 624              		.loc 1 448 0
+ 625 0034 0123     		movs	r3, #1
+ 626              	.L56:
+ 463:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c ****     
+ 464:u8g2_lib/u8x8_d_ssd1306_128x64_noname.c **** }
+ 627              		.loc 1 464 0
+ 628 0036 1846     		mov	r0, r3
+ 629 0038 38BD     		pop	{r3, r4, r5, pc}
+ 630              	.LVL69:
+ 631              	.L62:
+ 632 003a 00BF     		.align	2
+ 633              	.L61:
+ 634 003c 00000000 		.word	.LANCHOR9
+ 635 0040 00000000 		.word	.LANCHOR8
+ 636              		.cfi_endproc
+ 637              	.LFE6:
+ 639              		.section	.rodata.u8x8_d_sh1106_128x64_winstar_init_seq,"a",%progbits
+ 640              		.align	2
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccEMBpdj.s 			page 21
+
+
+ 641              		.set	.LANCHOR9,. + 0
+ 644              	u8x8_d_sh1106_128x64_winstar_init_seq:
+ 645 0000 18       		.byte	24
+ 646 0001 15       		.byte	21
+ 647 0002 AE       		.byte	-82
+ 648 0003 15       		.byte	21
+ 649 0004 A4       		.byte	-92
+ 650 0005 15       		.byte	21
+ 651 0006 D5       		.byte	-43
+ 652 0007 16       		.byte	22
+ 653 0008 50       		.byte	80
+ 654 0009 15       		.byte	21
+ 655 000a A8       		.byte	-88
+ 656 000b 16       		.byte	22
+ 657 000c 3F       		.byte	63
+ 658 000d 15       		.byte	21
+ 659 000e D3       		.byte	-45
+ 660 000f 16       		.byte	22
+ 661 0010 00       		.byte	0
+ 662 0011 15       		.byte	21
+ 663 0012 40       		.byte	64
+ 664 0013 15       		.byte	21
+ 665 0014 AD       		.byte	-83
+ 666 0015 16       		.byte	22
+ 667 0016 8B       		.byte	-117
+ 668 0017 15       		.byte	21
+ 669 0018 D9       		.byte	-39
+ 670 0019 16       		.byte	22
+ 671 001a 22       		.byte	34
+ 672 001b 15       		.byte	21
+ 673 001c DB       		.byte	-37
+ 674 001d 16       		.byte	22
+ 675 001e 35       		.byte	53
+ 676 001f 15       		.byte	21
+ 677 0020 32       		.byte	50
+ 678 0021 15       		.byte	21
+ 679 0022 81       		.byte	-127
+ 680 0023 16       		.byte	22
+ 681 0024 FF       		.byte	-1
+ 682 0025 15       		.byte	21
+ 683 0026 A6       		.byte	-90
+ 684 0027 15       		.byte	21
+ 685 0028 DA       		.byte	-38
+ 686 0029 16       		.byte	22
+ 687 002a 12       		.byte	18
+ 688 002b 19       		.byte	25
+ 689 002c FF       		.byte	-1
+ 690              		.section	.rodata.u8x8_sh1106_128x64_noname_display_info,"a",%progbits
+ 691              		.align	2
+ 692              		.set	.LANCHOR8,. + 0
+ 695              	u8x8_sh1106_128x64_noname_display_info:
+ 696 0000 00       		.byte	0
+ 697 0001 01       		.byte	1
+ 698 0002 14       		.byte	20
+ 699 0003 0A       		.byte	10
+ 700 0004 64       		.byte	100
+ 701 0005 64       		.byte	100
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccEMBpdj.s 			page 22
+
+
+ 702 0006 32       		.byte	50
+ 703 0007 32       		.byte	50
+ 704 0008 00093D00 		.word	4000000
+ 705 000c 03       		.byte	3
+ 706 000d 04       		.byte	4
+ 707 000e 28       		.byte	40
+ 708 000f 96       		.byte	-106
+ 709 0010 10       		.byte	16
+ 710 0011 08       		.byte	8
+ 711 0012 02       		.byte	2
+ 712 0013 02       		.byte	2
+ 713 0014 8000     		.short	128
+ 714 0016 4000     		.short	64
+ 715              		.section	.rodata.u8x8_d_ssd1306_128x64_vcomh0_init_seq,"a",%progbits
+ 716              		.align	2
+ 717              		.set	.LANCHOR6,. + 0
+ 720              	u8x8_d_ssd1306_128x64_vcomh0_init_seq:
+ 721 0000 18       		.byte	24
+ 722 0001 15       		.byte	21
+ 723 0002 AE       		.byte	-82
+ 724 0003 15       		.byte	21
+ 725 0004 D5       		.byte	-43
+ 726 0005 16       		.byte	22
+ 727 0006 80       		.byte	-128
+ 728 0007 15       		.byte	21
+ 729 0008 A8       		.byte	-88
+ 730 0009 16       		.byte	22
+ 731 000a 3F       		.byte	63
+ 732 000b 15       		.byte	21
+ 733 000c D3       		.byte	-45
+ 734 000d 16       		.byte	22
+ 735 000e 00       		.byte	0
+ 736 000f 15       		.byte	21
+ 737 0010 40       		.byte	64
+ 738 0011 15       		.byte	21
+ 739 0012 8D       		.byte	-115
+ 740 0013 16       		.byte	22
+ 741 0014 14       		.byte	20
+ 742 0015 15       		.byte	21
+ 743 0016 20       		.byte	32
+ 744 0017 16       		.byte	22
+ 745 0018 00       		.byte	0
+ 746 0019 15       		.byte	21
+ 747 001a A1       		.byte	-95
+ 748 001b 15       		.byte	21
+ 749 001c C8       		.byte	-56
+ 750 001d 15       		.byte	21
+ 751 001e DA       		.byte	-38
+ 752 001f 16       		.byte	22
+ 753 0020 12       		.byte	18
+ 754 0021 15       		.byte	21
+ 755 0022 81       		.byte	-127
+ 756 0023 16       		.byte	22
+ 757 0024 EF       		.byte	-17
+ 758 0025 15       		.byte	21
+ 759 0026 D9       		.byte	-39
+ 760 0027 16       		.byte	22
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccEMBpdj.s 			page 23
+
+
+ 761 0028 A1       		.byte	-95
+ 762 0029 15       		.byte	21
+ 763 002a DB       		.byte	-37
+ 764 002b 16       		.byte	22
+ 765 002c 00       		.byte	0
+ 766 002d 15       		.byte	21
+ 767 002e 2E       		.byte	46
+ 768 002f 15       		.byte	21
+ 769 0030 A4       		.byte	-92
+ 770 0031 15       		.byte	21
+ 771 0032 A6       		.byte	-90
+ 772 0033 19       		.byte	25
+ 773 0034 FF       		.byte	-1
+ 774              		.section	.rodata.u8x8_d_ssd1306_128x64_noname_powersave0_seq,"a",%progbits
+ 775              		.align	2
+ 776              		.set	.LANCHOR0,. + 0
+ 779              	u8x8_d_ssd1306_128x64_noname_powersave0_seq:
+ 780 0000 18       		.byte	24
+ 781 0001 15       		.byte	21
+ 782 0002 AF       		.byte	-81
+ 783 0003 19       		.byte	25
+ 784 0004 FF       		.byte	-1
+ 785              		.section	.rodata.u8x8_d_ssd1306_128x64_noname_powersave1_seq,"a",%progbits
+ 786              		.align	2
+ 787              		.set	.LANCHOR1,. + 0
+ 790              	u8x8_d_ssd1306_128x64_noname_powersave1_seq:
+ 791 0000 18       		.byte	24
+ 792 0001 15       		.byte	21
+ 793 0002 AE       		.byte	-82
+ 794 0003 19       		.byte	25
+ 795 0004 FF       		.byte	-1
+ 796              		.section	.rodata.u8x8_d_ssd1306_128x64_alt0_init_seq,"a",%progbits
+ 797              		.align	2
+ 798              		.set	.LANCHOR7,. + 0
+ 801              	u8x8_d_ssd1306_128x64_alt0_init_seq:
+ 802 0000 18       		.byte	24
+ 803 0001 15       		.byte	21
+ 804 0002 AE       		.byte	-82
+ 805 0003 15       		.byte	21
+ 806 0004 D5       		.byte	-43
+ 807 0005 16       		.byte	22
+ 808 0006 80       		.byte	-128
+ 809 0007 15       		.byte	21
+ 810 0008 A8       		.byte	-88
+ 811 0009 16       		.byte	22
+ 812 000a 3F       		.byte	63
+ 813 000b 15       		.byte	21
+ 814 000c D3       		.byte	-45
+ 815 000d 16       		.byte	22
+ 816 000e 00       		.byte	0
+ 817 000f 15       		.byte	21
+ 818 0010 40       		.byte	64
+ 819 0011 15       		.byte	21
+ 820 0012 8D       		.byte	-115
+ 821 0013 16       		.byte	22
+ 822 0014 14       		.byte	20
+ 823 0015 15       		.byte	21
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccEMBpdj.s 			page 24
+
+
+ 824 0016 20       		.byte	32
+ 825 0017 16       		.byte	22
+ 826 0018 00       		.byte	0
+ 827 0019 15       		.byte	21
+ 828 001a A1       		.byte	-95
+ 829 001b 15       		.byte	21
+ 830 001c C8       		.byte	-56
+ 831 001d 15       		.byte	21
+ 832 001e DA       		.byte	-38
+ 833 001f 16       		.byte	22
+ 834 0020 02       		.byte	2
+ 835 0021 15       		.byte	21
+ 836 0022 81       		.byte	-127
+ 837 0023 16       		.byte	22
+ 838 0024 CF       		.byte	-49
+ 839 0025 15       		.byte	21
+ 840 0026 D9       		.byte	-39
+ 841 0027 16       		.byte	22
+ 842 0028 F1       		.byte	-15
+ 843 0029 15       		.byte	21
+ 844 002a DB       		.byte	-37
+ 845 002b 16       		.byte	22
+ 846 002c 40       		.byte	64
+ 847 002d 15       		.byte	21
+ 848 002e 2E       		.byte	46
+ 849 002f 15       		.byte	21
+ 850 0030 A4       		.byte	-92
+ 851 0031 15       		.byte	21
+ 852 0032 A6       		.byte	-90
+ 853 0033 19       		.byte	25
+ 854 0034 FF       		.byte	-1
+ 855              		.section	.rodata.u8x8_ssd1306_128x64_noname_display_info,"a",%progbits
+ 856              		.align	2
+ 857              		.set	.LANCHOR5,. + 0
+ 860              	u8x8_ssd1306_128x64_noname_display_info:
+ 861 0000 00       		.byte	0
+ 862 0001 01       		.byte	1
+ 863 0002 14       		.byte	20
+ 864 0003 0A       		.byte	10
+ 865 0004 64       		.byte	100
+ 866 0005 64       		.byte	100
+ 867 0006 32       		.byte	50
+ 868 0007 32       		.byte	50
+ 869 0008 00127A00 		.word	8000000
+ 870 000c 00       		.byte	0
+ 871 000d 04       		.byte	4
+ 872 000e 28       		.byte	40
+ 873 000f 96       		.byte	-106
+ 874 0010 10       		.byte	16
+ 875 0011 08       		.byte	8
+ 876 0012 00       		.byte	0
+ 877 0013 00       		.byte	0
+ 878 0014 8000     		.short	128
+ 879 0016 4000     		.short	64
+ 880              		.section	.rodata.u8x8_d_ssd1306_128x64_noname_flip0_seq,"a",%progbits
+ 881              		.align	2
+ 882              		.set	.LANCHOR2,. + 0
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccEMBpdj.s 			page 25
+
+
+ 885              	u8x8_d_ssd1306_128x64_noname_flip0_seq:
+ 886 0000 18       		.byte	24
+ 887 0001 15       		.byte	21
+ 888 0002 A1       		.byte	-95
+ 889 0003 15       		.byte	21
+ 890 0004 C8       		.byte	-56
+ 891 0005 19       		.byte	25
+ 892 0006 FF       		.byte	-1
+ 893              		.section	.rodata.u8x8_d_ssd1306_128x64_noname_init_seq,"a",%progbits
+ 894              		.align	2
+ 895              		.set	.LANCHOR4,. + 0
+ 898              	u8x8_d_ssd1306_128x64_noname_init_seq:
+ 899 0000 18       		.byte	24
+ 900 0001 15       		.byte	21
+ 901 0002 AE       		.byte	-82
+ 902 0003 15       		.byte	21
+ 903 0004 D5       		.byte	-43
+ 904 0005 16       		.byte	22
+ 905 0006 80       		.byte	-128
+ 906 0007 15       		.byte	21
+ 907 0008 A8       		.byte	-88
+ 908 0009 16       		.byte	22
+ 909 000a 3F       		.byte	63
+ 910 000b 15       		.byte	21
+ 911 000c D3       		.byte	-45
+ 912 000d 16       		.byte	22
+ 913 000e 00       		.byte	0
+ 914 000f 15       		.byte	21
+ 915 0010 40       		.byte	64
+ 916 0011 15       		.byte	21
+ 917 0012 8D       		.byte	-115
+ 918 0013 16       		.byte	22
+ 919 0014 14       		.byte	20
+ 920 0015 15       		.byte	21
+ 921 0016 20       		.byte	32
+ 922 0017 16       		.byte	22
+ 923 0018 00       		.byte	0
+ 924 0019 15       		.byte	21
+ 925 001a A1       		.byte	-95
+ 926 001b 15       		.byte	21
+ 927 001c C8       		.byte	-56
+ 928 001d 15       		.byte	21
+ 929 001e DA       		.byte	-38
+ 930 001f 16       		.byte	22
+ 931 0020 12       		.byte	18
+ 932 0021 15       		.byte	21
+ 933 0022 81       		.byte	-127
+ 934 0023 16       		.byte	22
+ 935 0024 CF       		.byte	-49
+ 936 0025 15       		.byte	21
+ 937 0026 D9       		.byte	-39
+ 938 0027 16       		.byte	22
+ 939 0028 F1       		.byte	-15
+ 940 0029 15       		.byte	21
+ 941 002a DB       		.byte	-37
+ 942 002b 16       		.byte	22
+ 943 002c 40       		.byte	64
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccEMBpdj.s 			page 26
+
+
+ 944 002d 15       		.byte	21
+ 945 002e 2E       		.byte	46
+ 946 002f 15       		.byte	21
+ 947 0030 A4       		.byte	-92
+ 948 0031 15       		.byte	21
+ 949 0032 A6       		.byte	-90
+ 950 0033 19       		.byte	25
+ 951 0034 FF       		.byte	-1
+ 952              		.section	.rodata.u8x8_d_ssd1306_128x64_noname_flip1_seq,"a",%progbits
+ 953              		.align	2
+ 954              		.set	.LANCHOR3,. + 0
+ 957              	u8x8_d_ssd1306_128x64_noname_flip1_seq:
+ 958 0000 18       		.byte	24
+ 959 0001 15       		.byte	21
+ 960 0002 A0       		.byte	-96
+ 961 0003 15       		.byte	21
+ 962 0004 C0       		.byte	-64
+ 963 0005 19       		.byte	25
+ 964 0006 FF       		.byte	-1
+ 965              		.text
+ 966              	.Letext0:
+ 967              		.file 2 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\mach
+ 968              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\sys\
+ 969              		.file 4 "u8g2_lib/u8x8.h"
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccEMBpdj.s 			page 27
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 u8x8_d_ssd1306_128x64_noname.c
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:20     .text.u8x8_d_ssd1306_sh1106_generic:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:24     .text.u8x8_d_ssd1306_sh1106_generic:00000000 u8x8_d_ssd1306_sh1106_generic
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:52     .text.u8x8_d_ssd1306_sh1106_generic:00000012 $d
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:206    .text.u8x8_d_ssd1306_sh1106_generic:000000d4 $d
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:214    .text.u8x8_d_ssd1306_128x64_noname:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:219    .text.u8x8_d_ssd1306_128x64_noname:00000000 u8x8_d_ssd1306_128x64_noname
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:279    .text.u8x8_d_ssd1306_128x64_noname:0000003c $d
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:285    .text.u8x8_d_ssd1306_128x64_vcomh0:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:290    .text.u8x8_d_ssd1306_128x64_vcomh0:00000000 u8x8_d_ssd1306_128x64_vcomh0
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:350    .text.u8x8_d_ssd1306_128x64_vcomh0:0000003c $d
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:356    .text.u8x8_d_ssd1306_128x64_alt0:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:361    .text.u8x8_d_ssd1306_128x64_alt0:00000000 u8x8_d_ssd1306_128x64_alt0
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:421    .text.u8x8_d_ssd1306_128x64_alt0:0000003c $d
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:427    .text.u8x8_d_sh1106_128x64_noname:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:432    .text.u8x8_d_sh1106_128x64_noname:00000000 u8x8_d_sh1106_128x64_noname
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:492    .text.u8x8_d_sh1106_128x64_noname:0000003c $d
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:498    .text.u8x8_d_sh1106_128x64_vcomh0:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:503    .text.u8x8_d_sh1106_128x64_vcomh0:00000000 u8x8_d_sh1106_128x64_vcomh0
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:563    .text.u8x8_d_sh1106_128x64_vcomh0:0000003c $d
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:569    .text.u8x8_d_sh1106_128x64_winstar:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:574    .text.u8x8_d_sh1106_128x64_winstar:00000000 u8x8_d_sh1106_128x64_winstar
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:634    .text.u8x8_d_sh1106_128x64_winstar:0000003c $d
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:640    .rodata.u8x8_d_sh1106_128x64_winstar_init_seq:00000000 $d
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:644    .rodata.u8x8_d_sh1106_128x64_winstar_init_seq:00000000 u8x8_d_sh1106_128x64_winstar_init_seq
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:691    .rodata.u8x8_sh1106_128x64_noname_display_info:00000000 $d
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:695    .rodata.u8x8_sh1106_128x64_noname_display_info:00000000 u8x8_sh1106_128x64_noname_display_info
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:716    .rodata.u8x8_d_ssd1306_128x64_vcomh0_init_seq:00000000 $d
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:720    .rodata.u8x8_d_ssd1306_128x64_vcomh0_init_seq:00000000 u8x8_d_ssd1306_128x64_vcomh0_init_seq
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:775    .rodata.u8x8_d_ssd1306_128x64_noname_powersave0_seq:00000000 $d
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:779    .rodata.u8x8_d_ssd1306_128x64_noname_powersave0_seq:00000000 u8x8_d_ssd1306_128x64_noname_powersave0_seq
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:786    .rodata.u8x8_d_ssd1306_128x64_noname_powersave1_seq:00000000 $d
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:790    .rodata.u8x8_d_ssd1306_128x64_noname_powersave1_seq:00000000 u8x8_d_ssd1306_128x64_noname_powersave1_seq
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:797    .rodata.u8x8_d_ssd1306_128x64_alt0_init_seq:00000000 $d
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:801    .rodata.u8x8_d_ssd1306_128x64_alt0_init_seq:00000000 u8x8_d_ssd1306_128x64_alt0_init_seq
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:856    .rodata.u8x8_ssd1306_128x64_noname_display_info:00000000 $d
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:860    .rodata.u8x8_ssd1306_128x64_noname_display_info:00000000 u8x8_ssd1306_128x64_noname_display_info
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:881    .rodata.u8x8_d_ssd1306_128x64_noname_flip0_seq:00000000 $d
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:885    .rodata.u8x8_d_ssd1306_128x64_noname_flip0_seq:00000000 u8x8_d_ssd1306_128x64_noname_flip0_seq
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:894    .rodata.u8x8_d_ssd1306_128x64_noname_init_seq:00000000 $d
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:898    .rodata.u8x8_d_ssd1306_128x64_noname_init_seq:00000000 u8x8_d_ssd1306_128x64_noname_init_seq
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:953    .rodata.u8x8_d_ssd1306_128x64_noname_flip1_seq:00000000 $d
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:957    .rodata.u8x8_d_ssd1306_128x64_noname_flip1_seq:00000000 u8x8_d_ssd1306_128x64_noname_flip1_seq
+                     .debug_frame:00000010 $d
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:57     .text.u8x8_d_ssd1306_sh1106_generic:00000017 $d
+C:\Users\master\AppData\Local\Temp\ccEMBpdj.s:57     .text.u8x8_d_ssd1306_sh1106_generic:00000018 $t
+
+UNDEFINED SYMBOLS
+u8x8_cad_SendSequence
+u8x8_cad_StartTransfer
+u8x8_cad_SendCmd
+u8x8_cad_SendArg
+u8x8_cad_EndTransfer
+u8x8_cad_SendData
+u8x8_d_helper_display_init
+u8x8_d_helper_display_setup_memory
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccEMBpdj.s 			page 28
+
+

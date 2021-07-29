@@ -1,0 +1,1766 @@
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"u8g2_setup.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.u8g2_update_dimension_common,"ax",%progbits
+  20              		.align	2
+  21              		.thumb
+  22              		.thumb_func
+  24              	u8g2_update_dimension_common:
+  25              	.LFB5:
+  26              		.file 1 "u8g2_lib/u8g2_setup.c"
+   1:u8g2_lib/u8g2_setup.c **** /*
+   2:u8g2_lib/u8g2_setup.c **** 
+   3:u8g2_lib/u8g2_setup.c ****   u8g2_setup.c
+   4:u8g2_lib/u8g2_setup.c **** 
+   5:u8g2_lib/u8g2_setup.c ****   Universal 8bit Graphics Library (https://github.com/olikraus/u8g2/)
+   6:u8g2_lib/u8g2_setup.c **** 
+   7:u8g2_lib/u8g2_setup.c ****   Copyright (c) 2016, olikraus@gmail.com
+   8:u8g2_lib/u8g2_setup.c ****   All rights reserved.
+   9:u8g2_lib/u8g2_setup.c **** 
+  10:u8g2_lib/u8g2_setup.c ****   Redistribution and use in source and binary forms, with or without modification, 
+  11:u8g2_lib/u8g2_setup.c ****   are permitted provided that the following conditions are met:
+  12:u8g2_lib/u8g2_setup.c **** 
+  13:u8g2_lib/u8g2_setup.c ****   * Redistributions of source code must retain the above copyright notice, this list 
+  14:u8g2_lib/u8g2_setup.c ****     of conditions and the following disclaimer.
+  15:u8g2_lib/u8g2_setup.c ****     
+  16:u8g2_lib/u8g2_setup.c ****   * Redistributions in binary form must reproduce the above copyright notice, this 
+  17:u8g2_lib/u8g2_setup.c ****     list of conditions and the following disclaimer in the documentation and/or other 
+  18:u8g2_lib/u8g2_setup.c ****     materials provided with the distribution.
+  19:u8g2_lib/u8g2_setup.c **** 
+  20:u8g2_lib/u8g2_setup.c ****   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND 
+  21:u8g2_lib/u8g2_setup.c ****   CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, 
+  22:u8g2_lib/u8g2_setup.c ****   INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF 
+  23:u8g2_lib/u8g2_setup.c ****   MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE 
+  24:u8g2_lib/u8g2_setup.c ****   DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR 
+  25:u8g2_lib/u8g2_setup.c ****   CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+  26:u8g2_lib/u8g2_setup.c ****   SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+  27:u8g2_lib/u8g2_setup.c ****   NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; 
+  28:u8g2_lib/u8g2_setup.c ****   LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER 
+  29:u8g2_lib/u8g2_setup.c ****   CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, 
+  30:u8g2_lib/u8g2_setup.c ****   STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+  31:u8g2_lib/u8g2_setup.c ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
+  32:u8g2_lib/u8g2_setup.c ****   ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.  
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 2
+
+
+  33:u8g2_lib/u8g2_setup.c **** 
+  34:u8g2_lib/u8g2_setup.c **** */
+  35:u8g2_lib/u8g2_setup.c **** 
+  36:u8g2_lib/u8g2_setup.c **** #include "u8g2.h"
+  37:u8g2_lib/u8g2_setup.c **** #include <string.h>
+  38:u8g2_lib/u8g2_setup.c **** #include <assert.h>
+  39:u8g2_lib/u8g2_setup.c **** 
+  40:u8g2_lib/u8g2_setup.c **** 
+  41:u8g2_lib/u8g2_setup.c **** /*============================================*/
+  42:u8g2_lib/u8g2_setup.c **** 
+  43:u8g2_lib/u8g2_setup.c **** 
+  44:u8g2_lib/u8g2_setup.c **** #ifdef U8G2_WITH_CLIP_WINDOW_SUPPORT
+  45:u8g2_lib/u8g2_setup.c **** 
+  46:u8g2_lib/u8g2_setup.c **** void u8g2_SetMaxClipWindow(u8g2_t *u8g2)
+  47:u8g2_lib/u8g2_setup.c **** {
+  48:u8g2_lib/u8g2_setup.c ****   u8g2->clip_x0 = 0;
+  49:u8g2_lib/u8g2_setup.c ****   u8g2->clip_y0 = 0;
+  50:u8g2_lib/u8g2_setup.c ****   u8g2->clip_x1 = (u8g2_uint_t)~(u8g2_uint_t)0;
+  51:u8g2_lib/u8g2_setup.c ****   u8g2->clip_y1 = (u8g2_uint_t)~(u8g2_uint_t)0;
+  52:u8g2_lib/u8g2_setup.c ****   
+  53:u8g2_lib/u8g2_setup.c ****   u8g2->cb->update_page_win(u8g2);
+  54:u8g2_lib/u8g2_setup.c **** }
+  55:u8g2_lib/u8g2_setup.c **** 
+  56:u8g2_lib/u8g2_setup.c **** void u8g2_SetClipWindow(u8g2_t *u8g2, u8g2_uint_t clip_x0, u8g2_uint_t clip_y0, u8g2_uint_t clip_x1
+  57:u8g2_lib/u8g2_setup.c **** {
+  58:u8g2_lib/u8g2_setup.c ****   u8g2->clip_x0 = clip_x0;
+  59:u8g2_lib/u8g2_setup.c ****   u8g2->clip_y0 = clip_y0;
+  60:u8g2_lib/u8g2_setup.c ****   u8g2->clip_x1 = clip_x1;
+  61:u8g2_lib/u8g2_setup.c ****   u8g2->clip_y1 = clip_y1;
+  62:u8g2_lib/u8g2_setup.c ****   u8g2->cb->update_page_win(u8g2);
+  63:u8g2_lib/u8g2_setup.c **** }
+  64:u8g2_lib/u8g2_setup.c **** #endif
+  65:u8g2_lib/u8g2_setup.c **** 
+  66:u8g2_lib/u8g2_setup.c **** /*============================================*/
+  67:u8g2_lib/u8g2_setup.c **** /*
+  68:u8g2_lib/u8g2_setup.c ****   This procedure is called after setting up the display (u8x8 structure).
+  69:u8g2_lib/u8g2_setup.c ****   --> This is the central init procedure for u8g2 object
+  70:u8g2_lib/u8g2_setup.c **** */
+  71:u8g2_lib/u8g2_setup.c **** void u8g2_SetupBuffer(u8g2_t *u8g2, uint8_t *buf, uint8_t tile_buf_height, u8g2_draw_ll_hvline_cb l
+  72:u8g2_lib/u8g2_setup.c **** {
+  73:u8g2_lib/u8g2_setup.c ****   u8g2->font = NULL;
+  74:u8g2_lib/u8g2_setup.c ****   //u8g2->kerning = NULL;
+  75:u8g2_lib/u8g2_setup.c ****   //u8g2->get_kerning_cb = u8g2_GetNullKerning;
+  76:u8g2_lib/u8g2_setup.c ****   
+  77:u8g2_lib/u8g2_setup.c ****   //u8g2->ll_hvline = u8g2_ll_hvline_vertical_top_lsb;
+  78:u8g2_lib/u8g2_setup.c ****   u8g2->ll_hvline = ll_hvline_cb;
+  79:u8g2_lib/u8g2_setup.c ****   
+  80:u8g2_lib/u8g2_setup.c ****   u8g2->tile_buf_ptr = buf;
+  81:u8g2_lib/u8g2_setup.c ****   u8g2->tile_buf_height = tile_buf_height;
+  82:u8g2_lib/u8g2_setup.c ****   
+  83:u8g2_lib/u8g2_setup.c ****   u8g2->tile_curr_row = 0;
+  84:u8g2_lib/u8g2_setup.c ****   
+  85:u8g2_lib/u8g2_setup.c ****   u8g2->font_decode.is_transparent = 0; /* issue 443 */
+  86:u8g2_lib/u8g2_setup.c ****   u8g2->bitmap_transparency = 0;
+  87:u8g2_lib/u8g2_setup.c ****   
+  88:u8g2_lib/u8g2_setup.c ****   u8g2->draw_color = 1;
+  89:u8g2_lib/u8g2_setup.c ****   u8g2->is_auto_page_clear = 1;
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 3
+
+
+  90:u8g2_lib/u8g2_setup.c ****   
+  91:u8g2_lib/u8g2_setup.c ****   u8g2->cb = u8g2_cb;
+  92:u8g2_lib/u8g2_setup.c ****   u8g2->cb->update_dimension(u8g2);
+  93:u8g2_lib/u8g2_setup.c **** #ifdef U8G2_WITH_CLIP_WINDOW_SUPPORT
+  94:u8g2_lib/u8g2_setup.c ****   u8g2_SetMaxClipWindow(u8g2);		/* assign a clip window and call the update() procedure */
+  95:u8g2_lib/u8g2_setup.c **** #else
+  96:u8g2_lib/u8g2_setup.c ****   u8g2->cb->update_page_win(u8g2);
+  97:u8g2_lib/u8g2_setup.c **** #endif
+  98:u8g2_lib/u8g2_setup.c **** 
+  99:u8g2_lib/u8g2_setup.c ****   u8g2_SetFontPosBaseline(u8g2);  /* issue 195 */
+ 100:u8g2_lib/u8g2_setup.c ****   
+ 101:u8g2_lib/u8g2_setup.c **** #ifdef U8G2_WITH_FONT_ROTATION  
+ 102:u8g2_lib/u8g2_setup.c ****   u8g2->font_decode.dir = 0;
+ 103:u8g2_lib/u8g2_setup.c **** #endif
+ 104:u8g2_lib/u8g2_setup.c **** }
+ 105:u8g2_lib/u8g2_setup.c **** 
+ 106:u8g2_lib/u8g2_setup.c **** /*
+ 107:u8g2_lib/u8g2_setup.c ****   Usually the display rotation is set initially, but it could be done later also
+ 108:u8g2_lib/u8g2_setup.c ****   u8g2_cb can be U8G2_R0..U8G2_R3
+ 109:u8g2_lib/u8g2_setup.c **** */
+ 110:u8g2_lib/u8g2_setup.c **** void u8g2_SetDisplayRotation(u8g2_t *u8g2, const u8g2_cb_t *u8g2_cb)
+ 111:u8g2_lib/u8g2_setup.c **** {
+ 112:u8g2_lib/u8g2_setup.c ****   u8g2->cb = u8g2_cb;
+ 113:u8g2_lib/u8g2_setup.c ****   u8g2->cb->update_dimension(u8g2);
+ 114:u8g2_lib/u8g2_setup.c ****   u8g2->cb->update_page_win(u8g2);
+ 115:u8g2_lib/u8g2_setup.c **** }
+ 116:u8g2_lib/u8g2_setup.c **** 
+ 117:u8g2_lib/u8g2_setup.c **** /*============================================*/
+ 118:u8g2_lib/u8g2_setup.c **** 
+ 119:u8g2_lib/u8g2_setup.c **** void u8g2_SendF(u8g2_t * u8g2, const char *fmt, ...)
+ 120:u8g2_lib/u8g2_setup.c **** {
+ 121:u8g2_lib/u8g2_setup.c ****   va_list va;
+ 122:u8g2_lib/u8g2_setup.c ****   va_start(va, fmt);
+ 123:u8g2_lib/u8g2_setup.c ****   u8x8_cad_vsendf(u8g2_GetU8x8(u8g2), fmt, va);
+ 124:u8g2_lib/u8g2_setup.c ****   va_end(va);
+ 125:u8g2_lib/u8g2_setup.c **** }
+ 126:u8g2_lib/u8g2_setup.c **** 
+ 127:u8g2_lib/u8g2_setup.c **** 
+ 128:u8g2_lib/u8g2_setup.c **** /*============================================*/
+ 129:u8g2_lib/u8g2_setup.c **** /* 
+ 130:u8g2_lib/u8g2_setup.c ****   update dimension: 
+ 131:u8g2_lib/u8g2_setup.c ****   calculate the following variables:
+ 132:u8g2_lib/u8g2_setup.c ****     u8g2_uint_t buf_x0;	left corner of the buffer
+ 133:u8g2_lib/u8g2_setup.c ****     u8g2_uint_t buf_x1;	right corner of the buffer (excluded)
+ 134:u8g2_lib/u8g2_setup.c ****     u8g2_uint_t buf_y0;
+ 135:u8g2_lib/u8g2_setup.c ****     u8g2_uint_t buf_y1; 	
+ 136:u8g2_lib/u8g2_setup.c **** */
+ 137:u8g2_lib/u8g2_setup.c **** 
+ 138:u8g2_lib/u8g2_setup.c **** static void u8g2_update_dimension_common(u8g2_t *u8g2)
+ 139:u8g2_lib/u8g2_setup.c **** {
+  27              		.loc 1 139 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32              	.LVL0:
+  33 0000 F0B4     		push	{r4, r5, r6, r7}
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 4
+
+
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 16
+  36              		.cfi_offset 4, -16
+  37              		.cfi_offset 5, -12
+  38              		.cfi_offset 6, -8
+  39              		.cfi_offset 7, -4
+ 140:u8g2_lib/u8g2_setup.c ****   const u8x8_display_info_t *display_info = u8g2_GetU8x8(u8g2)->display_info;
+  40              		.loc 1 140 0
+  41 0002 0268     		ldr	r2, [r0]
+  42              	.LVL1:
+ 141:u8g2_lib/u8g2_setup.c ****   u8g2_uint_t t;
+ 142:u8g2_lib/u8g2_setup.c ****   
+ 143:u8g2_lib/u8g2_setup.c ****   t = u8g2->tile_buf_height;
+  43              		.loc 1 143 0
+  44 0004 90F83860 		ldrb	r6, [r0, #56]	@ zero_extendqisi2
+  45 0008 B3B2     		uxth	r3, r6
+  46              	.LVL2:
+ 144:u8g2_lib/u8g2_setup.c ****   t *= 8;
+  47              		.loc 1 144 0
+  48 000a D900     		lsls	r1, r3, #3
+  49              	.LVL3:
+ 145:u8g2_lib/u8g2_setup.c ****   u8g2->pixel_buf_height = t;
+  50              		.loc 1 145 0
+  51 000c 8187     		strh	r1, [r0, #60]	@ movhi
+ 146:u8g2_lib/u8g2_setup.c ****   
+ 147:u8g2_lib/u8g2_setup.c ****   t = display_info->tile_width;
+  52              		.loc 1 147 0
+  53 000e 147C     		ldrb	r4, [r2, #16]	@ zero_extendqisi2
+  54              	.LVL4:
+ 148:u8g2_lib/u8g2_setup.c **** #ifndef U8G2_16BIT
+ 149:u8g2_lib/u8g2_setup.c ****   if ( t >= 32 )
+ 150:u8g2_lib/u8g2_setup.c ****     t = 31;
+ 151:u8g2_lib/u8g2_setup.c **** #endif
+ 152:u8g2_lib/u8g2_setup.c ****   t *= 8;
+  55              		.loc 1 152 0
+  56 0010 E400     		lsls	r4, r4, #3
+  57              	.LVL5:
+ 153:u8g2_lib/u8g2_setup.c ****   u8g2->pixel_buf_width = t;
+  58              		.loc 1 153 0
+  59 0012 4487     		strh	r4, [r0, #58]	@ movhi
+ 154:u8g2_lib/u8g2_setup.c ****   
+ 155:u8g2_lib/u8g2_setup.c ****   t = u8g2->tile_curr_row;
+  60              		.loc 1 155 0
+  61 0014 90F83910 		ldrb	r1, [r0, #57]	@ zero_extendqisi2
+  62 0018 8FB2     		uxth	r7, r1
+  63              	.LVL6:
+ 156:u8g2_lib/u8g2_setup.c ****   t *= 8;
+  64              		.loc 1 156 0
+  65 001a FC00     		lsls	r4, r7, #3
+  66              	.LVL7:
+ 157:u8g2_lib/u8g2_setup.c ****   u8g2->pixel_curr_row = t;
+  67              		.loc 1 157 0
+  68 001c C487     		strh	r4, [r0, #62]	@ movhi
+  69              	.LVL8:
+ 158:u8g2_lib/u8g2_setup.c ****   
+ 159:u8g2_lib/u8g2_setup.c ****   t = u8g2->tile_buf_height;
+ 160:u8g2_lib/u8g2_setup.c ****   /* handle the case, where the buffer is larger than the (remaining) part of the display */
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 5
+
+
+ 161:u8g2_lib/u8g2_setup.c ****   if ( t + u8g2->tile_curr_row > display_info->tile_height )
+  70              		.loc 1 161 0
+  71 001e 3144     		add	r1, r1, r6
+  72 0020 557C     		ldrb	r5, [r2, #17]	@ zero_extendqisi2
+  73 0022 A942     		cmp	r1, r5
+  74 0024 01DD     		ble	.L2
+ 162:u8g2_lib/u8g2_setup.c ****     t = display_info->tile_height - u8g2->tile_curr_row;
+  75              		.loc 1 162 0
+  76 0026 EB1B     		subs	r3, r5, r7
+  77              	.LVL9:
+  78 0028 9BB2     		uxth	r3, r3
+  79              	.LVL10:
+  80              	.L2:
+ 163:u8g2_lib/u8g2_setup.c ****   t *= 8;
+  81              		.loc 1 163 0
+  82 002a DB00     		lsls	r3, r3, #3
+  83              	.LVL11:
+  84 002c 9BB2     		uxth	r3, r3
+  85              	.LVL12:
+ 164:u8g2_lib/u8g2_setup.c ****   
+ 165:u8g2_lib/u8g2_setup.c ****   u8g2->buf_y0 = u8g2->pixel_curr_row;   
+  86              		.loc 1 165 0
+  87 002e A0F84040 		strh	r4, [r0, #64]	@ movhi
+ 166:u8g2_lib/u8g2_setup.c ****   u8g2->buf_y1 = u8g2->buf_y0;
+ 167:u8g2_lib/u8g2_setup.c ****   u8g2->buf_y1 += t;
+  88              		.loc 1 167 0
+  89 0032 2344     		add	r3, r3, r4
+  90              	.LVL13:
+  91 0034 A0F84230 		strh	r3, [r0, #66]	@ movhi
+ 168:u8g2_lib/u8g2_setup.c **** 
+ 169:u8g2_lib/u8g2_setup.c ****   
+ 170:u8g2_lib/u8g2_setup.c **** #ifdef U8G2_16BIT
+ 171:u8g2_lib/u8g2_setup.c ****   u8g2->width = display_info->pixel_width;
+  92              		.loc 1 171 0
+  93 0038 938A     		ldrh	r3, [r2, #20]
+  94 003a A0F84430 		strh	r3, [r0, #68]	@ movhi
+ 172:u8g2_lib/u8g2_setup.c ****   u8g2->height = display_info->pixel_height;
+  95              		.loc 1 172 0
+  96 003e D38A     		ldrh	r3, [r2, #22]
+  97 0040 A0F84630 		strh	r3, [r0, #70]	@ movhi
+ 173:u8g2_lib/u8g2_setup.c **** #else
+ 174:u8g2_lib/u8g2_setup.c ****   u8g2->width = 240;
+ 175:u8g2_lib/u8g2_setup.c ****   if ( display_info->pixel_width <= 240 )
+ 176:u8g2_lib/u8g2_setup.c ****     u8g2->width = display_info->pixel_width;
+ 177:u8g2_lib/u8g2_setup.c ****   u8g2->height = display_info->pixel_height;
+ 178:u8g2_lib/u8g2_setup.c **** #endif
+ 179:u8g2_lib/u8g2_setup.c **** 
+ 180:u8g2_lib/u8g2_setup.c **** }
+  98              		.loc 1 180 0
+  99 0044 F0BC     		pop	{r4, r5, r6, r7}
+ 100              	.LCFI1:
+ 101              		.cfi_restore 7
+ 102              		.cfi_restore 6
+ 103              		.cfi_restore 5
+ 104              		.cfi_restore 4
+ 105              		.cfi_def_cfa_offset 0
+ 106 0046 7047     		bx	lr
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 6
+
+
+ 107              		.cfi_endproc
+ 108              	.LFE5:
+ 110              		.section	.text.u8g2_update_dimension_r0,"ax",%progbits
+ 111              		.align	2
+ 112              		.global	u8g2_update_dimension_r0
+ 113              		.thumb
+ 114              		.thumb_func
+ 116              	u8g2_update_dimension_r0:
+ 117              	.LFB7:
+ 181:u8g2_lib/u8g2_setup.c **** 
+ 182:u8g2_lib/u8g2_setup.c **** /*==========================================================*/
+ 183:u8g2_lib/u8g2_setup.c **** /* apply clip window */
+ 184:u8g2_lib/u8g2_setup.c **** 
+ 185:u8g2_lib/u8g2_setup.c **** #ifdef U8G2_WITH_CLIP_WINDOW_SUPPORT
+ 186:u8g2_lib/u8g2_setup.c **** static void u8g2_apply_clip_window(u8g2_t *u8g2)
+ 187:u8g2_lib/u8g2_setup.c **** {
+ 188:u8g2_lib/u8g2_setup.c ****   /* check aganst the current user_??? window */
+ 189:u8g2_lib/u8g2_setup.c ****   if ( u8g2_IsIntersection(u8g2, u8g2->clip_x0, u8g2->clip_y0, u8g2->clip_x1, u8g2->clip_y1) == 0 )
+ 190:u8g2_lib/u8g2_setup.c ****   {
+ 191:u8g2_lib/u8g2_setup.c ****     u8g2->is_page_clip_window_intersection = 0;
+ 192:u8g2_lib/u8g2_setup.c ****   }
+ 193:u8g2_lib/u8g2_setup.c ****   else
+ 194:u8g2_lib/u8g2_setup.c ****   {
+ 195:u8g2_lib/u8g2_setup.c ****     u8g2->is_page_clip_window_intersection = 1;
+ 196:u8g2_lib/u8g2_setup.c **** 
+ 197:u8g2_lib/u8g2_setup.c ****     if ( u8g2->user_x0 < u8g2->clip_x0 )
+ 198:u8g2_lib/u8g2_setup.c ****       u8g2->user_x0 = u8g2->clip_x0;
+ 199:u8g2_lib/u8g2_setup.c ****     if ( u8g2->user_x1 > u8g2->clip_x1 )
+ 200:u8g2_lib/u8g2_setup.c ****       u8g2->user_x1 = u8g2->clip_x1;
+ 201:u8g2_lib/u8g2_setup.c ****     if ( u8g2->user_y0 < u8g2->clip_y0 )
+ 202:u8g2_lib/u8g2_setup.c ****       u8g2->user_y0 = u8g2->clip_y0;
+ 203:u8g2_lib/u8g2_setup.c ****     if ( u8g2->user_y1 > u8g2->clip_y1 )
+ 204:u8g2_lib/u8g2_setup.c ****       u8g2->user_y1 = u8g2->clip_y1;
+ 205:u8g2_lib/u8g2_setup.c ****   }
+ 206:u8g2_lib/u8g2_setup.c **** }
+ 207:u8g2_lib/u8g2_setup.c **** #endif /* U8G2_WITH_CLIP_WINDOW_SUPPORT */
+ 208:u8g2_lib/u8g2_setup.c **** 
+ 209:u8g2_lib/u8g2_setup.c **** /*==========================================================*/
+ 210:u8g2_lib/u8g2_setup.c **** 
+ 211:u8g2_lib/u8g2_setup.c **** 
+ 212:u8g2_lib/u8g2_setup.c **** void u8g2_update_dimension_r0(u8g2_t *u8g2)
+ 213:u8g2_lib/u8g2_setup.c **** {
+ 118              		.loc 1 213 0
+ 119              		.cfi_startproc
+ 120              		@ args = 0, pretend = 0, frame = 0
+ 121              		@ frame_needed = 0, uses_anonymous_args = 0
+ 122              	.LVL14:
+ 123 0000 08B5     		push	{r3, lr}
+ 124              	.LCFI2:
+ 125              		.cfi_def_cfa_offset 8
+ 126              		.cfi_offset 3, -8
+ 127              		.cfi_offset 14, -4
+ 214:u8g2_lib/u8g2_setup.c ****   u8g2_update_dimension_common(u8g2);  
+ 128              		.loc 1 214 0
+ 129 0002 FFF7FEFF 		bl	u8g2_update_dimension_common
+ 130              	.LVL15:
+ 131 0006 08BD     		pop	{r3, pc}
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 7
+
+
+ 132              		.cfi_endproc
+ 133              	.LFE7:
+ 135              		.section	.text.u8g2_update_dimension_r1,"ax",%progbits
+ 136              		.align	2
+ 137              		.global	u8g2_update_dimension_r1
+ 138              		.thumb
+ 139              		.thumb_func
+ 141              	u8g2_update_dimension_r1:
+ 142              	.LFB9:
+ 215:u8g2_lib/u8g2_setup.c **** }
+ 216:u8g2_lib/u8g2_setup.c **** 
+ 217:u8g2_lib/u8g2_setup.c **** void u8g2_update_page_win_r0(u8g2_t *u8g2)
+ 218:u8g2_lib/u8g2_setup.c **** {
+ 219:u8g2_lib/u8g2_setup.c ****   u8g2->user_x0 = 0;
+ 220:u8g2_lib/u8g2_setup.c ****   u8g2->user_x1 = u8g2->width;			/* pixel_buf_width replaced with width */
+ 221:u8g2_lib/u8g2_setup.c ****   
+ 222:u8g2_lib/u8g2_setup.c ****   u8g2->user_y0 = u8g2->buf_y0;
+ 223:u8g2_lib/u8g2_setup.c ****   u8g2->user_y1 = u8g2->buf_y1;
+ 224:u8g2_lib/u8g2_setup.c ****   
+ 225:u8g2_lib/u8g2_setup.c **** #ifdef U8G2_WITH_CLIP_WINDOW_SUPPORT
+ 226:u8g2_lib/u8g2_setup.c ****   u8g2_apply_clip_window(u8g2);
+ 227:u8g2_lib/u8g2_setup.c **** #endif /* U8G2_WITH_CLIP_WINDOW_SUPPORT */
+ 228:u8g2_lib/u8g2_setup.c **** }
+ 229:u8g2_lib/u8g2_setup.c **** 
+ 230:u8g2_lib/u8g2_setup.c **** 
+ 231:u8g2_lib/u8g2_setup.c **** void u8g2_update_dimension_r1(u8g2_t *u8g2)
+ 232:u8g2_lib/u8g2_setup.c **** {
+ 143              		.loc 1 232 0
+ 144              		.cfi_startproc
+ 145              		@ args = 0, pretend = 0, frame = 0
+ 146              		@ frame_needed = 0, uses_anonymous_args = 0
+ 147              	.LVL16:
+ 148 0000 10B5     		push	{r4, lr}
+ 149              	.LCFI3:
+ 150              		.cfi_def_cfa_offset 8
+ 151              		.cfi_offset 4, -8
+ 152              		.cfi_offset 14, -4
+ 153 0002 0446     		mov	r4, r0
+ 233:u8g2_lib/u8g2_setup.c ****   u8g2_update_dimension_common(u8g2);
+ 154              		.loc 1 233 0
+ 155 0004 FFF7FEFF 		bl	u8g2_update_dimension_common
+ 156              	.LVL17:
+ 234:u8g2_lib/u8g2_setup.c ****   
+ 235:u8g2_lib/u8g2_setup.c ****   u8g2->height = u8g2_GetU8x8(u8g2)->display_info->pixel_width;
+ 157              		.loc 1 235 0
+ 158 0008 2368     		ldr	r3, [r4]
+ 159 000a 9A8A     		ldrh	r2, [r3, #20]
+ 160 000c A4F84620 		strh	r2, [r4, #70]	@ movhi
+ 236:u8g2_lib/u8g2_setup.c ****   u8g2->width = u8g2_GetU8x8(u8g2)->display_info->pixel_height;
+ 161              		.loc 1 236 0
+ 162 0010 DB8A     		ldrh	r3, [r3, #22]
+ 163 0012 A4F84430 		strh	r3, [r4, #68]	@ movhi
+ 164 0016 10BD     		pop	{r4, pc}
+ 165              		.cfi_endproc
+ 166              	.LFE9:
+ 168              		.section	.text.u8g2_update_dimension_r2,"ax",%progbits
+ 169              		.align	2
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 8
+
+
+ 170              		.global	u8g2_update_dimension_r2
+ 171              		.thumb
+ 172              		.thumb_func
+ 174              	u8g2_update_dimension_r2:
+ 175              	.LFB11:
+ 237:u8g2_lib/u8g2_setup.c ****   
+ 238:u8g2_lib/u8g2_setup.c **** }
+ 239:u8g2_lib/u8g2_setup.c **** 
+ 240:u8g2_lib/u8g2_setup.c **** void u8g2_update_page_win_r1(u8g2_t *u8g2)
+ 241:u8g2_lib/u8g2_setup.c **** {
+ 242:u8g2_lib/u8g2_setup.c ****   u8g2->user_x0 = u8g2->buf_y0;
+ 243:u8g2_lib/u8g2_setup.c ****   u8g2->user_x1 = u8g2->buf_y1;
+ 244:u8g2_lib/u8g2_setup.c ****   
+ 245:u8g2_lib/u8g2_setup.c ****   u8g2->user_y0 = 0;
+ 246:u8g2_lib/u8g2_setup.c ****   u8g2->user_y1 = u8g2->height;	/* pixel_buf_width replaced with height (which is the real pixel wi
+ 247:u8g2_lib/u8g2_setup.c ****   
+ 248:u8g2_lib/u8g2_setup.c **** #ifdef U8G2_WITH_CLIP_WINDOW_SUPPORT
+ 249:u8g2_lib/u8g2_setup.c ****   u8g2_apply_clip_window(u8g2);
+ 250:u8g2_lib/u8g2_setup.c **** #endif /* U8G2_WITH_CLIP_WINDOW_SUPPORT */
+ 251:u8g2_lib/u8g2_setup.c **** }
+ 252:u8g2_lib/u8g2_setup.c **** 
+ 253:u8g2_lib/u8g2_setup.c **** void u8g2_update_dimension_r2(u8g2_t *u8g2)
+ 254:u8g2_lib/u8g2_setup.c **** {
+ 176              		.loc 1 254 0
+ 177              		.cfi_startproc
+ 178              		@ args = 0, pretend = 0, frame = 0
+ 179              		@ frame_needed = 0, uses_anonymous_args = 0
+ 180              	.LVL18:
+ 181 0000 08B5     		push	{r3, lr}
+ 182              	.LCFI4:
+ 183              		.cfi_def_cfa_offset 8
+ 184              		.cfi_offset 3, -8
+ 185              		.cfi_offset 14, -4
+ 255:u8g2_lib/u8g2_setup.c ****   u8g2_update_dimension_common(u8g2);
+ 186              		.loc 1 255 0
+ 187 0002 FFF7FEFF 		bl	u8g2_update_dimension_common
+ 188              	.LVL19:
+ 189 0006 08BD     		pop	{r3, pc}
+ 190              		.cfi_endproc
+ 191              	.LFE11:
+ 193              		.section	.text.u8g2_update_dimension_r3,"ax",%progbits
+ 194              		.align	2
+ 195              		.global	u8g2_update_dimension_r3
+ 196              		.thumb
+ 197              		.thumb_func
+ 199              	u8g2_update_dimension_r3:
+ 200              	.LFB13:
+ 256:u8g2_lib/u8g2_setup.c **** }
+ 257:u8g2_lib/u8g2_setup.c **** 
+ 258:u8g2_lib/u8g2_setup.c **** void u8g2_update_page_win_r2(u8g2_t *u8g2)
+ 259:u8g2_lib/u8g2_setup.c **** {
+ 260:u8g2_lib/u8g2_setup.c ****   u8g2->user_x0 = 0;
+ 261:u8g2_lib/u8g2_setup.c ****   u8g2->user_x1 = u8g2->width;	/* pixel_buf_width replaced with width */
+ 262:u8g2_lib/u8g2_setup.c ****   
+ 263:u8g2_lib/u8g2_setup.c ****   /* there are ases where the height is not a multiple of 8. */
+ 264:u8g2_lib/u8g2_setup.c ****   /* in such a case u8g2->buf_y1 might be heigher than u8g2->height */
+ 265:u8g2_lib/u8g2_setup.c ****   u8g2->user_y0 = 0;
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 9
+
+
+ 266:u8g2_lib/u8g2_setup.c ****   if ( u8g2->height >= u8g2->buf_y1 )
+ 267:u8g2_lib/u8g2_setup.c ****     u8g2->user_y0 = u8g2->height - u8g2->buf_y1;
+ 268:u8g2_lib/u8g2_setup.c ****   u8g2->user_y1 = u8g2->height - u8g2->buf_y0;
+ 269:u8g2_lib/u8g2_setup.c **** 
+ 270:u8g2_lib/u8g2_setup.c **** #ifdef U8G2_WITH_CLIP_WINDOW_SUPPORT
+ 271:u8g2_lib/u8g2_setup.c ****   u8g2_apply_clip_window(u8g2);
+ 272:u8g2_lib/u8g2_setup.c **** #endif /* U8G2_WITH_CLIP_WINDOW_SUPPORT */
+ 273:u8g2_lib/u8g2_setup.c **** }
+ 274:u8g2_lib/u8g2_setup.c **** 
+ 275:u8g2_lib/u8g2_setup.c **** 
+ 276:u8g2_lib/u8g2_setup.c **** void u8g2_update_dimension_r3(u8g2_t *u8g2)
+ 277:u8g2_lib/u8g2_setup.c **** {
+ 201              		.loc 1 277 0
+ 202              		.cfi_startproc
+ 203              		@ args = 0, pretend = 0, frame = 0
+ 204              		@ frame_needed = 0, uses_anonymous_args = 0
+ 205              	.LVL20:
+ 206 0000 10B5     		push	{r4, lr}
+ 207              	.LCFI5:
+ 208              		.cfi_def_cfa_offset 8
+ 209              		.cfi_offset 4, -8
+ 210              		.cfi_offset 14, -4
+ 211 0002 0446     		mov	r4, r0
+ 278:u8g2_lib/u8g2_setup.c ****   u8g2_update_dimension_common(u8g2);
+ 212              		.loc 1 278 0
+ 213 0004 FFF7FEFF 		bl	u8g2_update_dimension_common
+ 214              	.LVL21:
+ 279:u8g2_lib/u8g2_setup.c ****   
+ 280:u8g2_lib/u8g2_setup.c ****   u8g2->height = u8g2_GetU8x8(u8g2)->display_info->pixel_width;
+ 215              		.loc 1 280 0
+ 216 0008 2368     		ldr	r3, [r4]
+ 217 000a 9A8A     		ldrh	r2, [r3, #20]
+ 218 000c A4F84620 		strh	r2, [r4, #70]	@ movhi
+ 281:u8g2_lib/u8g2_setup.c ****   u8g2->width = u8g2_GetU8x8(u8g2)->display_info->pixel_height;
+ 219              		.loc 1 281 0
+ 220 0010 DB8A     		ldrh	r3, [r3, #22]
+ 221 0012 A4F84430 		strh	r3, [r4, #68]	@ movhi
+ 222 0016 10BD     		pop	{r4, pc}
+ 223              		.cfi_endproc
+ 224              	.LFE13:
+ 226              		.section	.text.u8g2_apply_clip_window,"ax",%progbits
+ 227              		.align	2
+ 228              		.thumb
+ 229              		.thumb_func
+ 231              	u8g2_apply_clip_window:
+ 232              	.LFB6:
+ 187:u8g2_lib/u8g2_setup.c ****   /* check aganst the current user_??? window */
+ 233              		.loc 1 187 0
+ 234              		.cfi_startproc
+ 235              		@ args = 0, pretend = 0, frame = 0
+ 236              		@ frame_needed = 0, uses_anonymous_args = 0
+ 237              	.LVL22:
+ 238 0000 30B5     		push	{r4, r5, lr}
+ 239              	.LCFI6:
+ 240              		.cfi_def_cfa_offset 12
+ 241              		.cfi_offset 4, -12
+ 242              		.cfi_offset 5, -8
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 10
+
+
+ 243              		.cfi_offset 14, -4
+ 244 0002 83B0     		sub	sp, sp, #12
+ 245              	.LCFI7:
+ 246              		.cfi_def_cfa_offset 24
+ 247 0004 0446     		mov	r4, r0
+ 189:u8g2_lib/u8g2_setup.c ****   {
+ 248              		.loc 1 189 0
+ 249 0006 B0F85230 		ldrh	r3, [r0, #82]
+ 250 000a B0F85420 		ldrh	r2, [r0, #84]
+ 251 000e B0F85010 		ldrh	r1, [r0, #80]
+ 252 0012 B0F85650 		ldrh	r5, [r0, #86]
+ 253 0016 0095     		str	r5, [sp]
+ 254 0018 FFF7FEFF 		bl	u8g2_IsIntersection
+ 255              	.LVL23:
+ 256 001c 18B9     		cbnz	r0, .L13
+ 191:u8g2_lib/u8g2_setup.c ****   }
+ 257              		.loc 1 191 0
+ 258 001e 0023     		movs	r3, #0
+ 259 0020 84F88C30 		strb	r3, [r4, #140]
+ 260 0024 22E0     		b	.L12
+ 261              	.L13:
+ 195:u8g2_lib/u8g2_setup.c **** 
+ 262              		.loc 1 195 0
+ 263 0026 0123     		movs	r3, #1
+ 264 0028 84F88C30 		strb	r3, [r4, #140]
+ 197:u8g2_lib/u8g2_setup.c ****       u8g2->user_x0 = u8g2->clip_x0;
+ 265              		.loc 1 197 0
+ 266 002c B4F84820 		ldrh	r2, [r4, #72]
+ 267 0030 B4F85030 		ldrh	r3, [r4, #80]
+ 268 0034 9A42     		cmp	r2, r3
+ 269 0036 01D2     		bcs	.L15
+ 198:u8g2_lib/u8g2_setup.c ****     if ( u8g2->user_x1 > u8g2->clip_x1 )
+ 270              		.loc 1 198 0
+ 271 0038 A4F84830 		strh	r3, [r4, #72]	@ movhi
+ 272              	.L15:
+ 199:u8g2_lib/u8g2_setup.c ****       u8g2->user_x1 = u8g2->clip_x1;
+ 273              		.loc 1 199 0
+ 274 003c B4F84A20 		ldrh	r2, [r4, #74]
+ 275 0040 B4F85230 		ldrh	r3, [r4, #82]
+ 276 0044 9A42     		cmp	r2, r3
+ 277 0046 01D9     		bls	.L16
+ 200:u8g2_lib/u8g2_setup.c ****     if ( u8g2->user_y0 < u8g2->clip_y0 )
+ 278              		.loc 1 200 0
+ 279 0048 A4F84A30 		strh	r3, [r4, #74]	@ movhi
+ 280              	.L16:
+ 201:u8g2_lib/u8g2_setup.c ****       u8g2->user_y0 = u8g2->clip_y0;
+ 281              		.loc 1 201 0
+ 282 004c B4F84C20 		ldrh	r2, [r4, #76]
+ 283 0050 B4F85430 		ldrh	r3, [r4, #84]
+ 284 0054 9A42     		cmp	r2, r3
+ 285 0056 01D2     		bcs	.L17
+ 202:u8g2_lib/u8g2_setup.c ****     if ( u8g2->user_y1 > u8g2->clip_y1 )
+ 286              		.loc 1 202 0
+ 287 0058 A4F84C30 		strh	r3, [r4, #76]	@ movhi
+ 288              	.L17:
+ 203:u8g2_lib/u8g2_setup.c ****       u8g2->user_y1 = u8g2->clip_y1;
+ 289              		.loc 1 203 0
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 11
+
+
+ 290 005c B4F84E20 		ldrh	r2, [r4, #78]
+ 291 0060 B4F85630 		ldrh	r3, [r4, #86]
+ 292 0064 9A42     		cmp	r2, r3
+ 293 0066 01D9     		bls	.L12
+ 204:u8g2_lib/u8g2_setup.c ****   }
+ 294              		.loc 1 204 0
+ 295 0068 A4F84E30 		strh	r3, [r4, #78]	@ movhi
+ 296              	.L12:
+ 206:u8g2_lib/u8g2_setup.c **** #endif /* U8G2_WITH_CLIP_WINDOW_SUPPORT */
+ 297              		.loc 1 206 0
+ 298 006c 03B0     		add	sp, sp, #12
+ 299              	.LCFI8:
+ 300              		.cfi_def_cfa_offset 12
+ 301              		@ sp needed
+ 302 006e 30BD     		pop	{r4, r5, pc}
+ 303              		.cfi_endproc
+ 304              	.LFE6:
+ 306              		.section	.text.u8g2_update_page_win_r0,"ax",%progbits
+ 307              		.align	2
+ 308              		.global	u8g2_update_page_win_r0
+ 309              		.thumb
+ 310              		.thumb_func
+ 312              	u8g2_update_page_win_r0:
+ 313              	.LFB8:
+ 218:u8g2_lib/u8g2_setup.c ****   u8g2->user_x0 = 0;
+ 314              		.loc 1 218 0
+ 315              		.cfi_startproc
+ 316              		@ args = 0, pretend = 0, frame = 0
+ 317              		@ frame_needed = 0, uses_anonymous_args = 0
+ 318              	.LVL24:
+ 319 0000 08B5     		push	{r3, lr}
+ 320              	.LCFI9:
+ 321              		.cfi_def_cfa_offset 8
+ 322              		.cfi_offset 3, -8
+ 323              		.cfi_offset 14, -4
+ 219:u8g2_lib/u8g2_setup.c ****   u8g2->user_x1 = u8g2->width;			/* pixel_buf_width replaced with width */
+ 324              		.loc 1 219 0
+ 325 0002 0022     		movs	r2, #0
+ 326 0004 A0F84820 		strh	r2, [r0, #72]	@ movhi
+ 220:u8g2_lib/u8g2_setup.c ****   
+ 327              		.loc 1 220 0
+ 328 0008 B0F84420 		ldrh	r2, [r0, #68]
+ 329 000c A0F84A20 		strh	r2, [r0, #74]	@ movhi
+ 222:u8g2_lib/u8g2_setup.c ****   u8g2->user_y1 = u8g2->buf_y1;
+ 330              		.loc 1 222 0
+ 331 0010 B0F84020 		ldrh	r2, [r0, #64]
+ 332 0014 A0F84C20 		strh	r2, [r0, #76]	@ movhi
+ 223:u8g2_lib/u8g2_setup.c ****   
+ 333              		.loc 1 223 0
+ 334 0018 B0F84220 		ldrh	r2, [r0, #66]
+ 335 001c A0F84E20 		strh	r2, [r0, #78]	@ movhi
+ 226:u8g2_lib/u8g2_setup.c **** #endif /* U8G2_WITH_CLIP_WINDOW_SUPPORT */
+ 336              		.loc 1 226 0
+ 337 0020 FFF7FEFF 		bl	u8g2_apply_clip_window
+ 338              	.LVL25:
+ 339 0024 08BD     		pop	{r3, pc}
+ 340              		.cfi_endproc
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 12
+
+
+ 341              	.LFE8:
+ 343 0026 00BF     		.section	.text.u8g2_update_page_win_r1,"ax",%progbits
+ 344              		.align	2
+ 345              		.global	u8g2_update_page_win_r1
+ 346              		.thumb
+ 347              		.thumb_func
+ 349              	u8g2_update_page_win_r1:
+ 350              	.LFB10:
+ 241:u8g2_lib/u8g2_setup.c ****   u8g2->user_x0 = u8g2->buf_y0;
+ 351              		.loc 1 241 0
+ 352              		.cfi_startproc
+ 353              		@ args = 0, pretend = 0, frame = 0
+ 354              		@ frame_needed = 0, uses_anonymous_args = 0
+ 355              	.LVL26:
+ 356 0000 08B5     		push	{r3, lr}
+ 357              	.LCFI10:
+ 358              		.cfi_def_cfa_offset 8
+ 359              		.cfi_offset 3, -8
+ 360              		.cfi_offset 14, -4
+ 242:u8g2_lib/u8g2_setup.c ****   u8g2->user_x1 = u8g2->buf_y1;
+ 361              		.loc 1 242 0
+ 362 0002 B0F84020 		ldrh	r2, [r0, #64]
+ 363 0006 A0F84820 		strh	r2, [r0, #72]	@ movhi
+ 243:u8g2_lib/u8g2_setup.c ****   
+ 364              		.loc 1 243 0
+ 365 000a B0F84220 		ldrh	r2, [r0, #66]
+ 366 000e A0F84A20 		strh	r2, [r0, #74]	@ movhi
+ 245:u8g2_lib/u8g2_setup.c ****   u8g2->user_y1 = u8g2->height;	/* pixel_buf_width replaced with height (which is the real pixel wi
+ 367              		.loc 1 245 0
+ 368 0012 0022     		movs	r2, #0
+ 369 0014 A0F84C20 		strh	r2, [r0, #76]	@ movhi
+ 246:u8g2_lib/u8g2_setup.c ****   
+ 370              		.loc 1 246 0
+ 371 0018 B0F84620 		ldrh	r2, [r0, #70]
+ 372 001c A0F84E20 		strh	r2, [r0, #78]	@ movhi
+ 249:u8g2_lib/u8g2_setup.c **** #endif /* U8G2_WITH_CLIP_WINDOW_SUPPORT */
+ 373              		.loc 1 249 0
+ 374 0020 FFF7FEFF 		bl	u8g2_apply_clip_window
+ 375              	.LVL27:
+ 376 0024 08BD     		pop	{r3, pc}
+ 377              		.cfi_endproc
+ 378              	.LFE10:
+ 380 0026 00BF     		.section	.text.u8g2_update_page_win_r2,"ax",%progbits
+ 381              		.align	2
+ 382              		.global	u8g2_update_page_win_r2
+ 383              		.thumb
+ 384              		.thumb_func
+ 386              	u8g2_update_page_win_r2:
+ 387              	.LFB12:
+ 259:u8g2_lib/u8g2_setup.c ****   u8g2->user_x0 = 0;
+ 388              		.loc 1 259 0
+ 389              		.cfi_startproc
+ 390              		@ args = 0, pretend = 0, frame = 0
+ 391              		@ frame_needed = 0, uses_anonymous_args = 0
+ 392              	.LVL28:
+ 393 0000 08B5     		push	{r3, lr}
+ 394              	.LCFI11:
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 13
+
+
+ 395              		.cfi_def_cfa_offset 8
+ 396              		.cfi_offset 3, -8
+ 397              		.cfi_offset 14, -4
+ 260:u8g2_lib/u8g2_setup.c ****   u8g2->user_x1 = u8g2->width;	/* pixel_buf_width replaced with width */
+ 398              		.loc 1 260 0
+ 399 0002 0023     		movs	r3, #0
+ 400 0004 A0F84830 		strh	r3, [r0, #72]	@ movhi
+ 261:u8g2_lib/u8g2_setup.c ****   
+ 401              		.loc 1 261 0
+ 402 0008 B0F84420 		ldrh	r2, [r0, #68]
+ 403 000c A0F84A20 		strh	r2, [r0, #74]	@ movhi
+ 265:u8g2_lib/u8g2_setup.c ****   if ( u8g2->height >= u8g2->buf_y1 )
+ 404              		.loc 1 265 0
+ 405 0010 A0F84C30 		strh	r3, [r0, #76]	@ movhi
+ 266:u8g2_lib/u8g2_setup.c ****     u8g2->user_y0 = u8g2->height - u8g2->buf_y1;
+ 406              		.loc 1 266 0
+ 407 0014 B0F84630 		ldrh	r3, [r0, #70]
+ 408 0018 B0F84220 		ldrh	r2, [r0, #66]
+ 409 001c 9342     		cmp	r3, r2
+ 410 001e 02D3     		bcc	.L24
+ 267:u8g2_lib/u8g2_setup.c ****   u8g2->user_y1 = u8g2->height - u8g2->buf_y0;
+ 411              		.loc 1 267 0
+ 412 0020 9A1A     		subs	r2, r3, r2
+ 413 0022 A0F84C20 		strh	r2, [r0, #76]	@ movhi
+ 414              	.L24:
+ 268:u8g2_lib/u8g2_setup.c **** 
+ 415              		.loc 1 268 0
+ 416 0026 B0F84020 		ldrh	r2, [r0, #64]
+ 417 002a 9B1A     		subs	r3, r3, r2
+ 418 002c A0F84E30 		strh	r3, [r0, #78]	@ movhi
+ 271:u8g2_lib/u8g2_setup.c **** #endif /* U8G2_WITH_CLIP_WINDOW_SUPPORT */
+ 419              		.loc 1 271 0
+ 420 0030 FFF7FEFF 		bl	u8g2_apply_clip_window
+ 421              	.LVL29:
+ 422 0034 08BD     		pop	{r3, pc}
+ 423              		.cfi_endproc
+ 424              	.LFE12:
+ 426 0036 00BF     		.section	.text.u8g2_update_page_win_r3,"ax",%progbits
+ 427              		.align	2
+ 428              		.global	u8g2_update_page_win_r3
+ 429              		.thumb
+ 430              		.thumb_func
+ 432              	u8g2_update_page_win_r3:
+ 433              	.LFB14:
+ 282:u8g2_lib/u8g2_setup.c **** 
+ 283:u8g2_lib/u8g2_setup.c **** }
+ 284:u8g2_lib/u8g2_setup.c **** 
+ 285:u8g2_lib/u8g2_setup.c **** void u8g2_update_page_win_r3(u8g2_t *u8g2)
+ 286:u8g2_lib/u8g2_setup.c **** {
+ 434              		.loc 1 286 0
+ 435              		.cfi_startproc
+ 436              		@ args = 0, pretend = 0, frame = 0
+ 437              		@ frame_needed = 0, uses_anonymous_args = 0
+ 438              	.LVL30:
+ 439 0000 08B5     		push	{r3, lr}
+ 440              	.LCFI12:
+ 441              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 14
+
+
+ 442              		.cfi_offset 3, -8
+ 443              		.cfi_offset 14, -4
+ 287:u8g2_lib/u8g2_setup.c ****   /* there are ases where the height is not a multiple of 8. */
+ 288:u8g2_lib/u8g2_setup.c ****   /* in such a case u8g2->buf_y1 might be heigher than u8g2->width */
+ 289:u8g2_lib/u8g2_setup.c ****   u8g2->user_x0 = 0;
+ 444              		.loc 1 289 0
+ 445 0002 0023     		movs	r3, #0
+ 446 0004 A0F84830 		strh	r3, [r0, #72]	@ movhi
+ 290:u8g2_lib/u8g2_setup.c ****   if ( u8g2->width >= u8g2->buf_y1 )
+ 447              		.loc 1 290 0
+ 448 0008 B0F84430 		ldrh	r3, [r0, #68]
+ 449 000c B0F84220 		ldrh	r2, [r0, #66]
+ 450 0010 9342     		cmp	r3, r2
+ 451 0012 02D3     		bcc	.L27
+ 291:u8g2_lib/u8g2_setup.c ****     u8g2->user_x0 = u8g2->width - u8g2->buf_y1;
+ 452              		.loc 1 291 0
+ 453 0014 9A1A     		subs	r2, r3, r2
+ 454 0016 A0F84820 		strh	r2, [r0, #72]	@ movhi
+ 455              	.L27:
+ 292:u8g2_lib/u8g2_setup.c ****   u8g2->user_x1 = u8g2->width - u8g2->buf_y0;
+ 456              		.loc 1 292 0
+ 457 001a B0F84020 		ldrh	r2, [r0, #64]
+ 458 001e 9B1A     		subs	r3, r3, r2
+ 459 0020 A0F84A30 		strh	r3, [r0, #74]	@ movhi
+ 293:u8g2_lib/u8g2_setup.c ****   
+ 294:u8g2_lib/u8g2_setup.c ****   u8g2->user_y0 = 0;
+ 460              		.loc 1 294 0
+ 461 0024 0023     		movs	r3, #0
+ 462 0026 A0F84C30 		strh	r3, [r0, #76]	@ movhi
+ 295:u8g2_lib/u8g2_setup.c ****   u8g2->user_y1 = u8g2->height;	/* pixel_buf_width replaced with height (pixel_width) */
+ 463              		.loc 1 295 0
+ 464 002a B0F84630 		ldrh	r3, [r0, #70]
+ 465 002e A0F84E30 		strh	r3, [r0, #78]	@ movhi
+ 296:u8g2_lib/u8g2_setup.c **** 
+ 297:u8g2_lib/u8g2_setup.c **** #ifdef U8G2_WITH_CLIP_WINDOW_SUPPORT
+ 298:u8g2_lib/u8g2_setup.c ****   u8g2_apply_clip_window(u8g2);
+ 466              		.loc 1 298 0
+ 467 0032 FFF7FEFF 		bl	u8g2_apply_clip_window
+ 468              	.LVL31:
+ 469 0036 08BD     		pop	{r3, pc}
+ 470              		.cfi_endproc
+ 471              	.LFE14:
+ 473              		.section	.text.u8g2_draw_l90_r0,"ax",%progbits
+ 474              		.align	2
+ 475              		.global	u8g2_draw_l90_r0
+ 476              		.thumb
+ 477              		.thumb_func
+ 479              	u8g2_draw_l90_r0:
+ 480              	.LFB15:
+ 299:u8g2_lib/u8g2_setup.c **** #endif /* U8G2_WITH_CLIP_WINDOW_SUPPORT */
+ 300:u8g2_lib/u8g2_setup.c **** }
+ 301:u8g2_lib/u8g2_setup.c **** 
+ 302:u8g2_lib/u8g2_setup.c **** 
+ 303:u8g2_lib/u8g2_setup.c **** /*============================================*/
+ 304:u8g2_lib/u8g2_setup.c **** extern void u8g2_draw_hv_line_2dir(u8g2_t *u8g2, u8g2_uint_t x, u8g2_uint_t y, u8g2_uint_t len, uin
+ 305:u8g2_lib/u8g2_setup.c **** 
+ 306:u8g2_lib/u8g2_setup.c **** 
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 15
+
+
+ 307:u8g2_lib/u8g2_setup.c **** void u8g2_draw_l90_r0(u8g2_t *u8g2, u8g2_uint_t x, u8g2_uint_t y, u8g2_uint_t len, uint8_t dir)
+ 308:u8g2_lib/u8g2_setup.c **** {
+ 481              		.loc 1 308 0
+ 482              		.cfi_startproc
+ 483              		@ args = 4, pretend = 0, frame = 0
+ 484              		@ frame_needed = 0, uses_anonymous_args = 0
+ 485              	.LVL32:
+ 486 0000 10B5     		push	{r4, lr}
+ 487              	.LCFI13:
+ 488              		.cfi_def_cfa_offset 8
+ 489              		.cfi_offset 4, -8
+ 490              		.cfi_offset 14, -4
+ 491 0002 82B0     		sub	sp, sp, #8
+ 492              	.LCFI14:
+ 493              		.cfi_def_cfa_offset 16
+ 309:u8g2_lib/u8g2_setup.c **** #ifdef __unix
+ 310:u8g2_lib/u8g2_setup.c ****   assert( dir <= 1 );
+ 311:u8g2_lib/u8g2_setup.c **** #endif
+ 312:u8g2_lib/u8g2_setup.c ****   u8g2_draw_hv_line_2dir(u8g2, x, y, len, dir);
+ 494              		.loc 1 312 0
+ 495 0004 9DF81040 		ldrb	r4, [sp, #16]	@ zero_extendqisi2
+ 496 0008 0094     		str	r4, [sp]
+ 497 000a FFF7FEFF 		bl	u8g2_draw_hv_line_2dir
+ 498              	.LVL33:
+ 313:u8g2_lib/u8g2_setup.c **** }
+ 499              		.loc 1 313 0
+ 500 000e 02B0     		add	sp, sp, #8
+ 501              	.LCFI15:
+ 502              		.cfi_def_cfa_offset 8
+ 503              		@ sp needed
+ 504 0010 10BD     		pop	{r4, pc}
+ 505              		.cfi_endproc
+ 506              	.LFE15:
+ 508 0012 00BF     		.section	.text.u8g2_draw_l90_mirrorr_r0,"ax",%progbits
+ 509              		.align	2
+ 510              		.global	u8g2_draw_l90_mirrorr_r0
+ 511              		.thumb
+ 512              		.thumb_func
+ 514              	u8g2_draw_l90_mirrorr_r0:
+ 515              	.LFB16:
+ 314:u8g2_lib/u8g2_setup.c **** 
+ 315:u8g2_lib/u8g2_setup.c **** void u8g2_draw_l90_mirrorr_r0(u8g2_t *u8g2, u8g2_uint_t x, u8g2_uint_t y, u8g2_uint_t len, uint8_t 
+ 316:u8g2_lib/u8g2_setup.c **** {
+ 516              		.loc 1 316 0
+ 517              		.cfi_startproc
+ 518              		@ args = 4, pretend = 0, frame = 0
+ 519              		@ frame_needed = 0, uses_anonymous_args = 0
+ 520              	.LVL34:
+ 521 0000 30B5     		push	{r4, r5, lr}
+ 522              	.LCFI16:
+ 523              		.cfi_def_cfa_offset 12
+ 524              		.cfi_offset 4, -12
+ 525              		.cfi_offset 5, -8
+ 526              		.cfi_offset 14, -4
+ 527 0002 83B0     		sub	sp, sp, #12
+ 528              	.LCFI17:
+ 529              		.cfi_def_cfa_offset 24
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 16
+
+
+ 530 0004 9DF81850 		ldrb	r5, [sp, #24]	@ zero_extendqisi2
+ 317:u8g2_lib/u8g2_setup.c ****   u8g2_uint_t xx;
+ 318:u8g2_lib/u8g2_setup.c ****   xx = u8g2->width;
+ 531              		.loc 1 318 0
+ 532 0008 B0F84440 		ldrh	r4, [r0, #68]
+ 533              	.LVL35:
+ 319:u8g2_lib/u8g2_setup.c ****   xx -= x;
+ 534              		.loc 1 319 0
+ 535 000c 611A     		subs	r1, r4, r1
+ 536              	.LVL36:
+ 537 000e 89B2     		uxth	r1, r1
+ 538              	.LVL37:
+ 320:u8g2_lib/u8g2_setup.c ****   if ( (dir & 1) == 0 )
+ 539              		.loc 1 320 0
+ 540 0010 15F0010F 		tst	r5, #1
+ 541 0014 02D1     		bne	.L32
+ 321:u8g2_lib/u8g2_setup.c ****   {
+ 322:u8g2_lib/u8g2_setup.c ****     xx -= len;
+ 542              		.loc 1 322 0
+ 543 0016 C91A     		subs	r1, r1, r3
+ 544              	.LVL38:
+ 545 0018 89B2     		uxth	r1, r1
+ 546              	.LVL39:
+ 547 001a 01E0     		b	.L33
+ 548              	.L32:
+ 323:u8g2_lib/u8g2_setup.c ****   }
+ 324:u8g2_lib/u8g2_setup.c ****   else
+ 325:u8g2_lib/u8g2_setup.c ****   {
+ 326:u8g2_lib/u8g2_setup.c ****     xx--;
+ 549              		.loc 1 326 0
+ 550 001c 0139     		subs	r1, r1, #1
+ 551              	.LVL40:
+ 552 001e 89B2     		uxth	r1, r1
+ 553              	.LVL41:
+ 554              	.L33:
+ 327:u8g2_lib/u8g2_setup.c ****   }
+ 328:u8g2_lib/u8g2_setup.c ****   u8g2_draw_hv_line_2dir(u8g2, xx, y, len, dir);
+ 555              		.loc 1 328 0
+ 556 0020 0095     		str	r5, [sp]
+ 557 0022 FFF7FEFF 		bl	u8g2_draw_hv_line_2dir
+ 558              	.LVL42:
+ 329:u8g2_lib/u8g2_setup.c **** }
+ 559              		.loc 1 329 0
+ 560 0026 03B0     		add	sp, sp, #12
+ 561              	.LCFI18:
+ 562              		.cfi_def_cfa_offset 12
+ 563              		@ sp needed
+ 564 0028 30BD     		pop	{r4, r5, pc}
+ 565              		.cfi_endproc
+ 566              	.LFE16:
+ 568 002a 00BF     		.section	.text.u8g2_draw_l90_r1,"ax",%progbits
+ 569              		.align	2
+ 570              		.global	u8g2_draw_l90_r1
+ 571              		.thumb
+ 572              		.thumb_func
+ 574              	u8g2_draw_l90_r1:
+ 575              	.LFB17:
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 17
+
+
+ 330:u8g2_lib/u8g2_setup.c **** 
+ 331:u8g2_lib/u8g2_setup.c **** /* dir = 0 or 1 */
+ 332:u8g2_lib/u8g2_setup.c **** void u8g2_draw_l90_r1(u8g2_t *u8g2, u8g2_uint_t x, u8g2_uint_t y, u8g2_uint_t len, uint8_t dir)
+ 333:u8g2_lib/u8g2_setup.c **** {
+ 576              		.loc 1 333 0
+ 577              		.cfi_startproc
+ 578              		@ args = 4, pretend = 0, frame = 0
+ 579              		@ frame_needed = 0, uses_anonymous_args = 0
+ 580              	.LVL43:
+ 581 0000 30B5     		push	{r4, r5, lr}
+ 582              	.LCFI19:
+ 583              		.cfi_def_cfa_offset 12
+ 584              		.cfi_offset 4, -12
+ 585              		.cfi_offset 5, -8
+ 586              		.cfi_offset 14, -4
+ 587 0002 83B0     		sub	sp, sp, #12
+ 588              	.LCFI20:
+ 589              		.cfi_def_cfa_offset 24
+ 590 0004 0D46     		mov	r5, r1
+ 591              	.LVL44:
+ 334:u8g2_lib/u8g2_setup.c ****   u8g2_uint_t xx, yy;
+ 335:u8g2_lib/u8g2_setup.c **** 
+ 336:u8g2_lib/u8g2_setup.c **** #ifdef __unix
+ 337:u8g2_lib/u8g2_setup.c ****   assert( dir <= 1 );
+ 338:u8g2_lib/u8g2_setup.c **** #endif
+ 339:u8g2_lib/u8g2_setup.c ****   
+ 340:u8g2_lib/u8g2_setup.c ****   yy = x;
+ 341:u8g2_lib/u8g2_setup.c ****   
+ 342:u8g2_lib/u8g2_setup.c ****   xx = u8g2->height;
+ 592              		.loc 1 342 0
+ 593 0006 B0F84640 		ldrh	r4, [r0, #70]
+ 594              	.LVL45:
+ 343:u8g2_lib/u8g2_setup.c ****   xx -= y;
+ 595              		.loc 1 343 0
+ 596 000a A21A     		subs	r2, r4, r2
+ 597              	.LVL46:
+ 598 000c 92B2     		uxth	r2, r2
+ 599              	.LVL47:
+ 344:u8g2_lib/u8g2_setup.c ****   xx--;
+ 600              		.loc 1 344 0
+ 601 000e 013A     		subs	r2, r2, #1
+ 602              	.LVL48:
+ 603 0010 91B2     		uxth	r1, r2
+ 604              	.LVL49:
+ 345:u8g2_lib/u8g2_setup.c ****   
+ 346:u8g2_lib/u8g2_setup.c ****   dir ++;
+ 605              		.loc 1 346 0
+ 606 0012 9DF81820 		ldrb	r2, [sp, #24]	@ zero_extendqisi2
+ 607 0016 0132     		adds	r2, r2, #1
+ 608 0018 D2B2     		uxtb	r2, r2
+ 609              	.LVL50:
+ 347:u8g2_lib/u8g2_setup.c ****   if ( dir == 2 )
+ 610              		.loc 1 347 0
+ 611 001a 022A     		cmp	r2, #2
+ 612 001c 04D1     		bne	.L36
+ 348:u8g2_lib/u8g2_setup.c ****   {
+ 349:u8g2_lib/u8g2_setup.c ****     xx -= len;
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 18
+
+
+ 613              		.loc 1 349 0
+ 614 001e CA1A     		subs	r2, r1, r3
+ 615              	.LVL51:
+ 616 0020 92B2     		uxth	r2, r2
+ 617              	.LVL52:
+ 350:u8g2_lib/u8g2_setup.c ****     xx++;
+ 618              		.loc 1 350 0
+ 619 0022 0132     		adds	r2, r2, #1
+ 620              	.LVL53:
+ 621 0024 91B2     		uxth	r1, r2
+ 622              	.LVL54:
+ 351:u8g2_lib/u8g2_setup.c ****     dir = 0;
+ 623              		.loc 1 351 0
+ 624 0026 0022     		movs	r2, #0
+ 625              	.LVL55:
+ 626              	.L36:
+ 352:u8g2_lib/u8g2_setup.c ****   }
+ 353:u8g2_lib/u8g2_setup.c ****   
+ 354:u8g2_lib/u8g2_setup.c ****   u8g2_draw_hv_line_2dir(u8g2, xx, yy, len, dir);
+ 627              		.loc 1 354 0
+ 628 0028 0092     		str	r2, [sp]
+ 629 002a 2A46     		mov	r2, r5
+ 630              	.LVL56:
+ 631 002c FFF7FEFF 		bl	u8g2_draw_hv_line_2dir
+ 632              	.LVL57:
+ 355:u8g2_lib/u8g2_setup.c **** }
+ 633              		.loc 1 355 0
+ 634 0030 03B0     		add	sp, sp, #12
+ 635              	.LCFI21:
+ 636              		.cfi_def_cfa_offset 12
+ 637              		@ sp needed
+ 638 0032 30BD     		pop	{r4, r5, pc}
+ 639              		.cfi_endproc
+ 640              	.LFE17:
+ 642              		.section	.text.u8g2_draw_l90_r2,"ax",%progbits
+ 643              		.align	2
+ 644              		.global	u8g2_draw_l90_r2
+ 645              		.thumb
+ 646              		.thumb_func
+ 648              	u8g2_draw_l90_r2:
+ 649              	.LFB18:
+ 356:u8g2_lib/u8g2_setup.c **** 
+ 357:u8g2_lib/u8g2_setup.c **** void u8g2_draw_l90_r2(u8g2_t *u8g2, u8g2_uint_t x, u8g2_uint_t y, u8g2_uint_t len, uint8_t dir)
+ 358:u8g2_lib/u8g2_setup.c **** {
+ 650              		.loc 1 358 0
+ 651              		.cfi_startproc
+ 652              		@ args = 4, pretend = 0, frame = 0
+ 653              		@ frame_needed = 0, uses_anonymous_args = 0
+ 654              	.LVL58:
+ 655 0000 30B5     		push	{r4, r5, lr}
+ 656              	.LCFI22:
+ 657              		.cfi_def_cfa_offset 12
+ 658              		.cfi_offset 4, -12
+ 659              		.cfi_offset 5, -8
+ 660              		.cfi_offset 14, -4
+ 661 0002 83B0     		sub	sp, sp, #12
+ 662              	.LCFI23:
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 19
+
+
+ 663              		.cfi_def_cfa_offset 24
+ 664 0004 9DF81850 		ldrb	r5, [sp, #24]	@ zero_extendqisi2
+ 359:u8g2_lib/u8g2_setup.c ****   u8g2_uint_t xx, yy;
+ 360:u8g2_lib/u8g2_setup.c **** 
+ 361:u8g2_lib/u8g2_setup.c ****   /*
+ 362:u8g2_lib/u8g2_setup.c ****   yy = u8g2->height;
+ 363:u8g2_lib/u8g2_setup.c ****   yy -= y;
+ 364:u8g2_lib/u8g2_setup.c ****   yy--;
+ 365:u8g2_lib/u8g2_setup.c ****   
+ 366:u8g2_lib/u8g2_setup.c ****   xx = u8g2->width;
+ 367:u8g2_lib/u8g2_setup.c ****   xx -= x;
+ 368:u8g2_lib/u8g2_setup.c ****   xx--;
+ 369:u8g2_lib/u8g2_setup.c ****   
+ 370:u8g2_lib/u8g2_setup.c ****   if ( dir == 0 )
+ 371:u8g2_lib/u8g2_setup.c ****   {
+ 372:u8g2_lib/u8g2_setup.c ****     xx -= len;
+ 373:u8g2_lib/u8g2_setup.c ****     xx++;
+ 374:u8g2_lib/u8g2_setup.c ****   }
+ 375:u8g2_lib/u8g2_setup.c ****   else if ( dir == 1 )
+ 376:u8g2_lib/u8g2_setup.c ****   {
+ 377:u8g2_lib/u8g2_setup.c ****     yy -= len;
+ 378:u8g2_lib/u8g2_setup.c ****     yy++;
+ 379:u8g2_lib/u8g2_setup.c ****   }
+ 380:u8g2_lib/u8g2_setup.c ****   */
+ 381:u8g2_lib/u8g2_setup.c **** 
+ 382:u8g2_lib/u8g2_setup.c ****   yy = u8g2->height;
+ 665              		.loc 1 382 0
+ 666 0008 B0F84640 		ldrh	r4, [r0, #70]
+ 667              	.LVL59:
+ 383:u8g2_lib/u8g2_setup.c ****   yy -= y;
+ 668              		.loc 1 383 0
+ 669 000c A21A     		subs	r2, r4, r2
+ 670              	.LVL60:
+ 671 000e 92B2     		uxth	r2, r2
+ 672              	.LVL61:
+ 384:u8g2_lib/u8g2_setup.c ****   
+ 385:u8g2_lib/u8g2_setup.c ****   xx = u8g2->width;
+ 673              		.loc 1 385 0
+ 674 0010 B0F84440 		ldrh	r4, [r0, #68]
+ 675              	.LVL62:
+ 386:u8g2_lib/u8g2_setup.c ****   xx -= x;
+ 676              		.loc 1 386 0
+ 677 0014 611A     		subs	r1, r4, r1
+ 678              	.LVL63:
+ 679 0016 89B2     		uxth	r1, r1
+ 680              	.LVL64:
+ 387:u8g2_lib/u8g2_setup.c ****   
+ 388:u8g2_lib/u8g2_setup.c ****   if ( dir == 0 )
+ 681              		.loc 1 388 0
+ 682 0018 25B9     		cbnz	r5, .L39
+ 389:u8g2_lib/u8g2_setup.c ****   {
+ 390:u8g2_lib/u8g2_setup.c ****     yy--;
+ 683              		.loc 1 390 0
+ 684 001a 013A     		subs	r2, r2, #1
+ 685              	.LVL65:
+ 686 001c 92B2     		uxth	r2, r2
+ 687              	.LVL66:
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 20
+
+
+ 391:u8g2_lib/u8g2_setup.c ****     xx -= len;
+ 688              		.loc 1 391 0
+ 689 001e C91A     		subs	r1, r1, r3
+ 690              	.LVL67:
+ 691 0020 89B2     		uxth	r1, r1
+ 692              	.LVL68:
+ 693 0022 05E0     		b	.L40
+ 694              	.L39:
+ 392:u8g2_lib/u8g2_setup.c ****   }
+ 393:u8g2_lib/u8g2_setup.c ****   else if ( dir == 1 )
+ 695              		.loc 1 393 0
+ 696 0024 012D     		cmp	r5, #1
+ 697 0026 03D1     		bne	.L40
+ 394:u8g2_lib/u8g2_setup.c ****   {
+ 395:u8g2_lib/u8g2_setup.c ****     xx--;
+ 698              		.loc 1 395 0
+ 699 0028 0139     		subs	r1, r1, #1
+ 700              	.LVL69:
+ 701 002a 89B2     		uxth	r1, r1
+ 702              	.LVL70:
+ 396:u8g2_lib/u8g2_setup.c ****     yy -= len;
+ 703              		.loc 1 396 0
+ 704 002c D21A     		subs	r2, r2, r3
+ 705              	.LVL71:
+ 706 002e 92B2     		uxth	r2, r2
+ 707              	.LVL72:
+ 708              	.L40:
+ 397:u8g2_lib/u8g2_setup.c ****   }
+ 398:u8g2_lib/u8g2_setup.c **** 
+ 399:u8g2_lib/u8g2_setup.c ****   u8g2_draw_hv_line_2dir(u8g2, xx, yy, len, dir);
+ 709              		.loc 1 399 0
+ 710 0030 0095     		str	r5, [sp]
+ 711 0032 FFF7FEFF 		bl	u8g2_draw_hv_line_2dir
+ 712              	.LVL73:
+ 400:u8g2_lib/u8g2_setup.c **** }
+ 713              		.loc 1 400 0
+ 714 0036 03B0     		add	sp, sp, #12
+ 715              	.LCFI24:
+ 716              		.cfi_def_cfa_offset 12
+ 717              		@ sp needed
+ 718 0038 30BD     		pop	{r4, r5, pc}
+ 719              		.cfi_endproc
+ 720              	.LFE18:
+ 722 003a 00BF     		.section	.text.u8g2_draw_l90_r3,"ax",%progbits
+ 723              		.align	2
+ 724              		.global	u8g2_draw_l90_r3
+ 725              		.thumb
+ 726              		.thumb_func
+ 728              	u8g2_draw_l90_r3:
+ 729              	.LFB19:
+ 401:u8g2_lib/u8g2_setup.c **** 
+ 402:u8g2_lib/u8g2_setup.c **** void u8g2_draw_l90_r3(u8g2_t *u8g2, u8g2_uint_t x, u8g2_uint_t y, u8g2_uint_t len, uint8_t dir)
+ 403:u8g2_lib/u8g2_setup.c **** {
+ 730              		.loc 1 403 0
+ 731              		.cfi_startproc
+ 732              		@ args = 4, pretend = 0, frame = 0
+ 733              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 21
+
+
+ 734              	.LVL74:
+ 735 0000 30B5     		push	{r4, r5, lr}
+ 736              	.LCFI25:
+ 737              		.cfi_def_cfa_offset 12
+ 738              		.cfi_offset 4, -12
+ 739              		.cfi_offset 5, -8
+ 740              		.cfi_offset 14, -4
+ 741 0002 83B0     		sub	sp, sp, #12
+ 742              	.LCFI26:
+ 743              		.cfi_def_cfa_offset 24
+ 744 0004 1446     		mov	r4, r2
+ 745 0006 9DF81850 		ldrb	r5, [sp, #24]	@ zero_extendqisi2
+ 746              	.LVL75:
+ 404:u8g2_lib/u8g2_setup.c ****   u8g2_uint_t xx, yy;
+ 405:u8g2_lib/u8g2_setup.c **** 
+ 406:u8g2_lib/u8g2_setup.c ****   xx = y;
+ 407:u8g2_lib/u8g2_setup.c ****   
+ 408:u8g2_lib/u8g2_setup.c ****   yy = u8g2->width;
+ 747              		.loc 1 408 0
+ 748 000a B0F84420 		ldrh	r2, [r0, #68]
+ 749              	.LVL76:
+ 409:u8g2_lib/u8g2_setup.c ****   yy -= x;
+ 750              		.loc 1 409 0
+ 751 000e 511A     		subs	r1, r2, r1
+ 752              	.LVL77:
+ 753 0010 8AB2     		uxth	r2, r1
+ 754              	.LVL78:
+ 410:u8g2_lib/u8g2_setup.c ****   
+ 411:u8g2_lib/u8g2_setup.c ****   if ( dir == 0 )
+ 755              		.loc 1 411 0
+ 756 0012 3DB9     		cbnz	r5, .L43
+ 412:u8g2_lib/u8g2_setup.c ****   {
+ 413:u8g2_lib/u8g2_setup.c ****     yy--;
+ 757              		.loc 1 413 0
+ 758 0014 013A     		subs	r2, r2, #1
+ 759              	.LVL79:
+ 760 0016 92B2     		uxth	r2, r2
+ 761              	.LVL80:
+ 414:u8g2_lib/u8g2_setup.c ****     yy -= len;
+ 762              		.loc 1 414 0
+ 763 0018 D21A     		subs	r2, r2, r3
+ 764              	.LVL81:
+ 765 001a 92B2     		uxth	r2, r2
+ 766              	.LVL82:
+ 415:u8g2_lib/u8g2_setup.c ****     yy++;
+ 767              		.loc 1 415 0
+ 768 001c 0132     		adds	r2, r2, #1
+ 769              	.LVL83:
+ 770 001e 92B2     		uxth	r2, r2
+ 771              	.LVL84:
+ 416:u8g2_lib/u8g2_setup.c ****     dir = 1;
+ 772              		.loc 1 416 0
+ 773 0020 0121     		movs	r1, #1
+ 774 0022 02E0     		b	.L44
+ 775              	.LVL85:
+ 776              	.L43:
+ 417:u8g2_lib/u8g2_setup.c ****   }
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 22
+
+
+ 418:u8g2_lib/u8g2_setup.c ****   else
+ 419:u8g2_lib/u8g2_setup.c ****   {
+ 420:u8g2_lib/u8g2_setup.c ****     yy--;
+ 777              		.loc 1 420 0
+ 778 0024 013A     		subs	r2, r2, #1
+ 779              	.LVL86:
+ 780 0026 92B2     		uxth	r2, r2
+ 781              	.LVL87:
+ 421:u8g2_lib/u8g2_setup.c ****     dir = 0;
+ 782              		.loc 1 421 0
+ 783 0028 0021     		movs	r1, #0
+ 784              	.LVL88:
+ 785              	.L44:
+ 422:u8g2_lib/u8g2_setup.c ****   }
+ 423:u8g2_lib/u8g2_setup.c ****   
+ 424:u8g2_lib/u8g2_setup.c ****   
+ 425:u8g2_lib/u8g2_setup.c ****   u8g2_draw_hv_line_2dir(u8g2, xx, yy, len, dir);
+ 786              		.loc 1 425 0
+ 787 002a 0091     		str	r1, [sp]
+ 788 002c 2146     		mov	r1, r4
+ 789              	.LVL89:
+ 790 002e FFF7FEFF 		bl	u8g2_draw_hv_line_2dir
+ 791              	.LVL90:
+ 426:u8g2_lib/u8g2_setup.c **** }
+ 792              		.loc 1 426 0
+ 793 0032 03B0     		add	sp, sp, #12
+ 794              	.LCFI27:
+ 795              		.cfi_def_cfa_offset 12
+ 796              		@ sp needed
+ 797 0034 30BD     		pop	{r4, r5, pc}
+ 798              		.cfi_endproc
+ 799              	.LFE19:
+ 801 0036 00BF     		.section	.text.u8g2_SetMaxClipWindow,"ax",%progbits
+ 802              		.align	2
+ 803              		.global	u8g2_SetMaxClipWindow
+ 804              		.thumb
+ 805              		.thumb_func
+ 807              	u8g2_SetMaxClipWindow:
+ 808              	.LFB0:
+  47:u8g2_lib/u8g2_setup.c ****   u8g2->clip_x0 = 0;
+ 809              		.loc 1 47 0
+ 810              		.cfi_startproc
+ 811              		@ args = 0, pretend = 0, frame = 0
+ 812              		@ frame_needed = 0, uses_anonymous_args = 0
+ 813              	.LVL91:
+ 814 0000 08B5     		push	{r3, lr}
+ 815              	.LCFI28:
+ 816              		.cfi_def_cfa_offset 8
+ 817              		.cfi_offset 3, -8
+ 818              		.cfi_offset 14, -4
+  48:u8g2_lib/u8g2_setup.c ****   u8g2->clip_y0 = 0;
+ 819              		.loc 1 48 0
+ 820 0002 0022     		movs	r2, #0
+ 821 0004 A0F85020 		strh	r2, [r0, #80]	@ movhi
+  49:u8g2_lib/u8g2_setup.c ****   u8g2->clip_x1 = (u8g2_uint_t)~(u8g2_uint_t)0;
+ 822              		.loc 1 49 0
+ 823 0008 A0F85420 		strh	r2, [r0, #84]	@ movhi
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 23
+
+
+  50:u8g2_lib/u8g2_setup.c ****   u8g2->clip_y1 = (u8g2_uint_t)~(u8g2_uint_t)0;
+ 824              		.loc 1 50 0
+ 825 000c 4FF6FF72 		movw	r2, #65535
+ 826 0010 A0F85220 		strh	r2, [r0, #82]	@ movhi
+  51:u8g2_lib/u8g2_setup.c ****   
+ 827              		.loc 1 51 0
+ 828 0014 A0F85620 		strh	r2, [r0, #86]	@ movhi
+  53:u8g2_lib/u8g2_setup.c **** }
+ 829              		.loc 1 53 0
+ 830 0018 036B     		ldr	r3, [r0, #48]
+ 831 001a 5B68     		ldr	r3, [r3, #4]
+ 832 001c 9847     		blx	r3
+ 833              	.LVL92:
+ 834 001e 08BD     		pop	{r3, pc}
+ 835              		.cfi_endproc
+ 836              	.LFE0:
+ 838              		.section	.text.u8g2_SetClipWindow,"ax",%progbits
+ 839              		.align	2
+ 840              		.global	u8g2_SetClipWindow
+ 841              		.thumb
+ 842              		.thumb_func
+ 844              	u8g2_SetClipWindow:
+ 845              	.LFB1:
+  57:u8g2_lib/u8g2_setup.c ****   u8g2->clip_x0 = clip_x0;
+ 846              		.loc 1 57 0
+ 847              		.cfi_startproc
+ 848              		@ args = 4, pretend = 0, frame = 0
+ 849              		@ frame_needed = 0, uses_anonymous_args = 0
+ 850              	.LVL93:
+ 851 0000 10B5     		push	{r4, lr}
+ 852              	.LCFI29:
+ 853              		.cfi_def_cfa_offset 8
+ 854              		.cfi_offset 4, -8
+ 855              		.cfi_offset 14, -4
+  58:u8g2_lib/u8g2_setup.c ****   u8g2->clip_y0 = clip_y0;
+ 856              		.loc 1 58 0
+ 857 0002 A0F85010 		strh	r1, [r0, #80]	@ movhi
+  59:u8g2_lib/u8g2_setup.c ****   u8g2->clip_x1 = clip_x1;
+ 858              		.loc 1 59 0
+ 859 0006 A0F85420 		strh	r2, [r0, #84]	@ movhi
+  60:u8g2_lib/u8g2_setup.c ****   u8g2->clip_y1 = clip_y1;
+ 860              		.loc 1 60 0
+ 861 000a A0F85230 		strh	r3, [r0, #82]	@ movhi
+  61:u8g2_lib/u8g2_setup.c ****   u8g2->cb->update_page_win(u8g2);
+ 862              		.loc 1 61 0
+ 863 000e BDF80830 		ldrh	r3, [sp, #8]
+ 864              	.LVL94:
+ 865 0012 A0F85630 		strh	r3, [r0, #86]	@ movhi
+  62:u8g2_lib/u8g2_setup.c **** }
+ 866              		.loc 1 62 0
+ 867 0016 036B     		ldr	r3, [r0, #48]
+ 868 0018 5B68     		ldr	r3, [r3, #4]
+ 869 001a 9847     		blx	r3
+ 870              	.LVL95:
+ 871 001c 10BD     		pop	{r4, pc}
+ 872              		.cfi_endproc
+ 873              	.LFE1:
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 24
+
+
+ 875 001e 00BF     		.section	.text.u8g2_SetupBuffer,"ax",%progbits
+ 876              		.align	2
+ 877              		.global	u8g2_SetupBuffer
+ 878              		.thumb
+ 879              		.thumb_func
+ 881              	u8g2_SetupBuffer:
+ 882              	.LFB2:
+  72:u8g2_lib/u8g2_setup.c ****   u8g2->font = NULL;
+ 883              		.loc 1 72 0
+ 884              		.cfi_startproc
+ 885              		@ args = 4, pretend = 0, frame = 0
+ 886              		@ frame_needed = 0, uses_anonymous_args = 0
+ 887              	.LVL96:
+ 888 0000 70B5     		push	{r4, r5, r6, lr}
+ 889              	.LCFI30:
+ 890              		.cfi_def_cfa_offset 16
+ 891              		.cfi_offset 4, -16
+ 892              		.cfi_offset 5, -12
+ 893              		.cfi_offset 6, -8
+ 894              		.cfi_offset 14, -4
+ 895 0002 0446     		mov	r4, r0
+ 896 0004 049E     		ldr	r6, [sp, #16]
+  73:u8g2_lib/u8g2_setup.c ****   //u8g2->kerning = NULL;
+ 897              		.loc 1 73 0
+ 898 0006 0025     		movs	r5, #0
+ 899 0008 8565     		str	r5, [r0, #88]
+  78:u8g2_lib/u8g2_setup.c ****   
+ 900              		.loc 1 78 0
+ 901 000a C362     		str	r3, [r0, #44]
+  80:u8g2_lib/u8g2_setup.c ****   u8g2->tile_buf_height = tile_buf_height;
+ 902              		.loc 1 80 0
+ 903 000c 4163     		str	r1, [r0, #52]
+  81:u8g2_lib/u8g2_setup.c ****   
+ 904              		.loc 1 81 0
+ 905 000e 80F83820 		strb	r2, [r0, #56]
+  83:u8g2_lib/u8g2_setup.c ****   
+ 906              		.loc 1 83 0
+ 907 0012 80F83950 		strb	r5, [r0, #57]
+  85:u8g2_lib/u8g2_setup.c ****   u8g2->bitmap_transparency = 0;
+ 908              		.loc 1 85 0
+ 909 0016 80F86D50 		strb	r5, [r0, #109]
+  86:u8g2_lib/u8g2_setup.c ****   
+ 910              		.loc 1 86 0
+ 911 001a 80F89150 		strb	r5, [r0, #145]
+  88:u8g2_lib/u8g2_setup.c ****   u8g2->is_auto_page_clear = 1;
+ 912              		.loc 1 88 0
+ 913 001e 0123     		movs	r3, #1
+ 914              	.LVL97:
+ 915 0020 80F89230 		strb	r3, [r0, #146]
+  89:u8g2_lib/u8g2_setup.c ****   
+ 916              		.loc 1 89 0
+ 917 0024 80F89330 		strb	r3, [r0, #147]
+  91:u8g2_lib/u8g2_setup.c ****   u8g2->cb->update_dimension(u8g2);
+ 918              		.loc 1 91 0
+ 919 0028 0663     		str	r6, [r0, #48]
+  92:u8g2_lib/u8g2_setup.c **** #ifdef U8G2_WITH_CLIP_WINDOW_SUPPORT
+ 920              		.loc 1 92 0
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 25
+
+
+ 921 002a 3368     		ldr	r3, [r6]
+ 922 002c 9847     		blx	r3
+ 923              	.LVL98:
+  94:u8g2_lib/u8g2_setup.c **** #else
+ 924              		.loc 1 94 0
+ 925 002e 2046     		mov	r0, r4
+ 926 0030 FFF7FEFF 		bl	u8g2_SetMaxClipWindow
+ 927              	.LVL99:
+  99:u8g2_lib/u8g2_setup.c ****   
+ 928              		.loc 1 99 0
+ 929 0034 2046     		mov	r0, r4
+ 930 0036 FFF7FEFF 		bl	u8g2_SetFontPosBaseline
+ 931              	.LVL100:
+ 102:u8g2_lib/u8g2_setup.c **** #endif
+ 932              		.loc 1 102 0
+ 933 003a 84F87050 		strb	r5, [r4, #112]
+ 934 003e 70BD     		pop	{r4, r5, r6, pc}
+ 935              		.cfi_endproc
+ 936              	.LFE2:
+ 938              		.section	.text.u8g2_SetDisplayRotation,"ax",%progbits
+ 939              		.align	2
+ 940              		.global	u8g2_SetDisplayRotation
+ 941              		.thumb
+ 942              		.thumb_func
+ 944              	u8g2_SetDisplayRotation:
+ 945              	.LFB3:
+ 111:u8g2_lib/u8g2_setup.c ****   u8g2->cb = u8g2_cb;
+ 946              		.loc 1 111 0
+ 947              		.cfi_startproc
+ 948              		@ args = 0, pretend = 0, frame = 0
+ 949              		@ frame_needed = 0, uses_anonymous_args = 0
+ 950              	.LVL101:
+ 951 0000 10B5     		push	{r4, lr}
+ 952              	.LCFI31:
+ 953              		.cfi_def_cfa_offset 8
+ 954              		.cfi_offset 4, -8
+ 955              		.cfi_offset 14, -4
+ 956 0002 0446     		mov	r4, r0
+ 112:u8g2_lib/u8g2_setup.c ****   u8g2->cb->update_dimension(u8g2);
+ 957              		.loc 1 112 0
+ 958 0004 0163     		str	r1, [r0, #48]
+ 113:u8g2_lib/u8g2_setup.c ****   u8g2->cb->update_page_win(u8g2);
+ 959              		.loc 1 113 0
+ 960 0006 0B68     		ldr	r3, [r1]
+ 961 0008 9847     		blx	r3
+ 962              	.LVL102:
+ 114:u8g2_lib/u8g2_setup.c **** }
+ 963              		.loc 1 114 0
+ 964 000a 236B     		ldr	r3, [r4, #48]
+ 965 000c 5B68     		ldr	r3, [r3, #4]
+ 966 000e 2046     		mov	r0, r4
+ 967 0010 9847     		blx	r3
+ 968              	.LVL103:
+ 969 0012 10BD     		pop	{r4, pc}
+ 970              		.cfi_endproc
+ 971              	.LFE3:
+ 973              		.section	.text.u8g2_SendF,"ax",%progbits
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 26
+
+
+ 974              		.align	2
+ 975              		.global	u8g2_SendF
+ 976              		.thumb
+ 977              		.thumb_func
+ 979              	u8g2_SendF:
+ 980              	.LFB4:
+ 120:u8g2_lib/u8g2_setup.c ****   va_list va;
+ 981              		.loc 1 120 0
+ 982              		.cfi_startproc
+ 983              		@ args = 4, pretend = 12, frame = 8
+ 984              		@ frame_needed = 0, uses_anonymous_args = 1
+ 985              	.LVL104:
+ 986 0000 0EB4     		push	{r1, r2, r3}
+ 987              	.LCFI32:
+ 988              		.cfi_def_cfa_offset 12
+ 989              		.cfi_offset 1, -12
+ 990              		.cfi_offset 2, -8
+ 991              		.cfi_offset 3, -4
+ 992 0002 00B5     		push	{lr}
+ 993              	.LCFI33:
+ 994              		.cfi_def_cfa_offset 16
+ 995              		.cfi_offset 14, -16
+ 996 0004 82B0     		sub	sp, sp, #8
+ 997              	.LCFI34:
+ 998              		.cfi_def_cfa_offset 24
+ 999 0006 03AA     		add	r2, sp, #12
+ 1000 0008 52F8041B 		ldr	r1, [r2], #4
+ 122:u8g2_lib/u8g2_setup.c ****   u8x8_cad_vsendf(u8g2_GetU8x8(u8g2), fmt, va);
+ 1001              		.loc 1 122 0
+ 1002 000c 0192     		str	r2, [sp, #4]
+ 123:u8g2_lib/u8g2_setup.c ****   va_end(va);
+ 1003              		.loc 1 123 0
+ 1004 000e FFF7FEFF 		bl	u8x8_cad_vsendf
+ 1005              	.LVL105:
+ 125:u8g2_lib/u8g2_setup.c **** 
+ 1006              		.loc 1 125 0
+ 1007 0012 02B0     		add	sp, sp, #8
+ 1008              	.LCFI35:
+ 1009              		.cfi_def_cfa_offset 16
+ 1010              		@ sp needed
+ 1011 0014 5DF804EB 		ldr	lr, [sp], #4
+ 1012              	.LCFI36:
+ 1013              		.cfi_restore 14
+ 1014              		.cfi_def_cfa_offset 12
+ 1015 0018 03B0     		add	sp, sp, #12
+ 1016              	.LCFI37:
+ 1017              		.cfi_restore 3
+ 1018              		.cfi_restore 2
+ 1019              		.cfi_restore 1
+ 1020              		.cfi_def_cfa_offset 0
+ 1021 001a 7047     		bx	lr
+ 1022              		.cfi_endproc
+ 1023              	.LFE4:
+ 1025              		.section	.text.u8g2_Setup_null,"ax",%progbits
+ 1026              		.align	2
+ 1027              		.global	u8g2_Setup_null
+ 1028              		.thumb
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 27
+
+
+ 1029              		.thumb_func
+ 1031              	u8g2_Setup_null:
+ 1032              	.LFB20:
+ 427:u8g2_lib/u8g2_setup.c **** 
+ 428:u8g2_lib/u8g2_setup.c **** 
+ 429:u8g2_lib/u8g2_setup.c **** 
+ 430:u8g2_lib/u8g2_setup.c **** /*============================================*/
+ 431:u8g2_lib/u8g2_setup.c **** const u8g2_cb_t u8g2_cb_r0 = { u8g2_update_dimension_r0, u8g2_update_page_win_r0, u8g2_draw_l90_r0 
+ 432:u8g2_lib/u8g2_setup.c **** const u8g2_cb_t u8g2_cb_r1 = { u8g2_update_dimension_r1, u8g2_update_page_win_r1, u8g2_draw_l90_r1 
+ 433:u8g2_lib/u8g2_setup.c **** const u8g2_cb_t u8g2_cb_r2 = { u8g2_update_dimension_r2, u8g2_update_page_win_r2, u8g2_draw_l90_r2 
+ 434:u8g2_lib/u8g2_setup.c **** const u8g2_cb_t u8g2_cb_r3 = { u8g2_update_dimension_r3, u8g2_update_page_win_r3, u8g2_draw_l90_r3 
+ 435:u8g2_lib/u8g2_setup.c ****   
+ 436:u8g2_lib/u8g2_setup.c **** const u8g2_cb_t u8g2_cb_mirror = { u8g2_update_dimension_r0, u8g2_update_page_win_r0, u8g2_draw_l90
+ 437:u8g2_lib/u8g2_setup.c ****   
+ 438:u8g2_lib/u8g2_setup.c **** /*============================================*/
+ 439:u8g2_lib/u8g2_setup.c **** /* setup for the null device */
+ 440:u8g2_lib/u8g2_setup.c **** 
+ 441:u8g2_lib/u8g2_setup.c **** /* setup for the null (empty) device */
+ 442:u8g2_lib/u8g2_setup.c **** void u8g2_Setup_null(u8g2_t *u8g2, const u8g2_cb_t *rotation, u8x8_msg_cb byte_cb, u8x8_msg_cb gpio
+ 443:u8g2_lib/u8g2_setup.c **** {
+ 1033              		.loc 1 443 0
+ 1034              		.cfi_startproc
+ 1035              		@ args = 0, pretend = 0, frame = 0
+ 1036              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1037              	.LVL106:
+ 1038 0000 30B5     		push	{r4, r5, lr}
+ 1039              	.LCFI38:
+ 1040              		.cfi_def_cfa_offset 12
+ 1041              		.cfi_offset 4, -12
+ 1042              		.cfi_offset 5, -8
+ 1043              		.cfi_offset 14, -4
+ 1044 0002 83B0     		sub	sp, sp, #12
+ 1045              	.LCFI39:
+ 1046              		.cfi_def_cfa_offset 24
+ 1047 0004 0446     		mov	r4, r0
+ 1048 0006 0D46     		mov	r5, r1
+ 444:u8g2_lib/u8g2_setup.c ****   static uint8_t buf[8];
+ 445:u8g2_lib/u8g2_setup.c ****   u8g2_SetupDisplay(u8g2, u8x8_d_null_cb, u8x8_cad_empty, byte_cb, gpio_and_delay_cb);
+ 1049              		.loc 1 445 0
+ 1050 0008 0093     		str	r3, [sp]
+ 1051 000a 1346     		mov	r3, r2
+ 1052              	.LVL107:
+ 1053 000c 064A     		ldr	r2, .L58
+ 1054              	.LVL108:
+ 1055 000e 0749     		ldr	r1, .L58+4
+ 1056              	.LVL109:
+ 1057 0010 FFF7FEFF 		bl	u8x8_Setup
+ 1058              	.LVL110:
+ 446:u8g2_lib/u8g2_setup.c ****   u8g2_SetupBuffer(u8g2, buf, 1, u8g2_ll_hvline_vertical_top_lsb, rotation);
+ 1059              		.loc 1 446 0
+ 1060 0014 0095     		str	r5, [sp]
+ 1061 0016 064B     		ldr	r3, .L58+8
+ 1062 0018 0122     		movs	r2, #1
+ 1063 001a 0649     		ldr	r1, .L58+12
+ 1064 001c 2046     		mov	r0, r4
+ 1065 001e FFF7FEFF 		bl	u8g2_SetupBuffer
+ 1066              	.LVL111:
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 28
+
+
+ 447:u8g2_lib/u8g2_setup.c **** }
+ 1067              		.loc 1 447 0
+ 1068 0022 03B0     		add	sp, sp, #12
+ 1069              	.LCFI40:
+ 1070              		.cfi_def_cfa_offset 12
+ 1071              		@ sp needed
+ 1072 0024 30BD     		pop	{r4, r5, pc}
+ 1073              	.LVL112:
+ 1074              	.L59:
+ 1075 0026 00BF     		.align	2
+ 1076              	.L58:
+ 1077 0028 00000000 		.word	u8x8_cad_empty
+ 1078 002c 00000000 		.word	u8x8_d_null_cb
+ 1079 0030 00000000 		.word	u8g2_ll_hvline_vertical_top_lsb
+ 1080 0034 00000000 		.word	.LANCHOR0
+ 1081              		.cfi_endproc
+ 1082              	.LFE20:
+ 1084              		.global	u8g2_cb_mirror
+ 1085              		.global	u8g2_cb_r3
+ 1086              		.global	u8g2_cb_r2
+ 1087              		.global	u8g2_cb_r1
+ 1088              		.global	u8g2_cb_r0
+ 1089              		.section	.rodata.u8g2_cb_r3,"a",%progbits
+ 1090              		.align	2
+ 1093              	u8g2_cb_r3:
+ 1094 0000 00000000 		.word	u8g2_update_dimension_r3
+ 1095 0004 00000000 		.word	u8g2_update_page_win_r3
+ 1096 0008 00000000 		.word	u8g2_draw_l90_r3
+ 1097              		.section	.rodata.u8g2_cb_r1,"a",%progbits
+ 1098              		.align	2
+ 1101              	u8g2_cb_r1:
+ 1102 0000 00000000 		.word	u8g2_update_dimension_r1
+ 1103 0004 00000000 		.word	u8g2_update_page_win_r1
+ 1104 0008 00000000 		.word	u8g2_draw_l90_r1
+ 1105              		.section	.rodata.u8g2_cb_r2,"a",%progbits
+ 1106              		.align	2
+ 1109              	u8g2_cb_r2:
+ 1110 0000 00000000 		.word	u8g2_update_dimension_r2
+ 1111 0004 00000000 		.word	u8g2_update_page_win_r2
+ 1112 0008 00000000 		.word	u8g2_draw_l90_r2
+ 1113              		.section	.rodata.u8g2_cb_mirror,"a",%progbits
+ 1114              		.align	2
+ 1117              	u8g2_cb_mirror:
+ 1118 0000 00000000 		.word	u8g2_update_dimension_r0
+ 1119 0004 00000000 		.word	u8g2_update_page_win_r0
+ 1120 0008 00000000 		.word	u8g2_draw_l90_mirrorr_r0
+ 1121              		.section	.bss.buf.11897,"aw",%nobits
+ 1122              		.align	2
+ 1123              		.set	.LANCHOR0,. + 0
+ 1126              	buf.11897:
+ 1127 0000 00000000 		.space	8
+ 1127      00000000 
+ 1128              		.section	.rodata.u8g2_cb_r0,"a",%progbits
+ 1129              		.align	2
+ 1132              	u8g2_cb_r0:
+ 1133 0000 00000000 		.word	u8g2_update_dimension_r0
+ 1134 0004 00000000 		.word	u8g2_update_page_win_r0
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 29
+
+
+ 1135 0008 00000000 		.word	u8g2_draw_l90_r0
+ 1136              		.text
+ 1137              	.Letext0:
+ 1138              		.file 2 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\mach
+ 1139              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\sys\
+ 1140              		.file 4 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\lib\\gcc\\arm-none-eabi\\5.4
+ 1141              		.file 5 "u8g2_lib/u8x8.h"
+ 1142              		.file 6 "<built-in>"
+ 1143              		.file 7 "u8g2_lib/u8g2.h"
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 30
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 u8g2_setup.c
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:20     .text.u8g2_update_dimension_common:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:24     .text.u8g2_update_dimension_common:00000000 u8g2_update_dimension_common
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:111    .text.u8g2_update_dimension_r0:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:116    .text.u8g2_update_dimension_r0:00000000 u8g2_update_dimension_r0
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:136    .text.u8g2_update_dimension_r1:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:141    .text.u8g2_update_dimension_r1:00000000 u8g2_update_dimension_r1
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:169    .text.u8g2_update_dimension_r2:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:174    .text.u8g2_update_dimension_r2:00000000 u8g2_update_dimension_r2
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:194    .text.u8g2_update_dimension_r3:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:199    .text.u8g2_update_dimension_r3:00000000 u8g2_update_dimension_r3
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:227    .text.u8g2_apply_clip_window:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:231    .text.u8g2_apply_clip_window:00000000 u8g2_apply_clip_window
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:307    .text.u8g2_update_page_win_r0:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:312    .text.u8g2_update_page_win_r0:00000000 u8g2_update_page_win_r0
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:344    .text.u8g2_update_page_win_r1:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:349    .text.u8g2_update_page_win_r1:00000000 u8g2_update_page_win_r1
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:381    .text.u8g2_update_page_win_r2:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:386    .text.u8g2_update_page_win_r2:00000000 u8g2_update_page_win_r2
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:427    .text.u8g2_update_page_win_r3:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:432    .text.u8g2_update_page_win_r3:00000000 u8g2_update_page_win_r3
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:474    .text.u8g2_draw_l90_r0:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:479    .text.u8g2_draw_l90_r0:00000000 u8g2_draw_l90_r0
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:509    .text.u8g2_draw_l90_mirrorr_r0:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:514    .text.u8g2_draw_l90_mirrorr_r0:00000000 u8g2_draw_l90_mirrorr_r0
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:569    .text.u8g2_draw_l90_r1:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:574    .text.u8g2_draw_l90_r1:00000000 u8g2_draw_l90_r1
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:643    .text.u8g2_draw_l90_r2:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:648    .text.u8g2_draw_l90_r2:00000000 u8g2_draw_l90_r2
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:723    .text.u8g2_draw_l90_r3:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:728    .text.u8g2_draw_l90_r3:00000000 u8g2_draw_l90_r3
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:802    .text.u8g2_SetMaxClipWindow:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:807    .text.u8g2_SetMaxClipWindow:00000000 u8g2_SetMaxClipWindow
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:839    .text.u8g2_SetClipWindow:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:844    .text.u8g2_SetClipWindow:00000000 u8g2_SetClipWindow
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:876    .text.u8g2_SetupBuffer:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:881    .text.u8g2_SetupBuffer:00000000 u8g2_SetupBuffer
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:939    .text.u8g2_SetDisplayRotation:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:944    .text.u8g2_SetDisplayRotation:00000000 u8g2_SetDisplayRotation
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:974    .text.u8g2_SendF:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:979    .text.u8g2_SendF:00000000 u8g2_SendF
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:1026   .text.u8g2_Setup_null:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:1031   .text.u8g2_Setup_null:00000000 u8g2_Setup_null
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:1077   .text.u8g2_Setup_null:00000028 $d
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:1117   .rodata.u8g2_cb_mirror:00000000 u8g2_cb_mirror
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:1093   .rodata.u8g2_cb_r3:00000000 u8g2_cb_r3
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:1109   .rodata.u8g2_cb_r2:00000000 u8g2_cb_r2
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:1101   .rodata.u8g2_cb_r1:00000000 u8g2_cb_r1
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:1132   .rodata.u8g2_cb_r0:00000000 u8g2_cb_r0
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:1090   .rodata.u8g2_cb_r3:00000000 $d
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:1098   .rodata.u8g2_cb_r1:00000000 $d
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:1106   .rodata.u8g2_cb_r2:00000000 $d
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:1114   .rodata.u8g2_cb_mirror:00000000 $d
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:1122   .bss.buf.11897:00000000 $d
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:1126   .bss.buf.11897:00000000 buf.11897
+C:\Users\master\AppData\Local\Temp\ccI5edfW.s:1129   .rodata.u8g2_cb_r0:00000000 $d
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccI5edfW.s 			page 31
+
+
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+u8g2_IsIntersection
+u8g2_draw_hv_line_2dir
+u8g2_SetFontPosBaseline
+u8x8_cad_vsendf
+u8x8_Setup
+u8x8_cad_empty
+u8x8_d_null_cb
+u8g2_ll_hvline_vertical_top_lsb

@@ -1,0 +1,971 @@
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccueH7td.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"u8g2_bitmap.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.u8g2_SetBitmapMode,"ax",%progbits
+  20              		.align	2
+  21              		.global	u8g2_SetBitmapMode
+  22              		.thumb
+  23              		.thumb_func
+  25              	u8g2_SetBitmapMode:
+  26              	.LFB0:
+  27              		.file 1 "u8g2_lib/u8g2_bitmap.c"
+   1:u8g2_lib/u8g2_bitmap.c **** /*
+   2:u8g2_lib/u8g2_bitmap.c **** 
+   3:u8g2_lib/u8g2_bitmap.c ****   u8g2_bitmap.c
+   4:u8g2_lib/u8g2_bitmap.c **** 
+   5:u8g2_lib/u8g2_bitmap.c ****   Universal 8bit Graphics Library (https://github.com/olikraus/u8g2/)
+   6:u8g2_lib/u8g2_bitmap.c **** 
+   7:u8g2_lib/u8g2_bitmap.c ****   Copyright (c) 2016, olikraus@gmail.com
+   8:u8g2_lib/u8g2_bitmap.c ****   All rights reserved.
+   9:u8g2_lib/u8g2_bitmap.c **** 
+  10:u8g2_lib/u8g2_bitmap.c ****   Redistribution and use in source and binary forms, with or without modification, 
+  11:u8g2_lib/u8g2_bitmap.c ****   are permitted provided that the following conditions are met:
+  12:u8g2_lib/u8g2_bitmap.c **** 
+  13:u8g2_lib/u8g2_bitmap.c ****   * Redistributions of source code must retain the above copyright notice, this list 
+  14:u8g2_lib/u8g2_bitmap.c ****     of conditions and the following disclaimer.
+  15:u8g2_lib/u8g2_bitmap.c ****     
+  16:u8g2_lib/u8g2_bitmap.c ****   * Redistributions in binary form must reproduce the above copyright notice, this 
+  17:u8g2_lib/u8g2_bitmap.c ****     list of conditions and the following disclaimer in the documentation and/or other 
+  18:u8g2_lib/u8g2_bitmap.c ****     materials provided with the distribution.
+  19:u8g2_lib/u8g2_bitmap.c **** 
+  20:u8g2_lib/u8g2_bitmap.c ****   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND 
+  21:u8g2_lib/u8g2_bitmap.c ****   CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, 
+  22:u8g2_lib/u8g2_bitmap.c ****   INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF 
+  23:u8g2_lib/u8g2_bitmap.c ****   MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE 
+  24:u8g2_lib/u8g2_bitmap.c ****   DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR 
+  25:u8g2_lib/u8g2_bitmap.c ****   CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+  26:u8g2_lib/u8g2_bitmap.c ****   SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+  27:u8g2_lib/u8g2_bitmap.c ****   NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; 
+  28:u8g2_lib/u8g2_bitmap.c ****   LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER 
+  29:u8g2_lib/u8g2_bitmap.c ****   CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, 
+  30:u8g2_lib/u8g2_bitmap.c ****   STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+  31:u8g2_lib/u8g2_bitmap.c ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccueH7td.s 			page 2
+
+
+  32:u8g2_lib/u8g2_bitmap.c ****   ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.  
+  33:u8g2_lib/u8g2_bitmap.c **** 
+  34:u8g2_lib/u8g2_bitmap.c **** */
+  35:u8g2_lib/u8g2_bitmap.c **** 
+  36:u8g2_lib/u8g2_bitmap.c **** #include "u8g2.h"
+  37:u8g2_lib/u8g2_bitmap.c **** 
+  38:u8g2_lib/u8g2_bitmap.c **** 
+  39:u8g2_lib/u8g2_bitmap.c **** void u8g2_SetBitmapMode(u8g2_t *u8g2, uint8_t is_transparent) {
+  28              		.loc 1 39 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33              	.LVL0:
+  40:u8g2_lib/u8g2_bitmap.c ****   u8g2->bitmap_transparency = is_transparent;
+  34              		.loc 1 40 0
+  35 0000 80F89110 		strb	r1, [r0, #145]
+  36 0004 7047     		bx	lr
+  37              		.cfi_endproc
+  38              	.LFE0:
+  40 0006 00BF     		.section	.text.u8g2_DrawHorizontalBitmap,"ax",%progbits
+  41              		.align	2
+  42              		.global	u8g2_DrawHorizontalBitmap
+  43              		.thumb
+  44              		.thumb_func
+  46              	u8g2_DrawHorizontalBitmap:
+  47              	.LFB1:
+  41:u8g2_lib/u8g2_bitmap.c **** }
+  42:u8g2_lib/u8g2_bitmap.c **** 
+  43:u8g2_lib/u8g2_bitmap.c **** /*
+  44:u8g2_lib/u8g2_bitmap.c ****   x,y 	Position on the display
+  45:u8g2_lib/u8g2_bitmap.c ****   len		Length of bitmap line in pixel. Note: This differs from u8glib which had a bytecount here.
+  46:u8g2_lib/u8g2_bitmap.c ****   b		Pointer to the bitmap line.
+  47:u8g2_lib/u8g2_bitmap.c ****   Only draw pixels which are set.
+  48:u8g2_lib/u8g2_bitmap.c **** */
+  49:u8g2_lib/u8g2_bitmap.c **** 
+  50:u8g2_lib/u8g2_bitmap.c **** void u8g2_DrawHorizontalBitmap(u8g2_t *u8g2, u8g2_uint_t x, u8g2_uint_t y, u8g2_uint_t len, const u
+  51:u8g2_lib/u8g2_bitmap.c **** {
+  48              		.loc 1 51 0
+  49              		.cfi_startproc
+  50              		@ args = 4, pretend = 0, frame = 0
+  51              		@ frame_needed = 0, uses_anonymous_args = 0
+  52              	.LVL1:
+  53 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+  54              	.LCFI0:
+  55              		.cfi_def_cfa_offset 36
+  56              		.cfi_offset 4, -36
+  57              		.cfi_offset 5, -32
+  58              		.cfi_offset 6, -28
+  59              		.cfi_offset 7, -24
+  60              		.cfi_offset 8, -20
+  61              		.cfi_offset 9, -16
+  62              		.cfi_offset 10, -12
+  63              		.cfi_offset 11, -8
+  64              		.cfi_offset 14, -4
+  65 0004 83B0     		sub	sp, sp, #12
+  66              	.LCFI1:
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccueH7td.s 			page 3
+
+
+  67              		.cfi_def_cfa_offset 48
+  68 0006 8046     		mov	r8, r0
+  69 0008 0D46     		mov	r5, r1
+  70 000a 9146     		mov	r9, r2
+  71 000c 1C46     		mov	r4, r3
+  72 000e 0C9F     		ldr	r7, [sp, #48]
+  52:u8g2_lib/u8g2_bitmap.c ****   uint8_t mask;
+  53:u8g2_lib/u8g2_bitmap.c ****   uint8_t color = u8g2->draw_color;
+  73              		.loc 1 53 0
+  74 0010 90F892A0 		ldrb	r10, [r0, #146]	@ zero_extendqisi2
+  75              	.LVL2:
+  54:u8g2_lib/u8g2_bitmap.c ****   uint8_t ncolor = (color == 0 ? 1 : 0);
+  55:u8g2_lib/u8g2_bitmap.c **** 
+  56:u8g2_lib/u8g2_bitmap.c **** #ifdef U8G2_WITH_INTERSECTION
+  57:u8g2_lib/u8g2_bitmap.c ****   if ( u8g2_IsIntersection(u8g2, x, y, x+len, y+1) == 0 ) 
+  76              		.loc 1 57 0
+  77 0014 CB18     		adds	r3, r1, r3
+  78              	.LVL3:
+  79 0016 561C     		adds	r6, r2, #1
+  80 0018 B6B2     		uxth	r6, r6
+  81 001a 0096     		str	r6, [sp]
+  82 001c 9BB2     		uxth	r3, r3
+  83 001e FFF7FEFF 		bl	u8g2_IsIntersection
+  84              	.LVL4:
+  85 0022 58B3     		cbz	r0, .L2
+  86 0024 BAFA8AFB 		clz	fp, r10
+  87              	.LVL5:
+  88 0028 4FEA5B1B 		lsr	fp, fp, #5
+  89              	.LVL6:
+  90 002c 8026     		movs	r6, #128
+  91 002e 21E0     		b	.L4
+  92              	.LVL7:
+  93              	.L8:
+  58:u8g2_lib/u8g2_bitmap.c ****     return;
+  59:u8g2_lib/u8g2_bitmap.c **** #endif /* U8G2_WITH_INTERSECTION */
+  60:u8g2_lib/u8g2_bitmap.c ****   
+  61:u8g2_lib/u8g2_bitmap.c ****   mask = 128;
+  62:u8g2_lib/u8g2_bitmap.c ****   while(len > 0)
+  63:u8g2_lib/u8g2_bitmap.c ****   {
+  64:u8g2_lib/u8g2_bitmap.c ****     if ( *b & mask ) {
+  94              		.loc 1 64 0
+  95 0030 3B78     		ldrb	r3, [r7]	@ zero_extendqisi2
+  96 0032 1E42     		tst	r6, r3
+  97 0034 0AD0     		beq	.L5
+  65:u8g2_lib/u8g2_bitmap.c ****       u8g2->draw_color = color;
+  98              		.loc 1 65 0
+  99 0036 88F892A0 		strb	r10, [r8, #146]
+  66:u8g2_lib/u8g2_bitmap.c ****       u8g2_DrawHVLine(u8g2, x, y, 1, 0);
+ 100              		.loc 1 66 0
+ 101 003a 0023     		movs	r3, #0
+ 102 003c 0093     		str	r3, [sp]
+ 103 003e 0123     		movs	r3, #1
+ 104 0040 4A46     		mov	r2, r9
+ 105 0042 2946     		mov	r1, r5
+ 106 0044 4046     		mov	r0, r8
+ 107 0046 FFF7FEFF 		bl	u8g2_DrawHVLine
+ 108              	.LVL8:
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccueH7td.s 			page 4
+
+
+ 109 004a 0BE0     		b	.L6
+ 110              	.L5:
+  67:u8g2_lib/u8g2_bitmap.c ****     } else if ( u8g2->bitmap_transparency == 0 ) {
+ 111              		.loc 1 67 0
+ 112 004c 98F89130 		ldrb	r3, [r8, #145]	@ zero_extendqisi2
+ 113 0050 43B9     		cbnz	r3, .L6
+  68:u8g2_lib/u8g2_bitmap.c ****       u8g2->draw_color = ncolor;
+ 114              		.loc 1 68 0
+ 115 0052 88F892B0 		strb	fp, [r8, #146]
+  69:u8g2_lib/u8g2_bitmap.c ****       u8g2_DrawHVLine(u8g2, x, y, 1, 0);
+ 116              		.loc 1 69 0
+ 117 0056 0093     		str	r3, [sp]
+ 118 0058 0123     		movs	r3, #1
+ 119 005a 4A46     		mov	r2, r9
+ 120 005c 2946     		mov	r1, r5
+ 121 005e 4046     		mov	r0, r8
+ 122 0060 FFF7FEFF 		bl	u8g2_DrawHVLine
+ 123              	.LVL9:
+ 124              	.L6:
+  70:u8g2_lib/u8g2_bitmap.c ****     }
+  71:u8g2_lib/u8g2_bitmap.c **** 
+  72:u8g2_lib/u8g2_bitmap.c ****     x++;
+ 125              		.loc 1 72 0
+ 126 0064 0135     		adds	r5, r5, #1
+ 127              	.LVL10:
+ 128 0066 ADB2     		uxth	r5, r5
+ 129              	.LVL11:
+  73:u8g2_lib/u8g2_bitmap.c ****     mask >>= 1;
+  74:u8g2_lib/u8g2_bitmap.c ****     if ( mask == 0 )
+ 130              		.loc 1 74 0
+ 131 0068 7608     		lsrs	r6, r6, #1
+ 132              	.LVL12:
+ 133 006a 01D1     		bne	.L7
+ 134              	.LVL13:
+  75:u8g2_lib/u8g2_bitmap.c ****     {
+  76:u8g2_lib/u8g2_bitmap.c ****       mask = 128;
+  77:u8g2_lib/u8g2_bitmap.c ****       b++;
+ 135              		.loc 1 77 0
+ 136 006c 0137     		adds	r7, r7, #1
+ 137              	.LVL14:
+  76:u8g2_lib/u8g2_bitmap.c ****       b++;
+ 138              		.loc 1 76 0
+ 139 006e 8026     		movs	r6, #128
+ 140              	.LVL15:
+ 141              	.L7:
+  78:u8g2_lib/u8g2_bitmap.c ****     }
+  79:u8g2_lib/u8g2_bitmap.c ****     len--;
+ 142              		.loc 1 79 0
+ 143 0070 013C     		subs	r4, r4, #1
+ 144              	.LVL16:
+ 145 0072 A4B2     		uxth	r4, r4
+ 146              	.LVL17:
+ 147              	.L4:
+  62:u8g2_lib/u8g2_bitmap.c ****   {
+ 148              		.loc 1 62 0
+ 149 0074 002C     		cmp	r4, #0
+ 150 0076 DBD1     		bne	.L8
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccueH7td.s 			page 5
+
+
+  80:u8g2_lib/u8g2_bitmap.c ****   }
+  81:u8g2_lib/u8g2_bitmap.c ****   u8g2->draw_color = color;
+ 151              		.loc 1 81 0
+ 152 0078 88F892A0 		strb	r10, [r8, #146]
+ 153              	.LVL18:
+ 154              	.L2:
+  82:u8g2_lib/u8g2_bitmap.c **** }
+ 155              		.loc 1 82 0
+ 156 007c 03B0     		add	sp, sp, #12
+ 157              	.LCFI2:
+ 158              		.cfi_def_cfa_offset 36
+ 159              		@ sp needed
+ 160 007e BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 161              		.cfi_endproc
+ 162              	.LFE1:
+ 164 0082 00BF     		.section	.text.u8g2_DrawBitmap,"ax",%progbits
+ 165              		.align	2
+ 166              		.global	u8g2_DrawBitmap
+ 167              		.thumb
+ 168              		.thumb_func
+ 170              	u8g2_DrawBitmap:
+ 171              	.LFB2:
+  83:u8g2_lib/u8g2_bitmap.c **** 
+  84:u8g2_lib/u8g2_bitmap.c **** 
+  85:u8g2_lib/u8g2_bitmap.c **** /* u8glib compatible bitmap draw function */
+  86:u8g2_lib/u8g2_bitmap.c **** void u8g2_DrawBitmap(u8g2_t *u8g2, u8g2_uint_t x, u8g2_uint_t y, u8g2_uint_t cnt, u8g2_uint_t h, co
+  87:u8g2_lib/u8g2_bitmap.c **** {
+ 172              		.loc 1 87 0
+ 173              		.cfi_startproc
+ 174              		@ args = 8, pretend = 0, frame = 0
+ 175              		@ frame_needed = 0, uses_anonymous_args = 0
+ 176              	.LVL19:
+ 177 0000 2DE9F047 		push	{r4, r5, r6, r7, r8, r9, r10, lr}
+ 178              	.LCFI3:
+ 179              		.cfi_def_cfa_offset 32
+ 180              		.cfi_offset 4, -32
+ 181              		.cfi_offset 5, -28
+ 182              		.cfi_offset 6, -24
+ 183              		.cfi_offset 7, -20
+ 184              		.cfi_offset 8, -16
+ 185              		.cfi_offset 9, -12
+ 186              		.cfi_offset 10, -8
+ 187              		.cfi_offset 14, -4
+ 188 0004 82B0     		sub	sp, sp, #8
+ 189              	.LCFI4:
+ 190              		.cfi_def_cfa_offset 40
+ 191 0006 8246     		mov	r10, r0
+ 192 0008 8846     		mov	r8, r1
+ 193 000a 1546     		mov	r5, r2
+ 194 000c 9946     		mov	r9, r3
+ 195 000e BDF82840 		ldrh	r4, [sp, #40]
+ 196 0012 0B9E     		ldr	r6, [sp, #44]
+ 197              	.LVL20:
+  88:u8g2_lib/u8g2_bitmap.c ****   u8g2_uint_t w;
+  89:u8g2_lib/u8g2_bitmap.c ****   w = cnt;
+  90:u8g2_lib/u8g2_bitmap.c ****   w *= 8;
+ 198              		.loc 1 90 0
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccueH7td.s 			page 6
+
+
+ 199 0014 DF00     		lsls	r7, r3, #3
+ 200 0016 BFB2     		uxth	r7, r7
+ 201              	.LVL21:
+  91:u8g2_lib/u8g2_bitmap.c **** #ifdef U8G2_WITH_INTERSECTION
+  92:u8g2_lib/u8g2_bitmap.c ****   if ( u8g2_IsIntersection(u8g2, x, y, x+w, y+h) == 0 ) 
+ 202              		.loc 1 92 0
+ 203 0018 07EB010E 		add	lr, r7, r1
+ 204 001c 1319     		adds	r3, r2, r4
+ 205              	.LVL22:
+ 206 001e 9BB2     		uxth	r3, r3
+ 207 0020 0093     		str	r3, [sp]
+ 208 0022 1FFA8EF3 		uxth	r3, lr
+ 209 0026 FFF7FEFF 		bl	u8g2_IsIntersection
+ 210              	.LVL23:
+ 211 002a 60B9     		cbnz	r0, .L12
+ 212 002c 0DE0     		b	.L10
+ 213              	.LVL24:
+ 214              	.L13:
+  93:u8g2_lib/u8g2_bitmap.c ****     return;
+  94:u8g2_lib/u8g2_bitmap.c **** #endif /* U8G2_WITH_INTERSECTION */
+  95:u8g2_lib/u8g2_bitmap.c ****   
+  96:u8g2_lib/u8g2_bitmap.c ****   while( h > 0 )
+  97:u8g2_lib/u8g2_bitmap.c ****   {
+  98:u8g2_lib/u8g2_bitmap.c ****     u8g2_DrawHorizontalBitmap(u8g2, x, y, w, bitmap);
+ 215              		.loc 1 98 0
+ 216 002e 0096     		str	r6, [sp]
+ 217 0030 3B46     		mov	r3, r7
+ 218 0032 2A46     		mov	r2, r5
+ 219 0034 4146     		mov	r1, r8
+ 220 0036 5046     		mov	r0, r10
+ 221 0038 FFF7FEFF 		bl	u8g2_DrawHorizontalBitmap
+ 222              	.LVL25:
+  99:u8g2_lib/u8g2_bitmap.c ****     bitmap += cnt;
+ 223              		.loc 1 99 0
+ 224 003c 4E44     		add	r6, r6, r9
+ 225              	.LVL26:
+ 100:u8g2_lib/u8g2_bitmap.c ****     y++;
+ 226              		.loc 1 100 0
+ 227 003e 0135     		adds	r5, r5, #1
+ 228              	.LVL27:
+ 229 0040 ADB2     		uxth	r5, r5
+ 230              	.LVL28:
+ 101:u8g2_lib/u8g2_bitmap.c ****     h--;
+ 231              		.loc 1 101 0
+ 232 0042 013C     		subs	r4, r4, #1
+ 233              	.LVL29:
+ 234 0044 A4B2     		uxth	r4, r4
+ 235              	.LVL30:
+ 236              	.L12:
+  96:u8g2_lib/u8g2_bitmap.c ****   {
+ 237              		.loc 1 96 0
+ 238 0046 002C     		cmp	r4, #0
+ 239 0048 F1D1     		bne	.L13
+ 240              	.LVL31:
+ 241              	.L10:
+ 102:u8g2_lib/u8g2_bitmap.c ****   }
+ 103:u8g2_lib/u8g2_bitmap.c **** }
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccueH7td.s 			page 7
+
+
+ 242              		.loc 1 103 0
+ 243 004a 02B0     		add	sp, sp, #8
+ 244              	.LCFI5:
+ 245              		.cfi_def_cfa_offset 32
+ 246              		@ sp needed
+ 247 004c BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 248              		.cfi_endproc
+ 249              	.LFE2:
+ 251              		.section	.text.u8g2_DrawHXBM,"ax",%progbits
+ 252              		.align	2
+ 253              		.global	u8g2_DrawHXBM
+ 254              		.thumb
+ 255              		.thumb_func
+ 257              	u8g2_DrawHXBM:
+ 258              	.LFB3:
+ 104:u8g2_lib/u8g2_bitmap.c **** 
+ 105:u8g2_lib/u8g2_bitmap.c **** 
+ 106:u8g2_lib/u8g2_bitmap.c **** 
+ 107:u8g2_lib/u8g2_bitmap.c **** void u8g2_DrawHXBM(u8g2_t *u8g2, u8g2_uint_t x, u8g2_uint_t y, u8g2_uint_t len, const uint8_t *b)
+ 108:u8g2_lib/u8g2_bitmap.c **** {
+ 259              		.loc 1 108 0
+ 260              		.cfi_startproc
+ 261              		@ args = 4, pretend = 0, frame = 0
+ 262              		@ frame_needed = 0, uses_anonymous_args = 0
+ 263              	.LVL32:
+ 264 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 265              	.LCFI6:
+ 266              		.cfi_def_cfa_offset 36
+ 267              		.cfi_offset 4, -36
+ 268              		.cfi_offset 5, -32
+ 269              		.cfi_offset 6, -28
+ 270              		.cfi_offset 7, -24
+ 271              		.cfi_offset 8, -20
+ 272              		.cfi_offset 9, -16
+ 273              		.cfi_offset 10, -12
+ 274              		.cfi_offset 11, -8
+ 275              		.cfi_offset 14, -4
+ 276 0004 83B0     		sub	sp, sp, #12
+ 277              	.LCFI7:
+ 278              		.cfi_def_cfa_offset 48
+ 279 0006 8046     		mov	r8, r0
+ 280 0008 0E46     		mov	r6, r1
+ 281 000a 9146     		mov	r9, r2
+ 282 000c 1D46     		mov	r5, r3
+ 283 000e 0C9F     		ldr	r7, [sp, #48]
+ 109:u8g2_lib/u8g2_bitmap.c ****   uint8_t mask;
+ 110:u8g2_lib/u8g2_bitmap.c ****   uint8_t color = u8g2->draw_color;
+ 284              		.loc 1 110 0
+ 285 0010 90F892A0 		ldrb	r10, [r0, #146]	@ zero_extendqisi2
+ 286              	.LVL33:
+ 111:u8g2_lib/u8g2_bitmap.c ****   uint8_t ncolor = (color == 0 ? 1 : 0);
+ 112:u8g2_lib/u8g2_bitmap.c **** #ifdef U8G2_WITH_INTERSECTION
+ 113:u8g2_lib/u8g2_bitmap.c ****   if ( u8g2_IsIntersection(u8g2, x, y, x+len, y+1) == 0 ) 
+ 287              		.loc 1 113 0
+ 288 0014 CB18     		adds	r3, r1, r3
+ 289              	.LVL34:
+ 290 0016 541C     		adds	r4, r2, #1
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccueH7td.s 			page 8
+
+
+ 291 0018 A4B2     		uxth	r4, r4
+ 292 001a 0094     		str	r4, [sp]
+ 293 001c 9BB2     		uxth	r3, r3
+ 294 001e FFF7FEFF 		bl	u8g2_IsIntersection
+ 295              	.LVL35:
+ 296 0022 68B3     		cbz	r0, .L15
+ 297 0024 BAFA8AFB 		clz	fp, r10
+ 298              	.LVL36:
+ 299 0028 4FEA5B1B 		lsr	fp, fp, #5
+ 300              	.LVL37:
+ 301 002c 0124     		movs	r4, #1
+ 302 002e 23E0     		b	.L17
+ 303              	.LVL38:
+ 304              	.L21:
+ 114:u8g2_lib/u8g2_bitmap.c ****     return;
+ 115:u8g2_lib/u8g2_bitmap.c **** #endif /* U8G2_WITH_INTERSECTION */
+ 116:u8g2_lib/u8g2_bitmap.c ****   
+ 117:u8g2_lib/u8g2_bitmap.c ****   mask = 1;
+ 118:u8g2_lib/u8g2_bitmap.c ****   while(len > 0) {
+ 119:u8g2_lib/u8g2_bitmap.c ****     if ( *b & mask ) {
+ 305              		.loc 1 119 0
+ 306 0030 3B78     		ldrb	r3, [r7]	@ zero_extendqisi2
+ 307 0032 1C42     		tst	r4, r3
+ 308 0034 0AD0     		beq	.L18
+ 120:u8g2_lib/u8g2_bitmap.c ****       u8g2->draw_color = color;
+ 309              		.loc 1 120 0
+ 310 0036 88F892A0 		strb	r10, [r8, #146]
+ 121:u8g2_lib/u8g2_bitmap.c ****       u8g2_DrawHVLine(u8g2, x, y, 1, 0);
+ 311              		.loc 1 121 0
+ 312 003a 0023     		movs	r3, #0
+ 313 003c 0093     		str	r3, [sp]
+ 314 003e 0123     		movs	r3, #1
+ 315 0040 4A46     		mov	r2, r9
+ 316 0042 3146     		mov	r1, r6
+ 317 0044 4046     		mov	r0, r8
+ 318 0046 FFF7FEFF 		bl	u8g2_DrawHVLine
+ 319              	.LVL39:
+ 320 004a 0BE0     		b	.L19
+ 321              	.L18:
+ 122:u8g2_lib/u8g2_bitmap.c ****     } else if ( u8g2->bitmap_transparency == 0 ) {
+ 322              		.loc 1 122 0
+ 323 004c 98F89130 		ldrb	r3, [r8, #145]	@ zero_extendqisi2
+ 324 0050 43B9     		cbnz	r3, .L19
+ 123:u8g2_lib/u8g2_bitmap.c ****       u8g2->draw_color = ncolor;
+ 325              		.loc 1 123 0
+ 326 0052 88F892B0 		strb	fp, [r8, #146]
+ 124:u8g2_lib/u8g2_bitmap.c ****       u8g2_DrawHVLine(u8g2, x, y, 1, 0);
+ 327              		.loc 1 124 0
+ 328 0056 0093     		str	r3, [sp]
+ 329 0058 0123     		movs	r3, #1
+ 330 005a 4A46     		mov	r2, r9
+ 331 005c 3146     		mov	r1, r6
+ 332 005e 4046     		mov	r0, r8
+ 333 0060 FFF7FEFF 		bl	u8g2_DrawHVLine
+ 334              	.LVL40:
+ 335              	.L19:
+ 125:u8g2_lib/u8g2_bitmap.c ****     }
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccueH7td.s 			page 9
+
+
+ 126:u8g2_lib/u8g2_bitmap.c ****     x++;
+ 336              		.loc 1 126 0
+ 337 0064 0136     		adds	r6, r6, #1
+ 338              	.LVL41:
+ 339 0066 B6B2     		uxth	r6, r6
+ 340              	.LVL42:
+ 127:u8g2_lib/u8g2_bitmap.c ****     mask <<= 1;
+ 341              		.loc 1 127 0
+ 342 0068 6400     		lsls	r4, r4, #1
+ 343              	.LVL43:
+ 128:u8g2_lib/u8g2_bitmap.c ****     if ( mask == 0 )
+ 344              		.loc 1 128 0
+ 345 006a 14F0FF04 		ands	r4, r4, #255
+ 346              	.LVL44:
+ 347 006e 01D1     		bne	.L20
+ 348              	.LVL45:
+ 129:u8g2_lib/u8g2_bitmap.c ****     {
+ 130:u8g2_lib/u8g2_bitmap.c ****       mask = 1;
+ 131:u8g2_lib/u8g2_bitmap.c ****       b++;
+ 349              		.loc 1 131 0
+ 350 0070 0137     		adds	r7, r7, #1
+ 351              	.LVL46:
+ 130:u8g2_lib/u8g2_bitmap.c ****       b++;
+ 352              		.loc 1 130 0
+ 353 0072 0124     		movs	r4, #1
+ 354              	.LVL47:
+ 355              	.L20:
+ 132:u8g2_lib/u8g2_bitmap.c ****     }
+ 133:u8g2_lib/u8g2_bitmap.c ****     len--;
+ 356              		.loc 1 133 0
+ 357 0074 013D     		subs	r5, r5, #1
+ 358              	.LVL48:
+ 359 0076 ADB2     		uxth	r5, r5
+ 360              	.LVL49:
+ 361              	.L17:
+ 118:u8g2_lib/u8g2_bitmap.c ****     if ( *b & mask ) {
+ 362              		.loc 1 118 0
+ 363 0078 002D     		cmp	r5, #0
+ 364 007a D9D1     		bne	.L21
+ 134:u8g2_lib/u8g2_bitmap.c ****   }
+ 135:u8g2_lib/u8g2_bitmap.c ****   u8g2->draw_color = color;
+ 365              		.loc 1 135 0
+ 366 007c 88F892A0 		strb	r10, [r8, #146]
+ 367              	.LVL50:
+ 368              	.L15:
+ 136:u8g2_lib/u8g2_bitmap.c **** }
+ 369              		.loc 1 136 0
+ 370 0080 03B0     		add	sp, sp, #12
+ 371              	.LCFI8:
+ 372              		.cfi_def_cfa_offset 36
+ 373              		@ sp needed
+ 374 0082 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 375              		.cfi_endproc
+ 376              	.LFE3:
+ 378 0086 00BF     		.section	.text.u8g2_DrawXBM,"ax",%progbits
+ 379              		.align	2
+ 380              		.global	u8g2_DrawXBM
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccueH7td.s 			page 10
+
+
+ 381              		.thumb
+ 382              		.thumb_func
+ 384              	u8g2_DrawXBM:
+ 385              	.LFB4:
+ 137:u8g2_lib/u8g2_bitmap.c **** 
+ 138:u8g2_lib/u8g2_bitmap.c **** 
+ 139:u8g2_lib/u8g2_bitmap.c **** void u8g2_DrawXBM(u8g2_t *u8g2, u8g2_uint_t x, u8g2_uint_t y, u8g2_uint_t w, u8g2_uint_t h, const u
+ 140:u8g2_lib/u8g2_bitmap.c **** {
+ 386              		.loc 1 140 0
+ 387              		.cfi_startproc
+ 388              		@ args = 8, pretend = 0, frame = 0
+ 389              		@ frame_needed = 0, uses_anonymous_args = 0
+ 390              	.LVL51:
+ 391 0000 2DE9F047 		push	{r4, r5, r6, r7, r8, r9, r10, lr}
+ 392              	.LCFI9:
+ 393              		.cfi_def_cfa_offset 32
+ 394              		.cfi_offset 4, -32
+ 395              		.cfi_offset 5, -28
+ 396              		.cfi_offset 6, -24
+ 397              		.cfi_offset 7, -20
+ 398              		.cfi_offset 8, -16
+ 399              		.cfi_offset 9, -12
+ 400              		.cfi_offset 10, -8
+ 401              		.cfi_offset 14, -4
+ 402 0004 82B0     		sub	sp, sp, #8
+ 403              	.LCFI10:
+ 404              		.cfi_def_cfa_offset 40
+ 405 0006 8246     		mov	r10, r0
+ 406 0008 8946     		mov	r9, r1
+ 407 000a 1546     		mov	r5, r2
+ 408 000c 1F46     		mov	r7, r3
+ 409 000e BDF82840 		ldrh	r4, [sp, #40]
+ 410 0012 0B9E     		ldr	r6, [sp, #44]
+ 411              	.LVL52:
+ 141:u8g2_lib/u8g2_bitmap.c ****   u8g2_uint_t blen;
+ 142:u8g2_lib/u8g2_bitmap.c ****   blen = w;
+ 143:u8g2_lib/u8g2_bitmap.c ****   blen += 7;
+ 412              		.loc 1 143 0
+ 413 0014 03F10708 		add	r8, r3, #7
+ 414              	.LVL53:
+ 144:u8g2_lib/u8g2_bitmap.c ****   blen >>= 3;
+ 415              		.loc 1 144 0
+ 416 0018 C8F3CC08 		ubfx	r8, r8, #3, #13
+ 417              	.LVL54:
+ 145:u8g2_lib/u8g2_bitmap.c **** #ifdef U8G2_WITH_INTERSECTION
+ 146:u8g2_lib/u8g2_bitmap.c ****   if ( u8g2_IsIntersection(u8g2, x, y, x+w, y+h) == 0 ) 
+ 418              		.loc 1 146 0
+ 419 001c 03EB010E 		add	lr, r3, r1
+ 420 0020 1319     		adds	r3, r2, r4
+ 421              	.LVL55:
+ 422 0022 9BB2     		uxth	r3, r3
+ 423 0024 0093     		str	r3, [sp]
+ 424 0026 1FFA8EF3 		uxth	r3, lr
+ 425 002a FFF7FEFF 		bl	u8g2_IsIntersection
+ 426              	.LVL56:
+ 427 002e 60B9     		cbnz	r0, .L25
+ 428 0030 0DE0     		b	.L23
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccueH7td.s 			page 11
+
+
+ 429              	.LVL57:
+ 430              	.L26:
+ 147:u8g2_lib/u8g2_bitmap.c ****     return;
+ 148:u8g2_lib/u8g2_bitmap.c **** #endif /* U8G2_WITH_INTERSECTION */
+ 149:u8g2_lib/u8g2_bitmap.c ****   
+ 150:u8g2_lib/u8g2_bitmap.c ****   while( h > 0 )
+ 151:u8g2_lib/u8g2_bitmap.c ****   {
+ 152:u8g2_lib/u8g2_bitmap.c ****     u8g2_DrawHXBM(u8g2, x, y, w, bitmap);
+ 431              		.loc 1 152 0
+ 432 0032 0096     		str	r6, [sp]
+ 433 0034 3B46     		mov	r3, r7
+ 434 0036 2A46     		mov	r2, r5
+ 435 0038 4946     		mov	r1, r9
+ 436 003a 5046     		mov	r0, r10
+ 437 003c FFF7FEFF 		bl	u8g2_DrawHXBM
+ 438              	.LVL58:
+ 153:u8g2_lib/u8g2_bitmap.c ****     bitmap += blen;
+ 439              		.loc 1 153 0
+ 440 0040 4644     		add	r6, r6, r8
+ 441              	.LVL59:
+ 154:u8g2_lib/u8g2_bitmap.c ****     y++;
+ 442              		.loc 1 154 0
+ 443 0042 0135     		adds	r5, r5, #1
+ 444              	.LVL60:
+ 445 0044 ADB2     		uxth	r5, r5
+ 446              	.LVL61:
+ 155:u8g2_lib/u8g2_bitmap.c ****     h--;
+ 447              		.loc 1 155 0
+ 448 0046 013C     		subs	r4, r4, #1
+ 449              	.LVL62:
+ 450 0048 A4B2     		uxth	r4, r4
+ 451              	.LVL63:
+ 452              	.L25:
+ 150:u8g2_lib/u8g2_bitmap.c ****   {
+ 453              		.loc 1 150 0
+ 454 004a 002C     		cmp	r4, #0
+ 455 004c F1D1     		bne	.L26
+ 456              	.LVL64:
+ 457              	.L23:
+ 156:u8g2_lib/u8g2_bitmap.c ****   }
+ 157:u8g2_lib/u8g2_bitmap.c **** }
+ 458              		.loc 1 157 0
+ 459 004e 02B0     		add	sp, sp, #8
+ 460              	.LCFI11:
+ 461              		.cfi_def_cfa_offset 32
+ 462              		@ sp needed
+ 463 0050 BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 464              		.cfi_endproc
+ 465              	.LFE4:
+ 467              		.section	.text.u8g2_DrawHXBMP,"ax",%progbits
+ 468              		.align	2
+ 469              		.global	u8g2_DrawHXBMP
+ 470              		.thumb
+ 471              		.thumb_func
+ 473              	u8g2_DrawHXBMP:
+ 474              	.LFB5:
+ 158:u8g2_lib/u8g2_bitmap.c **** 
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccueH7td.s 			page 12
+
+
+ 159:u8g2_lib/u8g2_bitmap.c **** 
+ 160:u8g2_lib/u8g2_bitmap.c **** 
+ 161:u8g2_lib/u8g2_bitmap.c **** 
+ 162:u8g2_lib/u8g2_bitmap.c **** 
+ 163:u8g2_lib/u8g2_bitmap.c **** 
+ 164:u8g2_lib/u8g2_bitmap.c **** void u8g2_DrawHXBMP(u8g2_t *u8g2, u8g2_uint_t x, u8g2_uint_t y, u8g2_uint_t len, const uint8_t *b)
+ 165:u8g2_lib/u8g2_bitmap.c **** {
+ 475              		.loc 1 165 0
+ 476              		.cfi_startproc
+ 477              		@ args = 4, pretend = 0, frame = 0
+ 478              		@ frame_needed = 0, uses_anonymous_args = 0
+ 479              	.LVL65:
+ 480 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 481              	.LCFI12:
+ 482              		.cfi_def_cfa_offset 36
+ 483              		.cfi_offset 4, -36
+ 484              		.cfi_offset 5, -32
+ 485              		.cfi_offset 6, -28
+ 486              		.cfi_offset 7, -24
+ 487              		.cfi_offset 8, -20
+ 488              		.cfi_offset 9, -16
+ 489              		.cfi_offset 10, -12
+ 490              		.cfi_offset 11, -8
+ 491              		.cfi_offset 14, -4
+ 492 0004 83B0     		sub	sp, sp, #12
+ 493              	.LCFI13:
+ 494              		.cfi_def_cfa_offset 48
+ 495 0006 8046     		mov	r8, r0
+ 496 0008 0E46     		mov	r6, r1
+ 497 000a 9146     		mov	r9, r2
+ 498 000c 1D46     		mov	r5, r3
+ 499 000e 0C9F     		ldr	r7, [sp, #48]
+ 166:u8g2_lib/u8g2_bitmap.c ****   uint8_t mask;
+ 167:u8g2_lib/u8g2_bitmap.c ****   uint8_t color = u8g2->draw_color;
+ 500              		.loc 1 167 0
+ 501 0010 90F892A0 		ldrb	r10, [r0, #146]	@ zero_extendqisi2
+ 502              	.LVL66:
+ 168:u8g2_lib/u8g2_bitmap.c ****   uint8_t ncolor = (color == 0 ? 1 : 0);
+ 169:u8g2_lib/u8g2_bitmap.c **** #ifdef U8G2_WITH_INTERSECTION
+ 170:u8g2_lib/u8g2_bitmap.c ****   if ( u8g2_IsIntersection(u8g2, x, y, x+len, y+1) == 0 ) 
+ 503              		.loc 1 170 0
+ 504 0014 CB18     		adds	r3, r1, r3
+ 505              	.LVL67:
+ 506 0016 541C     		adds	r4, r2, #1
+ 507 0018 A4B2     		uxth	r4, r4
+ 508 001a 0094     		str	r4, [sp]
+ 509 001c 9BB2     		uxth	r3, r3
+ 510 001e FFF7FEFF 		bl	u8g2_IsIntersection
+ 511              	.LVL68:
+ 512 0022 68B3     		cbz	r0, .L28
+ 513 0024 BAFA8AFB 		clz	fp, r10
+ 514              	.LVL69:
+ 515 0028 4FEA5B1B 		lsr	fp, fp, #5
+ 516              	.LVL70:
+ 517 002c 0124     		movs	r4, #1
+ 518 002e 23E0     		b	.L30
+ 519              	.LVL71:
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccueH7td.s 			page 13
+
+
+ 520              	.L34:
+ 171:u8g2_lib/u8g2_bitmap.c ****     return;
+ 172:u8g2_lib/u8g2_bitmap.c **** #endif /* U8G2_WITH_INTERSECTION */
+ 173:u8g2_lib/u8g2_bitmap.c ****   
+ 174:u8g2_lib/u8g2_bitmap.c ****   mask = 1;
+ 175:u8g2_lib/u8g2_bitmap.c ****   while(len > 0)
+ 176:u8g2_lib/u8g2_bitmap.c ****   {
+ 177:u8g2_lib/u8g2_bitmap.c ****     if( u8x8_pgm_read(b) & mask ) {
+ 521              		.loc 1 177 0
+ 522 0030 3B78     		ldrb	r3, [r7]	@ zero_extendqisi2
+ 523 0032 1C42     		tst	r4, r3
+ 524 0034 0AD0     		beq	.L31
+ 178:u8g2_lib/u8g2_bitmap.c ****       u8g2->draw_color = color;
+ 525              		.loc 1 178 0
+ 526 0036 88F892A0 		strb	r10, [r8, #146]
+ 179:u8g2_lib/u8g2_bitmap.c ****       u8g2_DrawHVLine(u8g2, x, y, 1, 0);
+ 527              		.loc 1 179 0
+ 528 003a 0023     		movs	r3, #0
+ 529 003c 0093     		str	r3, [sp]
+ 530 003e 0123     		movs	r3, #1
+ 531 0040 4A46     		mov	r2, r9
+ 532 0042 3146     		mov	r1, r6
+ 533 0044 4046     		mov	r0, r8
+ 534 0046 FFF7FEFF 		bl	u8g2_DrawHVLine
+ 535              	.LVL72:
+ 536 004a 0BE0     		b	.L32
+ 537              	.L31:
+ 180:u8g2_lib/u8g2_bitmap.c ****     } else if( u8g2->bitmap_transparency == 0 ) {
+ 538              		.loc 1 180 0
+ 539 004c 98F89130 		ldrb	r3, [r8, #145]	@ zero_extendqisi2
+ 540 0050 43B9     		cbnz	r3, .L32
+ 181:u8g2_lib/u8g2_bitmap.c ****       u8g2->draw_color = ncolor;
+ 541              		.loc 1 181 0
+ 542 0052 88F892B0 		strb	fp, [r8, #146]
+ 182:u8g2_lib/u8g2_bitmap.c ****       u8g2_DrawHVLine(u8g2, x, y, 1, 0);
+ 543              		.loc 1 182 0
+ 544 0056 0093     		str	r3, [sp]
+ 545 0058 0123     		movs	r3, #1
+ 546 005a 4A46     		mov	r2, r9
+ 547 005c 3146     		mov	r1, r6
+ 548 005e 4046     		mov	r0, r8
+ 549 0060 FFF7FEFF 		bl	u8g2_DrawHVLine
+ 550              	.LVL73:
+ 551              	.L32:
+ 183:u8g2_lib/u8g2_bitmap.c ****     }
+ 184:u8g2_lib/u8g2_bitmap.c ****    
+ 185:u8g2_lib/u8g2_bitmap.c ****     x++;
+ 552              		.loc 1 185 0
+ 553 0064 0136     		adds	r6, r6, #1
+ 554              	.LVL74:
+ 555 0066 B6B2     		uxth	r6, r6
+ 556              	.LVL75:
+ 186:u8g2_lib/u8g2_bitmap.c ****     mask <<= 1;
+ 557              		.loc 1 186 0
+ 558 0068 6400     		lsls	r4, r4, #1
+ 559              	.LVL76:
+ 187:u8g2_lib/u8g2_bitmap.c ****     if ( mask == 0 )
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccueH7td.s 			page 14
+
+
+ 560              		.loc 1 187 0
+ 561 006a 14F0FF04 		ands	r4, r4, #255
+ 562              	.LVL77:
+ 563 006e 01D1     		bne	.L33
+ 564              	.LVL78:
+ 188:u8g2_lib/u8g2_bitmap.c ****     {
+ 189:u8g2_lib/u8g2_bitmap.c ****       mask = 1;
+ 190:u8g2_lib/u8g2_bitmap.c ****       b++;
+ 565              		.loc 1 190 0
+ 566 0070 0137     		adds	r7, r7, #1
+ 567              	.LVL79:
+ 189:u8g2_lib/u8g2_bitmap.c ****       b++;
+ 568              		.loc 1 189 0
+ 569 0072 0124     		movs	r4, #1
+ 570              	.LVL80:
+ 571              	.L33:
+ 191:u8g2_lib/u8g2_bitmap.c ****     }
+ 192:u8g2_lib/u8g2_bitmap.c ****     len--;
+ 572              		.loc 1 192 0
+ 573 0074 013D     		subs	r5, r5, #1
+ 574              	.LVL81:
+ 575 0076 ADB2     		uxth	r5, r5
+ 576              	.LVL82:
+ 577              	.L30:
+ 175:u8g2_lib/u8g2_bitmap.c ****   {
+ 578              		.loc 1 175 0
+ 579 0078 002D     		cmp	r5, #0
+ 580 007a D9D1     		bne	.L34
+ 193:u8g2_lib/u8g2_bitmap.c ****   }
+ 194:u8g2_lib/u8g2_bitmap.c ****   u8g2->draw_color = color;
+ 581              		.loc 1 194 0
+ 582 007c 88F892A0 		strb	r10, [r8, #146]
+ 583              	.LVL83:
+ 584              	.L28:
+ 195:u8g2_lib/u8g2_bitmap.c **** }
+ 585              		.loc 1 195 0
+ 586 0080 03B0     		add	sp, sp, #12
+ 587              	.LCFI14:
+ 588              		.cfi_def_cfa_offset 36
+ 589              		@ sp needed
+ 590 0082 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 591              		.cfi_endproc
+ 592              	.LFE5:
+ 594 0086 00BF     		.section	.text.u8g2_DrawXBMP,"ax",%progbits
+ 595              		.align	2
+ 596              		.global	u8g2_DrawXBMP
+ 597              		.thumb
+ 598              		.thumb_func
+ 600              	u8g2_DrawXBMP:
+ 601              	.LFB6:
+ 196:u8g2_lib/u8g2_bitmap.c **** 
+ 197:u8g2_lib/u8g2_bitmap.c **** 
+ 198:u8g2_lib/u8g2_bitmap.c **** void u8g2_DrawXBMP(u8g2_t *u8g2, u8g2_uint_t x, u8g2_uint_t y, u8g2_uint_t w, u8g2_uint_t h, const 
+ 199:u8g2_lib/u8g2_bitmap.c **** {
+ 602              		.loc 1 199 0
+ 603              		.cfi_startproc
+ 604              		@ args = 8, pretend = 0, frame = 0
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccueH7td.s 			page 15
+
+
+ 605              		@ frame_needed = 0, uses_anonymous_args = 0
+ 606              	.LVL84:
+ 607 0000 2DE9F047 		push	{r4, r5, r6, r7, r8, r9, r10, lr}
+ 608              	.LCFI15:
+ 609              		.cfi_def_cfa_offset 32
+ 610              		.cfi_offset 4, -32
+ 611              		.cfi_offset 5, -28
+ 612              		.cfi_offset 6, -24
+ 613              		.cfi_offset 7, -20
+ 614              		.cfi_offset 8, -16
+ 615              		.cfi_offset 9, -12
+ 616              		.cfi_offset 10, -8
+ 617              		.cfi_offset 14, -4
+ 618 0004 82B0     		sub	sp, sp, #8
+ 619              	.LCFI16:
+ 620              		.cfi_def_cfa_offset 40
+ 621 0006 8246     		mov	r10, r0
+ 622 0008 8946     		mov	r9, r1
+ 623 000a 1546     		mov	r5, r2
+ 624 000c 1F46     		mov	r7, r3
+ 625 000e BDF82840 		ldrh	r4, [sp, #40]
+ 626 0012 0B9E     		ldr	r6, [sp, #44]
+ 627              	.LVL85:
+ 200:u8g2_lib/u8g2_bitmap.c ****   u8g2_uint_t blen;
+ 201:u8g2_lib/u8g2_bitmap.c ****   blen = w;
+ 202:u8g2_lib/u8g2_bitmap.c ****   blen += 7;
+ 628              		.loc 1 202 0
+ 629 0014 03F10708 		add	r8, r3, #7
+ 630              	.LVL86:
+ 203:u8g2_lib/u8g2_bitmap.c ****   blen >>= 3;
+ 631              		.loc 1 203 0
+ 632 0018 C8F3CC08 		ubfx	r8, r8, #3, #13
+ 633              	.LVL87:
+ 204:u8g2_lib/u8g2_bitmap.c **** #ifdef U8G2_WITH_INTERSECTION
+ 205:u8g2_lib/u8g2_bitmap.c ****   if ( u8g2_IsIntersection(u8g2, x, y, x+w, y+h) == 0 ) 
+ 634              		.loc 1 205 0
+ 635 001c 03EB010E 		add	lr, r3, r1
+ 636 0020 1319     		adds	r3, r2, r4
+ 637              	.LVL88:
+ 638 0022 9BB2     		uxth	r3, r3
+ 639 0024 0093     		str	r3, [sp]
+ 640 0026 1FFA8EF3 		uxth	r3, lr
+ 641 002a FFF7FEFF 		bl	u8g2_IsIntersection
+ 642              	.LVL89:
+ 643 002e 60B9     		cbnz	r0, .L38
+ 644 0030 0DE0     		b	.L36
+ 645              	.LVL90:
+ 646              	.L39:
+ 206:u8g2_lib/u8g2_bitmap.c ****     return;
+ 207:u8g2_lib/u8g2_bitmap.c **** #endif /* U8G2_WITH_INTERSECTION */
+ 208:u8g2_lib/u8g2_bitmap.c ****   
+ 209:u8g2_lib/u8g2_bitmap.c ****   while( h > 0 )
+ 210:u8g2_lib/u8g2_bitmap.c ****   {
+ 211:u8g2_lib/u8g2_bitmap.c ****     u8g2_DrawHXBMP(u8g2, x, y, w, bitmap);
+ 647              		.loc 1 211 0
+ 648 0032 0096     		str	r6, [sp]
+ 649 0034 3B46     		mov	r3, r7
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccueH7td.s 			page 16
+
+
+ 650 0036 2A46     		mov	r2, r5
+ 651 0038 4946     		mov	r1, r9
+ 652 003a 5046     		mov	r0, r10
+ 653 003c FFF7FEFF 		bl	u8g2_DrawHXBMP
+ 654              	.LVL91:
+ 212:u8g2_lib/u8g2_bitmap.c ****     bitmap += blen;
+ 655              		.loc 1 212 0
+ 656 0040 4644     		add	r6, r6, r8
+ 657              	.LVL92:
+ 213:u8g2_lib/u8g2_bitmap.c ****     y++;
+ 658              		.loc 1 213 0
+ 659 0042 0135     		adds	r5, r5, #1
+ 660              	.LVL93:
+ 661 0044 ADB2     		uxth	r5, r5
+ 662              	.LVL94:
+ 214:u8g2_lib/u8g2_bitmap.c ****     h--;
+ 663              		.loc 1 214 0
+ 664 0046 013C     		subs	r4, r4, #1
+ 665              	.LVL95:
+ 666 0048 A4B2     		uxth	r4, r4
+ 667              	.LVL96:
+ 668              	.L38:
+ 209:u8g2_lib/u8g2_bitmap.c ****   {
+ 669              		.loc 1 209 0
+ 670 004a 002C     		cmp	r4, #0
+ 671 004c F1D1     		bne	.L39
+ 672              	.LVL97:
+ 673              	.L36:
+ 215:u8g2_lib/u8g2_bitmap.c ****   }
+ 216:u8g2_lib/u8g2_bitmap.c **** }
+ 674              		.loc 1 216 0
+ 675 004e 02B0     		add	sp, sp, #8
+ 676              	.LCFI17:
+ 677              		.cfi_def_cfa_offset 32
+ 678              		@ sp needed
+ 679 0050 BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 680              		.cfi_endproc
+ 681              	.LFE6:
+ 683              		.text
+ 684              	.Letext0:
+ 685              		.file 2 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\mach
+ 686              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\sys\
+ 687              		.file 4 "u8g2_lib/u8x8.h"
+ 688              		.file 5 "u8g2_lib/u8g2.h"
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccueH7td.s 			page 17
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 u8g2_bitmap.c
+C:\Users\master\AppData\Local\Temp\ccueH7td.s:20     .text.u8g2_SetBitmapMode:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccueH7td.s:25     .text.u8g2_SetBitmapMode:00000000 u8g2_SetBitmapMode
+C:\Users\master\AppData\Local\Temp\ccueH7td.s:41     .text.u8g2_DrawHorizontalBitmap:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccueH7td.s:46     .text.u8g2_DrawHorizontalBitmap:00000000 u8g2_DrawHorizontalBitmap
+C:\Users\master\AppData\Local\Temp\ccueH7td.s:165    .text.u8g2_DrawBitmap:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccueH7td.s:170    .text.u8g2_DrawBitmap:00000000 u8g2_DrawBitmap
+C:\Users\master\AppData\Local\Temp\ccueH7td.s:252    .text.u8g2_DrawHXBM:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccueH7td.s:257    .text.u8g2_DrawHXBM:00000000 u8g2_DrawHXBM
+C:\Users\master\AppData\Local\Temp\ccueH7td.s:379    .text.u8g2_DrawXBM:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccueH7td.s:384    .text.u8g2_DrawXBM:00000000 u8g2_DrawXBM
+C:\Users\master\AppData\Local\Temp\ccueH7td.s:468    .text.u8g2_DrawHXBMP:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccueH7td.s:473    .text.u8g2_DrawHXBMP:00000000 u8g2_DrawHXBMP
+C:\Users\master\AppData\Local\Temp\ccueH7td.s:595    .text.u8g2_DrawXBMP:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccueH7td.s:600    .text.u8g2_DrawXBMP:00000000 u8g2_DrawXBMP
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+u8g2_IsIntersection
+u8g2_DrawHVLine

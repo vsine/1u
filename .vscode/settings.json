@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "alloca.h": "c"
+    },
+    "stm32-for-vscode.openOCDPath": false
+}

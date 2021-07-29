@@ -1,0 +1,720 @@
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc6xQtLh.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"u8g2_message.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.u8g2_draw_button_line,"ax",%progbits
+  20              		.align	2
+  21              		.global	u8g2_draw_button_line
+  22              		.thumb
+  23              		.thumb_func
+  25              	u8g2_draw_button_line:
+  26              	.LFB0:
+  27              		.file 1 "u8g2_lib/u8g2_message.c"
+   1:u8g2_lib/u8g2_message.c **** /*
+   2:u8g2_lib/u8g2_message.c **** 
+   3:u8g2_lib/u8g2_message.c ****   u8g2_message.c
+   4:u8g2_lib/u8g2_message.c ****   
+   5:u8g2_lib/u8g2_message.c ****   Universal 8bit Graphics Library (https://github.com/olikraus/u8g2/)
+   6:u8g2_lib/u8g2_message.c **** 
+   7:u8g2_lib/u8g2_message.c ****   Copyright (c) 2016, olikraus@gmail.com
+   8:u8g2_lib/u8g2_message.c ****   All rights reserved.
+   9:u8g2_lib/u8g2_message.c **** 
+  10:u8g2_lib/u8g2_message.c ****   Redistribution and use in source and binary forms, with or without modification, 
+  11:u8g2_lib/u8g2_message.c ****   are permitted provided that the following conditions are met:
+  12:u8g2_lib/u8g2_message.c **** 
+  13:u8g2_lib/u8g2_message.c ****   * Redistributions of source code must retain the above copyright notice, this list 
+  14:u8g2_lib/u8g2_message.c ****     of conditions and the following disclaimer.
+  15:u8g2_lib/u8g2_message.c ****     
+  16:u8g2_lib/u8g2_message.c ****   * Redistributions in binary form must reproduce the above copyright notice, this 
+  17:u8g2_lib/u8g2_message.c ****     list of conditions and the following disclaimer in the documentation and/or other 
+  18:u8g2_lib/u8g2_message.c ****     materials provided with the distribution.
+  19:u8g2_lib/u8g2_message.c **** 
+  20:u8g2_lib/u8g2_message.c ****   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND 
+  21:u8g2_lib/u8g2_message.c ****   CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, 
+  22:u8g2_lib/u8g2_message.c ****   INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF 
+  23:u8g2_lib/u8g2_message.c ****   MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE 
+  24:u8g2_lib/u8g2_message.c ****   DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR 
+  25:u8g2_lib/u8g2_message.c ****   CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+  26:u8g2_lib/u8g2_message.c ****   SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+  27:u8g2_lib/u8g2_message.c ****   NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; 
+  28:u8g2_lib/u8g2_message.c ****   LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER 
+  29:u8g2_lib/u8g2_message.c ****   CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, 
+  30:u8g2_lib/u8g2_message.c ****   STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+  31:u8g2_lib/u8g2_message.c ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc6xQtLh.s 			page 2
+
+
+  32:u8g2_lib/u8g2_message.c ****   ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.  
+  33:u8g2_lib/u8g2_message.c ****   
+  34:u8g2_lib/u8g2_message.c **** */
+  35:u8g2_lib/u8g2_message.c **** 
+  36:u8g2_lib/u8g2_message.c **** #include "u8g2.h"
+  37:u8g2_lib/u8g2_message.c **** 
+  38:u8g2_lib/u8g2_message.c **** #define SPACE_BETWEEN_BUTTONS_IN_PIXEL 6
+  39:u8g2_lib/u8g2_message.c **** #define SPACE_BETWEEN_TEXT_AND_BUTTONS_IN_PIXEL 3
+  40:u8g2_lib/u8g2_message.c **** 
+  41:u8g2_lib/u8g2_message.c **** uint8_t u8g2_draw_button_line(u8g2_t *u8g2, u8g2_uint_t y, u8g2_uint_t w, uint8_t cursor, const cha
+  42:u8g2_lib/u8g2_message.c **** {
+  28              		.loc 1 42 0
+  29              		.cfi_startproc
+  30              		@ args = 4, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              	.LVL0:
+  33 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 36
+  36              		.cfi_offset 4, -36
+  37              		.cfi_offset 5, -32
+  38              		.cfi_offset 6, -28
+  39              		.cfi_offset 7, -24
+  40              		.cfi_offset 8, -20
+  41              		.cfi_offset 9, -16
+  42              		.cfi_offset 10, -12
+  43              		.cfi_offset 11, -8
+  44              		.cfi_offset 14, -4
+  45 0004 85B0     		sub	sp, sp, #20
+  46              	.LCFI1:
+  47              		.cfi_def_cfa_offset 56
+  48 0006 0746     		mov	r7, r0
+  49 0008 8946     		mov	r9, r1
+  50 000a 1446     		mov	r4, r2
+  51 000c 9A46     		mov	r10, r3
+  52 000e 0E9E     		ldr	r6, [sp, #56]
+  43:u8g2_lib/u8g2_message.c ****   u8g2_uint_t button_line_width;
+  44:u8g2_lib/u8g2_message.c **** 	
+  45:u8g2_lib/u8g2_message.c ****   uint8_t i;
+  46:u8g2_lib/u8g2_message.c ****   uint8_t cnt;
+  47:u8g2_lib/u8g2_message.c ****   uint8_t is_invert;
+  48:u8g2_lib/u8g2_message.c **** 	
+  49:u8g2_lib/u8g2_message.c ****   u8g2_uint_t d;
+  50:u8g2_lib/u8g2_message.c ****   u8g2_uint_t x;
+  51:u8g2_lib/u8g2_message.c **** 	
+  52:u8g2_lib/u8g2_message.c ****   cnt = u8x8_GetStringLineCnt(s);
+  53              		.loc 1 52 0
+  54 0010 3046     		mov	r0, r6
+  55              	.LVL1:
+  56 0012 FFF7FEFF 		bl	u8x8_GetStringLineCnt
+  57              	.LVL2:
+  58 0016 8046     		mov	r8, r0
+  59              	.LVL3:
+  53:u8g2_lib/u8g2_message.c ****   
+  54:u8g2_lib/u8g2_message.c **** 	
+  55:u8g2_lib/u8g2_message.c ****   /* calculate the width of the button line */
+  56:u8g2_lib/u8g2_message.c ****   button_line_width = 0;
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc6xQtLh.s 			page 3
+
+
+  57:u8g2_lib/u8g2_message.c ****   for( i = 0; i < cnt; i++ )
+  60              		.loc 1 57 0
+  61 0018 0025     		movs	r5, #0
+  56:u8g2_lib/u8g2_message.c ****   for( i = 0; i < cnt; i++ )
+  62              		.loc 1 56 0
+  63 001a AB46     		mov	fp, r5
+  64              		.loc 1 57 0
+  65 001c 0CE0     		b	.L2
+  66              	.LVL4:
+  67              	.L3:
+  58:u8g2_lib/u8g2_message.c ****   {
+  59:u8g2_lib/u8g2_message.c ****     button_line_width += u8g2_GetUTF8Width(u8g2, u8x8_GetStringLineStart(i, s));
+  68              		.loc 1 59 0 discriminator 3
+  69 001e 3146     		mov	r1, r6
+  70 0020 2846     		mov	r0, r5
+  71 0022 FFF7FEFF 		bl	u8x8_GetStringLineStart
+  72              	.LVL5:
+  73 0026 0146     		mov	r1, r0
+  74 0028 3846     		mov	r0, r7
+  75 002a FFF7FEFF 		bl	u8g2_GetUTF8Width
+  76              	.LVL6:
+  77 002e 5844     		add	r0, r0, fp
+  78 0030 1FFA80FB 		uxth	fp, r0
+  79              	.LVL7:
+  57:u8g2_lib/u8g2_message.c ****   {
+  80              		.loc 1 57 0 discriminator 3
+  81 0034 0135     		adds	r5, r5, #1
+  82              	.LVL8:
+  83 0036 EDB2     		uxtb	r5, r5
+  84              	.LVL9:
+  85              	.L2:
+  57:u8g2_lib/u8g2_message.c ****   {
+  86              		.loc 1 57 0 is_stmt 0 discriminator 1
+  87 0038 4545     		cmp	r5, r8
+  88 003a F0D3     		bcc	.L3
+  60:u8g2_lib/u8g2_message.c ****   }
+  61:u8g2_lib/u8g2_message.c ****   button_line_width += (cnt-1)*SPACE_BETWEEN_BUTTONS_IN_PIXEL;	/* add some space between the button
+  89              		.loc 1 61 0 is_stmt 1
+  90 003c 08F1FF33 		add	r3, r8, #-1
+  91 0040 03EB4303 		add	r3, r3, r3, lsl #1
+  92 0044 5800     		lsls	r0, r3, #1
+  93 0046 5844     		add	r0, r0, fp
+  94 0048 80B2     		uxth	r0, r0
+  95              	.LVL10:
+  62:u8g2_lib/u8g2_message.c ****   
+  63:u8g2_lib/u8g2_message.c ****   /* calculate the left offset */
+  64:u8g2_lib/u8g2_message.c ****   d = 0;
+  65:u8g2_lib/u8g2_message.c ****   if ( button_line_width < w )
+  96              		.loc 1 65 0
+  97 004a A042     		cmp	r0, r4
+  98 004c 03D2     		bcs	.L8
+  99              	.LVL11:
+  66:u8g2_lib/u8g2_message.c ****   {
+  67:u8g2_lib/u8g2_message.c ****     d = w;
+  68:u8g2_lib/u8g2_message.c ****     d -= button_line_width;
+ 100              		.loc 1 68 0
+ 101 004e 241A     		subs	r4, r4, r0
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc6xQtLh.s 			page 4
+
+
+ 102              	.LVL12:
+  69:u8g2_lib/u8g2_message.c ****     d /= 2;
+ 103              		.loc 1 69 0
+ 104 0050 C4F34E04 		ubfx	r4, r4, #1, #15
+ 105              	.LVL13:
+ 106 0054 00E0     		b	.L4
+ 107              	.LVL14:
+ 108              	.L8:
+  64:u8g2_lib/u8g2_message.c ****   if ( button_line_width < w )
+ 109              		.loc 1 64 0
+ 110 0056 0024     		movs	r4, #0
+ 111              	.LVL15:
+ 112              	.L4:
+  70:u8g2_lib/u8g2_message.c ****   }
+  71:u8g2_lib/u8g2_message.c ****   
+  72:u8g2_lib/u8g2_message.c ****   /* draw the buttons */
+  73:u8g2_lib/u8g2_message.c ****   x = d;
+  74:u8g2_lib/u8g2_message.c ****   for( i = 0; i < cnt; i++ )
+  75:u8g2_lib/u8g2_message.c ****   {
+  76:u8g2_lib/u8g2_message.c ****     is_invert = 0;
+  77:u8g2_lib/u8g2_message.c ****     if ( i == cursor )
+  78:u8g2_lib/u8g2_message.c ****       is_invert = 1;
+ 113              		.loc 1 78 0 discriminator 1
+ 114 0058 0025     		movs	r5, #0
+ 115              	.LVL16:
+ 116 005a 23E0     		b	.L5
+ 117              	.LVL17:
+ 118              	.L7:
+  77:u8g2_lib/u8g2_message.c ****       is_invert = 1;
+ 119              		.loc 1 77 0
+ 120 005c 5545     		cmp	r5, r10
+ 121 005e 02D0     		beq	.L9
+  76:u8g2_lib/u8g2_message.c ****     if ( i == cursor )
+ 122              		.loc 1 76 0
+ 123 0060 4FF0000B 		mov	fp, #0
+ 124 0064 01E0     		b	.L6
+ 125              	.L9:
+ 126              		.loc 1 78 0
+ 127 0066 4FF0010B 		mov	fp, #1
+ 128              	.L6:
+ 129              	.LVL18:
+  79:u8g2_lib/u8g2_message.c **** 
+  80:u8g2_lib/u8g2_message.c ****     u8g2_DrawUTF8Line(u8g2, x, y, 0, u8x8_GetStringLineStart(i, s), 1, is_invert);
+ 130              		.loc 1 80 0 discriminator 2
+ 131 006a 3146     		mov	r1, r6
+ 132 006c 2846     		mov	r0, r5
+ 133 006e FFF7FEFF 		bl	u8x8_GetStringLineStart
+ 134              	.LVL19:
+ 135 0072 CDF808B0 		str	fp, [sp, #8]
+ 136 0076 0123     		movs	r3, #1
+ 137 0078 0193     		str	r3, [sp, #4]
+ 138 007a 0090     		str	r0, [sp]
+ 139 007c 0023     		movs	r3, #0
+ 140 007e 4A46     		mov	r2, r9
+ 141 0080 2146     		mov	r1, r4
+ 142 0082 3846     		mov	r0, r7
+ 143 0084 FFF7FEFF 		bl	u8g2_DrawUTF8Line
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc6xQtLh.s 			page 5
+
+
+ 144              	.LVL20:
+  81:u8g2_lib/u8g2_message.c ****     x += u8g2_GetUTF8Width(u8g2, u8x8_GetStringLineStart(i, s));
+ 145              		.loc 1 81 0 discriminator 2
+ 146 0088 3146     		mov	r1, r6
+ 147 008a 2846     		mov	r0, r5
+ 148 008c FFF7FEFF 		bl	u8x8_GetStringLineStart
+ 149              	.LVL21:
+ 150 0090 0146     		mov	r1, r0
+ 151 0092 3846     		mov	r0, r7
+ 152 0094 FFF7FEFF 		bl	u8g2_GetUTF8Width
+ 153              	.LVL22:
+ 154 0098 2044     		add	r0, r0, r4
+ 155 009a 84B2     		uxth	r4, r0
+ 156              	.LVL23:
+  82:u8g2_lib/u8g2_message.c ****     x += SPACE_BETWEEN_BUTTONS_IN_PIXEL;
+ 157              		.loc 1 82 0 discriminator 2
+ 158 009c 0634     		adds	r4, r4, #6
+ 159              	.LVL24:
+ 160 009e A4B2     		uxth	r4, r4
+ 161              	.LVL25:
+  74:u8g2_lib/u8g2_message.c ****   {
+ 162              		.loc 1 74 0 discriminator 2
+ 163 00a0 0135     		adds	r5, r5, #1
+ 164              	.LVL26:
+ 165 00a2 EDB2     		uxtb	r5, r5
+ 166              	.LVL27:
+ 167              	.L5:
+  74:u8g2_lib/u8g2_message.c ****   {
+ 168              		.loc 1 74 0 is_stmt 0 discriminator 1
+ 169 00a4 4545     		cmp	r5, r8
+ 170 00a6 D9D3     		bcc	.L7
+  83:u8g2_lib/u8g2_message.c ****   }
+  84:u8g2_lib/u8g2_message.c ****   
+  85:u8g2_lib/u8g2_message.c ****   /* return the number of buttons */
+  86:u8g2_lib/u8g2_message.c ****   return cnt;
+  87:u8g2_lib/u8g2_message.c **** }
+ 171              		.loc 1 87 0 is_stmt 1
+ 172 00a8 4046     		mov	r0, r8
+ 173 00aa 05B0     		add	sp, sp, #20
+ 174              	.LCFI2:
+ 175              		.cfi_def_cfa_offset 36
+ 176              		@ sp needed
+ 177 00ac BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 178              		.cfi_endproc
+ 179              	.LFE0:
+ 181              		.section	.text.u8g2_UserInterfaceMessage,"ax",%progbits
+ 182              		.align	2
+ 183              		.global	u8g2_UserInterfaceMessage
+ 184              		.thumb
+ 185              		.thumb_func
+ 187              	u8g2_UserInterfaceMessage:
+ 188              	.LFB1:
+  88:u8g2_lib/u8g2_message.c **** 
+  89:u8g2_lib/u8g2_message.c **** /*
+  90:u8g2_lib/u8g2_message.c ****   title1:	Multiple lines,separated by '\n'
+  91:u8g2_lib/u8g2_message.c ****   title2:	A single line/string which is terminated by '\0' or '\n' . "title2" accepts the return va
+  92:u8g2_lib/u8g2_message.c ****   title3:	Multiple lines,separated by '\n'
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc6xQtLh.s 			page 6
+
+
+  93:u8g2_lib/u8g2_message.c ****   buttons:	one more more buttons separated by '\n' and terminated with '\0'
+  94:u8g2_lib/u8g2_message.c ****   side effects:
+  95:u8g2_lib/u8g2_message.c ****     u8g2_SetFontDirection(u8g2, 0);
+  96:u8g2_lib/u8g2_message.c ****     u8g2_SetFontPosBaseline(u8g2);
+  97:u8g2_lib/u8g2_message.c **** */
+  98:u8g2_lib/u8g2_message.c **** 
+  99:u8g2_lib/u8g2_message.c **** uint8_t u8g2_UserInterfaceMessage(u8g2_t *u8g2, const char *title1, const char *title2, const char 
+ 100:u8g2_lib/u8g2_message.c **** {
+ 189              		.loc 1 100 0
+ 190              		.cfi_startproc
+ 191              		@ args = 4, pretend = 0, frame = 8
+ 192              		@ frame_needed = 0, uses_anonymous_args = 0
+ 193              	.LVL28:
+ 194 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 195              	.LCFI3:
+ 196              		.cfi_def_cfa_offset 36
+ 197              		.cfi_offset 4, -36
+ 198              		.cfi_offset 5, -32
+ 199              		.cfi_offset 6, -28
+ 200              		.cfi_offset 7, -24
+ 201              		.cfi_offset 8, -20
+ 202              		.cfi_offset 9, -16
+ 203              		.cfi_offset 10, -12
+ 204              		.cfi_offset 11, -8
+ 205              		.cfi_offset 14, -4
+ 206 0004 87B0     		sub	sp, sp, #28
+ 207              	.LCFI4:
+ 208              		.cfi_def_cfa_offset 64
+ 209 0006 0446     		mov	r4, r0
+ 210 0008 8946     		mov	r9, r1
+ 211 000a 1746     		mov	r7, r2
+ 212 000c 9A46     		mov	r10, r3
+ 213 000e DDF840B0 		ldr	fp, [sp, #64]
+ 214              	.LVL29:
+ 101:u8g2_lib/u8g2_message.c ****   uint8_t height;
+ 102:u8g2_lib/u8g2_message.c ****   uint8_t line_height;
+ 103:u8g2_lib/u8g2_message.c ****   u8g2_uint_t pixel_height;
+ 104:u8g2_lib/u8g2_message.c ****   u8g2_uint_t y, yy;
+ 105:u8g2_lib/u8g2_message.c **** 	
+ 106:u8g2_lib/u8g2_message.c ****   uint8_t cursor = 0;
+ 107:u8g2_lib/u8g2_message.c ****   uint8_t button_cnt;
+ 108:u8g2_lib/u8g2_message.c ****   uint8_t event;
+ 109:u8g2_lib/u8g2_message.c **** 	
+ 110:u8g2_lib/u8g2_message.c ****   /* only horizontal strings are supported, so force this here */
+ 111:u8g2_lib/u8g2_message.c ****   u8g2_SetFontDirection(u8g2, 0);
+ 215              		.loc 1 111 0
+ 216 0012 0021     		movs	r1, #0
+ 217              	.LVL30:
+ 218 0014 FFF7FEFF 		bl	u8g2_SetFontDirection
+ 219              	.LVL31:
+ 112:u8g2_lib/u8g2_message.c **** 
+ 113:u8g2_lib/u8g2_message.c ****   /* force baseline position */
+ 114:u8g2_lib/u8g2_message.c ****   u8g2_SetFontPosBaseline(u8g2);
+ 220              		.loc 1 114 0
+ 221 0018 2046     		mov	r0, r4
+ 222 001a FFF7FEFF 		bl	u8g2_SetFontPosBaseline
+ 223              	.LVL32:
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc6xQtLh.s 			page 7
+
+
+ 115:u8g2_lib/u8g2_message.c **** 	
+ 116:u8g2_lib/u8g2_message.c **** 	
+ 117:u8g2_lib/u8g2_message.c ****   /* calculate line height */
+ 118:u8g2_lib/u8g2_message.c ****   line_height = u8g2_GetAscent(u8g2);
+ 224              		.loc 1 118 0
+ 225 001e 94F88E30 		ldrb	r3, [r4, #142]	@ zero_extendqisi2
+ 226              	.LVL33:
+ 119:u8g2_lib/u8g2_message.c ****   line_height -= u8g2_GetDescent(u8g2);
+ 227              		.loc 1 119 0
+ 228 0022 94F98F50 		ldrsb	r5, [r4, #143]
+ 229 0026 5D1B     		subs	r5, r3, r5
+ 230 0028 EDB2     		uxtb	r5, r5
+ 231              	.LVL34:
+ 120:u8g2_lib/u8g2_message.c **** 
+ 121:u8g2_lib/u8g2_message.c ****   /* calculate overall height of the message box in lines*/
+ 122:u8g2_lib/u8g2_message.c ****   height = 1;	/* button line */
+ 123:u8g2_lib/u8g2_message.c ****   height += u8x8_GetStringLineCnt(title1);
+ 232              		.loc 1 123 0
+ 233 002a 4846     		mov	r0, r9
+ 234 002c FFF7FEFF 		bl	u8x8_GetStringLineCnt
+ 235              	.LVL35:
+ 236 0030 461C     		adds	r6, r0, #1
+ 237 0032 F6B2     		uxtb	r6, r6
+ 238              	.LVL36:
+ 124:u8g2_lib/u8g2_message.c ****   if ( title2 != NULL )
+ 239              		.loc 1 124 0
+ 240 0034 0FB1     		cbz	r7, .L12
+ 125:u8g2_lib/u8g2_message.c ****     height++;
+ 241              		.loc 1 125 0
+ 242 0036 0230     		adds	r0, r0, #2
+ 243 0038 C6B2     		uxtb	r6, r0
+ 244              	.LVL37:
+ 245              	.L12:
+ 126:u8g2_lib/u8g2_message.c ****   height += u8x8_GetStringLineCnt(title3);
+ 246              		.loc 1 126 0
+ 247 003a 5046     		mov	r0, r10
+ 248 003c FFF7FEFF 		bl	u8x8_GetStringLineCnt
+ 249              	.LVL38:
+ 250 0040 3044     		add	r0, r0, r6
+ 251              	.LVL39:
+ 127:u8g2_lib/u8g2_message.c ****   
+ 128:u8g2_lib/u8g2_message.c ****   /* calculate the height in pixel */
+ 129:u8g2_lib/u8g2_message.c ****   pixel_height = height;
+ 252              		.loc 1 129 0
+ 253 0042 C3B2     		uxtb	r3, r0
+ 254              	.LVL40:
+ 130:u8g2_lib/u8g2_message.c ****   pixel_height *= line_height;
+ 255              		.loc 1 130 0
+ 256 0044 ADB2     		uxth	r5, r5
+ 257              	.LVL41:
+ 258 0046 05FB03F3 		mul	r3, r5, r3
+ 259              	.LVL42:
+ 131:u8g2_lib/u8g2_message.c ****   
+ 132:u8g2_lib/u8g2_message.c ****   /* ... and add the space between the text and the buttons */
+ 133:u8g2_lib/u8g2_message.c ****   pixel_height +=SPACE_BETWEEN_TEXT_AND_BUTTONS_IN_PIXEL;
+ 260              		.loc 1 133 0
+ 261 004a 0333     		adds	r3, r3, #3
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc6xQtLh.s 			page 8
+
+
+ 262              	.LVL43:
+ 263 004c 9BB2     		uxth	r3, r3
+ 264              	.LVL44:
+ 134:u8g2_lib/u8g2_message.c ****   
+ 135:u8g2_lib/u8g2_message.c ****   /* calculate offset from top */
+ 136:u8g2_lib/u8g2_message.c ****   y = 0;
+ 137:u8g2_lib/u8g2_message.c ****   if ( pixel_height < u8g2_GetDisplayHeight(u8g2)   )
+ 265              		.loc 1 137 0
+ 266 004e B4F84620 		ldrh	r2, [r4, #70]
+ 267 0052 9342     		cmp	r3, r2
+ 268 0054 03D2     		bcs	.L26
+ 269              	.LVL45:
+ 138:u8g2_lib/u8g2_message.c ****   {
+ 139:u8g2_lib/u8g2_message.c ****     y = u8g2_GetDisplayHeight(u8g2);
+ 140:u8g2_lib/u8g2_message.c ****     y -= pixel_height;
+ 270              		.loc 1 140 0
+ 271 0056 D31A     		subs	r3, r2, r3
+ 272              	.LVL46:
+ 141:u8g2_lib/u8g2_message.c ****     y /= 2;
+ 273              		.loc 1 141 0
+ 274 0058 C3F34E03 		ubfx	r3, r3, #1, #15
+ 275              	.LVL47:
+ 276 005c 00E0     		b	.L13
+ 277              	.LVL48:
+ 278              	.L26:
+ 136:u8g2_lib/u8g2_message.c ****   if ( pixel_height < u8g2_GetDisplayHeight(u8g2)   )
+ 279              		.loc 1 136 0
+ 280 005e 0023     		movs	r3, #0
+ 281              	.LVL49:
+ 282              	.L13:
+ 142:u8g2_lib/u8g2_message.c ****   }
+ 143:u8g2_lib/u8g2_message.c ****   y += u8g2_GetAscent(u8g2);
+ 283              		.loc 1 143 0
+ 284 0060 94F98E60 		ldrsb	r6, [r4, #142]
+ 285 0064 1E44     		add	r6, r6, r3
+ 286 0066 B6B2     		uxth	r6, r6
+ 287              	.LVL50:
+ 106:u8g2_lib/u8g2_message.c ****   uint8_t button_cnt;
+ 288              		.loc 1 106 0
+ 289 0068 0023     		movs	r3, #0
+ 290 006a 0493     		str	r3, [sp, #16]
+ 291 006c 01E0     		b	.L14
+ 292              	.LVL51:
+ 293              	.L27:
+ 144:u8g2_lib/u8g2_message.c **** 
+ 145:u8g2_lib/u8g2_message.c ****   
+ 146:u8g2_lib/u8g2_message.c ****   for(;;)
+ 147:u8g2_lib/u8g2_message.c ****   {
+ 148:u8g2_lib/u8g2_message.c ****       u8g2_FirstPage(u8g2);
+ 149:u8g2_lib/u8g2_message.c ****       do
+ 150:u8g2_lib/u8g2_message.c ****       {
+ 151:u8g2_lib/u8g2_message.c **** 	  yy = y;
+ 152:u8g2_lib/u8g2_message.c **** 	  /* draw message box */
+ 153:u8g2_lib/u8g2_message.c **** 	  
+ 154:u8g2_lib/u8g2_message.c **** 	  yy += u8g2_DrawUTF8Lines(u8g2, 0, yy, u8g2_GetDisplayWidth(u8g2), line_height, title1);
+ 155:u8g2_lib/u8g2_message.c **** 	  if ( title2 != NULL )
+ 156:u8g2_lib/u8g2_message.c **** 	  {
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc6xQtLh.s 			page 9
+
+
+ 157:u8g2_lib/u8g2_message.c **** 	    u8g2_DrawUTF8Line(u8g2, 0, yy, u8g2_GetDisplayWidth(u8g2), title2, 0, 0);
+ 158:u8g2_lib/u8g2_message.c **** 	    yy+=line_height;
+ 159:u8g2_lib/u8g2_message.c **** 	  }
+ 160:u8g2_lib/u8g2_message.c **** 	  yy += u8g2_DrawUTF8Lines(u8g2, 0, yy, u8g2_GetDisplayWidth(u8g2), line_height, title3);
+ 161:u8g2_lib/u8g2_message.c **** 	  yy += SPACE_BETWEEN_TEXT_AND_BUTTONS_IN_PIXEL;
+ 162:u8g2_lib/u8g2_message.c **** 
+ 163:u8g2_lib/u8g2_message.c **** 	  button_cnt = u8g2_draw_button_line(u8g2, yy, u8g2_GetDisplayWidth(u8g2), cursor, buttons);
+ 164:u8g2_lib/u8g2_message.c **** 	  
+ 165:u8g2_lib/u8g2_message.c ****       } while( u8g2_NextPage(u8g2) );
+ 166:u8g2_lib/u8g2_message.c **** 
+ 167:u8g2_lib/u8g2_message.c **** #ifdef U8G2_REF_MAN_PIC
+ 168:u8g2_lib/u8g2_message.c ****       return 0;
+ 169:u8g2_lib/u8g2_message.c **** #endif
+ 170:u8g2_lib/u8g2_message.c **** 	  
+ 171:u8g2_lib/u8g2_message.c ****       for(;;)
+ 172:u8g2_lib/u8g2_message.c ****       {
+ 173:u8g2_lib/u8g2_message.c **** 	    event = u8x8_GetMenuEvent(u8g2_GetU8x8(u8g2));
+ 174:u8g2_lib/u8g2_message.c **** 	    if ( event == U8X8_MSG_GPIO_MENU_SELECT )
+ 175:u8g2_lib/u8g2_message.c **** 	      return cursor+1;
+ 176:u8g2_lib/u8g2_message.c **** 	    else if ( event == U8X8_MSG_GPIO_MENU_HOME )
+ 177:u8g2_lib/u8g2_message.c **** 	      return 0;
+ 178:u8g2_lib/u8g2_message.c **** 	    else if ( event == U8X8_MSG_GPIO_MENU_NEXT || event == U8X8_MSG_GPIO_MENU_DOWN )
+ 179:u8g2_lib/u8g2_message.c **** 	    {
+ 180:u8g2_lib/u8g2_message.c **** 	      cursor++;
+ 181:u8g2_lib/u8g2_message.c **** 	      if ( cursor >= button_cnt )
+ 182:u8g2_lib/u8g2_message.c **** 		cursor = 0;
+ 294              		.loc 1 182 0
+ 295 006e 0023     		movs	r3, #0
+ 296              	.LVL52:
+ 297 0070 0493     		str	r3, [sp, #16]
+ 298              	.LVL53:
+ 299              	.L14:
+ 148:u8g2_lib/u8g2_message.c ****       do
+ 300              		.loc 1 148 0
+ 301 0072 2046     		mov	r0, r4
+ 302 0074 FFF7FEFF 		bl	u8g2_FirstPage
+ 303              	.LVL54:
+ 304              	.L16:
+ 154:u8g2_lib/u8g2_message.c **** 	  if ( title2 != NULL )
+ 305              		.loc 1 154 0
+ 306 0078 B4F84430 		ldrh	r3, [r4, #68]
+ 307 007c CDF80490 		str	r9, [sp, #4]
+ 308 0080 0095     		str	r5, [sp]
+ 309 0082 3246     		mov	r2, r6
+ 310 0084 0021     		movs	r1, #0
+ 311 0086 2046     		mov	r0, r4
+ 312 0088 FFF7FEFF 		bl	u8g2_DrawUTF8Lines
+ 313              	.LVL55:
+ 314 008c 3044     		add	r0, r0, r6
+ 315 008e 1FFA80F8 		uxth	r8, r0
+ 316              	.LVL56:
+ 155:u8g2_lib/u8g2_message.c **** 	  {
+ 317              		.loc 1 155 0
+ 318 0092 67B1     		cbz	r7, .L15
+ 157:u8g2_lib/u8g2_message.c **** 	    yy+=line_height;
+ 319              		.loc 1 157 0
+ 320 0094 B4F84430 		ldrh	r3, [r4, #68]
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc6xQtLh.s 			page 10
+
+
+ 321 0098 0021     		movs	r1, #0
+ 322 009a 0291     		str	r1, [sp, #8]
+ 323 009c 0191     		str	r1, [sp, #4]
+ 324 009e 0097     		str	r7, [sp]
+ 325 00a0 4246     		mov	r2, r8
+ 326 00a2 2046     		mov	r0, r4
+ 327 00a4 FFF7FEFF 		bl	u8g2_DrawUTF8Line
+ 328              	.LVL57:
+ 158:u8g2_lib/u8g2_message.c **** 	  }
+ 329              		.loc 1 158 0
+ 330 00a8 A844     		add	r8, r8, r5
+ 331              	.LVL58:
+ 332 00aa 1FFA88F8 		uxth	r8, r8
+ 333              	.LVL59:
+ 334              	.L15:
+ 160:u8g2_lib/u8g2_message.c **** 	  yy += SPACE_BETWEEN_TEXT_AND_BUTTONS_IN_PIXEL;
+ 335              		.loc 1 160 0
+ 336 00ae B4F84430 		ldrh	r3, [r4, #68]
+ 337 00b2 CDF804A0 		str	r10, [sp, #4]
+ 338 00b6 0095     		str	r5, [sp]
+ 339 00b8 4246     		mov	r2, r8
+ 340 00ba 0021     		movs	r1, #0
+ 341 00bc 2046     		mov	r0, r4
+ 342 00be FFF7FEFF 		bl	u8g2_DrawUTF8Lines
+ 343              	.LVL60:
+ 344 00c2 4044     		add	r0, r0, r8
+ 345 00c4 81B2     		uxth	r1, r0
+ 346              	.LVL61:
+ 161:u8g2_lib/u8g2_message.c **** 
+ 347              		.loc 1 161 0
+ 348 00c6 0331     		adds	r1, r1, #3
+ 349              	.LVL62:
+ 163:u8g2_lib/u8g2_message.c **** 	  
+ 350              		.loc 1 163 0
+ 351 00c8 B4F84420 		ldrh	r2, [r4, #68]
+ 352 00cc CDF800B0 		str	fp, [sp]
+ 353 00d0 049B     		ldr	r3, [sp, #16]
+ 354 00d2 89B2     		uxth	r1, r1
+ 355 00d4 2046     		mov	r0, r4
+ 356 00d6 FFF7FEFF 		bl	u8g2_draw_button_line
+ 357              	.LVL63:
+ 358 00da 8046     		mov	r8, r0
+ 359              	.LVL64:
+ 165:u8g2_lib/u8g2_message.c **** 
+ 360              		.loc 1 165 0
+ 361 00dc 2046     		mov	r0, r4
+ 362 00de FFF7FEFF 		bl	u8g2_NextPage
+ 363              	.LVL65:
+ 364 00e2 0028     		cmp	r0, #0
+ 365 00e4 C8D1     		bne	.L16
+ 366 00e6 0590     		str	r0, [sp, #20]
+ 367              	.L24:
+ 173:u8g2_lib/u8g2_message.c **** 	    if ( event == U8X8_MSG_GPIO_MENU_SELECT )
+ 368              		.loc 1 173 0
+ 369 00e8 2046     		mov	r0, r4
+ 370 00ea FFF7FEFF 		bl	u8x8_GetMenuEvent
+ 371              	.LVL66:
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc6xQtLh.s 			page 11
+
+
+ 174:u8g2_lib/u8g2_message.c **** 	      return cursor+1;
+ 372              		.loc 1 174 0
+ 373 00ee 5028     		cmp	r0, #80
+ 374 00f0 04D1     		bne	.L17
+ 175:u8g2_lib/u8g2_message.c **** 	    else if ( event == U8X8_MSG_GPIO_MENU_HOME )
+ 375              		.loc 1 175 0
+ 376 00f2 049B     		ldr	r3, [sp, #16]
+ 377 00f4 0133     		adds	r3, r3, #1
+ 378 00f6 DBB2     		uxtb	r3, r3
+ 379 00f8 0593     		str	r3, [sp, #20]
+ 380 00fa 19E0     		b	.L18
+ 381              	.L17:
+ 176:u8g2_lib/u8g2_message.c **** 	      return 0;
+ 382              		.loc 1 176 0
+ 383 00fc 5328     		cmp	r0, #83
+ 384 00fe 17D0     		beq	.L18
+ 178:u8g2_lib/u8g2_message.c **** 	    {
+ 385              		.loc 1 178 0
+ 386 0100 5128     		cmp	r0, #81
+ 387 0102 01D0     		beq	.L19
+ 178:u8g2_lib/u8g2_message.c **** 	    {
+ 388              		.loc 1 178 0 is_stmt 0 discriminator 1
+ 389 0104 5528     		cmp	r0, #85
+ 390 0106 06D1     		bne	.L20
+ 391              	.L19:
+ 180:u8g2_lib/u8g2_message.c **** 	      if ( cursor >= button_cnt )
+ 392              		.loc 1 180 0 is_stmt 1
+ 393 0108 049B     		ldr	r3, [sp, #16]
+ 394 010a 0133     		adds	r3, r3, #1
+ 395 010c DBB2     		uxtb	r3, r3
+ 396 010e 0493     		str	r3, [sp, #16]
+ 397              	.LVL67:
+ 181:u8g2_lib/u8g2_message.c **** 		cursor = 0;
+ 398              		.loc 1 181 0
+ 399 0110 9845     		cmp	r8, r3
+ 400 0112 ACD9     		bls	.L27
+ 401 0114 ADE7     		b	.L14
+ 402              	.LVL68:
+ 403              	.L20:
+ 183:u8g2_lib/u8g2_message.c **** 	      break;
+ 184:u8g2_lib/u8g2_message.c **** 	    }
+ 185:u8g2_lib/u8g2_message.c **** 	    else if ( event == U8X8_MSG_GPIO_MENU_PREV || event == U8X8_MSG_GPIO_MENU_UP )
+ 404              		.loc 1 185 0
+ 405 0116 5228     		cmp	r0, #82
+ 406 0118 01D0     		beq	.L23
+ 407              		.loc 1 185 0 is_stmt 0 discriminator 1
+ 408 011a 5428     		cmp	r0, #84
+ 409 011c E4D1     		bne	.L24
+ 410              	.L23:
+ 186:u8g2_lib/u8g2_message.c **** 	    {
+ 187:u8g2_lib/u8g2_message.c **** 	      if ( cursor == 0 )
+ 411              		.loc 1 187 0 is_stmt 1
+ 412 011e 049B     		ldr	r3, [sp, #16]
+ 413 0120 03B1     		cbz	r3, .L25
+ 414 0122 9846     		mov	r8, r3
+ 415              	.LVL69:
+ 416              	.L25:
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc6xQtLh.s 			page 12
+
+
+ 188:u8g2_lib/u8g2_message.c **** 		cursor = button_cnt;
+ 189:u8g2_lib/u8g2_message.c **** 	      cursor--;
+ 417              		.loc 1 189 0
+ 418 0124 08F1FF38 		add	r8, r8, #-1
+ 419              	.LVL70:
+ 420 0128 5FFA88F3 		uxtb	r3, r8
+ 421 012c 0493     		str	r3, [sp, #16]
+ 422              	.LVL71:
+ 190:u8g2_lib/u8g2_message.c **** 	      break;
+ 423              		.loc 1 190 0
+ 424 012e A0E7     		b	.L14
+ 425              	.LVL72:
+ 426              	.L18:
+ 191:u8g2_lib/u8g2_message.c **** 	    }    
+ 192:u8g2_lib/u8g2_message.c ****       }
+ 193:u8g2_lib/u8g2_message.c ****   }
+ 194:u8g2_lib/u8g2_message.c ****   /* never reached */
+ 195:u8g2_lib/u8g2_message.c ****   //return 0;
+ 196:u8g2_lib/u8g2_message.c **** }
+ 427              		.loc 1 196 0
+ 428 0130 0598     		ldr	r0, [sp, #20]
+ 429              	.LVL73:
+ 430 0132 07B0     		add	sp, sp, #28
+ 431              	.LCFI5:
+ 432              		.cfi_def_cfa_offset 36
+ 433              		@ sp needed
+ 434 0134 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 435              		.cfi_endproc
+ 436              	.LFE1:
+ 438              		.text
+ 439              	.Letext0:
+ 440              		.file 2 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\mach
+ 441              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\sys\
+ 442              		.file 4 "u8g2_lib/u8x8.h"
+ 443              		.file 5 "u8g2_lib/u8g2.h"
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc6xQtLh.s 			page 13
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 u8g2_message.c
+C:\Users\master\AppData\Local\Temp\cc6xQtLh.s:20     .text.u8g2_draw_button_line:00000000 $t
+C:\Users\master\AppData\Local\Temp\cc6xQtLh.s:25     .text.u8g2_draw_button_line:00000000 u8g2_draw_button_line
+C:\Users\master\AppData\Local\Temp\cc6xQtLh.s:182    .text.u8g2_UserInterfaceMessage:00000000 $t
+C:\Users\master\AppData\Local\Temp\cc6xQtLh.s:187    .text.u8g2_UserInterfaceMessage:00000000 u8g2_UserInterfaceMessage
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+u8x8_GetStringLineCnt
+u8x8_GetStringLineStart
+u8g2_GetUTF8Width
+u8g2_DrawUTF8Line
+u8g2_SetFontDirection
+u8g2_SetFontPosBaseline
+u8g2_FirstPage
+u8g2_DrawUTF8Lines
+u8g2_NextPage
+u8x8_GetMenuEvent

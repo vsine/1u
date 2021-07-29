@@ -1,0 +1,705 @@
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc8urnt3.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"u8x8_selection_list.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.u8x8_sl_string_line_cb,"ax",%progbits
+  20              		.align	2
+  21              		.global	u8x8_sl_string_line_cb
+  22              		.thumb
+  23              		.thumb_func
+  25              	u8x8_sl_string_line_cb:
+  26              	.LFB3:
+  27              		.file 1 "u8g2_lib/u8x8_selection_list.c"
+   1:u8g2_lib/u8x8_selection_list.c **** /*
+   2:u8g2_lib/u8x8_selection_list.c **** 
+   3:u8g2_lib/u8x8_selection_list.c ****   u8x8_selection_list.c
+   4:u8g2_lib/u8x8_selection_list.c ****   
+   5:u8g2_lib/u8x8_selection_list.c ****   selection list with scroll option
+   6:u8g2_lib/u8x8_selection_list.c ****   
+   7:u8g2_lib/u8x8_selection_list.c ****   Universal 8bit Graphics Library (https://github.com/olikraus/u8g2/)
+   8:u8g2_lib/u8x8_selection_list.c **** 
+   9:u8g2_lib/u8x8_selection_list.c ****   Copyright (c) 2016, olikraus@gmail.com
+  10:u8g2_lib/u8x8_selection_list.c ****   All rights reserved.
+  11:u8g2_lib/u8x8_selection_list.c **** 
+  12:u8g2_lib/u8x8_selection_list.c ****   Redistribution and use in source and binary forms, with or without modification, 
+  13:u8g2_lib/u8x8_selection_list.c ****   are permitted provided that the following conditions are met:
+  14:u8g2_lib/u8x8_selection_list.c **** 
+  15:u8g2_lib/u8x8_selection_list.c ****   * Redistributions of source code must retain the above copyright notice, this list 
+  16:u8g2_lib/u8x8_selection_list.c ****     of conditions and the following disclaimer.
+  17:u8g2_lib/u8x8_selection_list.c ****     
+  18:u8g2_lib/u8x8_selection_list.c ****   * Redistributions in binary form must reproduce the above copyright notice, this 
+  19:u8g2_lib/u8x8_selection_list.c ****     list of conditions and the following disclaimer in the documentation and/or other 
+  20:u8g2_lib/u8x8_selection_list.c ****     materials provided with the distribution.
+  21:u8g2_lib/u8x8_selection_list.c **** 
+  22:u8g2_lib/u8x8_selection_list.c ****   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND 
+  23:u8g2_lib/u8x8_selection_list.c ****   CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, 
+  24:u8g2_lib/u8x8_selection_list.c ****   INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF 
+  25:u8g2_lib/u8x8_selection_list.c ****   MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE 
+  26:u8g2_lib/u8x8_selection_list.c ****   DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR 
+  27:u8g2_lib/u8x8_selection_list.c ****   CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+  28:u8g2_lib/u8x8_selection_list.c ****   SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+  29:u8g2_lib/u8x8_selection_list.c ****   NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; 
+  30:u8g2_lib/u8x8_selection_list.c ****   LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER 
+  31:u8g2_lib/u8x8_selection_list.c ****   CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, 
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc8urnt3.s 			page 2
+
+
+  32:u8g2_lib/u8x8_selection_list.c ****   STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+  33:u8g2_lib/u8x8_selection_list.c ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
+  34:u8g2_lib/u8x8_selection_list.c ****   ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.  
+  35:u8g2_lib/u8x8_selection_list.c ****   
+  36:u8g2_lib/u8x8_selection_list.c **** */
+  37:u8g2_lib/u8x8_selection_list.c **** 
+  38:u8g2_lib/u8x8_selection_list.c **** #include "u8x8.h"
+  39:u8g2_lib/u8x8_selection_list.c **** 
+  40:u8g2_lib/u8x8_selection_list.c **** /*
+  41:u8g2_lib/u8x8_selection_list.c ****   increase the cursor position
+  42:u8g2_lib/u8x8_selection_list.c **** */
+  43:u8g2_lib/u8x8_selection_list.c **** void u8sl_Next(u8sl_t *u8sl)
+  44:u8g2_lib/u8x8_selection_list.c **** {
+  45:u8g2_lib/u8x8_selection_list.c ****   u8sl->current_pos++;
+  46:u8g2_lib/u8x8_selection_list.c ****   if ( u8sl->current_pos >= u8sl->total )
+  47:u8g2_lib/u8x8_selection_list.c ****   {
+  48:u8g2_lib/u8x8_selection_list.c ****     u8sl->current_pos = 0;
+  49:u8g2_lib/u8x8_selection_list.c ****     u8sl->first_pos = 0;
+  50:u8g2_lib/u8x8_selection_list.c ****   }
+  51:u8g2_lib/u8x8_selection_list.c ****   else
+  52:u8g2_lib/u8x8_selection_list.c ****   {
+  53:u8g2_lib/u8x8_selection_list.c ****     if ( u8sl->first_pos + u8sl->visible <= u8sl->current_pos + 1 )
+  54:u8g2_lib/u8x8_selection_list.c ****     {
+  55:u8g2_lib/u8x8_selection_list.c ****       u8sl->first_pos = u8sl->current_pos - u8sl->visible + 1;
+  56:u8g2_lib/u8x8_selection_list.c ****     }
+  57:u8g2_lib/u8x8_selection_list.c ****   }
+  58:u8g2_lib/u8x8_selection_list.c **** }
+  59:u8g2_lib/u8x8_selection_list.c **** 
+  60:u8g2_lib/u8x8_selection_list.c **** void u8sl_Prev(u8sl_t *u8sl)
+  61:u8g2_lib/u8x8_selection_list.c **** {
+  62:u8g2_lib/u8x8_selection_list.c ****   if ( u8sl->current_pos == 0 )
+  63:u8g2_lib/u8x8_selection_list.c ****   {
+  64:u8g2_lib/u8x8_selection_list.c ****     u8sl->current_pos = u8sl->total - 1;
+  65:u8g2_lib/u8x8_selection_list.c ****     u8sl->first_pos = 0;
+  66:u8g2_lib/u8x8_selection_list.c ****     if ( u8sl->total > u8sl->visible )
+  67:u8g2_lib/u8x8_selection_list.c ****       u8sl->first_pos = u8sl->total - u8sl->visible;
+  68:u8g2_lib/u8x8_selection_list.c ****   }
+  69:u8g2_lib/u8x8_selection_list.c ****   else
+  70:u8g2_lib/u8x8_selection_list.c ****   {
+  71:u8g2_lib/u8x8_selection_list.c ****     u8sl->current_pos--;
+  72:u8g2_lib/u8x8_selection_list.c ****     if ( u8sl->first_pos > u8sl->current_pos )
+  73:u8g2_lib/u8x8_selection_list.c ****       u8sl->first_pos = u8sl->current_pos;
+  74:u8g2_lib/u8x8_selection_list.c ****   }
+  75:u8g2_lib/u8x8_selection_list.c **** }
+  76:u8g2_lib/u8x8_selection_list.c **** 
+  77:u8g2_lib/u8x8_selection_list.c **** void u8x8_DrawSelectionList(u8x8_t *u8x8, u8sl_t *u8sl, u8x8_sl_cb sl_cb, const void *aux)
+  78:u8g2_lib/u8x8_selection_list.c **** {
+  79:u8g2_lib/u8x8_selection_list.c ****   uint8_t i;
+  80:u8g2_lib/u8x8_selection_list.c ****   for( i = 0; i < u8sl->visible; i++ )
+  81:u8g2_lib/u8x8_selection_list.c ****   {
+  82:u8g2_lib/u8x8_selection_list.c ****     sl_cb(u8x8, u8sl, i+u8sl->first_pos, aux);
+  83:u8g2_lib/u8x8_selection_list.c ****   }
+  84:u8g2_lib/u8x8_selection_list.c **** }
+  85:u8g2_lib/u8x8_selection_list.c **** 
+  86:u8g2_lib/u8x8_selection_list.c **** /* selection list with string line */
+  87:u8g2_lib/u8x8_selection_list.c **** void u8x8_sl_string_line_cb(u8x8_t *u8x8, u8sl_t *u8sl, uint8_t idx, const void *aux)
+  88:u8g2_lib/u8x8_selection_list.c **** {
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc8urnt3.s 			page 3
+
+
+  28              		.loc 1 88 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              	.LVL0:
+  33 0000 70B5     		push	{r4, r5, r6, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 16
+  36              		.cfi_offset 4, -16
+  37              		.cfi_offset 5, -12
+  38              		.cfi_offset 6, -8
+  39              		.cfi_offset 14, -4
+  40 0002 82B0     		sub	sp, sp, #8
+  41              	.LCFI1:
+  42              		.cfi_def_cfa_offset 24
+  43 0004 0546     		mov	r5, r0
+  44 0006 0E46     		mov	r6, r1
+  89:u8g2_lib/u8x8_selection_list.c ****   const char *s;
+  90:u8g2_lib/u8x8_selection_list.c ****   uint8_t row;
+  91:u8g2_lib/u8x8_selection_list.c ****   /* calculate offset from display upper border */
+  92:u8g2_lib/u8x8_selection_list.c ****   row = u8sl->y;
+  45              		.loc 1 92 0
+  46 0008 4C79     		ldrb	r4, [r1, #5]	@ zero_extendqisi2
+  47              	.LVL1:
+  93:u8g2_lib/u8x8_selection_list.c ****   
+  94:u8g2_lib/u8x8_selection_list.c ****   /* calculate target pos */
+  95:u8g2_lib/u8x8_selection_list.c ****   row += idx;
+  48              		.loc 1 95 0
+  49 000a 1444     		add	r4, r4, r2
+  50              	.LVL2:
+  51 000c E4B2     		uxtb	r4, r4
+  52              	.LVL3:
+  96:u8g2_lib/u8x8_selection_list.c ****   row -= u8sl->first_pos;
+  53              		.loc 1 96 0
+  54 000e 8978     		ldrb	r1, [r1, #2]	@ zero_extendqisi2
+  55              	.LVL4:
+  56 0010 641A     		subs	r4, r4, r1
+  57              	.LVL5:
+  58 0012 E4B2     		uxtb	r4, r4
+  59              	.LVL6:
+  97:u8g2_lib/u8x8_selection_list.c ****   
+  98:u8g2_lib/u8x8_selection_list.c ****   /* check whether this is the current cursor line */
+  99:u8g2_lib/u8x8_selection_list.c ****   if ( idx == u8sl->current_pos )
+  60              		.loc 1 99 0
+  61 0014 F178     		ldrb	r1, [r6, #3]	@ zero_extendqisi2
+  62 0016 8A42     		cmp	r2, r1
+  63 0018 03D1     		bne	.L2
+ 100:u8g2_lib/u8x8_selection_list.c ****     u8x8_SetInverseFont(u8x8, 1);
+  64              		.loc 1 100 0
+  65 001a 0121     		movs	r1, #1
+  66 001c 80F82310 		strb	r1, [r0, #35]
+  67 0020 02E0     		b	.L3
+  68              	.L2:
+ 101:u8g2_lib/u8x8_selection_list.c ****   else
+ 102:u8g2_lib/u8x8_selection_list.c ****     u8x8_SetInverseFont(u8x8, 0);
+  69              		.loc 1 102 0
+  70 0022 0021     		movs	r1, #0
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc8urnt3.s 			page 4
+
+
+  71 0024 80F82310 		strb	r1, [r0, #35]
+  72              	.L3:
+ 103:u8g2_lib/u8x8_selection_list.c ****   
+ 104:u8g2_lib/u8x8_selection_list.c ****   /* get the line from the array */
+ 105:u8g2_lib/u8x8_selection_list.c ****   s = u8x8_GetStringLineStart(idx, (const char *)aux);
+  73              		.loc 1 105 0
+  74 0028 1946     		mov	r1, r3
+  75 002a 1046     		mov	r0, r2
+  76              	.LVL7:
+  77 002c FFF7FEFF 		bl	u8x8_GetStringLineStart
+  78              	.LVL8:
+ 106:u8g2_lib/u8x8_selection_list.c ****   
+ 107:u8g2_lib/u8x8_selection_list.c ****   /* draw the line */
+ 108:u8g2_lib/u8x8_selection_list.c ****   if ( s == NULL )
+  79              		.loc 1 108 0
+  80 0030 0246     		mov	r2, r0
+  81 0032 00B9     		cbnz	r0, .L4
+ 109:u8g2_lib/u8x8_selection_list.c ****     s = "";
+  82              		.loc 1 109 0
+  83 0034 064A     		ldr	r2, .L7
+  84              	.L4:
+  85              	.LVL9:
+ 110:u8g2_lib/u8x8_selection_list.c ****   u8x8_DrawUTF8Line(u8x8, u8sl->x, row, u8x8_GetCols(u8x8), s);  
+  86              		.loc 1 110 0
+  87 0036 2B68     		ldr	r3, [r5]
+  88 0038 1B7C     		ldrb	r3, [r3, #16]	@ zero_extendqisi2
+  89 003a 3179     		ldrb	r1, [r6, #4]	@ zero_extendqisi2
+  90 003c 0092     		str	r2, [sp]
+  91 003e 2246     		mov	r2, r4
+  92              	.LVL10:
+  93 0040 2846     		mov	r0, r5
+  94 0042 FFF7FEFF 		bl	u8x8_DrawUTF8Line
+  95              	.LVL11:
+ 111:u8g2_lib/u8x8_selection_list.c ****   u8x8_SetInverseFont(u8x8, 0);
+  96              		.loc 1 111 0
+  97 0046 0023     		movs	r3, #0
+  98 0048 85F82330 		strb	r3, [r5, #35]
+ 112:u8g2_lib/u8x8_selection_list.c **** }
+  99              		.loc 1 112 0
+ 100 004c 02B0     		add	sp, sp, #8
+ 101              	.LCFI2:
+ 102              		.cfi_def_cfa_offset 16
+ 103              		@ sp needed
+ 104 004e 70BD     		pop	{r4, r5, r6, pc}
+ 105              	.LVL12:
+ 106              	.L8:
+ 107              		.align	2
+ 108              	.L7:
+ 109 0050 00000000 		.word	.LC0
+ 110              		.cfi_endproc
+ 111              	.LFE3:
+ 113              		.section	.text.u8sl_Next,"ax",%progbits
+ 114              		.align	2
+ 115              		.global	u8sl_Next
+ 116              		.thumb
+ 117              		.thumb_func
+ 119              	u8sl_Next:
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc8urnt3.s 			page 5
+
+
+ 120              	.LFB0:
+  44:u8g2_lib/u8x8_selection_list.c ****   u8sl->current_pos++;
+ 121              		.loc 1 44 0
+ 122              		.cfi_startproc
+ 123              		@ args = 0, pretend = 0, frame = 0
+ 124              		@ frame_needed = 0, uses_anonymous_args = 0
+ 125              		@ link register save eliminated.
+ 126              	.LVL13:
+  45:u8g2_lib/u8x8_selection_list.c ****   if ( u8sl->current_pos >= u8sl->total )
+ 127              		.loc 1 45 0
+ 128 0000 C378     		ldrb	r3, [r0, #3]	@ zero_extendqisi2
+ 129 0002 0133     		adds	r3, r3, #1
+ 130 0004 DBB2     		uxtb	r3, r3
+ 131 0006 C370     		strb	r3, [r0, #3]
+  46:u8g2_lib/u8x8_selection_list.c ****   {
+ 132              		.loc 1 46 0
+ 133 0008 4278     		ldrb	r2, [r0, #1]	@ zero_extendqisi2
+ 134 000a 9342     		cmp	r3, r2
+ 135 000c 03D3     		bcc	.L10
+  48:u8g2_lib/u8x8_selection_list.c ****     u8sl->first_pos = 0;
+ 136              		.loc 1 48 0
+ 137 000e 0023     		movs	r3, #0
+ 138 0010 C370     		strb	r3, [r0, #3]
+  49:u8g2_lib/u8x8_selection_list.c ****   }
+ 139              		.loc 1 49 0
+ 140 0012 8370     		strb	r3, [r0, #2]
+ 141 0014 7047     		bx	lr
+ 142              	.L10:
+  44:u8g2_lib/u8x8_selection_list.c ****   u8sl->current_pos++;
+ 143              		.loc 1 44 0
+ 144 0016 10B4     		push	{r4}
+ 145              	.LCFI3:
+ 146              		.cfi_def_cfa_offset 4
+ 147              		.cfi_offset 4, -4
+  53:u8g2_lib/u8x8_selection_list.c ****     {
+ 148              		.loc 1 53 0
+ 149 0018 8278     		ldrb	r2, [r0, #2]	@ zero_extendqisi2
+ 150 001a 0178     		ldrb	r1, [r0]	@ zero_extendqisi2
+ 151 001c 0A44     		add	r2, r2, r1
+ 152 001e 5C1C     		adds	r4, r3, #1
+ 153 0020 A242     		cmp	r2, r4
+ 154 0022 02DC     		bgt	.L9
+  55:u8g2_lib/u8x8_selection_list.c ****     }
+ 155              		.loc 1 55 0
+ 156 0024 5B1A     		subs	r3, r3, r1
+ 157 0026 0133     		adds	r3, r3, #1
+ 158 0028 8370     		strb	r3, [r0, #2]
+ 159              	.L9:
+  58:u8g2_lib/u8x8_selection_list.c **** 
+ 160              		.loc 1 58 0
+ 161 002a 10BC     		pop	{r4}
+ 162              	.LCFI4:
+ 163              		.cfi_restore 4
+ 164              		.cfi_def_cfa_offset 0
+ 165 002c 7047     		bx	lr
+ 166              		.cfi_endproc
+ 167              	.LFE0:
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc8urnt3.s 			page 6
+
+
+ 169 002e 00BF     		.section	.text.u8sl_Prev,"ax",%progbits
+ 170              		.align	2
+ 171              		.global	u8sl_Prev
+ 172              		.thumb
+ 173              		.thumb_func
+ 175              	u8sl_Prev:
+ 176              	.LFB1:
+  61:u8g2_lib/u8x8_selection_list.c ****   if ( u8sl->current_pos == 0 )
+ 177              		.loc 1 61 0
+ 178              		.cfi_startproc
+ 179              		@ args = 0, pretend = 0, frame = 0
+ 180              		@ frame_needed = 0, uses_anonymous_args = 0
+ 181              		@ link register save eliminated.
+ 182              	.LVL14:
+  62:u8g2_lib/u8x8_selection_list.c ****   {
+ 183              		.loc 1 62 0
+ 184 0000 C378     		ldrb	r3, [r0, #3]	@ zero_extendqisi2
+ 185 0002 53B9     		cbnz	r3, .L14
+  64:u8g2_lib/u8x8_selection_list.c ****     u8sl->first_pos = 0;
+ 186              		.loc 1 64 0
+ 187 0004 4378     		ldrb	r3, [r0, #1]	@ zero_extendqisi2
+ 188 0006 5A1E     		subs	r2, r3, #1
+ 189 0008 C270     		strb	r2, [r0, #3]
+  65:u8g2_lib/u8x8_selection_list.c ****     if ( u8sl->total > u8sl->visible )
+ 190              		.loc 1 65 0
+ 191 000a 0022     		movs	r2, #0
+ 192 000c 8270     		strb	r2, [r0, #2]
+  66:u8g2_lib/u8x8_selection_list.c ****       u8sl->first_pos = u8sl->total - u8sl->visible;
+ 193              		.loc 1 66 0
+ 194 000e 0278     		ldrb	r2, [r0]	@ zero_extendqisi2
+ 195 0010 9342     		cmp	r3, r2
+ 196 0012 09D9     		bls	.L13
+  67:u8g2_lib/u8x8_selection_list.c ****   }
+ 197              		.loc 1 67 0
+ 198 0014 9B1A     		subs	r3, r3, r2
+ 199 0016 8370     		strb	r3, [r0, #2]
+ 200 0018 7047     		bx	lr
+ 201              	.L14:
+  71:u8g2_lib/u8x8_selection_list.c ****     if ( u8sl->first_pos > u8sl->current_pos )
+ 202              		.loc 1 71 0
+ 203 001a 013B     		subs	r3, r3, #1
+ 204 001c DBB2     		uxtb	r3, r3
+ 205 001e C370     		strb	r3, [r0, #3]
+  72:u8g2_lib/u8x8_selection_list.c ****       u8sl->first_pos = u8sl->current_pos;
+ 206              		.loc 1 72 0
+ 207 0020 8278     		ldrb	r2, [r0, #2]	@ zero_extendqisi2
+ 208 0022 9342     		cmp	r3, r2
+ 209 0024 00D2     		bcs	.L13
+  73:u8g2_lib/u8x8_selection_list.c ****   }
+ 210              		.loc 1 73 0
+ 211 0026 8370     		strb	r3, [r0, #2]
+ 212              	.L13:
+ 213 0028 7047     		bx	lr
+ 214              		.cfi_endproc
+ 215              	.LFE1:
+ 217 002a 00BF     		.section	.text.u8x8_DrawSelectionList,"ax",%progbits
+ 218              		.align	2
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc8urnt3.s 			page 7
+
+
+ 219              		.global	u8x8_DrawSelectionList
+ 220              		.thumb
+ 221              		.thumb_func
+ 223              	u8x8_DrawSelectionList:
+ 224              	.LFB2:
+  78:u8g2_lib/u8x8_selection_list.c ****   uint8_t i;
+ 225              		.loc 1 78 0
+ 226              		.cfi_startproc
+ 227              		@ args = 0, pretend = 0, frame = 0
+ 228              		@ frame_needed = 0, uses_anonymous_args = 0
+ 229              	.LVL15:
+ 230 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 231              	.LCFI5:
+ 232              		.cfi_def_cfa_offset 24
+ 233              		.cfi_offset 4, -24
+ 234              		.cfi_offset 5, -20
+ 235              		.cfi_offset 6, -16
+ 236              		.cfi_offset 7, -12
+ 237              		.cfi_offset 8, -8
+ 238              		.cfi_offset 14, -4
+ 239 0004 8046     		mov	r8, r0
+ 240 0006 0D46     		mov	r5, r1
+ 241 0008 1746     		mov	r7, r2
+ 242 000a 1E46     		mov	r6, r3
+ 243              	.LVL16:
+  80:u8g2_lib/u8x8_selection_list.c ****   {
+ 244              		.loc 1 80 0
+ 245 000c 0024     		movs	r4, #0
+ 246 000e 08E0     		b	.L17
+ 247              	.LVL17:
+ 248              	.L18:
+  82:u8g2_lib/u8x8_selection_list.c ****   }
+ 249              		.loc 1 82 0 discriminator 3
+ 250 0010 AA78     		ldrb	r2, [r5, #2]	@ zero_extendqisi2
+ 251 0012 2244     		add	r2, r2, r4
+ 252 0014 3346     		mov	r3, r6
+ 253 0016 D2B2     		uxtb	r2, r2
+ 254 0018 2946     		mov	r1, r5
+ 255 001a 4046     		mov	r0, r8
+ 256 001c B847     		blx	r7
+ 257              	.LVL18:
+  80:u8g2_lib/u8x8_selection_list.c ****   {
+ 258              		.loc 1 80 0 discriminator 3
+ 259 001e 0134     		adds	r4, r4, #1
+ 260              	.LVL19:
+ 261 0020 E4B2     		uxtb	r4, r4
+ 262              	.LVL20:
+ 263              	.L17:
+  80:u8g2_lib/u8x8_selection_list.c ****   {
+ 264              		.loc 1 80 0 is_stmt 0 discriminator 1
+ 265 0022 2B78     		ldrb	r3, [r5]	@ zero_extendqisi2
+ 266 0024 9C42     		cmp	r4, r3
+ 267 0026 F3D3     		bcc	.L18
+  84:u8g2_lib/u8x8_selection_list.c **** 
+ 268              		.loc 1 84 0 is_stmt 1
+ 269 0028 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 270              		.cfi_endproc
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc8urnt3.s 			page 8
+
+
+ 271              	.LFE2:
+ 273              		.section	.text.u8x8_UserInterfaceSelectionList,"ax",%progbits
+ 274              		.align	2
+ 275              		.global	u8x8_UserInterfaceSelectionList
+ 276              		.thumb
+ 277              		.thumb_func
+ 279              	u8x8_UserInterfaceSelectionList:
+ 280              	.LFB4:
+ 113:u8g2_lib/u8x8_selection_list.c **** 
+ 114:u8g2_lib/u8x8_selection_list.c **** /*
+ 115:u8g2_lib/u8x8_selection_list.c ****   title: 		NULL for no title, valid str for title line. Can contain mutliple lines, separated by '\
+ 116:u8g2_lib/u8x8_selection_list.c ****   start_pos: 	default position for the cursor (starts with 1)
+ 117:u8g2_lib/u8x8_selection_list.c ****   sl:			string list (list of strings separated by \n)
+ 118:u8g2_lib/u8x8_selection_list.c ****   returns 0 if user has pressed the home key
+ 119:u8g2_lib/u8x8_selection_list.c ****   returns the selected line+1 if user has pressed the select key (e.g. 1 for the first line)
+ 120:u8g2_lib/u8x8_selection_list.c **** */
+ 121:u8g2_lib/u8x8_selection_list.c **** uint8_t u8x8_UserInterfaceSelectionList(u8x8_t *u8x8, const char *title, uint8_t start_pos, const c
+ 122:u8g2_lib/u8x8_selection_list.c **** {
+ 281              		.loc 1 122 0
+ 282              		.cfi_startproc
+ 283              		@ args = 0, pretend = 0, frame = 8
+ 284              		@ frame_needed = 0, uses_anonymous_args = 0
+ 285              	.LVL21:
+ 286 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 287              	.LCFI6:
+ 288              		.cfi_def_cfa_offset 20
+ 289              		.cfi_offset 4, -20
+ 290              		.cfi_offset 5, -16
+ 291              		.cfi_offset 6, -12
+ 292              		.cfi_offset 7, -8
+ 293              		.cfi_offset 14, -4
+ 294 0002 85B0     		sub	sp, sp, #20
+ 295              	.LCFI7:
+ 296              		.cfi_def_cfa_offset 40
+ 297 0004 0446     		mov	r4, r0
+ 298 0006 0F46     		mov	r7, r1
+ 299 0008 1D46     		mov	r5, r3
+ 123:u8g2_lib/u8x8_selection_list.c ****   u8sl_t u8sl;
+ 124:u8g2_lib/u8x8_selection_list.c ****   uint8_t event;
+ 125:u8g2_lib/u8x8_selection_list.c ****   uint8_t title_lines;
+ 126:u8g2_lib/u8x8_selection_list.c ****   
+ 127:u8g2_lib/u8x8_selection_list.c ****   if ( start_pos > 0 )
+ 300              		.loc 1 127 0
+ 301 000a 1646     		mov	r6, r2
+ 302 000c 0AB1     		cbz	r2, .L21
+ 128:u8g2_lib/u8x8_selection_list.c ****     start_pos--;
+ 303              		.loc 1 128 0
+ 304 000e 561E     		subs	r6, r2, #1
+ 305 0010 F6B2     		uxtb	r6, r6
+ 306              	.LVL22:
+ 307              	.L21:
+ 129:u8g2_lib/u8x8_selection_list.c ****   
+ 130:u8g2_lib/u8x8_selection_list.c ****   u8sl.visible = u8x8_GetRows(u8x8);
+ 308              		.loc 1 130 0
+ 309 0012 2368     		ldr	r3, [r4]
+ 310              	.LVL23:
+ 311 0014 5B7C     		ldrb	r3, [r3, #17]	@ zero_extendqisi2
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc8urnt3.s 			page 9
+
+
+ 312 0016 8DF80830 		strb	r3, [sp, #8]
+ 131:u8g2_lib/u8x8_selection_list.c ****   u8sl.total = u8x8_GetStringLineCnt(sl);
+ 313              		.loc 1 131 0
+ 314 001a 2846     		mov	r0, r5
+ 315              	.LVL24:
+ 316 001c FFF7FEFF 		bl	u8x8_GetStringLineCnt
+ 317              	.LVL25:
+ 318 0020 8DF80900 		strb	r0, [sp, #9]
+ 132:u8g2_lib/u8x8_selection_list.c ****   u8sl.first_pos = 0;
+ 319              		.loc 1 132 0
+ 320 0024 0023     		movs	r3, #0
+ 321 0026 8DF80A30 		strb	r3, [sp, #10]
+ 133:u8g2_lib/u8x8_selection_list.c ****   u8sl.current_pos = start_pos;
+ 322              		.loc 1 133 0
+ 323 002a 8DF80B60 		strb	r6, [sp, #11]
+ 134:u8g2_lib/u8x8_selection_list.c ****   u8sl.x = 0;
+ 324              		.loc 1 134 0
+ 325 002e 8DF80C30 		strb	r3, [sp, #12]
+ 135:u8g2_lib/u8x8_selection_list.c ****   u8sl.y = 0;
+ 326              		.loc 1 135 0
+ 327 0032 8DF80D30 		strb	r3, [sp, #13]
+ 136:u8g2_lib/u8x8_selection_list.c ****   
+ 137:u8g2_lib/u8x8_selection_list.c **** 
+ 138:u8g2_lib/u8x8_selection_list.c ****   //u8x8_ClearDisplay(u8x8);   /* not required because all is 100% filled */
+ 139:u8g2_lib/u8x8_selection_list.c ****   u8x8_SetInverseFont(u8x8, 0);
+ 328              		.loc 1 139 0
+ 329 0036 84F82330 		strb	r3, [r4, #35]
+ 140:u8g2_lib/u8x8_selection_list.c ****   
+ 141:u8g2_lib/u8x8_selection_list.c ****   if ( title != NULL )
+ 330              		.loc 1 141 0
+ 331 003a 8FB1     		cbz	r7, .L22
+ 142:u8g2_lib/u8x8_selection_list.c ****   {
+ 143:u8g2_lib/u8x8_selection_list.c ****     title_lines = u8x8_DrawUTF8Lines(u8x8, u8sl.x, u8sl.y, u8x8_GetCols(u8x8), title);
+ 332              		.loc 1 143 0
+ 333 003c 2368     		ldr	r3, [r4]
+ 334 003e 1B7C     		ldrb	r3, [r3, #16]	@ zero_extendqisi2
+ 335 0040 0097     		str	r7, [sp]
+ 336 0042 0022     		movs	r2, #0
+ 337 0044 1146     		mov	r1, r2
+ 338 0046 2046     		mov	r0, r4
+ 339 0048 FFF7FEFF 		bl	u8x8_DrawUTF8Lines
+ 340              	.LVL26:
+ 144:u8g2_lib/u8x8_selection_list.c ****     u8sl.y+=title_lines;
+ 341              		.loc 1 144 0
+ 342 004c 9DF80D30 		ldrb	r3, [sp, #13]	@ zero_extendqisi2
+ 343 0050 0344     		add	r3, r3, r0
+ 344 0052 8DF80D30 		strb	r3, [sp, #13]
+ 145:u8g2_lib/u8x8_selection_list.c ****     u8sl.visible-=title_lines;
+ 345              		.loc 1 145 0
+ 346 0056 9DF80830 		ldrb	r3, [sp, #8]	@ zero_extendqisi2
+ 347 005a 181A     		subs	r0, r3, r0
+ 348              	.LVL27:
+ 349 005c 8DF80800 		strb	r0, [sp, #8]
+ 350              	.L22:
+ 146:u8g2_lib/u8x8_selection_list.c ****   }
+ 147:u8g2_lib/u8x8_selection_list.c ****   
+ 148:u8g2_lib/u8x8_selection_list.c ****   if ( u8sl.current_pos >= u8sl.total )
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc8urnt3.s 			page 10
+
+
+ 351              		.loc 1 148 0
+ 352 0060 9DF80B20 		ldrb	r2, [sp, #11]	@ zero_extendqisi2
+ 353 0064 9DF80930 		ldrb	r3, [sp, #9]	@ zero_extendqisi2
+ 354 0068 9A42     		cmp	r2, r3
+ 355 006a 02D3     		bcc	.L23
+ 149:u8g2_lib/u8x8_selection_list.c ****     u8sl.current_pos = u8sl.total-1;
+ 356              		.loc 1 149 0
+ 357 006c 013B     		subs	r3, r3, #1
+ 358 006e 8DF80B30 		strb	r3, [sp, #11]
+ 359              	.L23:
+ 150:u8g2_lib/u8x8_selection_list.c **** 
+ 151:u8g2_lib/u8x8_selection_list.c ****   
+ 152:u8g2_lib/u8x8_selection_list.c ****   u8x8_DrawSelectionList(u8x8, &u8sl, u8x8_sl_string_line_cb, sl);
+ 360              		.loc 1 152 0
+ 361 0072 2B46     		mov	r3, r5
+ 362 0074 174A     		ldr	r2, .L33
+ 363 0076 02A9     		add	r1, sp, #8
+ 364 0078 2046     		mov	r0, r4
+ 365 007a FFF7FEFF 		bl	u8x8_DrawSelectionList
+ 366              	.LVL28:
+ 367              	.L24:
+ 153:u8g2_lib/u8x8_selection_list.c **** 
+ 154:u8g2_lib/u8x8_selection_list.c ****   for(;;)
+ 155:u8g2_lib/u8x8_selection_list.c ****   {
+ 156:u8g2_lib/u8x8_selection_list.c ****     event = u8x8_GetMenuEvent(u8x8);
+ 368              		.loc 1 156 0
+ 369 007e 2046     		mov	r0, r4
+ 370 0080 FFF7FEFF 		bl	u8x8_GetMenuEvent
+ 371              	.LVL29:
+ 157:u8g2_lib/u8x8_selection_list.c ****     if ( event == U8X8_MSG_GPIO_MENU_SELECT )
+ 372              		.loc 1 157 0
+ 373 0084 5028     		cmp	r0, #80
+ 374 0086 04D1     		bne	.L25
+ 158:u8g2_lib/u8x8_selection_list.c ****       return u8sl.current_pos+1;
+ 375              		.loc 1 158 0
+ 376 0088 9DF80B00 		ldrb	r0, [sp, #11]	@ zero_extendqisi2
+ 377              	.LVL30:
+ 378 008c 0130     		adds	r0, r0, #1
+ 379 008e C0B2     		uxtb	r0, r0
+ 380 0090 1EE0     		b	.L26
+ 381              	.LVL31:
+ 382              	.L25:
+ 159:u8g2_lib/u8x8_selection_list.c ****     else if ( event == U8X8_MSG_GPIO_MENU_HOME )
+ 383              		.loc 1 159 0
+ 384 0092 5328     		cmp	r0, #83
+ 385 0094 1BD0     		beq	.L31
+ 160:u8g2_lib/u8x8_selection_list.c ****       return 0;
+ 161:u8g2_lib/u8x8_selection_list.c ****     else if ( event == U8X8_MSG_GPIO_MENU_NEXT || event == U8X8_MSG_GPIO_MENU_DOWN )
+ 386              		.loc 1 161 0
+ 387 0096 5128     		cmp	r0, #81
+ 388 0098 01D0     		beq	.L27
+ 389              		.loc 1 161 0 is_stmt 0 discriminator 1
+ 390 009a 5528     		cmp	r0, #85
+ 391 009c 09D1     		bne	.L28
+ 392              	.L27:
+ 162:u8g2_lib/u8x8_selection_list.c ****     {
+ 163:u8g2_lib/u8x8_selection_list.c ****       u8sl_Next(&u8sl);
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc8urnt3.s 			page 11
+
+
+ 393              		.loc 1 163 0 is_stmt 1
+ 394 009e 02A8     		add	r0, sp, #8
+ 395              	.LVL32:
+ 396 00a0 FFF7FEFF 		bl	u8sl_Next
+ 397              	.LVL33:
+ 164:u8g2_lib/u8x8_selection_list.c ****       u8x8_DrawSelectionList(u8x8, &u8sl, u8x8_sl_string_line_cb, sl);      
+ 398              		.loc 1 164 0
+ 399 00a4 2B46     		mov	r3, r5
+ 400 00a6 0B4A     		ldr	r2, .L33
+ 401 00a8 02A9     		add	r1, sp, #8
+ 402 00aa 2046     		mov	r0, r4
+ 403 00ac FFF7FEFF 		bl	u8x8_DrawSelectionList
+ 404              	.LVL34:
+ 405 00b0 E5E7     		b	.L24
+ 406              	.LVL35:
+ 407              	.L28:
+ 165:u8g2_lib/u8x8_selection_list.c ****     }
+ 166:u8g2_lib/u8x8_selection_list.c ****     else if ( event == U8X8_MSG_GPIO_MENU_PREV || event == U8X8_MSG_GPIO_MENU_UP  )
+ 408              		.loc 1 166 0
+ 409 00b2 5228     		cmp	r0, #82
+ 410 00b4 01D0     		beq	.L30
+ 411              		.loc 1 166 0 is_stmt 0 discriminator 1
+ 412 00b6 5428     		cmp	r0, #84
+ 413 00b8 E1D1     		bne	.L24
+ 414              	.L30:
+ 167:u8g2_lib/u8x8_selection_list.c ****     {
+ 168:u8g2_lib/u8x8_selection_list.c ****       u8sl_Prev(&u8sl);
+ 415              		.loc 1 168 0 is_stmt 1
+ 416 00ba 02A8     		add	r0, sp, #8
+ 417              	.LVL36:
+ 418 00bc FFF7FEFF 		bl	u8sl_Prev
+ 419              	.LVL37:
+ 169:u8g2_lib/u8x8_selection_list.c ****       u8x8_DrawSelectionList(u8x8, &u8sl, u8x8_sl_string_line_cb, sl);      
+ 420              		.loc 1 169 0
+ 421 00c0 2B46     		mov	r3, r5
+ 422 00c2 044A     		ldr	r2, .L33
+ 423 00c4 02A9     		add	r1, sp, #8
+ 424 00c6 2046     		mov	r0, r4
+ 425 00c8 FFF7FEFF 		bl	u8x8_DrawSelectionList
+ 426              	.LVL38:
+ 427 00cc D7E7     		b	.L24
+ 428              	.LVL39:
+ 429              	.L31:
+ 160:u8g2_lib/u8x8_selection_list.c ****     else if ( event == U8X8_MSG_GPIO_MENU_NEXT || event == U8X8_MSG_GPIO_MENU_DOWN )
+ 430              		.loc 1 160 0
+ 431 00ce 0020     		movs	r0, #0
+ 432              	.LVL40:
+ 433              	.L26:
+ 170:u8g2_lib/u8x8_selection_list.c ****     }
+ 171:u8g2_lib/u8x8_selection_list.c ****   }
+ 172:u8g2_lib/u8x8_selection_list.c **** }
+ 434              		.loc 1 172 0
+ 435 00d0 05B0     		add	sp, sp, #20
+ 436              	.LCFI8:
+ 437              		.cfi_def_cfa_offset 20
+ 438              		@ sp needed
+ 439 00d2 F0BD     		pop	{r4, r5, r6, r7, pc}
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc8urnt3.s 			page 12
+
+
+ 440              	.LVL41:
+ 441              	.L34:
+ 442              		.align	2
+ 443              	.L33:
+ 444 00d4 00000000 		.word	u8x8_sl_string_line_cb
+ 445              		.cfi_endproc
+ 446              	.LFE4:
+ 448              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 449              		.align	2
+ 450              	.LC0:
+ 451 0000 00       		.ascii	"\000"
+ 452              		.text
+ 453              	.Letext0:
+ 454              		.file 2 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\mach
+ 455              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\sys\
+ 456              		.file 4 "u8g2_lib/u8x8.h"
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc8urnt3.s 			page 13
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 u8x8_selection_list.c
+C:\Users\master\AppData\Local\Temp\cc8urnt3.s:20     .text.u8x8_sl_string_line_cb:00000000 $t
+C:\Users\master\AppData\Local\Temp\cc8urnt3.s:25     .text.u8x8_sl_string_line_cb:00000000 u8x8_sl_string_line_cb
+C:\Users\master\AppData\Local\Temp\cc8urnt3.s:109    .text.u8x8_sl_string_line_cb:00000050 $d
+C:\Users\master\AppData\Local\Temp\cc8urnt3.s:114    .text.u8sl_Next:00000000 $t
+C:\Users\master\AppData\Local\Temp\cc8urnt3.s:119    .text.u8sl_Next:00000000 u8sl_Next
+C:\Users\master\AppData\Local\Temp\cc8urnt3.s:170    .text.u8sl_Prev:00000000 $t
+C:\Users\master\AppData\Local\Temp\cc8urnt3.s:175    .text.u8sl_Prev:00000000 u8sl_Prev
+C:\Users\master\AppData\Local\Temp\cc8urnt3.s:218    .text.u8x8_DrawSelectionList:00000000 $t
+C:\Users\master\AppData\Local\Temp\cc8urnt3.s:223    .text.u8x8_DrawSelectionList:00000000 u8x8_DrawSelectionList
+C:\Users\master\AppData\Local\Temp\cc8urnt3.s:274    .text.u8x8_UserInterfaceSelectionList:00000000 $t
+C:\Users\master\AppData\Local\Temp\cc8urnt3.s:279    .text.u8x8_UserInterfaceSelectionList:00000000 u8x8_UserInterfaceSelectionList
+C:\Users\master\AppData\Local\Temp\cc8urnt3.s:444    .text.u8x8_UserInterfaceSelectionList:000000d4 $d
+C:\Users\master\AppData\Local\Temp\cc8urnt3.s:449    .rodata.str1.4:00000000 $d
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+u8x8_GetStringLineStart
+u8x8_DrawUTF8Line
+u8x8_GetStringLineCnt
+u8x8_DrawUTF8Lines
+u8x8_GetMenuEvent

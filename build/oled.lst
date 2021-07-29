@@ -1,0 +1,590 @@
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccc9nDIO.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"oled.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.u8x8_byte_hw_i2c,"ax",%progbits
+  20              		.align	2
+  21              		.global	u8x8_byte_hw_i2c
+  22              		.thumb
+  23              		.thumb_func
+  25              	u8x8_byte_hw_i2c:
+  26              	.LFB65:
+  27              		.file 1 "Core/Src/oled.c"
+   1:Core/Src/oled.c **** #include "oled.h"
+   2:Core/Src/oled.c **** extern I2C_HandleTypeDef hi2c1;
+   3:Core/Src/oled.c **** uint8_t u8x8_byte_hw_i2c(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *arg_ptr)
+   4:Core/Src/oled.c **** {
+  28              		.loc 1 4 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              	.LVL0:
+  33 0000 10B5     		push	{r4, lr}
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 4, -8
+  37              		.cfi_offset 14, -4
+  38 0002 82B0     		sub	sp, sp, #8
+  39              	.LCFI1:
+  40              		.cfi_def_cfa_offset 16
+   5:Core/Src/oled.c ****     /* u8g2/u8x8 will never send more than 32 bytes between START_TRANSFER and END_TRANSFER */
+   6:Core/Src/oled.c ****     static uint8_t buffer[128];
+   7:Core/Src/oled.c ****     static uint8_t buf_idx;
+   8:Core/Src/oled.c ****     uint8_t *data;
+   9:Core/Src/oled.c **** 
+  10:Core/Src/oled.c ****     switch (msg)
+  41              		.loc 1 10 0
+  42 0004 1439     		subs	r1, r1, #20
+  43              	.LVL1:
+  44 0006 0C29     		cmp	r1, #12
+  45 0008 08D8     		bhi	.L2
+  46 000a DFE801F0 		tbb	[pc, r1]
+  47              	.LVL2:
+  48              	.L4:
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccc9nDIO.s 			page 2
+
+
+  49 000e 29       		.byte	(.L9-.L4)/2
+  50 000f 07       		.byte	(.L2-.L4)/2
+  51 0010 07       		.byte	(.L2-.L4)/2
+  52 0011 18       		.byte	(.L5-.L4)/2
+  53 0012 09       		.byte	(.L6-.L4)/2
+  54 0013 1C       		.byte	(.L7-.L4)/2
+  55 0014 07       		.byte	(.L2-.L4)/2
+  56 0015 07       		.byte	(.L2-.L4)/2
+  57 0016 07       		.byte	(.L2-.L4)/2
+  58 0017 07       		.byte	(.L2-.L4)/2
+  59 0018 07       		.byte	(.L2-.L4)/2
+  60 0019 07       		.byte	(.L2-.L4)/2
+  61 001a 29       		.byte	(.L9-.L4)/2
+  62 001b 00       		.p2align 1
+  63              	.L2:
+  11:Core/Src/oled.c ****     {
+  12:Core/Src/oled.c ****     case U8X8_MSG_BYTE_INIT:
+  13:Core/Src/oled.c ****     {
+  14:Core/Src/oled.c ****         /* add your custom code to init i2c subsystem */
+  15:Core/Src/oled.c ****        // MX_I2C1_Init(); //I2C初始化
+  16:Core/Src/oled.c ****       // ihi2c=getHI2C1();
+  17:Core/Src/oled.c ****     }
+  18:Core/Src/oled.c ****     break;
+  19:Core/Src/oled.c **** 
+  20:Core/Src/oled.c ****     case U8X8_MSG_BYTE_START_TRANSFER:
+  21:Core/Src/oled.c ****     {
+  22:Core/Src/oled.c ****         buf_idx = 0;
+  23:Core/Src/oled.c ****     }
+  24:Core/Src/oled.c ****     break;
+  25:Core/Src/oled.c **** 
+  26:Core/Src/oled.c ****     case U8X8_MSG_BYTE_SEND:
+  27:Core/Src/oled.c ****     {
+  28:Core/Src/oled.c ****         data = (uint8_t *)arg_ptr;
+  29:Core/Src/oled.c **** 
+  30:Core/Src/oled.c ****         while (arg_int > 0)
+  31:Core/Src/oled.c ****         {
+  32:Core/Src/oled.c ****             buffer[buf_idx++] = *data;
+  33:Core/Src/oled.c ****             data++;
+  34:Core/Src/oled.c ****             arg_int--;
+  35:Core/Src/oled.c ****         }
+  36:Core/Src/oled.c ****     }
+  37:Core/Src/oled.c ****     break;
+  38:Core/Src/oled.c **** 
+  39:Core/Src/oled.c ****     case U8X8_MSG_BYTE_END_TRANSFER:
+  40:Core/Src/oled.c ****     {
+  41:Core/Src/oled.c ****         if (HAL_I2C_Master_Transmit(&hi2c1, (OLED_ADDRESS), buffer, buf_idx, 1000) != HAL_OK)
+  42:Core/Src/oled.c ****             return 0;
+  43:Core/Src/oled.c ****     }
+  44:Core/Src/oled.c ****     break;
+  45:Core/Src/oled.c **** 
+  46:Core/Src/oled.c ****     case U8X8_MSG_BYTE_SET_DC:
+  47:Core/Src/oled.c ****         break;
+  48:Core/Src/oled.c **** 
+  49:Core/Src/oled.c ****     default:
+  50:Core/Src/oled.c ****         return 0;
+  64              		.loc 1 50 0
+  65 001c 0020     		movs	r0, #0
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccc9nDIO.s 			page 3
+
+
+  66 001e 22E0     		b	.L3
+  67              	.L6:
+  22:Core/Src/oled.c ****     }
+  68              		.loc 1 22 0
+  69 0020 0022     		movs	r2, #0
+  70              	.LVL3:
+  71 0022 124B     		ldr	r3, .L12
+  72              	.LVL4:
+  73 0024 1A70     		strb	r2, [r3]
+  51:Core/Src/oled.c ****     }
+  52:Core/Src/oled.c **** 
+  53:Core/Src/oled.c ****     return 1;
+  74              		.loc 1 53 0
+  75 0026 0120     		movs	r0, #1
+  24:Core/Src/oled.c **** 
+  76              		.loc 1 24 0
+  77 0028 1DE0     		b	.L3
+  78              	.LVL5:
+  79              	.L8:
+  32:Core/Src/oled.c ****             data++;
+  80              		.loc 1 32 0
+  81 002a 1048     		ldr	r0, .L12
+  82 002c 0178     		ldrb	r1, [r0]	@ zero_extendqisi2
+  83 002e 4C1C     		adds	r4, r1, #1
+  84 0030 0470     		strb	r4, [r0]
+  85 0032 13F8014B 		ldrb	r4, [r3], #1	@ zero_extendqisi2
+  86              	.LVL6:
+  87 0036 0E48     		ldr	r0, .L12+4
+  88 0038 4454     		strb	r4, [r0, r1]
+  89              	.LVL7:
+  34:Core/Src/oled.c ****         }
+  90              		.loc 1 34 0
+  91 003a 013A     		subs	r2, r2, #1
+  92              	.LVL8:
+  93 003c D2B2     		uxtb	r2, r2
+  94              	.LVL9:
+  95              	.L5:
+  30:Core/Src/oled.c ****         {
+  96              		.loc 1 30 0
+  97 003e 002A     		cmp	r2, #0
+  98 0040 F3D1     		bne	.L8
+  99              		.loc 1 53 0
+ 100 0042 0120     		movs	r0, #1
+ 101 0044 0FE0     		b	.L3
+ 102              	.LVL10:
+ 103              	.L7:
+  41:Core/Src/oled.c ****             return 0;
+ 104              		.loc 1 41 0
+ 105 0046 094B     		ldr	r3, .L12
+ 106              	.LVL11:
+ 107 0048 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 108 004a 4FF47A72 		mov	r2, #1000
+ 109              	.LVL12:
+ 110 004e 0092     		str	r2, [sp]
+ 111 0050 074A     		ldr	r2, .L12+4
+ 112 0052 7821     		movs	r1, #120
+ 113 0054 0748     		ldr	r0, .L12+8
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccc9nDIO.s 			page 4
+
+
+ 114 0056 FFF7FEFF 		bl	HAL_I2C_Master_Transmit
+ 115              	.LVL13:
+ 116 005a 18B1     		cbz	r0, .L10
+  42:Core/Src/oled.c ****     }
+ 117              		.loc 1 42 0
+ 118 005c 0020     		movs	r0, #0
+ 119 005e 02E0     		b	.L3
+ 120              	.LVL14:
+ 121              	.L9:
+ 122              		.loc 1 53 0
+ 123 0060 0120     		movs	r0, #1
+ 124 0062 00E0     		b	.L3
+ 125              	.LVL15:
+ 126              	.L10:
+ 127 0064 0120     		movs	r0, #1
+ 128              	.LVL16:
+ 129              	.L3:
+  54:Core/Src/oled.c **** }
+ 130              		.loc 1 54 0
+ 131 0066 02B0     		add	sp, sp, #8
+ 132              	.LCFI2:
+ 133              		.cfi_def_cfa_offset 8
+ 134              		@ sp needed
+ 135 0068 10BD     		pop	{r4, pc}
+ 136              	.L13:
+ 137 006a 00BF     		.align	2
+ 138              	.L12:
+ 139 006c 00000000 		.word	.LANCHOR0
+ 140 0070 00000000 		.word	.LANCHOR1
+ 141 0074 00000000 		.word	hi2c1
+ 142              		.cfi_endproc
+ 143              	.LFE65:
+ 145              		.section	.text.u8x8_gpio_and_delay,"ax",%progbits
+ 146              		.align	2
+ 147              		.global	u8x8_gpio_and_delay
+ 148              		.thumb
+ 149              		.thumb_func
+ 151              	u8x8_gpio_and_delay:
+ 152              	.LFB67:
+  55:Core/Src/oled.c **** 
+  56:Core/Src/oled.c **** void delay_us(uint32_t time)
+  57:Core/Src/oled.c **** {
+  58:Core/Src/oled.c ****     uint32_t i = 8 * time;
+  59:Core/Src/oled.c ****     while (i--)
+  60:Core/Src/oled.c ****         ;
+  61:Core/Src/oled.c **** }
+  62:Core/Src/oled.c **** 
+  63:Core/Src/oled.c **** uint8_t u8x8_gpio_and_delay(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *arg_ptr)
+  64:Core/Src/oled.c **** {
+ 153              		.loc 1 64 0
+ 154              		.cfi_startproc
+ 155              		@ args = 0, pretend = 0, frame = 0
+ 156              		@ frame_needed = 0, uses_anonymous_args = 0
+ 157              	.LVL17:
+ 158 0000 08B5     		push	{r3, lr}
+ 159              	.LCFI3:
+ 160              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccc9nDIO.s 			page 5
+
+
+ 161              		.cfi_offset 3, -8
+ 162              		.cfi_offset 14, -4
+  65:Core/Src/oled.c ****     switch (msg)
+ 163              		.loc 1 65 0
+ 164 0002 2939     		subs	r1, r1, #41
+ 165              	.LVL18:
+ 166 0004 2A29     		cmp	r1, #42
+ 167 0006 36D8     		bhi	.L15
+ 168 0008 DFE801F0 		tbb	[pc, r1]
+ 169              	.LVL19:
+ 170              	.L17:
+ 171 000c 21       		.byte	(.L16-.L17)/2
+ 172 000d 1C       		.byte	(.L26-.L17)/2
+ 173 000e 16       		.byte	(.L19-.L17)/2
+ 174 000f 35       		.byte	(.L15-.L17)/2
+ 175 0010 38       		.byte	(.L20-.L17)/2
+ 176 0011 35       		.byte	(.L15-.L17)/2
+ 177 0012 35       		.byte	(.L15-.L17)/2
+ 178 0013 35       		.byte	(.L15-.L17)/2
+ 179 0014 35       		.byte	(.L15-.L17)/2
+ 180 0015 35       		.byte	(.L15-.L17)/2
+ 181 0016 35       		.byte	(.L15-.L17)/2
+ 182 0017 35       		.byte	(.L15-.L17)/2
+ 183 0018 35       		.byte	(.L15-.L17)/2
+ 184 0019 35       		.byte	(.L15-.L17)/2
+ 185 001a 35       		.byte	(.L15-.L17)/2
+ 186 001b 35       		.byte	(.L15-.L17)/2
+ 187 001c 35       		.byte	(.L15-.L17)/2
+ 188 001d 35       		.byte	(.L15-.L17)/2
+ 189 001e 35       		.byte	(.L15-.L17)/2
+ 190 001f 35       		.byte	(.L15-.L17)/2
+ 191 0020 35       		.byte	(.L15-.L17)/2
+ 192 0021 35       		.byte	(.L15-.L17)/2
+ 193 0022 35       		.byte	(.L15-.L17)/2
+ 194 0023 35       		.byte	(.L15-.L17)/2
+ 195 0024 35       		.byte	(.L15-.L17)/2
+ 196 0025 35       		.byte	(.L15-.L17)/2
+ 197 0026 35       		.byte	(.L15-.L17)/2
+ 198 0027 35       		.byte	(.L15-.L17)/2
+ 199 0028 35       		.byte	(.L15-.L17)/2
+ 200 0029 35       		.byte	(.L15-.L17)/2
+ 201 002a 35       		.byte	(.L15-.L17)/2
+ 202 002b 35       		.byte	(.L15-.L17)/2
+ 203 002c 35       		.byte	(.L15-.L17)/2
+ 204 002d 35       		.byte	(.L15-.L17)/2
+ 205 002e 35       		.byte	(.L15-.L17)/2
+ 206 002f 38       		.byte	(.L20-.L17)/2
+ 207 0030 38       		.byte	(.L20-.L17)/2
+ 208 0031 35       		.byte	(.L15-.L17)/2
+ 209 0032 35       		.byte	(.L15-.L17)/2
+ 210 0033 25       		.byte	(.L21-.L17)/2
+ 211 0034 29       		.byte	(.L22-.L17)/2
+ 212 0035 2D       		.byte	(.L23-.L17)/2
+ 213 0036 31       		.byte	(.L24-.L17)/2
+ 214 0037 00       		.p2align 1
+ 215              	.L19:
+  66:Core/Src/oled.c ****     {
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccc9nDIO.s 			page 6
+
+
+  67:Core/Src/oled.c ****     case U8X8_MSG_DELAY_100NANO: // delay arg_int * 100 nano seconds
+  68:Core/Src/oled.c ****         __NOP();
+ 216              		.loc 1 68 0
+ 217              		.syntax unified
+ 218              	@ 68 "Core/Src/oled.c" 1
+ 219 0038 00BF     		nop
+ 220              	@ 0 "" 2
+  69:Core/Src/oled.c ****         break;
+ 221              		.loc 1 69 0
+ 222              		.thumb
+ 223              		.syntax unified
+ 224 003a 1FE0     		b	.L20
+ 225              	.LVL20:
+ 226              	.L25:
+ 227              	.LBB2:
+  70:Core/Src/oled.c ****     case U8X8_MSG_DELAY_10MICRO: // delay arg_int * 10 micro seconds
+  71:Core/Src/oled.c ****         for (uint16_t n = 0; n < 320; n++)
+  72:Core/Src/oled.c ****         {
+  73:Core/Src/oled.c ****             __NOP();
+ 228              		.loc 1 73 0 discriminator 3
+ 229              		.syntax unified
+ 230              	@ 73 "Core/Src/oled.c" 1
+ 231 003c 00BF     		nop
+ 232              	@ 0 "" 2
+  71:Core/Src/oled.c ****         {
+ 233              		.loc 1 71 0 discriminator 3
+ 234              		.thumb
+ 235              		.syntax unified
+ 236 003e 0133     		adds	r3, r3, #1
+ 237              	.LVL21:
+ 238 0040 9BB2     		uxth	r3, r3
+ 239              	.LVL22:
+ 240 0042 00E0     		b	.L18
+ 241              	.LVL23:
+ 242              	.L26:
+ 243              	.LBE2:
+  65:Core/Src/oled.c ****     {
+ 244              		.loc 1 65 0
+ 245 0044 0023     		movs	r3, #0
+ 246              	.L18:
+ 247              	.LVL24:
+ 248              	.LBB3:
+  71:Core/Src/oled.c ****         {
+ 249              		.loc 1 71 0 discriminator 1
+ 250 0046 B3F5A07F 		cmp	r3, #320
+ 251 004a F7D3     		bcc	.L25
+ 252 004c 16E0     		b	.L20
+ 253              	.LVL25:
+ 254              	.L16:
+ 255              	.LBE3:
+  74:Core/Src/oled.c ****         }
+  75:Core/Src/oled.c ****         break;
+  76:Core/Src/oled.c ****     case U8X8_MSG_DELAY_MILLI: // delay arg_int * 1 milli second
+  77:Core/Src/oled.c ****         HAL_Delay(1);
+ 256              		.loc 1 77 0
+ 257 004e 0120     		movs	r0, #1
+ 258              	.LVL26:
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccc9nDIO.s 			page 7
+
+
+ 259 0050 FFF7FEFF 		bl	HAL_Delay
+ 260              	.LVL27:
+  78:Core/Src/oled.c ****         break;
+ 261              		.loc 1 78 0
+ 262 0054 12E0     		b	.L20
+ 263              	.LVL28:
+ 264              	.L21:
+  79:Core/Src/oled.c ****     case U8X8_MSG_DELAY_I2C: // arg_int is the I2C speed in 100KHz, e.g. 4 = 400 KHz
+  80:Core/Src/oled.c ****         delay_us(5);
+  81:Core/Src/oled.c ****         break;                    // arg_int=1: delay by 5us, arg_int = 4: delay by 1.25us
+  82:Core/Src/oled.c ****     case U8X8_MSG_GPIO_I2C_CLOCK: // arg_int=0: Output low at I2C clock pin
+  83:Core/Src/oled.c ****         break;                    // arg_int=1: Input dir with pullup high for I2C clock pin
+  84:Core/Src/oled.c ****     case U8X8_MSG_GPIO_I2C_DATA:  // arg_int=0: Output low at I2C data pin
+  85:Core/Src/oled.c ****         break;                    // arg_int=1: Input dir with pullup high for I2C data pin
+  86:Core/Src/oled.c ****     case U8X8_MSG_GPIO_MENU_SELECT:
+  87:Core/Src/oled.c ****         u8x8_SetGPIOResult(u8x8, /* get menu select pin state */ 0);
+ 265              		.loc 1 87 0
+ 266 0056 0023     		movs	r3, #0
+ 267 0058 80F82730 		strb	r3, [r0, #39]
+  88:Core/Src/oled.c ****         break;
+ 268              		.loc 1 88 0
+ 269 005c 0EE0     		b	.L20
+ 270              	.L22:
+  89:Core/Src/oled.c ****     case U8X8_MSG_GPIO_MENU_NEXT:
+  90:Core/Src/oled.c ****         u8x8_SetGPIOResult(u8x8, /* get menu next pin state */ 0);
+ 271              		.loc 1 90 0
+ 272 005e 0023     		movs	r3, #0
+ 273 0060 80F82730 		strb	r3, [r0, #39]
+  91:Core/Src/oled.c ****         break;
+ 274              		.loc 1 91 0
+ 275 0064 0AE0     		b	.L20
+ 276              	.L23:
+  92:Core/Src/oled.c ****     case U8X8_MSG_GPIO_MENU_PREV:
+  93:Core/Src/oled.c ****         u8x8_SetGPIOResult(u8x8, /* get menu prev pin state */ 0);
+ 277              		.loc 1 93 0
+ 278 0066 0023     		movs	r3, #0
+ 279 0068 80F82730 		strb	r3, [r0, #39]
+  94:Core/Src/oled.c ****         break;
+ 280              		.loc 1 94 0
+ 281 006c 06E0     		b	.L20
+ 282              	.L24:
+  95:Core/Src/oled.c ****     case U8X8_MSG_GPIO_MENU_HOME:
+  96:Core/Src/oled.c ****         u8x8_SetGPIOResult(u8x8, /* get menu home pin state */ 0);
+ 283              		.loc 1 96 0
+ 284 006e 0023     		movs	r3, #0
+ 285 0070 80F82730 		strb	r3, [r0, #39]
+  97:Core/Src/oled.c ****         break;
+ 286              		.loc 1 97 0
+ 287 0074 02E0     		b	.L20
+ 288              	.L15:
+  98:Core/Src/oled.c ****     default:
+  99:Core/Src/oled.c ****         u8x8_SetGPIOResult(u8x8, 1); // default return value
+ 289              		.loc 1 99 0
+ 290 0076 0123     		movs	r3, #1
+ 291 0078 80F82730 		strb	r3, [r0, #39]
+ 292              	.LVL29:
+ 293              	.L20:
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccc9nDIO.s 			page 8
+
+
+ 100:Core/Src/oled.c ****         break;
+ 101:Core/Src/oled.c ****     }
+ 102:Core/Src/oled.c ****     return 1;
+ 103:Core/Src/oled.c **** }
+ 294              		.loc 1 103 0
+ 295 007c 0120     		movs	r0, #1
+ 296 007e 08BD     		pop	{r3, pc}
+ 297              		.cfi_endproc
+ 298              	.LFE67:
+ 300              		.section	.text.delay_us,"ax",%progbits
+ 301              		.align	2
+ 302              		.global	delay_us
+ 303              		.thumb
+ 304              		.thumb_func
+ 306              	delay_us:
+ 307              	.LFB66:
+  57:Core/Src/oled.c ****     uint32_t i = 8 * time;
+ 308              		.loc 1 57 0
+ 309              		.cfi_startproc
+ 310              		@ args = 0, pretend = 0, frame = 0
+ 311              		@ frame_needed = 0, uses_anonymous_args = 0
+ 312              		@ link register save eliminated.
+ 313              	.LVL30:
+  58:Core/Src/oled.c ****     while (i--)
+ 314              		.loc 1 58 0
+ 315 0000 C000     		lsls	r0, r0, #3
+ 316              	.LVL31:
+  59:Core/Src/oled.c ****         ;
+ 317              		.loc 1 59 0
+ 318 0002 00E0     		b	.L29
+ 319              	.LVL32:
+ 320              	.L30:
+ 321 0004 1846     		mov	r0, r3
+ 322              	.LVL33:
+ 323              	.L29:
+  59:Core/Src/oled.c ****         ;
+ 324              		.loc 1 59 0 is_stmt 0 discriminator 1
+ 325 0006 431E     		subs	r3, r0, #1
+ 326              	.LVL34:
+ 327 0008 0028     		cmp	r0, #0
+ 328 000a FBD1     		bne	.L30
+  61:Core/Src/oled.c **** 
+ 329              		.loc 1 61 0 is_stmt 1
+ 330 000c 7047     		bx	lr
+ 331              		.cfi_endproc
+ 332              	.LFE66:
+ 334 000e 00BF     		.section	.text.u8g2Init,"ax",%progbits
+ 335              		.align	2
+ 336              		.global	u8g2Init
+ 337              		.thumb
+ 338              		.thumb_func
+ 340              	u8g2Init:
+ 341              	.LFB68:
+ 104:Core/Src/oled.c **** 
+ 105:Core/Src/oled.c **** void u8g2Init(u8g2_t *u8g2)
+ 106:Core/Src/oled.c **** {
+ 342              		.loc 1 106 0
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccc9nDIO.s 			page 9
+
+
+ 343              		.cfi_startproc
+ 344              		@ args = 0, pretend = 0, frame = 0
+ 345              		@ frame_needed = 0, uses_anonymous_args = 0
+ 346              	.LVL35:
+ 347 0000 10B5     		push	{r4, lr}
+ 348              	.LCFI4:
+ 349              		.cfi_def_cfa_offset 8
+ 350              		.cfi_offset 4, -8
+ 351              		.cfi_offset 14, -4
+ 352 0002 0446     		mov	r4, r0
+ 107:Core/Src/oled.c ****     u8g2_Setup_ssd1306_i2c_128x64_noname_f(u8g2, U8G2_R0, u8x8_byte_hw_i2c, u8x8_gpio_and_delay); /
+ 353              		.loc 1 107 0
+ 354 0004 074B     		ldr	r3, .L33
+ 355 0006 084A     		ldr	r2, .L33+4
+ 356 0008 0849     		ldr	r1, .L33+8
+ 357 000a FFF7FEFF 		bl	u8g2_Setup_ssd1306_i2c_128x64_noname_f
+ 358              	.LVL36:
+ 108:Core/Src/oled.c ****     u8g2_InitDisplay(u8g2);                                                                       /
+ 359              		.loc 1 108 0
+ 360 000e 2046     		mov	r0, r4
+ 361 0010 FFF7FEFF 		bl	u8x8_InitDisplay
+ 362              	.LVL37:
+ 109:Core/Src/oled.c ****     u8g2_SetPowerSave(u8g2, 0);                                                                   /
+ 363              		.loc 1 109 0
+ 364 0014 0021     		movs	r1, #0
+ 365 0016 2046     		mov	r0, r4
+ 366 0018 FFF7FEFF 		bl	u8x8_SetPowerSave
+ 367              	.LVL38:
+ 110:Core/Src/oled.c ****     u8g2_ClearBuffer(u8g2);
+ 368              		.loc 1 110 0
+ 369 001c 2046     		mov	r0, r4
+ 370 001e FFF7FEFF 		bl	u8g2_ClearBuffer
+ 371              	.LVL39:
+ 372 0022 10BD     		pop	{r4, pc}
+ 373              	.LVL40:
+ 374              	.L34:
+ 375              		.align	2
+ 376              	.L33:
+ 377 0024 00000000 		.word	u8x8_gpio_and_delay
+ 378 0028 00000000 		.word	u8x8_byte_hw_i2c
+ 379 002c 00000000 		.word	u8g2_cb_r0
+ 380              		.cfi_endproc
+ 381              	.LFE68:
+ 383              		.section	.bss.buf_idx.12910,"aw",%nobits
+ 384              		.set	.LANCHOR0,. + 0
+ 387              	buf_idx.12910:
+ 388 0000 00       		.space	1
+ 389              		.section	.bss.buffer.12909,"aw",%nobits
+ 390              		.align	2
+ 391              		.set	.LANCHOR1,. + 0
+ 394              	buffer.12909:
+ 395 0000 00000000 		.space	128
+ 395      00000000 
+ 395      00000000 
+ 395      00000000 
+ 395      00000000 
+ 396              		.text
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccc9nDIO.s 			page 10
+
+
+ 397              	.Letext0:
+ 398              		.file 2 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\mach
+ 399              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\sys\
+ 400              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 401              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 402              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 403              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h"
+ 404              		.file 8 "u8g2_lib/u8x8.h"
+ 405              		.file 9 "u8g2_lib/u8g2.h"
+ 406              		.file 10 "Drivers/CMSIS/Include/core_cm3.h"
+ 407              		.file 11 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccc9nDIO.s 			page 11
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 oled.c
+C:\Users\master\AppData\Local\Temp\ccc9nDIO.s:20     .text.u8x8_byte_hw_i2c:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccc9nDIO.s:25     .text.u8x8_byte_hw_i2c:00000000 u8x8_byte_hw_i2c
+C:\Users\master\AppData\Local\Temp\ccc9nDIO.s:49     .text.u8x8_byte_hw_i2c:0000000e $d
+C:\Users\master\AppData\Local\Temp\ccc9nDIO.s:139    .text.u8x8_byte_hw_i2c:0000006c $d
+C:\Users\master\AppData\Local\Temp\ccc9nDIO.s:146    .text.u8x8_gpio_and_delay:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccc9nDIO.s:151    .text.u8x8_gpio_and_delay:00000000 u8x8_gpio_and_delay
+C:\Users\master\AppData\Local\Temp\ccc9nDIO.s:171    .text.u8x8_gpio_and_delay:0000000c $d
+C:\Users\master\AppData\Local\Temp\ccc9nDIO.s:301    .text.delay_us:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccc9nDIO.s:306    .text.delay_us:00000000 delay_us
+C:\Users\master\AppData\Local\Temp\ccc9nDIO.s:335    .text.u8g2Init:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccc9nDIO.s:340    .text.u8g2Init:00000000 u8g2Init
+C:\Users\master\AppData\Local\Temp\ccc9nDIO.s:377    .text.u8g2Init:00000024 $d
+C:\Users\master\AppData\Local\Temp\ccc9nDIO.s:387    .bss.buf_idx.12910:00000000 buf_idx.12910
+C:\Users\master\AppData\Local\Temp\ccc9nDIO.s:388    .bss.buf_idx.12910:00000000 $d
+C:\Users\master\AppData\Local\Temp\ccc9nDIO.s:390    .bss.buffer.12909:00000000 $d
+C:\Users\master\AppData\Local\Temp\ccc9nDIO.s:394    .bss.buffer.12909:00000000 buffer.12909
+                     .debug_frame:00000010 $d
+C:\Users\master\AppData\Local\Temp\ccc9nDIO.s:62     .text.u8x8_byte_hw_i2c:0000001b $d
+C:\Users\master\AppData\Local\Temp\ccc9nDIO.s:62     .text.u8x8_byte_hw_i2c:0000001c $t
+C:\Users\master\AppData\Local\Temp\ccc9nDIO.s:214    .text.u8x8_gpio_and_delay:00000037 $d
+C:\Users\master\AppData\Local\Temp\ccc9nDIO.s:214    .text.u8x8_gpio_and_delay:00000038 $t
+
+UNDEFINED SYMBOLS
+HAL_I2C_Master_Transmit
+hi2c1
+HAL_Delay
+u8g2_Setup_ssd1306_i2c_128x64_noname_f
+u8x8_InitDisplay
+u8x8_SetPowerSave
+u8g2_ClearBuffer
+u8g2_cb_r0

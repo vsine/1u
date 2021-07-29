@@ -1,0 +1,388 @@
+ARM GAS  C:\Users\master\AppData\Local\Temp\cca2xbwc.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"u8x8_setup.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.u8x8_dummy_cb,"ax",%progbits
+  20              		.align	2
+  21              		.global	u8x8_dummy_cb
+  22              		.thumb
+  23              		.thumb_func
+  25              	u8x8_dummy_cb:
+  26              	.LFB0:
+  27              		.file 1 "u8g2_lib/u8x8_setup.c"
+   1:u8g2_lib/u8x8_setup.c **** /*
+   2:u8g2_lib/u8x8_setup.c **** 
+   3:u8g2_lib/u8x8_setup.c ****   u8x8_setup.c
+   4:u8g2_lib/u8x8_setup.c **** 
+   5:u8g2_lib/u8x8_setup.c ****   Universal 8bit Graphics Library (https://github.com/olikraus/u8g2/)
+   6:u8g2_lib/u8x8_setup.c **** 
+   7:u8g2_lib/u8x8_setup.c ****   Copyright (c) 2016, olikraus@gmail.com
+   8:u8g2_lib/u8x8_setup.c ****   All rights reserved.
+   9:u8g2_lib/u8x8_setup.c **** 
+  10:u8g2_lib/u8x8_setup.c ****   Redistribution and use in source and binary forms, with or without modification, 
+  11:u8g2_lib/u8x8_setup.c ****   are permitted provided that the following conditions are met:
+  12:u8g2_lib/u8x8_setup.c **** 
+  13:u8g2_lib/u8x8_setup.c ****   * Redistributions of source code must retain the above copyright notice, this list 
+  14:u8g2_lib/u8x8_setup.c ****     of conditions and the following disclaimer.
+  15:u8g2_lib/u8x8_setup.c ****     
+  16:u8g2_lib/u8x8_setup.c ****   * Redistributions in binary form must reproduce the above copyright notice, this 
+  17:u8g2_lib/u8x8_setup.c ****     list of conditions and the following disclaimer in the documentation and/or other 
+  18:u8g2_lib/u8x8_setup.c ****     materials provided with the distribution.
+  19:u8g2_lib/u8x8_setup.c **** 
+  20:u8g2_lib/u8x8_setup.c ****   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND 
+  21:u8g2_lib/u8x8_setup.c ****   CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, 
+  22:u8g2_lib/u8x8_setup.c ****   INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF 
+  23:u8g2_lib/u8x8_setup.c ****   MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE 
+  24:u8g2_lib/u8x8_setup.c ****   DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR 
+  25:u8g2_lib/u8x8_setup.c ****   CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+  26:u8g2_lib/u8x8_setup.c ****   SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+  27:u8g2_lib/u8x8_setup.c ****   NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; 
+  28:u8g2_lib/u8x8_setup.c ****   LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER 
+  29:u8g2_lib/u8x8_setup.c ****   CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, 
+  30:u8g2_lib/u8x8_setup.c ****   STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+  31:u8g2_lib/u8x8_setup.c ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
+ARM GAS  C:\Users\master\AppData\Local\Temp\cca2xbwc.s 			page 2
+
+
+  32:u8g2_lib/u8x8_setup.c ****   ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.  
+  33:u8g2_lib/u8x8_setup.c **** 
+  34:u8g2_lib/u8x8_setup.c **** */
+  35:u8g2_lib/u8x8_setup.c **** 
+  36:u8g2_lib/u8x8_setup.c **** 
+  37:u8g2_lib/u8x8_setup.c **** #include "u8x8.h"
+  38:u8g2_lib/u8x8_setup.c **** 
+  39:u8g2_lib/u8x8_setup.c **** /* universal dummy callback, which will be default for all callbacks */
+  40:u8g2_lib/u8x8_setup.c **** uint8_t u8x8_dummy_cb(U8X8_UNUSED u8x8_t *u8x8, U8X8_UNUSED uint8_t msg, U8X8_UNUSED uint8_t arg_in
+  41:u8g2_lib/u8x8_setup.c **** {
+  28              		.loc 1 41 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33              	.LVL0:
+  42:u8g2_lib/u8x8_setup.c ****   /* the dummy callback will not handle any message and will fail for all messages */
+  43:u8g2_lib/u8x8_setup.c ****   return 0;
+  44:u8g2_lib/u8x8_setup.c **** }
+  34              		.loc 1 44 0
+  35 0000 0020     		movs	r0, #0
+  36              	.LVL1:
+  37 0002 7047     		bx	lr
+  38              		.cfi_endproc
+  39              	.LFE0:
+  41              		.section	.text.u8x8_d_null_cb,"ax",%progbits
+  42              		.align	2
+  43              		.global	u8x8_d_null_cb
+  44              		.thumb
+  45              		.thumb_func
+  47              	u8x8_d_null_cb:
+  48              	.LFB1:
+  45:u8g2_lib/u8x8_setup.c **** 
+  46:u8g2_lib/u8x8_setup.c **** 
+  47:u8g2_lib/u8x8_setup.c **** static const u8x8_display_info_t u8x8_null_display_info =
+  48:u8g2_lib/u8x8_setup.c **** {
+  49:u8g2_lib/u8x8_setup.c ****   /* chip_enable_level = */ 0,
+  50:u8g2_lib/u8x8_setup.c ****   /* chip_disable_level = */ 1,
+  51:u8g2_lib/u8x8_setup.c ****   
+  52:u8g2_lib/u8x8_setup.c ****   /* post_chip_enable_wait_ns = */ 0,
+  53:u8g2_lib/u8x8_setup.c ****   /* pre_chip_disable_wait_ns = */ 0,
+  54:u8g2_lib/u8x8_setup.c ****   /* reset_pulse_width_ms = */ 0, 
+  55:u8g2_lib/u8x8_setup.c ****   /* post_reset_wait_ms = */ 0, 
+  56:u8g2_lib/u8x8_setup.c ****   /* sda_setup_time_ns = */ 0,		
+  57:u8g2_lib/u8x8_setup.c ****   /* sck_pulse_width_ns = */ 0,	/* half of cycle time (100ns according to datasheet), AVR: below 70
+  58:u8g2_lib/u8x8_setup.c ****   /* sck_clock_hz = */ 4000000UL,	/* since Arduino 1.6.0, the SPI bus speed in Hz. Should be  10000
+  59:u8g2_lib/u8x8_setup.c ****   /* spi_mode = */ 0,		/* active high, rising edge */
+  60:u8g2_lib/u8x8_setup.c ****   /* i2c_bus_clock_100kHz = */ 4,
+  61:u8g2_lib/u8x8_setup.c ****   /* data_setup_time_ns = */ 0,
+  62:u8g2_lib/u8x8_setup.c ****   /* write_pulse_width_ns = */ 0,
+  63:u8g2_lib/u8x8_setup.c ****   /* tile_width = */ 1,		/* 8x8 */
+  64:u8g2_lib/u8x8_setup.c ****   /* tile_hight = */ 1,
+  65:u8g2_lib/u8x8_setup.c ****   /* default_x_offset = */ 0,
+  66:u8g2_lib/u8x8_setup.c ****   /* flipmode_x_offset = */ 0,
+  67:u8g2_lib/u8x8_setup.c ****   /* pixel_width = */ 8,
+  68:u8g2_lib/u8x8_setup.c ****   /* pixel_height = */ 8
+  69:u8g2_lib/u8x8_setup.c **** };
+ARM GAS  C:\Users\master\AppData\Local\Temp\cca2xbwc.s 			page 3
+
+
+  70:u8g2_lib/u8x8_setup.c **** 
+  71:u8g2_lib/u8x8_setup.c **** 
+  72:u8g2_lib/u8x8_setup.c **** /* a special null device */
+  73:u8g2_lib/u8x8_setup.c **** uint8_t u8x8_d_null_cb(u8x8_t *u8x8, uint8_t msg, U8X8_UNUSED uint8_t arg_int, U8X8_UNUSED void *ar
+  74:u8g2_lib/u8x8_setup.c **** {
+  49              		.loc 1 74 0
+  50              		.cfi_startproc
+  51              		@ args = 0, pretend = 0, frame = 0
+  52              		@ frame_needed = 0, uses_anonymous_args = 0
+  53              	.LVL2:
+  54 0000 08B5     		push	{r3, lr}
+  55              	.LCFI0:
+  56              		.cfi_def_cfa_offset 8
+  57              		.cfi_offset 3, -8
+  58              		.cfi_offset 14, -4
+  75:u8g2_lib/u8x8_setup.c ****   switch(msg)
+  59              		.loc 1 75 0
+  60 0002 0929     		cmp	r1, #9
+  61 0004 02D0     		beq	.L4
+  62 0006 0A29     		cmp	r1, #10
+  63 0008 04D0     		beq	.L5
+  64 000a 05E0     		b	.L3
+  65              	.L4:
+  76:u8g2_lib/u8x8_setup.c ****   {
+  77:u8g2_lib/u8x8_setup.c ****     case U8X8_MSG_DISPLAY_SETUP_MEMORY:
+  78:u8g2_lib/u8x8_setup.c ****       u8x8_d_helper_display_setup_memory(u8x8, &u8x8_null_display_info);
+  66              		.loc 1 78 0
+  67 000c 0349     		ldr	r1, .L7
+  68              	.LVL3:
+  69 000e FFF7FEFF 		bl	u8x8_d_helper_display_setup_memory
+  70              	.LVL4:
+  79:u8g2_lib/u8x8_setup.c ****       break;
+  71              		.loc 1 79 0
+  72 0012 01E0     		b	.L3
+  73              	.LVL5:
+  74              	.L5:
+  80:u8g2_lib/u8x8_setup.c ****     case U8X8_MSG_DISPLAY_INIT:
+  81:u8g2_lib/u8x8_setup.c ****       u8x8_d_helper_display_init(u8x8);
+  75              		.loc 1 81 0
+  76 0014 FFF7FEFF 		bl	u8x8_d_helper_display_init
+  77              	.LVL6:
+  78              	.L3:
+  82:u8g2_lib/u8x8_setup.c ****       break;
+  83:u8g2_lib/u8x8_setup.c ****   }
+  84:u8g2_lib/u8x8_setup.c ****   /* the null device callback will succeed for all messages */
+  85:u8g2_lib/u8x8_setup.c ****   return 1;
+  86:u8g2_lib/u8x8_setup.c **** }
+  79              		.loc 1 86 0
+  80 0018 0120     		movs	r0, #1
+  81 001a 08BD     		pop	{r3, pc}
+  82              	.L8:
+  83              		.align	2
+  84              	.L7:
+  85 001c 00000000 		.word	.LANCHOR0
+  86              		.cfi_endproc
+  87              	.LFE1:
+  89              		.section	.text.u8x8_SetupDefaults,"ax",%progbits
+ARM GAS  C:\Users\master\AppData\Local\Temp\cca2xbwc.s 			page 4
+
+
+  90              		.align	2
+  91              		.global	u8x8_SetupDefaults
+  92              		.thumb
+  93              		.thumb_func
+  95              	u8x8_SetupDefaults:
+  96              	.LFB2:
+  87:u8g2_lib/u8x8_setup.c **** 
+  88:u8g2_lib/u8x8_setup.c **** 
+  89:u8g2_lib/u8x8_setup.c **** /*
+  90:u8g2_lib/u8x8_setup.c ****   Description:
+  91:u8g2_lib/u8x8_setup.c ****     Setup u8x8
+  92:u8g2_lib/u8x8_setup.c ****   Args:
+  93:u8g2_lib/u8x8_setup.c ****     u8x8	An empty u8x8 structure
+  94:u8g2_lib/u8x8_setup.c **** */
+  95:u8g2_lib/u8x8_setup.c **** void u8x8_SetupDefaults(u8x8_t *u8x8)
+  96:u8g2_lib/u8x8_setup.c **** {
+  97              		.loc 1 96 0
+  98              		.cfi_startproc
+  99              		@ args = 0, pretend = 0, frame = 0
+ 100              		@ frame_needed = 0, uses_anonymous_args = 0
+ 101              		@ link register save eliminated.
+ 102              	.LVL7:
+  97:u8g2_lib/u8x8_setup.c ****     u8x8->display_info = NULL;
+ 103              		.loc 1 97 0
+ 104 0000 0023     		movs	r3, #0
+ 105 0002 0360     		str	r3, [r0]
+  98:u8g2_lib/u8x8_setup.c ****     u8x8->display_cb = u8x8_dummy_cb;
+ 106              		.loc 1 98 0
+ 107 0004 074A     		ldr	r2, .L10
+ 108 0006 8260     		str	r2, [r0, #8]
+  99:u8g2_lib/u8x8_setup.c ****     u8x8->cad_cb = u8x8_dummy_cb;
+ 109              		.loc 1 99 0
+ 110 0008 C260     		str	r2, [r0, #12]
+ 100:u8g2_lib/u8x8_setup.c ****     u8x8->byte_cb = u8x8_dummy_cb;
+ 111              		.loc 1 100 0
+ 112 000a 0261     		str	r2, [r0, #16]
+ 101:u8g2_lib/u8x8_setup.c ****     u8x8->gpio_and_delay_cb = u8x8_dummy_cb;
+ 113              		.loc 1 101 0
+ 114 000c 4261     		str	r2, [r0, #20]
+ 102:u8g2_lib/u8x8_setup.c ****     u8x8->is_font_inverse_mode = 0;
+ 115              		.loc 1 102 0
+ 116 000e 80F82330 		strb	r3, [r0, #35]
+ 103:u8g2_lib/u8x8_setup.c ****     //u8x8->device_address = 0;
+ 104:u8g2_lib/u8x8_setup.c ****     u8x8->utf8_state = 0;		/* also reset by u8x8_utf8_init */
+ 117              		.loc 1 104 0
+ 118 0012 80F82630 		strb	r3, [r0, #38]
+ 105:u8g2_lib/u8x8_setup.c ****     u8x8->bus_clock = 0;		/* issue 769 */
+ 119              		.loc 1 105 0
+ 120 0016 8361     		str	r3, [r0, #24]
+ 106:u8g2_lib/u8x8_setup.c ****     u8x8->i2c_address = 255;
+ 121              		.loc 1 106 0
+ 122 0018 FF23     		movs	r3, #255
+ 123 001a 80F82430 		strb	r3, [r0, #36]
+ 107:u8g2_lib/u8x8_setup.c ****     u8x8->debounce_default_pin_state = 255;	/* assume all low active buttons */
+ 124              		.loc 1 107 0
+ 125 001e 80F82830 		strb	r3, [r0, #40]
+ 126 0022 7047     		bx	lr
+ARM GAS  C:\Users\master\AppData\Local\Temp\cca2xbwc.s 			page 5
+
+
+ 127              	.L11:
+ 128              		.align	2
+ 129              	.L10:
+ 130 0024 00000000 		.word	u8x8_dummy_cb
+ 131              		.cfi_endproc
+ 132              	.LFE2:
+ 134              		.section	.text.u8x8_Setup,"ax",%progbits
+ 135              		.align	2
+ 136              		.global	u8x8_Setup
+ 137              		.thumb
+ 138              		.thumb_func
+ 140              	u8x8_Setup:
+ 141              	.LFB3:
+ 108:u8g2_lib/u8x8_setup.c ****   
+ 109:u8g2_lib/u8x8_setup.c **** #ifdef U8X8_USE_PINS 
+ 110:u8g2_lib/u8x8_setup.c ****   {
+ 111:u8g2_lib/u8x8_setup.c ****     uint8_t i;
+ 112:u8g2_lib/u8x8_setup.c ****     for( i = 0; i < U8X8_PIN_CNT; i++ )
+ 113:u8g2_lib/u8x8_setup.c ****       u8x8->pins[i] = U8X8_PIN_NONE;
+ 114:u8g2_lib/u8x8_setup.c ****   }
+ 115:u8g2_lib/u8x8_setup.c **** #endif
+ 116:u8g2_lib/u8x8_setup.c **** }
+ 117:u8g2_lib/u8x8_setup.c **** 
+ 118:u8g2_lib/u8x8_setup.c **** 
+ 119:u8g2_lib/u8x8_setup.c **** /*
+ 120:u8g2_lib/u8x8_setup.c ****   Description:
+ 121:u8g2_lib/u8x8_setup.c ****     Setup u8x8 and assign the callback function. The dummy 
+ 122:u8g2_lib/u8x8_setup.c ****     callback "u8x8_dummy_cb" can be used, if no callback is required.
+ 123:u8g2_lib/u8x8_setup.c ****     This setup will not communicate with the display itself.
+ 124:u8g2_lib/u8x8_setup.c ****     Use u8x8_InitDisplay() to send the startup code to the Display.
+ 125:u8g2_lib/u8x8_setup.c ****   Args:
+ 126:u8g2_lib/u8x8_setup.c ****     u8x8				An empty u8x8 structure
+ 127:u8g2_lib/u8x8_setup.c ****     display_cb			Display/controller specific callback function
+ 128:u8g2_lib/u8x8_setup.c ****     cad_cb				Display controller specific communication callback function
+ 129:u8g2_lib/u8x8_setup.c ****     byte_cb			Display controller/communication specific callback funtion
+ 130:u8g2_lib/u8x8_setup.c ****     gpio_and_delay_cb	Environment specific callback function
+ 131:u8g2_lib/u8x8_setup.c **** 
+ 132:u8g2_lib/u8x8_setup.c **** */
+ 133:u8g2_lib/u8x8_setup.c **** void u8x8_Setup(u8x8_t *u8x8, u8x8_msg_cb display_cb, u8x8_msg_cb cad_cb, u8x8_msg_cb byte_cb, u8x8
+ 134:u8g2_lib/u8x8_setup.c **** {
+ 142              		.loc 1 134 0
+ 143              		.cfi_startproc
+ 144              		@ args = 4, pretend = 0, frame = 0
+ 145              		@ frame_needed = 0, uses_anonymous_args = 0
+ 146              	.LVL8:
+ 147 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 148              	.LCFI1:
+ 149              		.cfi_def_cfa_offset 24
+ 150              		.cfi_offset 3, -24
+ 151              		.cfi_offset 4, -20
+ 152              		.cfi_offset 5, -16
+ 153              		.cfi_offset 6, -12
+ 154              		.cfi_offset 7, -8
+ 155              		.cfi_offset 14, -4
+ 156 0002 0446     		mov	r4, r0
+ 157 0004 0F46     		mov	r7, r1
+ 158 0006 1646     		mov	r6, r2
+ARM GAS  C:\Users\master\AppData\Local\Temp\cca2xbwc.s 			page 6
+
+
+ 159 0008 1D46     		mov	r5, r3
+ 135:u8g2_lib/u8x8_setup.c ****   /* setup defaults and reset pins to U8X8_PIN_NONE */
+ 136:u8g2_lib/u8x8_setup.c ****   u8x8_SetupDefaults(u8x8);
+ 160              		.loc 1 136 0
+ 161 000a FFF7FEFF 		bl	u8x8_SetupDefaults
+ 162              	.LVL9:
+ 137:u8g2_lib/u8x8_setup.c **** 
+ 138:u8g2_lib/u8x8_setup.c ****   /* setup specific callbacks */
+ 139:u8g2_lib/u8x8_setup.c ****   u8x8->display_cb = display_cb;
+ 163              		.loc 1 139 0
+ 164 000e A760     		str	r7, [r4, #8]
+ 140:u8g2_lib/u8x8_setup.c ****   u8x8->cad_cb = cad_cb;
+ 165              		.loc 1 140 0
+ 166 0010 E660     		str	r6, [r4, #12]
+ 141:u8g2_lib/u8x8_setup.c ****   u8x8->byte_cb = byte_cb;
+ 167              		.loc 1 141 0
+ 168 0012 2561     		str	r5, [r4, #16]
+ 142:u8g2_lib/u8x8_setup.c ****   u8x8->gpio_and_delay_cb = gpio_and_delay_cb;
+ 169              		.loc 1 142 0
+ 170 0014 069B     		ldr	r3, [sp, #24]
+ 171 0016 6361     		str	r3, [r4, #20]
+ 143:u8g2_lib/u8x8_setup.c **** 
+ 144:u8g2_lib/u8x8_setup.c ****   /* setup display info */
+ 145:u8g2_lib/u8x8_setup.c ****   u8x8_SetupMemory(u8x8);
+ 172              		.loc 1 145 0
+ 173 0018 2046     		mov	r0, r4
+ 174 001a FFF7FEFF 		bl	u8x8_SetupMemory
+ 175              	.LVL10:
+ 176 001e F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 177              		.cfi_endproc
+ 178              	.LFE3:
+ 180              		.section	.rodata.u8x8_null_display_info,"a",%progbits
+ 181              		.align	2
+ 182              		.set	.LANCHOR0,. + 0
+ 185              	u8x8_null_display_info:
+ 186 0000 00       		.byte	0
+ 187 0001 01       		.byte	1
+ 188 0002 00       		.byte	0
+ 189 0003 00       		.byte	0
+ 190 0004 00       		.byte	0
+ 191 0005 00       		.byte	0
+ 192 0006 00       		.byte	0
+ 193 0007 00       		.byte	0
+ 194 0008 00093D00 		.word	4000000
+ 195 000c 00       		.byte	0
+ 196 000d 04       		.byte	4
+ 197 000e 00       		.byte	0
+ 198 000f 00       		.byte	0
+ 199 0010 01       		.byte	1
+ 200 0011 01       		.byte	1
+ 201 0012 00       		.byte	0
+ 202 0013 00       		.byte	0
+ 203 0014 0800     		.short	8
+ 204 0016 0800     		.short	8
+ 205              		.text
+ 206              	.Letext0:
+ 207              		.file 2 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\mach
+ARM GAS  C:\Users\master\AppData\Local\Temp\cca2xbwc.s 			page 7
+
+
+ 208              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\sys\
+ 209              		.file 4 "u8g2_lib/u8x8.h"
+ARM GAS  C:\Users\master\AppData\Local\Temp\cca2xbwc.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 u8x8_setup.c
+C:\Users\master\AppData\Local\Temp\cca2xbwc.s:20     .text.u8x8_dummy_cb:00000000 $t
+C:\Users\master\AppData\Local\Temp\cca2xbwc.s:25     .text.u8x8_dummy_cb:00000000 u8x8_dummy_cb
+C:\Users\master\AppData\Local\Temp\cca2xbwc.s:42     .text.u8x8_d_null_cb:00000000 $t
+C:\Users\master\AppData\Local\Temp\cca2xbwc.s:47     .text.u8x8_d_null_cb:00000000 u8x8_d_null_cb
+C:\Users\master\AppData\Local\Temp\cca2xbwc.s:85     .text.u8x8_d_null_cb:0000001c $d
+C:\Users\master\AppData\Local\Temp\cca2xbwc.s:90     .text.u8x8_SetupDefaults:00000000 $t
+C:\Users\master\AppData\Local\Temp\cca2xbwc.s:95     .text.u8x8_SetupDefaults:00000000 u8x8_SetupDefaults
+C:\Users\master\AppData\Local\Temp\cca2xbwc.s:130    .text.u8x8_SetupDefaults:00000024 $d
+C:\Users\master\AppData\Local\Temp\cca2xbwc.s:135    .text.u8x8_Setup:00000000 $t
+C:\Users\master\AppData\Local\Temp\cca2xbwc.s:140    .text.u8x8_Setup:00000000 u8x8_Setup
+C:\Users\master\AppData\Local\Temp\cca2xbwc.s:181    .rodata.u8x8_null_display_info:00000000 $d
+C:\Users\master\AppData\Local\Temp\cca2xbwc.s:185    .rodata.u8x8_null_display_info:00000000 u8x8_null_display_info
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+u8x8_d_helper_display_setup_memory
+u8x8_d_helper_display_init
+u8x8_SetupMemory
