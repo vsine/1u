@@ -1,9 +1,5 @@
 # Prerequisites
-*.d
 *.lst
 # Object files
 .tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+build/
