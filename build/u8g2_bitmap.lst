@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 1
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccH7dcQh.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 1
   29:u8g2_lib/u8g2_bitmap.c ****   CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, 
   30:u8g2_lib/u8g2_bitmap.c ****   STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
   31:u8g2_lib/u8g2_bitmap.c ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 2
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccH7dcQh.s 			page 2
 
 
   32:u8g2_lib/u8g2_bitmap.c ****   ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.  
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 1
   64              		.cfi_offset 14, -4
   65 0004 83B0     		sub	sp, sp, #12
   66              	.LCFI1:
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 3
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccH7dcQh.s 			page 3
 
 
   67              		.cfi_def_cfa_offset 48
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 1
  106 0044 4046     		mov	r0, r8
  107 0046 FFF7FEFF 		bl	u8g2_DrawHVLine
  108              	.LVL8:
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 4
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccH7dcQh.s 			page 4
 
 
  109 004a 0BE0     		b	.L6
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 1
  148              		.loc 1 62 0
  149 0074 002C     		cmp	r4, #0
  150 0076 DBD1     		bne	.L8
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 5
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccH7dcQh.s 			page 5
 
 
   80:u8g2_lib/u8g2_bitmap.c ****   }
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 1
   89:u8g2_lib/u8g2_bitmap.c ****   w = cnt;
   90:u8g2_lib/u8g2_bitmap.c ****   w *= 8;
  198              		.loc 1 90 0
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 6
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccH7dcQh.s 			page 6
 
 
  199 0014 DF00     		lsls	r7, r3, #3
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 1
  241              	.L10:
  102:u8g2_lib/u8g2_bitmap.c ****   }
  103:u8g2_lib/u8g2_bitmap.c **** }
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 7
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccH7dcQh.s 			page 7
 
 
  242              		.loc 1 103 0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 1
  288 0014 CB18     		adds	r3, r1, r3
  289              	.LVL34:
  290 0016 541C     		adds	r4, r2, #1
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 8
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccH7dcQh.s 			page 8
 
 
  291 0018 A4B2     		uxth	r4, r4
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 1
  334              	.LVL40:
  335              	.L19:
  125:u8g2_lib/u8g2_bitmap.c ****     }
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 9
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccH7dcQh.s 			page 9
 
 
  126:u8g2_lib/u8g2_bitmap.c ****     x++;
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 1
  378 0086 00BF     		.section	.text.u8g2_DrawXBM,"ax",%progbits
  379              		.align	2
  380              		.global	u8g2_DrawXBM
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 10
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccH7dcQh.s 			page 10
 
 
  381              		.thumb
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 1
  426              	.LVL56:
  427 002e 60B9     		cbnz	r0, .L25
  428 0030 0DE0     		b	.L23
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 11
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccH7dcQh.s 			page 11
 
 
  429              	.LVL57:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 1
  473              	u8g2_DrawHXBMP:
  474              	.LFB5:
  158:u8g2_lib/u8g2_bitmap.c **** 
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 12
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccH7dcQh.s 			page 12
 
 
  159:u8g2_lib/u8g2_bitmap.c **** 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 1
  517 002c 0124     		movs	r4, #1
  518 002e 23E0     		b	.L30
  519              	.LVL71:
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 13
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccH7dcQh.s 			page 13
 
 
  520              	.L34:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 1
  558 0068 6400     		lsls	r4, r4, #1
  559              	.LVL76:
  187:u8g2_lib/u8g2_bitmap.c ****     if ( mask == 0 )
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 14
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccH7dcQh.s 			page 14
 
 
  560              		.loc 1 187 0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 1
  602              		.loc 1 199 0
  603              		.cfi_startproc
  604              		@ args = 8, pretend = 0, frame = 0
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 15
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccH7dcQh.s 			page 15
 
 
  605              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 1
  647              		.loc 1 211 0
  648 0032 0096     		str	r6, [sp]
  649 0034 3B46     		mov	r3, r7
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 16
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccH7dcQh.s 			page 16
 
 
  650 0036 2A46     		mov	r2, r5
@@ -945,25 +945,25 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 1
  686              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\sys\
  687              		.file 4 "u8g2_lib/u8x8.h"
  688              		.file 5 "u8g2_lib/u8g2.h"
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccHGazIl.s 			page 17
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccH7dcQh.s 			page 17
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 u8g2_bitmap.c
-C:\Users\master\AppData\Local\Temp\ccHGazIl.s:20     .text.u8g2_SetBitmapMode:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccHGazIl.s:25     .text.u8g2_SetBitmapMode:00000000 u8g2_SetBitmapMode
-C:\Users\master\AppData\Local\Temp\ccHGazIl.s:41     .text.u8g2_DrawHorizontalBitmap:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccHGazIl.s:46     .text.u8g2_DrawHorizontalBitmap:00000000 u8g2_DrawHorizontalBitmap
-C:\Users\master\AppData\Local\Temp\ccHGazIl.s:165    .text.u8g2_DrawBitmap:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccHGazIl.s:170    .text.u8g2_DrawBitmap:00000000 u8g2_DrawBitmap
-C:\Users\master\AppData\Local\Temp\ccHGazIl.s:252    .text.u8g2_DrawHXBM:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccHGazIl.s:257    .text.u8g2_DrawHXBM:00000000 u8g2_DrawHXBM
-C:\Users\master\AppData\Local\Temp\ccHGazIl.s:379    .text.u8g2_DrawXBM:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccHGazIl.s:384    .text.u8g2_DrawXBM:00000000 u8g2_DrawXBM
-C:\Users\master\AppData\Local\Temp\ccHGazIl.s:468    .text.u8g2_DrawHXBMP:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccHGazIl.s:473    .text.u8g2_DrawHXBMP:00000000 u8g2_DrawHXBMP
-C:\Users\master\AppData\Local\Temp\ccHGazIl.s:595    .text.u8g2_DrawXBMP:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccHGazIl.s:600    .text.u8g2_DrawXBMP:00000000 u8g2_DrawXBMP
+C:\Users\master\AppData\Local\Temp\ccH7dcQh.s:20     .text.u8g2_SetBitmapMode:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccH7dcQh.s:25     .text.u8g2_SetBitmapMode:00000000 u8g2_SetBitmapMode
+C:\Users\master\AppData\Local\Temp\ccH7dcQh.s:41     .text.u8g2_DrawHorizontalBitmap:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccH7dcQh.s:46     .text.u8g2_DrawHorizontalBitmap:00000000 u8g2_DrawHorizontalBitmap
+C:\Users\master\AppData\Local\Temp\ccH7dcQh.s:165    .text.u8g2_DrawBitmap:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccH7dcQh.s:170    .text.u8g2_DrawBitmap:00000000 u8g2_DrawBitmap
+C:\Users\master\AppData\Local\Temp\ccH7dcQh.s:252    .text.u8g2_DrawHXBM:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccH7dcQh.s:257    .text.u8g2_DrawHXBM:00000000 u8g2_DrawHXBM
+C:\Users\master\AppData\Local\Temp\ccH7dcQh.s:379    .text.u8g2_DrawXBM:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccH7dcQh.s:384    .text.u8g2_DrawXBM:00000000 u8g2_DrawXBM
+C:\Users\master\AppData\Local\Temp\ccH7dcQh.s:468    .text.u8g2_DrawHXBMP:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccH7dcQh.s:473    .text.u8g2_DrawHXBMP:00000000 u8g2_DrawHXBMP
+C:\Users\master\AppData\Local\Temp\ccH7dcQh.s:595    .text.u8g2_DrawXBMP:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccH7dcQh.s:600    .text.u8g2_DrawXBMP:00000000 u8g2_DrawXBMP
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS
