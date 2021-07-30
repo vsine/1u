@@ -3,5 +3,4 @@
 # Object files
 .tmp_versions/
 build/
-build/mysetp.lst
-build/oled.lst
+
