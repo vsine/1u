@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccpMZxIY.s 			page 1
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccfMZWPP.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccpMZxIY.s 			page 1
   29:u8g2_lib/u8g2_kerning.c ****   CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, 
   30:u8g2_lib/u8g2_kerning.c ****   STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
   31:u8g2_lib/u8g2_kerning.c ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccpMZxIY.s 			page 2
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccfMZWPP.s 			page 2
 
 
   32:u8g2_lib/u8g2_kerning.c ****   ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.  
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccpMZxIY.s 			page 1
   56              	.L5:
   57:u8g2_lib/u8g2_kerning.c ****   {
   58:u8g2_lib/u8g2_kerning.c ****     if ( kerning->first_encoding_table[i1] == e1 )
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccpMZxIY.s 			page 3
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccfMZWPP.s 			page 3
 
 
   57              		.loc 1 58 0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccpMZxIY.s 			page 1
   66:u8g2_lib/u8g2_kerning.c ****   for( i2 = kerning->index_to_second_table[i1]; i2 < end; i2++ )
   98              		.loc 1 66 0 is_stmt 0 discriminator 1
   99 0042 8242     		cmp	r2, r0
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccpMZxIY.s 			page 4
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccfMZWPP.s 			page 4
 
 
  100 0044 F6D3     		bcc	.L8
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccpMZxIY.s 			page 1
  143              	.LVL21:
  144 005c 7047     		bx	lr
  145              		.cfi_endproc
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccpMZxIY.s 			page 5
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccfMZWPP.s 			page 5
 
 
  146              	.LFE0:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccpMZxIY.s 			page 1
   89:u8g2_lib/u8g2_kerning.c ****       return kt[i+2];
  189              		.loc 1 89 0 is_stmt 1
  190 0024 0236     		adds	r6, r6, #2
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccpMZxIY.s 			page 6
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccfMZWPP.s 			page 6
 
 
  191 0026 15F81600 		ldrb	r0, [r5, r6, lsl #1]	@ zero_extendqisi2
@@ -356,15 +356,15 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccpMZxIY.s 			page 1
  238              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\sys\
  239              		.file 4 "u8g2_lib/u8x8.h"
  240              		.file 5 "u8g2_lib/u8g2.h"
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccpMZxIY.s 			page 7
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccfMZWPP.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 u8g2_kerning.c
-C:\Users\master\AppData\Local\Temp\ccpMZxIY.s:20     .text.u8g2_GetKerning:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccpMZxIY.s:25     .text.u8g2_GetKerning:00000000 u8g2_GetKerning
-C:\Users\master\AppData\Local\Temp\ccpMZxIY.s:149    .text.u8g2_GetKerningByTable:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccpMZxIY.s:154    .text.u8g2_GetKerningByTable:00000000 u8g2_GetKerningByTable
+C:\Users\master\AppData\Local\Temp\ccfMZWPP.s:20     .text.u8g2_GetKerning:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccfMZWPP.s:25     .text.u8g2_GetKerning:00000000 u8g2_GetKerning
+C:\Users\master\AppData\Local\Temp\ccfMZWPP.s:149    .text.u8g2_GetKerningByTable:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccfMZWPP.s:154    .text.u8g2_GetKerningByTable:00000000 u8g2_GetKerningByTable
                      .debug_frame:00000010 $d
 
 NO UNDEFINED SYMBOLS
