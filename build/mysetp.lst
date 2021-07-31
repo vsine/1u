@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\master\AppData\Local\Temp\cc8w77Vt.s 			page 1
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccD0ZdFq.s 			page 1
 
 
    1              		.syntax unified
@@ -30,20 +30,23 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\cc8w77Vt.s 			page 1
    1:Core/Src/mysetp.c **** #include "mysetp.h"
    2:Core/Src/mysetp.c **** #include "oled.h"
    3:Core/Src/mysetp.c **** 
-   4:Core/Src/mysetp.c **** uint8_t dds[]={11,22};
-   5:Core/Src/mysetp.c **** 
+   4:Core/Src/mysetp.c **** 
+   5:Core/Src/mysetp.c **** extern TIM_HandleTypeDef htim2;
    6:Core/Src/mysetp.c **** 
-   7:Core/Src/mysetp.c **** u8g2_t u8g2;
+   7:Core/Src/mysetp.c **** uint8_t dds[]={11,22};
    8:Core/Src/mysetp.c **** 
-   9:Core/Src/mysetp.c **** unsigned char bmp[]=
-  10:Core/Src/mysetp.c **** {
-  11:Core/Src/mysetp.c **** 0xF8,0x0F,0x08,0x08,0x08,0x08,0xF8,0x0F,0x08,0x08,0x08,0x08,0xF8,0x0F,0x00,0x00,0xFF,0x7F,0x80,0x00
-  12:Core/Src/mysetp.c **** 0x40,0x00,0x40,0x00,0xE0,0x0F,0x10,0x04,0x1C,0x02,0x20,0x01,0xC0,0x02,0x30,0x01,0x8E,0x1F,0x40,0x10
-  13:Core/Src/mysetp.c **** 0x80,0x00,0x80,0x00,0x80,0x00,0x90,0x04,0x90,0x08,0x88,0x10,0x88,0x20,0x84,0x28,0x82,0x08,0x80,0x04
-  14:Core/Src/mysetp.c **** unsigned char mydist=40;
-  15:Core/Src/mysetp.c **** char flag=1;
-  16:Core/Src/mysetp.c **** void mysetp(){
-  28              		.loc 1 16 0
+   9:Core/Src/mysetp.c **** 
+  10:Core/Src/mysetp.c **** u8g2_t u8g2;
+  11:Core/Src/mysetp.c **** 
+  12:Core/Src/mysetp.c **** unsigned char bmp[]=
+  13:Core/Src/mysetp.c **** {
+  14:Core/Src/mysetp.c **** 0xF8,0x0F,0x08,0x08,0x08,0x08,0xF8,0x0F,0x08,0x08,0x08,0x08,0xF8,0x0F,0x00,0x00,0xFF,0x7F,0x80,0x00
+  15:Core/Src/mysetp.c **** 0x40,0x00,0x40,0x00,0xE0,0x0F,0x10,0x04,0x1C,0x02,0x20,0x01,0xC0,0x02,0x30,0x01,0x8E,0x1F,0x40,0x10
+  16:Core/Src/mysetp.c **** 0x80,0x00,0x80,0x00,0x80,0x00,0x90,0x04,0x90,0x08,0x88,0x10,0x88,0x20,0x84,0x28,0x82,0x08,0x80,0x04
+  17:Core/Src/mysetp.c **** unsigned char mydist=40;
+  18:Core/Src/mysetp.c **** char flag=1;
+  19:Core/Src/mysetp.c **** void mysetp(){
+  28              		.loc 1 19 0
   29              		.cfi_startproc
   30              		@ Volatile: function does not return.
   31              		@ args = 0, pretend = 0, frame = 0
@@ -53,281 +56,373 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\cc8w77Vt.s 			page 1
   35              		.cfi_def_cfa_offset 8
   36              		.cfi_offset 3, -8
   37              		.cfi_offset 14, -4
-  17:Core/Src/mysetp.c ****     //oledINIT(mhi2c);
-  18:Core/Src/mysetp.c ****     u8g2Init(&u8g2);
-  38              		.loc 1 18 0
-  39 0002 0548     		ldr	r0, .L4
+  20:Core/Src/mysetp.c ****     //oledINIT(mhi2c);
+  21:Core/Src/mysetp.c ****     u8g2Init(&u8g2);
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccD0ZdFq.s 			page 2
+
+
+  38              		.loc 1 21 0
+  39 0002 0348     		ldr	r0, .L4
   40 0004 FFF7FEFF 		bl	u8g2Init
-ARM GAS  C:\Users\master\AppData\Local\Temp\cc8w77Vt.s 			page 2
-
-
   41              	.LVL0:
-  42              	.L2:
-  19:Core/Src/mysetp.c ****     
-  20:Core/Src/mysetp.c **** 
-  21:Core/Src/mysetp.c ****     while (1)
-  22:Core/Src/mysetp.c ****     {
-  23:Core/Src/mysetp.c ****         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
-  43              		.loc 1 23 0 discriminator 1
-  44 0008 0122     		movs	r2, #1
-  45 000a 4FF48051 		mov	r1, #4096
-  46 000e 0348     		ldr	r0, .L4+4
-  47 0010 FFF7FEFF 		bl	HAL_GPIO_WritePin
-  48              	.LVL1:
-  49 0014 F8E7     		b	.L2
-  50              	.L5:
-  51 0016 00BF     		.align	2
-  52              	.L4:
-  53 0018 00000000 		.word	u8g2
-  54 001c 000C0140 		.word	1073810432
-  55              		.cfi_endproc
-  56              	.LFE66:
-  58              		.section	.text.HAL_GPIO_EXTI_Callback,"ax",%progbits
-  59              		.align	2
-  60              		.global	HAL_GPIO_EXTI_Callback
-  61              		.thumb
-  62              		.thumb_func
-  64              	HAL_GPIO_EXTI_Callback:
-  65              	.LFB67:
-  24:Core/Src/mysetp.c ****        // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
-  25:Core/Src/mysetp.c ****      /*
-  26:Core/Src/mysetp.c ****         u8g2_SetFont(&u8g2, u8g2_font_6x13_tr  );
-  27:Core/Src/mysetp.c ****         u8g2_DrawCircle(&u8g2,64,mydist,10,U8G2_DRAW_ALL);
-  28:Core/Src/mysetp.c ****         u8g2_DrawStr(&u8g2,0,10,"Neotoxic: me@qvqol.cn");
-  29:Core/Src/mysetp.c ****         u8g2_DrawLine(&u8g2,10,60,118,60);
-  30:Core/Src/mysetp.c ****         u8g2_DrawLine(&u8g2,10,20,10,60);
-  31:Core/Src/mysetp.c ****         //u8g2_DrawXBM(&u8g2,12,10,16,48,bmp);
-  32:Core/Src/mysetp.c ****         u8g2_SendBuffer(&u8g2);
-  33:Core/Src/mysetp.c ****         HAL_Delay(10);
-  34:Core/Src/mysetp.c ****         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
-  35:Core/Src/mysetp.c ****         HAL_Delay(10);
-  36:Core/Src/mysetp.c ****         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
-  37:Core/Src/mysetp.c ****     
-  38:Core/Src/mysetp.c ****         if (flag)
-  39:Core/Src/mysetp.c ****         {
-  40:Core/Src/mysetp.c ****            if (mydist>35)
-  41:Core/Src/mysetp.c ****            mydist+=2;
-  42:Core/Src/mysetp.c ****            else
-  43:Core/Src/mysetp.c ****            mydist+=1;
-  44:Core/Src/mysetp.c **** 
-  45:Core/Src/mysetp.c ****            if (mydist>49)
-  46:Core/Src/mysetp.c ****              flag=0;
-  47:Core/Src/mysetp.c ****         }else{
-  48:Core/Src/mysetp.c ****         if (mydist>35)
-  49:Core/Src/mysetp.c ****            mydist-=2;
-  50:Core/Src/mysetp.c ****            else
-  51:Core/Src/mysetp.c ****            mydist-=1;
-  52:Core/Src/mysetp.c ****            if (mydist<21)
-ARM GAS  C:\Users\master\AppData\Local\Temp\cc8w77Vt.s 			page 3
+  22:Core/Src/mysetp.c ****     HAL_TIM_Base_Start_IT(&htim2);
+  42              		.loc 1 22 0
+  43 0008 0248     		ldr	r0, .L4+4
+  44 000a FFF7FEFF 		bl	HAL_TIM_Base_Start_IT
+  45              	.LVL1:
+  46              	.L2:
+  47 000e FEE7     		b	.L2
+  48              	.L5:
+  49              		.align	2
+  50              	.L4:
+  51 0010 00000000 		.word	u8g2
+  52 0014 00000000 		.word	htim2
+  53              		.cfi_endproc
+  54              	.LFE66:
+  56              		.section	.text.HAL_GPIO_EXTI_Callback,"ax",%progbits
+  57              		.align	2
+  58              		.global	HAL_GPIO_EXTI_Callback
+  59              		.thumb
+  60              		.thumb_func
+  62              	HAL_GPIO_EXTI_Callback:
+  63              	.LFB67:
+  23:Core/Src/mysetp.c **** 
+  24:Core/Src/mysetp.c ****     while (1)
+  25:Core/Src/mysetp.c ****     {
+  26:Core/Src/mysetp.c ****         
+  27:Core/Src/mysetp.c ****        // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
+  28:Core/Src/mysetp.c ****      /*
+  29:Core/Src/mysetp.c ****         u8g2_SetFont(&u8g2, u8g2_font_6x13_tr  );
+  30:Core/Src/mysetp.c ****         u8g2_DrawCircle(&u8g2,64,mydist,10,U8G2_DRAW_ALL);
+  31:Core/Src/mysetp.c ****         u8g2_DrawStr(&u8g2,0,10,"Neotoxic: me@qvqol.cn");
+  32:Core/Src/mysetp.c ****         u8g2_DrawLine(&u8g2,10,60,118,60);
+  33:Core/Src/mysetp.c ****         u8g2_DrawLine(&u8g2,10,20,10,60);
+  34:Core/Src/mysetp.c ****         //u8g2_DrawXBM(&u8g2,12,10,16,48,bmp);
+  35:Core/Src/mysetp.c ****         u8g2_SendBuffer(&u8g2);
+  36:Core/Src/mysetp.c ****         HAL_Delay(10);
+  37:Core/Src/mysetp.c ****         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
+  38:Core/Src/mysetp.c ****         HAL_Delay(10);
+  39:Core/Src/mysetp.c ****         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
+  40:Core/Src/mysetp.c ****     
+  41:Core/Src/mysetp.c ****         if (flag)
+  42:Core/Src/mysetp.c ****         {
+  43:Core/Src/mysetp.c ****            if (mydist>35)
+  44:Core/Src/mysetp.c ****            mydist+=2;
+  45:Core/Src/mysetp.c ****            else
+  46:Core/Src/mysetp.c ****            mydist+=1;
+  47:Core/Src/mysetp.c **** 
+  48:Core/Src/mysetp.c ****            if (mydist>49)
+  49:Core/Src/mysetp.c ****              flag=0;
+  50:Core/Src/mysetp.c ****         }else{
+  51:Core/Src/mysetp.c ****         if (mydist>35)
+  52:Core/Src/mysetp.c ****            mydist-=2;
+  53:Core/Src/mysetp.c ****            else
+  54:Core/Src/mysetp.c ****            mydist-=1;
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccD0ZdFq.s 			page 3
 
 
-  53:Core/Src/mysetp.c ****              flag=1;
-  54:Core/Src/mysetp.c ****         }
-  55:Core/Src/mysetp.c ****         u8g2_ClearBuffer(&u8g2);*/
-  56:Core/Src/mysetp.c ****      
-  57:Core/Src/mysetp.c ****     }
-  58:Core/Src/mysetp.c ****     
-  59:Core/Src/mysetp.c ****     
-  60:Core/Src/mysetp.c **** 
-  61:Core/Src/mysetp.c **** 
-  62:Core/Src/mysetp.c **** }
+  55:Core/Src/mysetp.c ****            if (mydist<21)
+  56:Core/Src/mysetp.c ****              flag=1;
+  57:Core/Src/mysetp.c ****         }
+  58:Core/Src/mysetp.c ****         u8g2_ClearBuffer(&u8g2);*/
+  59:Core/Src/mysetp.c ****      
+  60:Core/Src/mysetp.c ****     }
+  61:Core/Src/mysetp.c ****     
+  62:Core/Src/mysetp.c ****     
   63:Core/Src/mysetp.c **** 
   64:Core/Src/mysetp.c **** 
-  65:Core/Src/mysetp.c **** 
-  66:Core/Src/mysetp.c **** void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-  67:Core/Src/mysetp.c **** {
-  66              		.loc 1 67 0
-  67              		.cfi_startproc
-  68              		@ args = 0, pretend = 0, frame = 0
-  69              		@ frame_needed = 0, uses_anonymous_args = 0
-  70              	.LVL2:
-  68:Core/Src/mysetp.c **** 	if(GPIO_Pin==GPIO_PIN_13)
-  71              		.loc 1 68 0
-  72 0000 B0F5005F 		cmp	r0, #8192
-  73 0004 06D1     		bne	.L9
-  67:Core/Src/mysetp.c **** 	if(GPIO_Pin==GPIO_PIN_13)
-  74              		.loc 1 67 0
-  75 0006 08B5     		push	{r3, lr}
-  76              	.LCFI1:
-  77              		.cfi_def_cfa_offset 8
-  78              		.cfi_offset 3, -8
-  79              		.cfi_offset 14, -4
-  69:Core/Src/mysetp.c ****         HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_12); 
-  80              		.loc 1 69 0
-  81 0008 4FF48051 		mov	r1, #4096
-  82 000c 0248     		ldr	r0, .L10
-  83              	.LVL3:
-  84 000e FFF7FEFF 		bl	HAL_GPIO_TogglePin
-  85              	.LVL4:
-  86 0012 08BD     		pop	{r3, pc}
-  87              	.LVL5:
-  88              	.L9:
-  89              	.LCFI2:
-  90              		.cfi_def_cfa_offset 0
-  91              		.cfi_restore 3
-  92              		.cfi_restore 14
-  93 0014 7047     		bx	lr
-  94              	.L11:
-  95 0016 00BF     		.align	2
-  96              	.L10:
-  97 0018 000C0140 		.word	1073810432
-  98              		.cfi_endproc
-  99              	.LFE67:
- 101              		.global	flag
- 102              		.global	mydist
- 103              		.global	bmp
- 104              		.comm	u8g2,148,4
- 105              		.global	dds
-ARM GAS  C:\Users\master\AppData\Local\Temp\cc8w77Vt.s 			page 4
+  65:Core/Src/mysetp.c **** }
+  66:Core/Src/mysetp.c **** 
+  67:Core/Src/mysetp.c **** 
+  68:Core/Src/mysetp.c **** 
+  69:Core/Src/mysetp.c **** void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+  70:Core/Src/mysetp.c **** {
+  64              		.loc 1 70 0
+  65              		.cfi_startproc
+  66              		@ args = 0, pretend = 0, frame = 0
+  67              		@ frame_needed = 0, uses_anonymous_args = 0
+  68              	.LVL2:
+  71:Core/Src/mysetp.c **** 	if(GPIO_Pin==GPIO_PIN_13)
+  69              		.loc 1 71 0
+  70 0000 B0F5005F 		cmp	r0, #8192
+  71 0004 06D1     		bne	.L9
+  70:Core/Src/mysetp.c **** 	if(GPIO_Pin==GPIO_PIN_13)
+  72              		.loc 1 70 0
+  73 0006 08B5     		push	{r3, lr}
+  74              	.LCFI1:
+  75              		.cfi_def_cfa_offset 8
+  76              		.cfi_offset 3, -8
+  77              		.cfi_offset 14, -4
+  72:Core/Src/mysetp.c ****         HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_12); 
+  78              		.loc 1 72 0
+  79 0008 4FF48051 		mov	r1, #4096
+  80 000c 0248     		ldr	r0, .L10
+  81              	.LVL3:
+  82 000e FFF7FEFF 		bl	HAL_GPIO_TogglePin
+  83              	.LVL4:
+  84 0012 08BD     		pop	{r3, pc}
+  85              	.LVL5:
+  86              	.L9:
+  87              	.LCFI2:
+  88              		.cfi_def_cfa_offset 0
+  89              		.cfi_restore 3
+  90              		.cfi_restore 14
+  91 0014 7047     		bx	lr
+  92              	.L11:
+  93 0016 00BF     		.align	2
+  94              	.L10:
+  95 0018 000C0140 		.word	1073810432
+  96              		.cfi_endproc
+  97              	.LFE67:
+  99              		.section	.text.HAL_TIM_PeriodElapsedCallback,"ax",%progbits
+ 100              		.align	2
+ 101              		.global	HAL_TIM_PeriodElapsedCallback
+ 102              		.thumb
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccD0ZdFq.s 			page 4
 
 
- 106              		.section	.data.mydist,"aw",%progbits
- 109              	mydist:
- 110 0000 28       		.byte	40
- 111              		.section	.data.bmp,"aw",%progbits
- 112              		.align	2
- 115              	bmp:
- 116 0000 F8       		.byte	-8
- 117 0001 0F       		.byte	15
- 118 0002 08       		.byte	8
- 119 0003 08       		.byte	8
- 120 0004 08       		.byte	8
- 121 0005 08       		.byte	8
- 122 0006 F8       		.byte	-8
- 123 0007 0F       		.byte	15
- 124 0008 08       		.byte	8
- 125 0009 08       		.byte	8
- 126 000a 08       		.byte	8
- 127 000b 08       		.byte	8
- 128 000c F8       		.byte	-8
- 129 000d 0F       		.byte	15
- 130 000e 00       		.byte	0
- 131 000f 00       		.byte	0
- 132 0010 FF       		.byte	-1
- 133 0011 7F       		.byte	127
- 134 0012 80       		.byte	-128
- 135 0013 00       		.byte	0
- 136 0014 88       		.byte	-120
- 137 0015 00       		.byte	0
- 138 0016 88       		.byte	-120
- 139 0017 1F       		.byte	31
- 140 0018 88       		.byte	-120
- 141 0019 00       		.byte	0
- 142 001a 94       		.byte	-108
- 143 001b 00       		.byte	0
- 144 001c A2       		.byte	-94
- 145 001d 00       		.byte	0
- 146 001e C1       		.byte	-63
- 147 001f 7F       		.byte	127
- 148 0020 40       		.byte	64
- 149 0021 00       		.byte	0
- 150 0022 40       		.byte	64
- 151 0023 00       		.byte	0
- 152 0024 E0       		.byte	-32
- 153 0025 0F       		.byte	15
- 154 0026 10       		.byte	16
- 155 0027 04       		.byte	4
- 156 0028 1C       		.byte	28
- 157 0029 02       		.byte	2
- 158 002a 20       		.byte	32
- 159 002b 01       		.byte	1
- 160 002c C0       		.byte	-64
- 161 002d 02       		.byte	2
- 162 002e 30       		.byte	48
- 163 002f 01       		.byte	1
- 164 0030 8E       		.byte	-114
- 165 0031 1F       		.byte	31
- 166 0032 40       		.byte	64
-ARM GAS  C:\Users\master\AppData\Local\Temp\cc8w77Vt.s 			page 5
+ 103              		.thumb_func
+ 105              	HAL_TIM_PeriodElapsedCallback:
+ 106              	.LFB68:
+  73:Core/Src/mysetp.c **** 	
+  74:Core/Src/mysetp.c **** }
+  75:Core/Src/mysetp.c **** 
+  76:Core/Src/mysetp.c **** 
+  77:Core/Src/mysetp.c **** 
+  78:Core/Src/mysetp.c ****   static unsigned char ledState = 0;
+  79:Core/Src/mysetp.c **** void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+  80:Core/Src/mysetp.c **** {
+ 107              		.loc 1 80 0
+ 108              		.cfi_startproc
+ 109              		@ args = 0, pretend = 0, frame = 0
+ 110              		@ frame_needed = 0, uses_anonymous_args = 0
+ 111              	.LVL6:
+ 112 0000 08B5     		push	{r3, lr}
+ 113              	.LCFI3:
+ 114              		.cfi_def_cfa_offset 8
+ 115              		.cfi_offset 3, -8
+ 116              		.cfi_offset 14, -4
+  81:Core/Src/mysetp.c ****  
+  82:Core/Src/mysetp.c ****   
+  83:Core/Src/mysetp.c **** 
+  84:Core/Src/mysetp.c **** if (htim==(&htim2))
+ 117              		.loc 1 84 0
+ 118 0002 0D4B     		ldr	r3, .L17
+ 119 0004 8342     		cmp	r3, r0
+ 120 0006 15D1     		bne	.L12
+  85:Core/Src/mysetp.c **** {
+  86:Core/Src/mysetp.c ****   if (ledState == 0)
+ 121              		.loc 1 86 0
+ 122 0008 0C4B     		ldr	r3, .L17+4
+ 123 000a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 124 000c 33B9     		cbnz	r3, .L14
+  87:Core/Src/mysetp.c ****             HAL_GPIO_WritePin(GPIOB,GPIO_PIN_12,GPIO_PIN_RESET);
+ 125              		.loc 1 87 0
+ 126 000e 0022     		movs	r2, #0
+ 127 0010 4FF48051 		mov	r1, #4096
+ 128 0014 0A48     		ldr	r0, .L17+8
+ 129              	.LVL7:
+ 130 0016 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 131              	.LVL8:
+ 132 001a 05E0     		b	.L15
+ 133              	.LVL9:
+ 134              	.L14:
+  88:Core/Src/mysetp.c ****         else
+  89:Core/Src/mysetp.c ****             HAL_GPIO_WritePin(GPIOB,GPIO_PIN_12,GPIO_PIN_SET);
+ 135              		.loc 1 89 0
+ 136 001c 0122     		movs	r2, #1
+ 137 001e 4FF48051 		mov	r1, #4096
+ 138 0022 0748     		ldr	r0, .L17+8
+ 139              	.LVL10:
+ 140 0024 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 141              	.LVL11:
+ 142              	.L15:
+  90:Core/Src/mysetp.c ****         ledState = !ledState;
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccD0ZdFq.s 			page 5
 
 
- 167 0033 10       		.byte	16
- 168 0034 30       		.byte	48
- 169 0035 08       		.byte	8
- 170 0036 4C       		.byte	76
- 171 0037 04       		.byte	4
- 172 0038 80       		.byte	-128
- 173 0039 02       		.byte	2
- 174 003a 80       		.byte	-128
- 175 003b 01       		.byte	1
- 176 003c 70       		.byte	112
- 177 003d 00       		.byte	0
- 178 003e 0E       		.byte	14
- 179 003f 00       		.byte	0
- 180 0040 80       		.byte	-128
- 181 0041 00       		.byte	0
- 182 0042 80       		.byte	-128
- 183 0043 00       		.byte	0
- 184 0044 80       		.byte	-128
- 185 0045 00       		.byte	0
- 186 0046 90       		.byte	-112
- 187 0047 04       		.byte	4
- 188 0048 90       		.byte	-112
- 189 0049 08       		.byte	8
- 190 004a 88       		.byte	-120
- 191 004b 10       		.byte	16
- 192 004c 88       		.byte	-120
- 193 004d 20       		.byte	32
- 194 004e 84       		.byte	-124
- 195 004f 28       		.byte	40
- 196 0050 82       		.byte	-126
- 197 0051 08       		.byte	8
- 198 0052 80       		.byte	-128
- 199 0053 04       		.byte	4
- 200 0054 00       		.byte	0
- 201 0055 02       		.byte	2
- 202 0056 00       		.byte	0
- 203 0057 01       		.byte	1
- 204 0058 80       		.byte	-128
- 205 0059 00       		.byte	0
- 206 005a 40       		.byte	64
- 207 005b 00       		.byte	0
- 208 005c 30       		.byte	48
- 209 005d 00       		.byte	0
- 210 005e 0E       		.byte	14
- 211 005f 00       		.byte	0
- 212              		.section	.data.flag,"aw",%progbits
- 215              	flag:
- 216 0000 01       		.byte	1
- 217              		.section	.data.dds,"aw",%progbits
- 218              		.align	2
- 221              	dds:
- 222 0000 0B       		.byte	11
- 223 0001 16       		.byte	22
- 224              		.text
- 225              	.Letext0:
- 226              		.file 2 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\mach
- 227              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\sys\
-ARM GAS  C:\Users\master\AppData\Local\Temp\cc8w77Vt.s 			page 6
+ 143              		.loc 1 90 0
+ 144 0028 044A     		ldr	r2, .L17+4
+ 145 002a 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 146 002c B3FA83F3 		clz	r3, r3
+ 147 0030 5B09     		lsrs	r3, r3, #5
+ 148 0032 1370     		strb	r3, [r2]
+ 149              	.L12:
+ 150 0034 08BD     		pop	{r3, pc}
+ 151              	.L18:
+ 152 0036 00BF     		.align	2
+ 153              	.L17:
+ 154 0038 00000000 		.word	htim2
+ 155 003c 00000000 		.word	.LANCHOR0
+ 156 0040 000C0140 		.word	1073810432
+ 157              		.cfi_endproc
+ 158              	.LFE68:
+ 160              		.global	flag
+ 161              		.global	mydist
+ 162              		.global	bmp
+ 163              		.comm	u8g2,148,4
+ 164              		.global	dds
+ 165              		.section	.data.mydist,"aw",%progbits
+ 168              	mydist:
+ 169 0000 28       		.byte	40
+ 170              		.section	.data.bmp,"aw",%progbits
+ 171              		.align	2
+ 174              	bmp:
+ 175 0000 F8       		.byte	-8
+ 176 0001 0F       		.byte	15
+ 177 0002 08       		.byte	8
+ 178 0003 08       		.byte	8
+ 179 0004 08       		.byte	8
+ 180 0005 08       		.byte	8
+ 181 0006 F8       		.byte	-8
+ 182 0007 0F       		.byte	15
+ 183 0008 08       		.byte	8
+ 184 0009 08       		.byte	8
+ 185 000a 08       		.byte	8
+ 186 000b 08       		.byte	8
+ 187 000c F8       		.byte	-8
+ 188 000d 0F       		.byte	15
+ 189 000e 00       		.byte	0
+ 190 000f 00       		.byte	0
+ 191 0010 FF       		.byte	-1
+ 192 0011 7F       		.byte	127
+ 193 0012 80       		.byte	-128
+ 194 0013 00       		.byte	0
+ 195 0014 88       		.byte	-120
+ 196 0015 00       		.byte	0
+ 197 0016 88       		.byte	-120
+ 198 0017 1F       		.byte	31
+ 199 0018 88       		.byte	-120
+ 200 0019 00       		.byte	0
+ 201 001a 94       		.byte	-108
+ 202 001b 00       		.byte	0
+ 203 001c A2       		.byte	-94
+ 204 001d 00       		.byte	0
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccD0ZdFq.s 			page 6
 
 
- 228              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
- 229              		.file 5 "u8g2_lib/u8x8.h"
- 230              		.file 6 "u8g2_lib/u8g2.h"
- 231              		.file 7 "Drivers/CMSIS/Include/core_cm3.h"
- 232              		.file 8 "Core/Inc/oled.h"
- 233              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
-ARM GAS  C:\Users\master\AppData\Local\Temp\cc8w77Vt.s 			page 7
+ 205 001e C1       		.byte	-63
+ 206 001f 7F       		.byte	127
+ 207 0020 40       		.byte	64
+ 208 0021 00       		.byte	0
+ 209 0022 40       		.byte	64
+ 210 0023 00       		.byte	0
+ 211 0024 E0       		.byte	-32
+ 212 0025 0F       		.byte	15
+ 213 0026 10       		.byte	16
+ 214 0027 04       		.byte	4
+ 215 0028 1C       		.byte	28
+ 216 0029 02       		.byte	2
+ 217 002a 20       		.byte	32
+ 218 002b 01       		.byte	1
+ 219 002c C0       		.byte	-64
+ 220 002d 02       		.byte	2
+ 221 002e 30       		.byte	48
+ 222 002f 01       		.byte	1
+ 223 0030 8E       		.byte	-114
+ 224 0031 1F       		.byte	31
+ 225 0032 40       		.byte	64
+ 226 0033 10       		.byte	16
+ 227 0034 30       		.byte	48
+ 228 0035 08       		.byte	8
+ 229 0036 4C       		.byte	76
+ 230 0037 04       		.byte	4
+ 231 0038 80       		.byte	-128
+ 232 0039 02       		.byte	2
+ 233 003a 80       		.byte	-128
+ 234 003b 01       		.byte	1
+ 235 003c 70       		.byte	112
+ 236 003d 00       		.byte	0
+ 237 003e 0E       		.byte	14
+ 238 003f 00       		.byte	0
+ 239 0040 80       		.byte	-128
+ 240 0041 00       		.byte	0
+ 241 0042 80       		.byte	-128
+ 242 0043 00       		.byte	0
+ 243 0044 80       		.byte	-128
+ 244 0045 00       		.byte	0
+ 245 0046 90       		.byte	-112
+ 246 0047 04       		.byte	4
+ 247 0048 90       		.byte	-112
+ 248 0049 08       		.byte	8
+ 249 004a 88       		.byte	-120
+ 250 004b 10       		.byte	16
+ 251 004c 88       		.byte	-120
+ 252 004d 20       		.byte	32
+ 253 004e 84       		.byte	-124
+ 254 004f 28       		.byte	40
+ 255 0050 82       		.byte	-126
+ 256 0051 08       		.byte	8
+ 257 0052 80       		.byte	-128
+ 258 0053 04       		.byte	4
+ 259 0054 00       		.byte	0
+ 260 0055 02       		.byte	2
+ 261 0056 00       		.byte	0
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccD0ZdFq.s 			page 7
+
+
+ 262 0057 01       		.byte	1
+ 263 0058 80       		.byte	-128
+ 264 0059 00       		.byte	0
+ 265 005a 40       		.byte	64
+ 266 005b 00       		.byte	0
+ 267 005c 30       		.byte	48
+ 268 005d 00       		.byte	0
+ 269 005e 0E       		.byte	14
+ 270 005f 00       		.byte	0
+ 271              		.section	.data.flag,"aw",%progbits
+ 274              	flag:
+ 275 0000 01       		.byte	1
+ 276              		.section	.data.dds,"aw",%progbits
+ 277              		.align	2
+ 280              	dds:
+ 281 0000 0B       		.byte	11
+ 282 0001 16       		.byte	22
+ 283              		.section	.bss.ledState,"aw",%nobits
+ 284              		.set	.LANCHOR0,. + 0
+ 287              	ledState:
+ 288 0000 00       		.space	1
+ 289              		.text
+ 290              	.Letext0:
+ 291              		.file 2 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\mach
+ 292              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\sys\
+ 293              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 294              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 295              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
+ 296              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 297              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
+ 298              		.file 9 "u8g2_lib/u8x8.h"
+ 299              		.file 10 "u8g2_lib/u8g2.h"
+ 300              		.file 11 "Drivers/CMSIS/Include/core_cm3.h"
+ 301              		.file 12 "Core/Inc/oled.h"
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccD0ZdFq.s 			page 8
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 mysetp.c
-C:\Users\master\AppData\Local\Temp\cc8w77Vt.s:20     .text.mysetp:00000000 $t
-C:\Users\master\AppData\Local\Temp\cc8w77Vt.s:25     .text.mysetp:00000000 mysetp
-C:\Users\master\AppData\Local\Temp\cc8w77Vt.s:53     .text.mysetp:00000018 $d
+C:\Users\master\AppData\Local\Temp\ccD0ZdFq.s:20     .text.mysetp:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccD0ZdFq.s:25     .text.mysetp:00000000 mysetp
+C:\Users\master\AppData\Local\Temp\ccD0ZdFq.s:51     .text.mysetp:00000010 $d
                             *COM*:00000094 u8g2
-C:\Users\master\AppData\Local\Temp\cc8w77Vt.s:59     .text.HAL_GPIO_EXTI_Callback:00000000 $t
-C:\Users\master\AppData\Local\Temp\cc8w77Vt.s:64     .text.HAL_GPIO_EXTI_Callback:00000000 HAL_GPIO_EXTI_Callback
-C:\Users\master\AppData\Local\Temp\cc8w77Vt.s:97     .text.HAL_GPIO_EXTI_Callback:00000018 $d
-C:\Users\master\AppData\Local\Temp\cc8w77Vt.s:215    .data.flag:00000000 flag
-C:\Users\master\AppData\Local\Temp\cc8w77Vt.s:109    .data.mydist:00000000 mydist
-C:\Users\master\AppData\Local\Temp\cc8w77Vt.s:115    .data.bmp:00000000 bmp
-C:\Users\master\AppData\Local\Temp\cc8w77Vt.s:221    .data.dds:00000000 dds
-C:\Users\master\AppData\Local\Temp\cc8w77Vt.s:112    .data.bmp:00000000 $d
-C:\Users\master\AppData\Local\Temp\cc8w77Vt.s:218    .data.dds:00000000 $d
+C:\Users\master\AppData\Local\Temp\ccD0ZdFq.s:57     .text.HAL_GPIO_EXTI_Callback:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccD0ZdFq.s:62     .text.HAL_GPIO_EXTI_Callback:00000000 HAL_GPIO_EXTI_Callback
+C:\Users\master\AppData\Local\Temp\ccD0ZdFq.s:95     .text.HAL_GPIO_EXTI_Callback:00000018 $d
+C:\Users\master\AppData\Local\Temp\ccD0ZdFq.s:100    .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccD0ZdFq.s:105    .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
+C:\Users\master\AppData\Local\Temp\ccD0ZdFq.s:154    .text.HAL_TIM_PeriodElapsedCallback:00000038 $d
+C:\Users\master\AppData\Local\Temp\ccD0ZdFq.s:274    .data.flag:00000000 flag
+C:\Users\master\AppData\Local\Temp\ccD0ZdFq.s:168    .data.mydist:00000000 mydist
+C:\Users\master\AppData\Local\Temp\ccD0ZdFq.s:174    .data.bmp:00000000 bmp
+C:\Users\master\AppData\Local\Temp\ccD0ZdFq.s:280    .data.dds:00000000 dds
+C:\Users\master\AppData\Local\Temp\ccD0ZdFq.s:171    .data.bmp:00000000 $d
+C:\Users\master\AppData\Local\Temp\ccD0ZdFq.s:277    .data.dds:00000000 $d
+C:\Users\master\AppData\Local\Temp\ccD0ZdFq.s:287    .bss.ledState:00000000 ledState
+C:\Users\master\AppData\Local\Temp\ccD0ZdFq.s:288    .bss.ledState:00000000 $d
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS
 u8g2Init
-HAL_GPIO_WritePin
+HAL_TIM_Base_Start_IT
+htim2
 HAL_GPIO_TogglePin
+HAL_GPIO_WritePin

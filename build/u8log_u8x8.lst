@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccoKz51e.s 			page 1
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccKrBsMa.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccoKz51e.s 			page 1
   30:u8g2_lib/u8log_u8x8.c ****   CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, 
   31:u8g2_lib/u8log_u8x8.c ****   STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
   32:u8g2_lib/u8log_u8x8.c ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccoKz51e.s 			page 2
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccKrBsMa.s 			page 2
 
 
   33:u8g2_lib/u8log_u8x8.c ****   ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.  
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccoKz51e.s 			page 1
   66              	.LVL6:
   48:u8g2_lib/u8log_u8x8.c ****     disp_x++;
   67              		.loc 1 48 0 discriminator 3
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccoKz51e.s 			page 3
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccKrBsMa.s 			page 3
 
 
   68 0024 0135     		adds	r5, r5, #1
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccoKz51e.s 			page 1
   54:u8g2_lib/u8log_u8x8.c ****   uint8_t buf_y;
   55:u8g2_lib/u8log_u8x8.c ****   for( buf_y = 0; buf_y < u8log->height; buf_y++ )
  117              		.loc 1 55 0
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccoKz51e.s 			page 4
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccKrBsMa.s 			page 4
 
 
  118 000e 0024     		movs	r4, #0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccoKz51e.s 			page 1
  163              		.cfi_startproc
  164              		@ args = 0, pretend = 0, frame = 0
  165              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccoKz51e.s 			page 5
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccKrBsMa.s 			page 5
 
 
  166              	.LVL19:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccoKz51e.s 			page 1
  210 002c 10BD     		pop	{r4, pc}
  211              		.cfi_endproc
  212              	.LFE2:
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccoKz51e.s 			page 6
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccKrBsMa.s 			page 6
 
 
  214 002e 00BF     		.text
@@ -306,17 +306,17 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccoKz51e.s 			page 1
  216              		.file 2 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\mach
  217              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\sys\
  218              		.file 4 "u8g2_lib/u8x8.h"
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccoKz51e.s 			page 7
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccKrBsMa.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 u8log_u8x8.c
-C:\Users\master\AppData\Local\Temp\ccoKz51e.s:20     .text.u8x8_DrawLogLine:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccoKz51e.s:24     .text.u8x8_DrawLogLine:00000000 u8x8_DrawLogLine
-C:\Users\master\AppData\Local\Temp\ccoKz51e.s:88     .text.u8x8_DrawLog:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccoKz51e.s:93     .text.u8x8_DrawLog:00000000 u8x8_DrawLog
-C:\Users\master\AppData\Local\Temp\ccoKz51e.s:155    .text.u8log_u8x8_cb:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccoKz51e.s:160    .text.u8log_u8x8_cb:00000000 u8log_u8x8_cb
+C:\Users\master\AppData\Local\Temp\ccKrBsMa.s:20     .text.u8x8_DrawLogLine:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccKrBsMa.s:24     .text.u8x8_DrawLogLine:00000000 u8x8_DrawLogLine
+C:\Users\master\AppData\Local\Temp\ccKrBsMa.s:88     .text.u8x8_DrawLog:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccKrBsMa.s:93     .text.u8x8_DrawLog:00000000 u8x8_DrawLog
+C:\Users\master\AppData\Local\Temp\ccKrBsMa.s:155    .text.u8log_u8x8_cb:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccKrBsMa.s:160    .text.u8log_u8x8_cb:00000000 u8log_u8x8_cb
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS
