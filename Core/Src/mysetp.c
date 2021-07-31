@@ -19,7 +19,7 @@ char flag=1;
 void mysetp(){
     //oledINIT(mhi2c);
     u8g2Init(&u8g2);
-    HAL_TIM_Base_Start_IT(&htim2);
+    HAL_TIM_Base_Start_IT(&htim2);//使能定时器中断
 
     while (1)
     {
