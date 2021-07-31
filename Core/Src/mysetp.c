@@ -1,6 +1,9 @@
 #include "mysetp.h"
 #include "oled.h"
 
+
+extern TIM_HandleTypeDef htim2;
+
 uint8_t dds[]={11,22};
 
 
@@ -16,11 +19,11 @@ char flag=1;
 void mysetp(){
     //oledINIT(mhi2c);
     u8g2Init(&u8g2);
-    
+    HAL_TIM_Base_Start_IT(&htim2);
 
     while (1)
     {
-        HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
+        
        // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
      /*
         u8g2_SetFont(&u8g2, u8g2_font_6x13_tr  );
@@ -72,3 +75,25 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 
 
 
+  static unsigned char ledState = 0;
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+ 
+  
+
+if (htim==(&htim2))
+{
+  if (ledState == 0)
+            HAL_GPIO_WritePin(GPIOB,GPIO_PIN_12,GPIO_PIN_RESET);
+        else
+            HAL_GPIO_WritePin(GPIOB,GPIO_PIN_12,GPIO_PIN_SET);
+        ledState = !ledState;
+}
+
+
+
+  
+  
+
+
+}
