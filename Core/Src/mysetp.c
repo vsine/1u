@@ -43,7 +43,7 @@ void mysetp(){
            mydist+=2;
            else
            mydist+=1;
-
+   
            if (mydist>49)
              flag=0;
         }else{
@@ -74,12 +74,12 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 
 
 
-  static unsigned char ledState = 0;
+ 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
  
   
-
+ static unsigned char ledState = 0;  
 if (htim==(&htim2))
 {
   if (ledState == 0)
