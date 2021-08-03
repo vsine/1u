@@ -9,6 +9,8 @@
                 "${workspaceFolder}/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy",
                 "${workspaceFolder}/Drivers/CMSIS/Include",
                 "${workspaceFolder}/Drivers/CMSIS/Device/ST/STM32F1xx/Include",
+
+                
                 "${workspaceFolder}/u8g2_lib"
             ],
             "defines": [
