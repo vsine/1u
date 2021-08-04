@@ -55,7 +55,13 @@ void mysetp(){
              flag=1;
         }
         u8g2_ClearBuffer(&u8g2);*/
-        printf("hello\n");
+        int *ch="hello";
+        int num = 7;
+        char str[25];
+        itoa(num, str, 2);
+
+        HAL_UART_Transmit_IT(&huart1,(uint8_t *)str,3);
+        
         HAL_Delay(500);
      
     }
@@ -70,6 +76,9 @@ int fputc(int ch,FILE *f){
     //HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
     return (ch);
 }
+
+
+
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
