@@ -13,7 +13,7 @@ uint8_t u8x8_byte_hw_i2c(u8x8_t *u8x8, uint8_t msg, uint8_t arg_int, void *arg_p
     {
         /* add your custom code to init i2c subsystem */
        // MX_I2C1_Init(); //I2C初始化
-      // ihi2c=getHI2C1();
+       // ihi2c=getHI2C1();
     }
     break;
 
