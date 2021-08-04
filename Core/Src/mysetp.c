@@ -16,10 +16,21 @@ unsigned char bmp[]=
 0x80,0x00,0x80,0x00,0x80,0x00,0x90,0x04,0x90,0x08,0x88,0x10,0x88,0x20,0x84,0x28,0x82,0x08,0x80,0x04,0x00,0x02,0x00,0x01,0x80,0x00,0x40,0x00,0x30,0x00,0x0E,0x00};
 unsigned char mydist=40;
 char flag=1;
+
+
+    int num = 7;
+    char str[25];
+
 void mysetp(){
     //oledINIT(mhi2c);
     u8g2Init(&u8g2);
     HAL_TIM_Base_Start_IT(&htim2);//使能定时器中断
+
+
+     itoa(num, str, 10);
+
+     HAL_UART_Transmit_DMA(&huart1,(uint8_t *)str,3);
+
     while (1)
     {
         
@@ -55,12 +66,11 @@ void mysetp(){
              flag=1;
         }
         u8g2_ClearBuffer(&u8g2);*/
-        int *ch="hello";
-        int num = 7;
-        char str[25];
-        itoa(num, str, 2);
 
-        HAL_UART_Transmit_DMA(&huart1,(uint8_t *)str,3);
+        num++;
+        itoa(num, str, 10);
+
+        
         
         HAL_Delay(500);
      
