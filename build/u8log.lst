@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 1
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccYv18Qj.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 1
   30:u8g2_lib/u8log.c ****   CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, 
   31:u8g2_lib/u8log.c ****   STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
   32:u8g2_lib/u8log.c ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
-ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 2
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccYv18Qj.s 			page 2
 
 
   33:u8g2_lib/u8log.c ****   ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.  
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 1
   60:u8g2_lib/u8log.c ****     cnt--;
   52              		.loc 1 60 0 discriminator 1
   53 0012 0132     		adds	r2, r2, #1
-ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 3
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccYv18Qj.s 			page 3
 
 
   54              	.LVL6:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 1
   97 000e 02FB03F3 		mul	r3, r2, r3
   98              	.LVL13:
   99 0012 9BB2     		uxth	r3, r3
-ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 4
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccYv18Qj.s 			page 4
 
 
  100              	.LVL14:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 1
  139              	.LVL23:
  140 0038 13B1     		cbz	r3, .L6
   88:u8g2_lib/u8log.c ****     u8log->is_redraw_all = 1;
-ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 5
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccYv18Qj.s 			page 5
 
 
  141              		.loc 1 88 0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 1
  184              		.loc 1 101 0
  185 000c 0023     		movs	r3, #0
  186 000e 8374     		strb	r3, [r0, #18]
-ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 6
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccYv18Qj.s 			page 6
 
 
  102:u8g2_lib/u8log.c ****     u8log->cursor_y++;
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 1
  228              		.cfi_offset 3, -16
  229              		.cfi_offset 4, -12
  230              		.cfi_offset 5, -8
-ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 7
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccYv18Qj.s 			page 7
 
 
  231              		.cfi_offset 14, -4
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 1
  133:u8g2_lib/u8log.c ****     \t		9		Jump to the next tab position
  134:u8g2_lib/u8log.c ****     \f		12		Clear the screen and mark redraw for whole screen
  135:u8g2_lib/u8log.c ****     any other char	Write char to screen. Line redraw mark depends on 
-ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 8
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccYv18Qj.s 			page 8
 
 
  136:u8g2_lib/u8log.c **** 				is_redraw_line_for_each_char flag.
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 1
  311 002a 0133     		adds	r3, r3, #1
  312 002c E374     		strb	r3, [r4, #19]
  149:u8g2_lib/u8log.c ****       u8log->cursor_x = 0;
-ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 9
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccYv18Qj.s 			page 9
 
 
  313              		.loc 1 149 0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 1
  352              	.L18:
  165:u8g2_lib/u8log.c ****     default:
  166:u8g2_lib/u8log.c ****       u8log_write_to_screen(u8log, c);
-ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 10
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccYv18Qj.s 			page 10
 
 
  353              		.loc 1 166 0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 1
  398              	.LFE5:
  400 001a 00BF     		.section	.text.u8log_SetCallback,"ax",%progbits
  401              		.align	2
-ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 11
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccYv18Qj.s 			page 11
 
 
  402              		.global	u8log_SetCallback
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 1
  189:u8g2_lib/u8log.c **** }
  190:u8g2_lib/u8log.c **** 
  191:u8g2_lib/u8log.c **** /* offset can be negative or positive, it is 0 by default */
-ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 12
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccYv18Qj.s 			page 12
 
 
  192:u8g2_lib/u8log.c **** void u8log_SetLineHeightOffset(u8log_t *u8log, int8_t line_height_offset)
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 1
  206:u8g2_lib/u8log.c ****       u8log->cb(u8log);
  492              		.loc 1 206 0
  493 0018 2046     		mov	r0, r4
-ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 13
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccYv18Qj.s 			page 13
 
 
  494 001a 9847     		blx	r3
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 1
  227:u8g2_lib/u8log.c ****     u8log_WriteChar(u8log, b+'0');
  530              		.loc 1 227 0
  531 000a 3031     		adds	r1, r1, #48
-ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 14
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccYv18Qj.s 			page 14
 
 
  532              	.LVL44:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 1
  581              		.loc 1 215 0
  582 0010 2178     		ldrb	r1, [r4]	@ zero_extendqisi2
  583 0012 0029     		cmp	r1, #0
-ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 15
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccYv18Qj.s 			page 15
 
 
  584 0014 F8D1     		bne	.L42
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 1
  237:u8g2_lib/u8log.c **** 
  238:u8g2_lib/u8log.c **** void u8log_WriteHex16(u8log_t *u8log, uint16_t v)
  239:u8g2_lib/u8log.c **** {
-ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 16
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccYv18Qj.s 			page 16
 
 
  634              		.loc 1 239 0
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 1
  246:u8g2_lib/u8log.c ****   u8log_WriteHex16(u8log, v>>16);
  684              		.loc 1 246 0
  685 0006 090C     		lsrs	r1, r1, #16
-ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 17
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccYv18Qj.s 			page 17
 
 
  686              	.LVL62:
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 1
  736              		.thumb_func
  738              	u8log_WriteDec16:
  739              	.LFB16:
-ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 18
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccYv18Qj.s 			page 18
 
 
  254:u8g2_lib/u8log.c **** }
@@ -1057,49 +1057,49 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 1
  768              		.file 2 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\mach
  769              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\sys\
  770              		.file 4 "u8g2_lib/u8x8.h"
-ARM GAS  C:\Users\master\AppData\Local\Temp\cc0nfwJY.s 			page 19
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccYv18Qj.s 			page 19
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 u8log.c
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:20     .text.u8log_clear_screen:00000000 $t
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:24     .text.u8log_clear_screen:00000000 u8log_clear_screen
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:64     .text.u8log_scroll_up:00000000 $t
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:68     .text.u8log_scroll_up:00000000 u8log_scroll_up
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:162    .text.u8log_cursor_on_screen:00000000 $t
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:166    .text.u8log_cursor_on_screen:00000000 u8log_cursor_on_screen
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:214    .text.u8log_write_to_screen:00000000 $t
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:218    .text.u8log_write_to_screen:00000000 u8log_write_to_screen
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:263    .text.u8log_write_char:00000000 $t
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:268    .text.u8log_write_char:00000000 u8log_write_char
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:287    .text.u8log_write_char:00000010 $d
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:361    .text.u8log_Init:00000000 $t
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:366    .text.u8log_Init:00000000 u8log_Init
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:401    .text.u8log_SetCallback:00000000 $t
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:406    .text.u8log_SetCallback:00000000 u8log_SetCallback
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:423    .text.u8log_SetRedrawMode:00000000 $t
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:428    .text.u8log_SetRedrawMode:00000000 u8log_SetRedrawMode
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:443    .text.u8log_SetLineHeightOffset:00000000 $t
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:448    .text.u8log_SetLineHeightOffset:00000000 u8log_SetLineHeightOffset
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:463    .text.u8log_WriteChar:00000000 $t
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:468    .text.u8log_WriteChar:00000000 u8log_WriteChar
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:508    .text.u8log_WriteHexHalfByte:00000000 $t
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:512    .text.u8log_WriteHexHalfByte:00000000 u8log_WriteHexHalfByte
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:548    .text.u8log_WriteString:00000000 $t
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:553    .text.u8log_WriteString:00000000 u8log_WriteString
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:591    .text.u8log_WriteHex8:00000000 $t
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:596    .text.u8log_WriteHex8:00000000 u8log_WriteHex8
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:627    .text.u8log_WriteHex16:00000000 $t
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:632    .text.u8log_WriteHex16:00000000 u8log_WriteHex16
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:663    .text.u8log_WriteHex32:00000000 $t
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:668    .text.u8log_WriteHex32:00000000 u8log_WriteHex32
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:699    .text.u8log_WriteDec8:00000000 $t
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:704    .text.u8log_WriteDec8:00000000 u8log_WriteDec8
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:733    .text.u8log_WriteDec16:00000000 $t
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:738    .text.u8log_WriteDec16:00000000 u8log_WriteDec16
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:20     .text.u8log_clear_screen:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:24     .text.u8log_clear_screen:00000000 u8log_clear_screen
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:64     .text.u8log_scroll_up:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:68     .text.u8log_scroll_up:00000000 u8log_scroll_up
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:162    .text.u8log_cursor_on_screen:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:166    .text.u8log_cursor_on_screen:00000000 u8log_cursor_on_screen
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:214    .text.u8log_write_to_screen:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:218    .text.u8log_write_to_screen:00000000 u8log_write_to_screen
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:263    .text.u8log_write_char:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:268    .text.u8log_write_char:00000000 u8log_write_char
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:287    .text.u8log_write_char:00000010 $d
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:361    .text.u8log_Init:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:366    .text.u8log_Init:00000000 u8log_Init
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:401    .text.u8log_SetCallback:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:406    .text.u8log_SetCallback:00000000 u8log_SetCallback
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:423    .text.u8log_SetRedrawMode:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:428    .text.u8log_SetRedrawMode:00000000 u8log_SetRedrawMode
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:443    .text.u8log_SetLineHeightOffset:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:448    .text.u8log_SetLineHeightOffset:00000000 u8log_SetLineHeightOffset
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:463    .text.u8log_WriteChar:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:468    .text.u8log_WriteChar:00000000 u8log_WriteChar
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:508    .text.u8log_WriteHexHalfByte:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:512    .text.u8log_WriteHexHalfByte:00000000 u8log_WriteHexHalfByte
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:548    .text.u8log_WriteString:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:553    .text.u8log_WriteString:00000000 u8log_WriteString
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:591    .text.u8log_WriteHex8:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:596    .text.u8log_WriteHex8:00000000 u8log_WriteHex8
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:627    .text.u8log_WriteHex16:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:632    .text.u8log_WriteHex16:00000000 u8log_WriteHex16
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:663    .text.u8log_WriteHex32:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:668    .text.u8log_WriteHex32:00000000 u8log_WriteHex32
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:699    .text.u8log_WriteDec8:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:704    .text.u8log_WriteDec8:00000000 u8log_WriteDec8
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:733    .text.u8log_WriteDec16:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:738    .text.u8log_WriteDec16:00000000 u8log_WriteDec16
                      .debug_frame:00000010 $d
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:292    .text.u8log_write_char:00000015 $d
-C:\Users\master\AppData\Local\Temp\cc0nfwJY.s:292    .text.u8log_write_char:00000016 $t
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:292    .text.u8log_write_char:00000015 $d
+C:\Users\master\AppData\Local\Temp\ccYv18Qj.s:292    .text.u8log_write_char:00000016 $t
 
 UNDEFINED SYMBOLS
 u8x8_u8toa

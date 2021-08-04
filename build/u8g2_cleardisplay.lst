@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccYKOtco.s 			page 1
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccm0JfWX.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccYKOtco.s 			page 1
   29:u8g2_lib/u8g2_cleardisplay.c ****   CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, 
   30:u8g2_lib/u8g2_cleardisplay.c ****   STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
   31:u8g2_lib/u8g2_cleardisplay.c ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccYKOtco.s 			page 2
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccm0JfWX.s 			page 2
 
 
   32:u8g2_lib/u8g2_cleardisplay.c ****   ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.  
@@ -117,13 +117,13 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccYKOtco.s 			page 1
   61              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\sys\
   62              		.file 4 "u8g2_lib/u8x8.h"
   63              		.file 5 "u8g2_lib/u8g2.h"
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccYKOtco.s 			page 3
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccm0JfWX.s 			page 3
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 u8g2_cleardisplay.c
-C:\Users\master\AppData\Local\Temp\ccYKOtco.s:20     .text.u8g2_ClearDisplay:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccYKOtco.s:25     .text.u8g2_ClearDisplay:00000000 u8g2_ClearDisplay
+C:\Users\master\AppData\Local\Temp\ccm0JfWX.s:20     .text.u8g2_ClearDisplay:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccm0JfWX.s:25     .text.u8g2_ClearDisplay:00000000 u8g2_ClearDisplay
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS
