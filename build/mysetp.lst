@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccFBDD3E.s 			page 1
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccVrdNfg.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccFBDD3E.s 			page 1
   37              	.LCFI1:
   38              		.cfi_def_cfa_offset 40
   20:Core/Src/mysetp.c ****     //oledINIT(mhi2c);
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccFBDD3E.s 			page 2
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccVrdNfg.s 			page 2
 
 
   21:Core/Src/mysetp.c ****     u8g2Init(&u8g2);
@@ -118,16 +118,16 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccFBDD3E.s 			page 1
   52 0014 0720     		movs	r0, #7
   53 0016 FFF7FEFF 		bl	itoa
   54              	.LVL2:
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccFBDD3E.s 			page 3
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccVrdNfg.s 			page 3
 
 
   62:Core/Src/mysetp.c **** 
-  63:Core/Src/mysetp.c ****         HAL_UART_Transmit_IT(&huart1,(uint8_t *)str,3);
+  63:Core/Src/mysetp.c ****         HAL_UART_Transmit_DMA(&huart1,(uint8_t *)str,3);
   55              		.loc 1 63 0 discriminator 1
   56 001a 0322     		movs	r2, #3
   57 001c 01A9     		add	r1, sp, #4
   58 001e 0648     		ldr	r0, .L4+8
-  59 0020 FFF7FEFF 		bl	HAL_UART_Transmit_IT
+  59 0020 FFF7FEFF 		bl	HAL_UART_Transmit_DMA
   60              	.LVL3:
   64:Core/Src/mysetp.c ****         
   65:Core/Src/mysetp.c ****         HAL_Delay(500);
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccFBDD3E.s 			page 1
   95 0002 00BF     		.section	.text.HAL_GPIO_EXTI_Callback,"ax",%progbits
   96              		.align	2
   97              		.global	HAL_GPIO_EXTI_Callback
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccFBDD3E.s 			page 4
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccVrdNfg.s 			page 4
 
 
   98              		.thumb
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccFBDD3E.s 			page 1
   87:Core/Src/mysetp.c **** 	
   88:Core/Src/mysetp.c **** }
   89:Core/Src/mysetp.c **** 
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccFBDD3E.s 			page 5
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccVrdNfg.s 			page 5
 
 
   90:Core/Src/mysetp.c **** void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccFBDD3E.s 			page 1
  188              	.L13:
  189 0034 08BD     		pop	{r3, pc}
  190              	.L19:
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccFBDD3E.s 			page 6
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccVrdNfg.s 			page 6
 
 
  191 0036 00BF     		.align	2
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccFBDD3E.s 			page 1
  252 0020 40       		.byte	64
  253 0021 00       		.byte	0
  254 0022 40       		.byte	64
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccFBDD3E.s 			page 7
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccVrdNfg.s 			page 7
 
 
  255 0023 00       		.byte	0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccFBDD3E.s 			page 1
  309 0059 00       		.byte	0
  310 005a 40       		.byte	64
  311 005b 00       		.byte	0
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccFBDD3E.s 			page 8
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccVrdNfg.s 			page 8
 
 
  312 005c 30       		.byte	48
@@ -453,38 +453,38 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccFBDD3E.s 			page 1
  345              		.file 17 "Drivers/CMSIS/Include/core_cm3.h"
  346              		.file 18 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
  347              		.file 19 "Core/Inc/oled.h"
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccFBDD3E.s 			page 9
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccVrdNfg.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 mysetp.c
-C:\Users\master\AppData\Local\Temp\ccFBDD3E.s:20     .text.mysetp:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccFBDD3E.s:25     .text.mysetp:00000000 mysetp
-C:\Users\master\AppData\Local\Temp\ccFBDD3E.s:69     .text.mysetp:00000030 $d
+C:\Users\master\AppData\Local\Temp\ccVrdNfg.s:20     .text.mysetp:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccVrdNfg.s:25     .text.mysetp:00000000 mysetp
+C:\Users\master\AppData\Local\Temp\ccVrdNfg.s:69     .text.mysetp:00000030 $d
                             *COM*:00000094 u8g2
-C:\Users\master\AppData\Local\Temp\ccFBDD3E.s:77     .text.fputc:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccFBDD3E.s:82     .text.fputc:00000000 fputc
-C:\Users\master\AppData\Local\Temp\ccFBDD3E.s:96     .text.HAL_GPIO_EXTI_Callback:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccFBDD3E.s:101    .text.HAL_GPIO_EXTI_Callback:00000000 HAL_GPIO_EXTI_Callback
-C:\Users\master\AppData\Local\Temp\ccFBDD3E.s:134    .text.HAL_GPIO_EXTI_Callback:00000018 $d
-C:\Users\master\AppData\Local\Temp\ccFBDD3E.s:139    .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccFBDD3E.s:144    .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
-C:\Users\master\AppData\Local\Temp\ccFBDD3E.s:193    .text.HAL_TIM_PeriodElapsedCallback:00000038 $d
-C:\Users\master\AppData\Local\Temp\ccFBDD3E.s:319    .data.flag:00000000 flag
-C:\Users\master\AppData\Local\Temp\ccFBDD3E.s:213    .data.mydist:00000000 mydist
-C:\Users\master\AppData\Local\Temp\ccFBDD3E.s:219    .data.bmp:00000000 bmp
-C:\Users\master\AppData\Local\Temp\ccFBDD3E.s:325    .data.dds:00000000 dds
-C:\Users\master\AppData\Local\Temp\ccFBDD3E.s:208    .bss.ledState.14567:00000000 ledState.14567
-C:\Users\master\AppData\Local\Temp\ccFBDD3E.s:209    .bss.ledState.14567:00000000 $d
-C:\Users\master\AppData\Local\Temp\ccFBDD3E.s:216    .data.bmp:00000000 $d
-C:\Users\master\AppData\Local\Temp\ccFBDD3E.s:322    .data.dds:00000000 $d
+C:\Users\master\AppData\Local\Temp\ccVrdNfg.s:77     .text.fputc:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccVrdNfg.s:82     .text.fputc:00000000 fputc
+C:\Users\master\AppData\Local\Temp\ccVrdNfg.s:96     .text.HAL_GPIO_EXTI_Callback:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccVrdNfg.s:101    .text.HAL_GPIO_EXTI_Callback:00000000 HAL_GPIO_EXTI_Callback
+C:\Users\master\AppData\Local\Temp\ccVrdNfg.s:134    .text.HAL_GPIO_EXTI_Callback:00000018 $d
+C:\Users\master\AppData\Local\Temp\ccVrdNfg.s:139    .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccVrdNfg.s:144    .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
+C:\Users\master\AppData\Local\Temp\ccVrdNfg.s:193    .text.HAL_TIM_PeriodElapsedCallback:00000038 $d
+C:\Users\master\AppData\Local\Temp\ccVrdNfg.s:319    .data.flag:00000000 flag
+C:\Users\master\AppData\Local\Temp\ccVrdNfg.s:213    .data.mydist:00000000 mydist
+C:\Users\master\AppData\Local\Temp\ccVrdNfg.s:219    .data.bmp:00000000 bmp
+C:\Users\master\AppData\Local\Temp\ccVrdNfg.s:325    .data.dds:00000000 dds
+C:\Users\master\AppData\Local\Temp\ccVrdNfg.s:208    .bss.ledState.14567:00000000 ledState.14567
+C:\Users\master\AppData\Local\Temp\ccVrdNfg.s:209    .bss.ledState.14567:00000000 $d
+C:\Users\master\AppData\Local\Temp\ccVrdNfg.s:216    .data.bmp:00000000 $d
+C:\Users\master\AppData\Local\Temp\ccVrdNfg.s:322    .data.dds:00000000 $d
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS
 u8g2Init
 HAL_TIM_Base_Start_IT
 itoa
-HAL_UART_Transmit_IT
+HAL_UART_Transmit_DMA
 HAL_Delay
 htim2
 huart1

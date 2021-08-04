@@ -60,7 +60,7 @@ void mysetp(){
         char str[25];
         itoa(num, str, 2);
 
-        HAL_UART_Transmit_IT(&huart1,(uint8_t *)str,3);
+        HAL_UART_Transmit_DMA(&huart1,(uint8_t *)str,3);
         
         HAL_Delay(500);
      
