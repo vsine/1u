@@ -1,6 +1,7 @@
 {
     "files.associations": {
-        "alloca.h": "c"
+        "alloca.h": "c",
+        "mysetp.h": "c"
     },
     "stm32-for-vscode.openOCDPath": false
 }

@@ -21,7 +21,8 @@ build/oled.o: Core/Src/oled.c Core/Inc/oled.h Core/Inc/main.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
- Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h u8g2_lib/u8g2.h \
+ Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+ Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h u8g2_lib/u8g2.h \
  u8g2_lib/u8x8.h
 
 Core/Inc/oled.h:
@@ -77,6 +78,8 @@ Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:
 
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
+
+Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
 
 u8g2_lib/u8g2.h:
 

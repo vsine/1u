@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccHZxYa6.s 			page 1
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBAsxdz.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccHZxYa6.s 			page 1
   29:u8g2_lib/u8g2_ll_hvline.c ****   NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; 
   30:u8g2_lib/u8g2_ll_hvline.c ****   LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER 
   31:u8g2_lib/u8g2_ll_hvline.c ****   CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, 
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccHZxYa6.s 			page 2
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBAsxdz.s 			page 2
 
 
   32:u8g2_lib/u8g2_ll_hvline.c ****   STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccHZxYa6.s 			page 1
   40              		.cfi_offset 14, -4
   41 0002 9DF814E0 		ldrb	lr, [sp, #20]	@ zero_extendqisi2
   42              	.LVL1:
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccHZxYa6.s 			page 3
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBAsxdz.s 			page 3
 
 
   74:u8g2_lib/u8g2_ll_hvline.c ****   uint16_t offset;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccHZxYa6.s 			page 1
   99:u8g2_lib/u8g2_ll_hvline.c **** 
  100:u8g2_lib/u8g2_ll_hvline.c **** 
  101:u8g2_lib/u8g2_ll_hvline.c ****   offset = y;		/* y might be 8 or 16 bit, but we need 16 bit, so use a 16 bit variable */
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccHZxYa6.s 			page 4
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBAsxdz.s 			page 4
 
 
  102:u8g2_lib/u8g2_ll_hvline.c ****   offset &= ~7;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccHZxYa6.s 			page 1
  106              		.loc 1 119 0 discriminator 1
  107 004e 002B     		cmp	r3, #0
  108 0050 F5D1     		bne	.L5
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccHZxYa6.s 			page 5
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBAsxdz.s 			page 5
 
 
  109 0052 F0BD     		pop	{r4, r5, r6, r7, pc}
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccHZxYa6.s 			page 1
  141              	.LVL22:
  142              	.L8:
  142:u8g2_lib/u8g2_ll_hvline.c **** 	if ( u8g2->draw_color != 1 )
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccHZxYa6.s 			page 6
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBAsxdz.s 			page 6
 
 
  143              		.loc 1 142 0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccHZxYa6.s 			page 1
  160:u8g2_lib/u8g2_ll_hvline.c **** */
  161:u8g2_lib/u8g2_ll_hvline.c **** static void u8g2_draw_pixel_vertical_top_lsb(u8g2_t *u8g2, u8g2_uint_t x, u8g2_uint_t y)
  162:u8g2_lib/u8g2_ll_hvline.c **** {
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccHZxYa6.s 			page 7
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBAsxdz.s 			page 7
 
 
  163:u8g2_lib/u8g2_ll_hvline.c ****   uint16_t offset;
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccHZxYa6.s 			page 1
  217:u8g2_lib/u8g2_ll_hvline.c ****       y++;
  218:u8g2_lib/u8g2_ll_hvline.c ****       len--;
  219:u8g2_lib/u8g2_ll_hvline.c ****     } while( len != 0 );
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccHZxYa6.s 			page 8
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBAsxdz.s 			page 8
 
 
  220:u8g2_lib/u8g2_ll_hvline.c ****   }
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccHZxYa6.s 			page 1
  201              	.LVL32:
  254:u8g2_lib/u8g2_ll_hvline.c ****   mask = 128;
  255:u8g2_lib/u8g2_ll_hvline.c ****   mask >>= bit_pos;
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccHZxYa6.s 			page 9
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBAsxdz.s 			page 9
 
 
  202              		.loc 1 255 0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccHZxYa6.s 			page 1
  272:u8g2_lib/u8g2_ll_hvline.c **** 	*ptr ^= mask;
  240              		.loc 1 272 0
  241 003c 1178     		ldrb	r1, [r2]	@ zero_extendqisi2
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccHZxYa6.s 			page 10
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBAsxdz.s 			page 10
 
 
  242 003e 6140     		eors	r1, r1, r4
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccHZxYa6.s 			page 1
  291:u8g2_lib/u8g2_ll_hvline.c ****       if ( u8g2->draw_color != 1 )
  277              		.loc 1 291 0
  278 0062 90F89210 		ldrb	r1, [r0, #146]	@ zero_extendqisi2
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccHZxYa6.s 			page 11
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBAsxdz.s 			page 11
 
 
  279 0066 0129     		cmp	r1, #1
@@ -646,15 +646,15 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccHZxYa6.s 			page 1
  314              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\sys\
  315              		.file 4 "u8g2_lib/u8x8.h"
  316              		.file 5 "u8g2_lib/u8g2.h"
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccHZxYa6.s 			page 12
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBAsxdz.s 			page 12
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 u8g2_ll_hvline.c
-C:\Users\master\AppData\Local\Temp\ccHZxYa6.s:20     .text.u8g2_ll_hvline_vertical_top_lsb:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccHZxYa6.s:25     .text.u8g2_ll_hvline_vertical_top_lsb:00000000 u8g2_ll_hvline_vertical_top_lsb
-C:\Users\master\AppData\Local\Temp\ccHZxYa6.s:174    .text.u8g2_ll_hvline_horizontal_right_lsb:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccHZxYa6.s:179    .text.u8g2_ll_hvline_horizontal_right_lsb:00000000 u8g2_ll_hvline_horizontal_right_lsb
+C:\Users\master\AppData\Local\Temp\ccBAsxdz.s:20     .text.u8g2_ll_hvline_vertical_top_lsb:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBAsxdz.s:25     .text.u8g2_ll_hvline_vertical_top_lsb:00000000 u8g2_ll_hvline_vertical_top_lsb
+C:\Users\master\AppData\Local\Temp\ccBAsxdz.s:174    .text.u8g2_ll_hvline_horizontal_right_lsb:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBAsxdz.s:179    .text.u8g2_ll_hvline_horizontal_right_lsb:00000000 u8g2_ll_hvline_horizontal_right_lsb
                      .debug_frame:00000010 $d
 
 NO UNDEFINED SYMBOLS

@@ -3,7 +3,7 @@
 
 
 extern TIM_HandleTypeDef htim2;
-
+extern UART_HandleTypeDef huart1;
 uint8_t dds[]={11,22};
 
 
@@ -55,6 +55,8 @@ void mysetp(){
              flag=1;
         }
         u8g2_ClearBuffer(&u8g2);*/
+        printf("hello\n");
+        HAL_Delay(500);
      
     }
     
@@ -63,7 +65,11 @@ void mysetp(){
 
 }
 
-
+int fputc(int ch,FILE *f){
+    //HAL_UART_Transmit(&huart1,(uint8_t *)&ch,1,1000);
+    //HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
+    return (ch);
+}
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
