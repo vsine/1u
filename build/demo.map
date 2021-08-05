@@ -8011,78 +8011,78 @@ LOAD c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm
 .iplt           0x080044e8        0x0
  .iplt          0x080044e8        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
 
-.rodata         0x080044e8      0x4e0
+.rodata         0x080044e8      0x4d4
                 0x080044e8                . = ALIGN (0x4)
  *(.rodata)
  .rodata        0x080044e8       0x12 build/stm32f1xx_hal_rcc.o
  *(.rodata*)
  *fill*         0x080044fa        0x2 
  .rodata.str1.4
-                0x080044fc       0x18 build/mysetp.o
-                                 0x16 (size before relaxing)
+                0x080044fc        0xc build/mysetp.o
+                                  0x9 (size before relaxing)
  .rodata.AHBPrescTable
-                0x08004514       0x10 build/system_stm32f1xx.o
-                0x08004514                AHBPrescTable
+                0x08004508       0x10 build/system_stm32f1xx.o
+                0x08004508                AHBPrescTable
  .rodata.APBPrescTable
-                0x08004524        0x8 build/system_stm32f1xx.o
-                0x08004524                APBPrescTable
+                0x08004518        0x8 build/system_stm32f1xx.o
+                0x08004518                APBPrescTable
  .rodata.u8g2_font_6x13_tr
-                0x0800452c      0x420 build/u8g2_fonts.o
-                0x0800452c                u8g2_font_6x13_tr
+                0x08004520      0x420 build/u8g2_fonts.o
+                0x08004520                u8g2_font_6x13_tr
  .rodata.u8g2_cb_r0
-                0x0800494c        0xc build/u8g2_setup.o
-                0x0800494c                u8g2_cb_r0
+                0x08004940        0xc build/u8g2_setup.o
+                0x08004940                u8g2_cb_r0
  .rodata.u8x8_d_ssd1306_128x64_noname_powersave0_seq
-                0x08004958        0x5 build/u8x8_d_ssd1306_128x64_noname.o
- *fill*         0x0800495d        0x3 
+                0x0800494c        0x5 build/u8x8_d_ssd1306_128x64_noname.o
+ *fill*         0x08004951        0x3 
  .rodata.u8x8_d_ssd1306_128x64_noname_powersave1_seq
-                0x08004960        0x5 build/u8x8_d_ssd1306_128x64_noname.o
- *fill*         0x08004965        0x3 
+                0x08004954        0x5 build/u8x8_d_ssd1306_128x64_noname.o
+ *fill*         0x08004959        0x3 
  .rodata.u8x8_ssd1306_128x64_noname_display_info
-                0x08004968       0x18 build/u8x8_d_ssd1306_128x64_noname.o
+                0x0800495c       0x18 build/u8x8_d_ssd1306_128x64_noname.o
  .rodata.u8x8_d_ssd1306_128x64_noname_flip0_seq
-                0x08004980        0x7 build/u8x8_d_ssd1306_128x64_noname.o
- *fill*         0x08004987        0x1 
+                0x08004974        0x7 build/u8x8_d_ssd1306_128x64_noname.o
+ *fill*         0x0800497b        0x1 
  .rodata.u8x8_d_ssd1306_128x64_noname_init_seq
-                0x08004988       0x35 build/u8x8_d_ssd1306_128x64_noname.o
- *fill*         0x080049bd        0x3 
+                0x0800497c       0x35 build/u8x8_d_ssd1306_128x64_noname.o
+ *fill*         0x080049b1        0x3 
  .rodata.u8x8_d_ssd1306_128x64_noname_flip1_seq
-                0x080049c0        0x7 build/u8x8_d_ssd1306_128x64_noname.o
-                0x080049c8                . = ALIGN (0x4)
- *fill*         0x080049c7        0x1 
+                0x080049b4        0x7 build/u8x8_d_ssd1306_128x64_noname.o
+                0x080049bc                . = ALIGN (0x4)
+ *fill*         0x080049bb        0x1 
 
-.rel.dyn        0x080049c8        0x0
- .rel.iplt      0x080049c8        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+.rel.dyn        0x080049bc        0x0
+ .rel.iplt      0x080049bc        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x080049c8        0x0
-                0x080049c8                __exidx_start = .
+.ARM            0x080049bc        0x0
+                0x080049bc                __exidx_start = .
  *(.ARM.exidx*)
-                0x080049c8                __exidx_end = .
+                0x080049bc                __exidx_end = .
 
-.preinit_array  0x080049c8        0x0
-                0x080049c8                PROVIDE (__preinit_array_start, .)
+.preinit_array  0x080049bc        0x0
+                0x080049bc                PROVIDE (__preinit_array_start, .)
  *(.preinit_array*)
-                0x080049c8                PROVIDE (__preinit_array_end, .)
+                0x080049bc                PROVIDE (__preinit_array_end, .)
 
-.init_array     0x080049c8        0x4
-                0x080049c8                PROVIDE (__init_array_start, .)
+.init_array     0x080049bc        0x4
+                0x080049bc                PROVIDE (__init_array_start, .)
  *(SORT(.init_array.*))
  *(.init_array*)
- .init_array    0x080049c8        0x4 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
-                0x080049cc                PROVIDE (__init_array_end, .)
+ .init_array    0x080049bc        0x4 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+                0x080049c0                PROVIDE (__init_array_end, .)
 
-.fini_array     0x080049cc        0x4
+.fini_array     0x080049c0        0x4
                 [!provide]                PROVIDE (__fini_array_start, .)
  *(SORT(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x080049cc        0x4 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .fini_array    0x080049c0        0x4 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
                 [!provide]                PROVIDE (__fini_array_end, .)
-                0x080049d0                _sidata = LOADADDR (.data)
+                0x080049c4                _sidata = LOADADDR (.data)
 
-.data           0x20000000       0x10 load address 0x080049d0
+.data           0x20000000       0x10 load address 0x080049c4
                 0x20000000                . = ALIGN (0x4)
                 0x20000000                _sdata = .
  *(.data)
@@ -8105,14 +8105,14 @@ LOAD c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm
                 0x20000010                . = ALIGN (0x4)
                 0x20000010                _edata = .
 
-.jcr            0x20000010        0x0 load address 0x080049e0
+.jcr            0x20000010        0x0 load address 0x080049d4
  .jcr           0x20000010        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
 
-.igot.plt       0x20000010        0x0 load address 0x080049e0
+.igot.plt       0x20000010        0x0 load address 0x080049d4
  .igot.plt      0x20000010        0x0 c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
                 0x20000010                . = ALIGN (0x4)
 
-.bss            0x20000010      0x660 load address 0x080049e0
+.bss            0x20000010      0x660 load address 0x080049d4
                 0x20000010                _sbss = .
                 0x20000010                __bss_start__ = _sbss
  *(.bss)
@@ -8145,7 +8145,7 @@ LOAD c:/program files (x86)/gnu tools arm embedded/5.4 2016q3/bin/../lib/gcc/arm
                 0x20000670                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x20000670      0x600 load address 0x080049e0
+                0x20000670      0x600 load address 0x080049d4
                 0x20000670                . = ALIGN (0x8)
                 [!provide]                PROVIDE (end, .)
                 [!provide]                PROVIDE (_end, .)
@@ -8454,41 +8454,41 @@ OUTPUT(build/demo.elf elf32-littlearm)
  .debug_ranges  0x00002c18      0x1f0 build/stm32f1xx_hal_uart.o
  .debug_ranges  0x00002e08       0x20 build/startup_stm32f103xb.o
 
-.debug_line     0x00000000     0xdccc
- .debug_line    0x00000000      0x366 build/mysetp.o
- .debug_line    0x00000366      0x279 build/oled.o
- .debug_line    0x000005df      0x389 build/main.o
- .debug_line    0x00000968      0x2f1 build/stm32f1xx_it.o
- .debug_line    0x00000c59      0x2f2 build/stm32f1xx_hal_msp.o
- .debug_line    0x00000f4b     0x1b12 build/stm32f1xx_hal_tim.o
- .debug_line    0x00002a5d      0xcdf build/stm32f1xx_hal_tim_ex.o
- .debug_line    0x0000373c      0x3c9 build/stm32f1xx_hal.o
- .debug_line    0x00003b05      0x52f build/stm32f1xx_hal_rcc.o
- .debug_line    0x00004034      0x341 build/stm32f1xx_hal_gpio.o
- .debug_line    0x00004375      0x54c build/stm32f1xx_hal_dma.o
- .debug_line    0x000048c1      0x33e build/stm32f1xx_hal_cortex.o
- .debug_line    0x00004bff      0x1ac build/system_stm32f1xx.o
- .debug_line    0x00004dab     0x17b6 build/stm32f1xx_hal_i2c.o
- .debug_line    0x00006561      0x2a0 build/u8g2_buffer.o
- .debug_line    0x00006801      0x2b5 build/u8g2_circle.o
- .debug_line    0x00006ab6      0xb1c build/u8g2_d_memory.o
- .debug_line    0x000075d2     0x3552 build/u8g2_d_setup.o
- .debug_line    0x0000ab24      0x674 build/u8g2_font.o
- .debug_line    0x0000b198      0x101 build/u8g2_fonts.o
- .debug_line    0x0000b299      0x1c3 build/u8g2_hvline.o
- .debug_line    0x0000b45c      0x153 build/u8g2_intersection.o
- .debug_line    0x0000b5af      0x168 build/u8g2_line.o
- .debug_line    0x0000b717      0x183 build/u8g2_ll_hvline.o
- .debug_line    0x0000b89a      0x367 build/u8g2_setup.o
- .debug_line    0x0000bc01      0x3ef build/u8x8_8x8.o
- .debug_line    0x0000bff0      0x4ab build/u8x8_byte.o
- .debug_line    0x0000c49b      0x4a3 build/u8x8_cad.o
- .debug_line    0x0000c93e      0x23f build/u8x8_d_ssd1306_128x64_noname.o
- .debug_line    0x0000cb7d      0x215 build/u8x8_display.o
- .debug_line    0x0000cd92      0x11a build/u8x8_gpio.o
- .debug_line    0x0000ceac      0x160 build/u8x8_setup.o
- .debug_line    0x0000d00c      0xc4b build/stm32f1xx_hal_uart.o
- .debug_line    0x0000dc57       0x75 build/startup_stm32f103xb.o
+.debug_line     0x00000000     0xdcca
+ .debug_line    0x00000000      0x364 build/mysetp.o
+ .debug_line    0x00000364      0x279 build/oled.o
+ .debug_line    0x000005dd      0x389 build/main.o
+ .debug_line    0x00000966      0x2f1 build/stm32f1xx_it.o
+ .debug_line    0x00000c57      0x2f2 build/stm32f1xx_hal_msp.o
+ .debug_line    0x00000f49     0x1b12 build/stm32f1xx_hal_tim.o
+ .debug_line    0x00002a5b      0xcdf build/stm32f1xx_hal_tim_ex.o
+ .debug_line    0x0000373a      0x3c9 build/stm32f1xx_hal.o
+ .debug_line    0x00003b03      0x52f build/stm32f1xx_hal_rcc.o
+ .debug_line    0x00004032      0x341 build/stm32f1xx_hal_gpio.o
+ .debug_line    0x00004373      0x54c build/stm32f1xx_hal_dma.o
+ .debug_line    0x000048bf      0x33e build/stm32f1xx_hal_cortex.o
+ .debug_line    0x00004bfd      0x1ac build/system_stm32f1xx.o
+ .debug_line    0x00004da9     0x17b6 build/stm32f1xx_hal_i2c.o
+ .debug_line    0x0000655f      0x2a0 build/u8g2_buffer.o
+ .debug_line    0x000067ff      0x2b5 build/u8g2_circle.o
+ .debug_line    0x00006ab4      0xb1c build/u8g2_d_memory.o
+ .debug_line    0x000075d0     0x3552 build/u8g2_d_setup.o
+ .debug_line    0x0000ab22      0x674 build/u8g2_font.o
+ .debug_line    0x0000b196      0x101 build/u8g2_fonts.o
+ .debug_line    0x0000b297      0x1c3 build/u8g2_hvline.o
+ .debug_line    0x0000b45a      0x153 build/u8g2_intersection.o
+ .debug_line    0x0000b5ad      0x168 build/u8g2_line.o
+ .debug_line    0x0000b715      0x183 build/u8g2_ll_hvline.o
+ .debug_line    0x0000b898      0x367 build/u8g2_setup.o
+ .debug_line    0x0000bbff      0x3ef build/u8x8_8x8.o
+ .debug_line    0x0000bfee      0x4ab build/u8x8_byte.o
+ .debug_line    0x0000c499      0x4a3 build/u8x8_cad.o
+ .debug_line    0x0000c93c      0x23f build/u8x8_d_ssd1306_128x64_noname.o
+ .debug_line    0x0000cb7b      0x215 build/u8x8_display.o
+ .debug_line    0x0000cd90      0x11a build/u8x8_gpio.o
+ .debug_line    0x0000ceaa      0x160 build/u8x8_setup.o
+ .debug_line    0x0000d00a      0xc4b build/stm32f1xx_hal_uart.o
+ .debug_line    0x0000dc55       0x75 build/startup_stm32f103xb.o
 
 .debug_str      0x00000000    0x15441
  .debug_str     0x00000000     0x10fe build/mysetp.o

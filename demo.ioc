@@ -1,6 +1,26 @@
 #MicroXplorer Configuration settings - do not modify
+Dma.MEMTOMEM.1.Direction=DMA_MEMORY_TO_MEMORY
+Dma.MEMTOMEM.1.Instance=DMA1_Channel1
+Dma.MEMTOMEM.1.MemDataAlignment=DMA_MDATAALIGN_BYTE
+Dma.MEMTOMEM.1.MemInc=DMA_MINC_ENABLE
+Dma.MEMTOMEM.1.Mode=DMA_NORMAL
+Dma.MEMTOMEM.1.PeriphDataAlignment=DMA_PDATAALIGN_BYTE
+Dma.MEMTOMEM.1.PeriphInc=DMA_PINC_ENABLE
+Dma.MEMTOMEM.1.Priority=DMA_PRIORITY_LOW
+Dma.MEMTOMEM.1.RequestParameters=Instance,Direction,PeriphInc,MemInc,PeriphDataAlignment,MemDataAlignment,Mode,Priority
+Dma.MEMTOMEM.2.Direction=DMA_MEMORY_TO_MEMORY
+Dma.MEMTOMEM.2.Instance=DMA1_Channel2
+Dma.MEMTOMEM.2.MemDataAlignment=DMA_MDATAALIGN_BYTE
+Dma.MEMTOMEM.2.MemInc=DMA_MINC_ENABLE
+Dma.MEMTOMEM.2.Mode=DMA_NORMAL
+Dma.MEMTOMEM.2.PeriphDataAlignment=DMA_PDATAALIGN_BYTE
+Dma.MEMTOMEM.2.PeriphInc=DMA_PINC_ENABLE
+Dma.MEMTOMEM.2.Priority=DMA_PRIORITY_LOW
+Dma.MEMTOMEM.2.RequestParameters=Instance,Direction,PeriphInc,MemInc,PeriphDataAlignment,MemDataAlignment,Mode,Priority
 Dma.Request0=USART1_TX
-Dma.RequestsNb=1
+Dma.Request1=MEMTOMEM
+Dma.Request2=MEMTOMEM
+Dma.RequestsNb=3
 Dma.USART1_TX.0.Direction=DMA_MEMORY_TO_PERIPH
 Dma.USART1_TX.0.Instance=DMA1_Channel4
 Dma.USART1_TX.0.MemDataAlignment=DMA_MDATAALIGN_BYTE

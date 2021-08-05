@@ -49,6 +49,8 @@ TIM_HandleTypeDef htim2;
 UART_HandleTypeDef huart1;
 DMA_HandleTypeDef hdma_usart1_tx;
 
+DMA_HandleTypeDef hdma_memtomem_dma1_channel1;
+DMA_HandleTypeDef hdma_memtomem_dma1_channel2;
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -273,12 +275,43 @@ static void MX_USART1_UART_Init(void)
 
 /**
   * Enable DMA controller clock
+  * Configure DMA for memory to memory transfers
+  *   hdma_memtomem_dma1_channel1
+  *   hdma_memtomem_dma1_channel2
   */
 static void MX_DMA_Init(void)
 {
 
   /* DMA controller clock enable */
   __HAL_RCC_DMA1_CLK_ENABLE();
+
+  /* Configure DMA request hdma_memtomem_dma1_channel1 on DMA1_Channel1 */
+  hdma_memtomem_dma1_channel1.Instance = DMA1_Channel1;
+  hdma_memtomem_dma1_channel1.Init.Direction = DMA_MEMORY_TO_MEMORY;
+  hdma_memtomem_dma1_channel1.Init.PeriphInc = DMA_PINC_ENABLE;
+  hdma_memtomem_dma1_channel1.Init.MemInc = DMA_MINC_ENABLE;
+  hdma_memtomem_dma1_channel1.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
+  hdma_memtomem_dma1_channel1.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
+  hdma_memtomem_dma1_channel1.Init.Mode = DMA_NORMAL;
+  hdma_memtomem_dma1_channel1.Init.Priority = DMA_PRIORITY_LOW;
+  if (HAL_DMA_Init(&hdma_memtomem_dma1_channel1) != HAL_OK)
+  {
+    Error_Handler( );
+  }
+
+  /* Configure DMA request hdma_memtomem_dma1_channel2 on DMA1_Channel2 */
+  hdma_memtomem_dma1_channel2.Instance = DMA1_Channel2;
+  hdma_memtomem_dma1_channel2.Init.Direction = DMA_MEMORY_TO_MEMORY;
+  hdma_memtomem_dma1_channel2.Init.PeriphInc = DMA_PINC_ENABLE;
+  hdma_memtomem_dma1_channel2.Init.MemInc = DMA_MINC_ENABLE;
+  hdma_memtomem_dma1_channel2.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
+  hdma_memtomem_dma1_channel2.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
+  hdma_memtomem_dma1_channel2.Init.Mode = DMA_NORMAL;
+  hdma_memtomem_dma1_channel2.Init.Priority = DMA_PRIORITY_LOW;
+  if (HAL_DMA_Init(&hdma_memtomem_dma1_channel2) != HAL_OK)
+  {
+    Error_Handler( );
+  }
 
   /* DMA interrupt init */
   /* DMA1_Channel4_IRQn interrupt configuration */

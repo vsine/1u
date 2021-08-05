@@ -35,7 +35,7 @@ void mysetp(){
      
         u8g2_SetFont(&u8g2, u8g2_font_6x13_tr  );
         u8g2_DrawCircle(&u8g2,64,mydist,10,U8G2_DRAW_ALL);
-        u8g2_DrawStr(&u8g2,0,10,"Neotoxic: me@qvqol.cn");
+        u8g2_DrawStr(&u8g2,0,10,"Neotoxic");
         u8g2_DrawLine(&u8g2,10,60,118,60);
         u8g2_DrawLine(&u8g2,10,20,10,60);
         //u8g2_DrawXBM(&u8g2,12,10,16,48,bmp);
