@@ -6,7 +6,6 @@ int gc() {
 	if(p1>=1000000)fread(buf,1,1000000,stdin),p1=0;
 	return buf[p1++];
 }
-
 #define gc getchar
 #define Loli true
 #define Kon xor true
