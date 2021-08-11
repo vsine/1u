@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccb8IjIa.s 			page 1
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc6MG9tp.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccb8IjIa.s 			page 1
   29:u8g2_lib/u8x8_capture.c ****   NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; 
   30:u8g2_lib/u8x8_capture.c ****   LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER 
   31:u8g2_lib/u8x8_capture.c ****   CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, 
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccb8IjIa.s 			page 2
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc6MG9tp.s 			page 2
 
 
   32:u8g2_lib/u8x8_capture.c ****   STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccb8IjIa.s 			page 1
   58              	.LVL6:
   59              	.L3:
   56:u8g2_lib/u8x8_capture.c ****   return 1;
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccb8IjIa.s 			page 3
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc6MG9tp.s 			page 3
 
 
   60              		.loc 1 56 0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccb8IjIa.s 			page 1
  102 0012 43FA00F0 		asr	r0, r3, r0
  103 0016 0242     		tst	r2, r0
  104 0018 01D1     		bne	.L7
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccb8IjIa.s 			page 4
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc6MG9tp.s 			page 4
 
 
   71:u8g2_lib/u8x8_capture.c ****     return 0;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccb8IjIa.s 			page 1
  152 0016 2846     		mov	r0, r5
  153 0018 A047     		blx	r4
  154              	.LVL20:
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccb8IjIa.s 			page 5
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc6MG9tp.s 			page 5
 
 
   80:u8g2_lib/u8x8_capture.c ****   out(u8x8_utoa((uint16_t)tile_height*8));
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccb8IjIa.s 			page 1
  204 000a 0A9F     		ldr	r7, [sp, #40]
  205              	.LVL26:
   87:u8g2_lib/u8x8_capture.c ****   uint16_t x, y;
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccb8IjIa.s 			page 6
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc6MG9tp.s 			page 6
 
 
   88:u8g2_lib/u8x8_capture.c ****   uint16_t w, h;
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccb8IjIa.s 			page 1
  244 0032 0024     		movs	r4, #0
  245              	.L17:
  246              	.LVL36:
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccb8IjIa.s 			page 7
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc6MG9tp.s 			page 7
 
 
   97:u8g2_lib/u8x8_capture.c ****     {
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccb8IjIa.s 			page 1
  290              		.cfi_def_cfa_offset 16
  291              		.cfi_offset 4, -16
  292              		.cfi_offset 5, -12
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccb8IjIa.s 			page 8
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc6MG9tp.s 			page 8
 
 
  293              		.cfi_offset 6, -8
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccb8IjIa.s 			page 1
  340 003c 38000000 		.word	.LC6
  341              		.cfi_endproc
  342              	.LFE4:
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccb8IjIa.s 			page 9
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc6MG9tp.s 			page 9
 
 
  344              		.section	.text.u8x8_capture_write_xbm_buffer,"ax",%progbits
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccb8IjIa.s 			page 1
  385              	.LVL57:
  386 001a 0192     		str	r2, [sp, #4]
  387              	.LVL58:
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccb8IjIa.s 			page 10
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc6MG9tp.s 			page 10
 
 
  134:u8g2_lib/u8x8_capture.c **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccb8IjIa.s 			page 1
  427 0042 E4B2     		uxtb	r4, r4
  428              	.LVL67:
  429              	.L27:
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccb8IjIa.s 			page 11
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc6MG9tp.s 			page 11
 
 
  142:u8g2_lib/u8x8_capture.c ****       {
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccb8IjIa.s 			page 1
  160:u8g2_lib/u8x8_capture.c ****       out(s);
  470              		.loc 1 160 0
  471 007a 03A8     		add	r0, sp, #12
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccb8IjIa.s 			page 12
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc6MG9tp.s 			page 12
 
 
  472 007c D047     		blx	r10
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccb8IjIa.s 			page 1
  174:u8g2_lib/u8x8_capture.c **** }
  513              		.loc 1 174 0
  514 00a8 05B0     		add	sp, sp, #20
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccb8IjIa.s 			page 13
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc6MG9tp.s 			page 13
 
 
  515              	.LCFI7:
@@ -778,35 +778,35 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccb8IjIa.s 			page 1
  558              	.LC9:
  559 0068 7D3B0A00 		.ascii	"};\012\000"
  560              		.text
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccb8IjIa.s 			page 14
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc6MG9tp.s 			page 14
 
 
  561              	.Letext0:
  562              		.file 2 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\mach
  563              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\sys\
  564              		.file 4 "u8g2_lib/u8x8.h"
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccb8IjIa.s 			page 15
+ARM GAS  C:\Users\master\AppData\Local\Temp\cc6MG9tp.s 			page 15
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 u8x8_capture.c
-C:\Users\master\AppData\Local\Temp\ccb8IjIa.s:20     .text.u8x8_capture_get_pixel_1:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccb8IjIa.s:25     .text.u8x8_capture_get_pixel_1:00000000 u8x8_capture_get_pixel_1
-C:\Users\master\AppData\Local\Temp\ccb8IjIa.s:74     .text.u8x8_capture_get_pixel_2:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccb8IjIa.s:79     .text.u8x8_capture_get_pixel_2:00000000 u8x8_capture_get_pixel_2
-C:\Users\master\AppData\Local\Temp\ccb8IjIa.s:117    .text.u8x8_capture_write_pbm_pre:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccb8IjIa.s:122    .text.u8x8_capture_write_pbm_pre:00000000 u8x8_capture_write_pbm_pre
-C:\Users\master\AppData\Local\Temp\ccb8IjIa.s:170    .text.u8x8_capture_write_pbm_pre:00000028 $d
-C:\Users\master\AppData\Local\Temp\ccb8IjIa.s:176    .text.u8x8_capture_write_pbm_buffer:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccb8IjIa.s:181    .text.u8x8_capture_write_pbm_buffer:00000000 u8x8_capture_write_pbm_buffer
-C:\Users\master\AppData\Local\Temp\ccb8IjIa.s:269    .text.u8x8_capture_write_pbm_buffer:00000048 $d
-C:\Users\master\AppData\Local\Temp\ccb8IjIa.s:276    .text.u8x8_capture_write_xbm_pre:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccb8IjIa.s:281    .text.u8x8_capture_write_xbm_pre:00000000 u8x8_capture_write_xbm_pre
-C:\Users\master\AppData\Local\Temp\ccb8IjIa.s:337    .text.u8x8_capture_write_xbm_pre:00000030 $d
-C:\Users\master\AppData\Local\Temp\ccb8IjIa.s:345    .text.u8x8_capture_write_xbm_buffer:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccb8IjIa.s:350    .text.u8x8_capture_write_xbm_buffer:00000000 u8x8_capture_write_xbm_buffer
-C:\Users\master\AppData\Local\Temp\ccb8IjIa.s:524    .text.u8x8_capture_write_xbm_buffer:000000b0 $d
-C:\Users\master\AppData\Local\Temp\ccb8IjIa.s:532    .rodata.str1.4:00000000 $d
+C:\Users\master\AppData\Local\Temp\cc6MG9tp.s:20     .text.u8x8_capture_get_pixel_1:00000000 $t
+C:\Users\master\AppData\Local\Temp\cc6MG9tp.s:25     .text.u8x8_capture_get_pixel_1:00000000 u8x8_capture_get_pixel_1
+C:\Users\master\AppData\Local\Temp\cc6MG9tp.s:74     .text.u8x8_capture_get_pixel_2:00000000 $t
+C:\Users\master\AppData\Local\Temp\cc6MG9tp.s:79     .text.u8x8_capture_get_pixel_2:00000000 u8x8_capture_get_pixel_2
+C:\Users\master\AppData\Local\Temp\cc6MG9tp.s:117    .text.u8x8_capture_write_pbm_pre:00000000 $t
+C:\Users\master\AppData\Local\Temp\cc6MG9tp.s:122    .text.u8x8_capture_write_pbm_pre:00000000 u8x8_capture_write_pbm_pre
+C:\Users\master\AppData\Local\Temp\cc6MG9tp.s:170    .text.u8x8_capture_write_pbm_pre:00000028 $d
+C:\Users\master\AppData\Local\Temp\cc6MG9tp.s:176    .text.u8x8_capture_write_pbm_buffer:00000000 $t
+C:\Users\master\AppData\Local\Temp\cc6MG9tp.s:181    .text.u8x8_capture_write_pbm_buffer:00000000 u8x8_capture_write_pbm_buffer
+C:\Users\master\AppData\Local\Temp\cc6MG9tp.s:269    .text.u8x8_capture_write_pbm_buffer:00000048 $d
+C:\Users\master\AppData\Local\Temp\cc6MG9tp.s:276    .text.u8x8_capture_write_xbm_pre:00000000 $t
+C:\Users\master\AppData\Local\Temp\cc6MG9tp.s:281    .text.u8x8_capture_write_xbm_pre:00000000 u8x8_capture_write_xbm_pre
+C:\Users\master\AppData\Local\Temp\cc6MG9tp.s:337    .text.u8x8_capture_write_xbm_pre:00000030 $d
+C:\Users\master\AppData\Local\Temp\cc6MG9tp.s:345    .text.u8x8_capture_write_xbm_buffer:00000000 $t
+C:\Users\master\AppData\Local\Temp\cc6MG9tp.s:350    .text.u8x8_capture_write_xbm_buffer:00000000 u8x8_capture_write_xbm_buffer
+C:\Users\master\AppData\Local\Temp\cc6MG9tp.s:524    .text.u8x8_capture_write_xbm_buffer:000000b0 $d
+C:\Users\master\AppData\Local\Temp\cc6MG9tp.s:532    .rodata.str1.4:00000000 $d
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS

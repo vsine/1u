@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
   30:u8g2_lib/u8g2_font.c ****   STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
   31:u8g2_lib/u8g2_font.c ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF 
   32:u8g2_lib/u8g2_font.c ****   ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.  
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 2
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 2
 
 
   33:u8g2_lib/u8g2_font.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
   87:u8g2_lib/u8g2_font.c ****     - Ref height mode: U8G2_FONT_HEIGHT_MODE_ALL
   88:u8g2_lib/u8g2_font.c ****     - transparent or solid mode
   89:u8g2_lib/u8g2_font.c ****     - The height of the glyphs depend on the largest glyph in the font. This means font height depe
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 3
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 3
 
 
   90:u8g2_lib/u8g2_font.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  120:u8g2_lib/u8g2_font.c ****     uint16_t pos;
  121:u8g2_lib/u8g2_font.c ****     font += offset;
   53              		.loc 1 121 0
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 4
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 4
 
 
   54 0000 4318     		adds	r3, r0, r1
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  154:u8g2_lib/u8g2_font.c ****   font_info->descent_g = u8g2_font_get_byte(font, 14);
  155:u8g2_lib/u8g2_font.c ****   font_info->ascent_para = u8g2_font_get_byte(font, 15);
  156:u8g2_lib/u8g2_font.c ****   font_info->descent_para = u8g2_font_get_byte(font, 16);
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 5
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 5
 
 
  157:u8g2_lib/u8g2_font.c ****   
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  211:u8g2_lib/u8g2_font.c **** {
  212:u8g2_lib/u8g2_font.c ****   return u8g2->font_info.max_char_height;		/* new font info structure */
  213:u8g2_lib/u8g2_font.c **** }
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 6
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 6
 
 
  214:u8g2_lib/u8g2_font.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  268:u8g2_lib/u8g2_font.c ****     2 bit --> cnt = 2
  269:u8g2_lib/u8g2_font.c ****       -2,-1,0. 1
  270:u8g2_lib/u8g2_font.c **** 
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 7
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 7
 
 
  271:u8g2_lib/u8g2_font.c ****     3 bit --> cnt = 3
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  325:u8g2_lib/u8g2_font.c ****       break;
  326:u8g2_lib/u8g2_font.c ****     case 2:
  327:u8g2_lib/u8g2_font.c ****       dx -= x;
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 8
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 8
 
 
  328:u8g2_lib/u8g2_font.c ****       break;
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  382:u8g2_lib/u8g2_font.c ****     u8g2_Draw90Line()
  383:u8g2_lib/u8g2_font.c ****   Called by:
  384:u8g2_lib/u8g2_font.c ****     u8g2_font_decode_glyph()
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 9
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 9
 
 
  385:u8g2_lib/u8g2_font.c **** */
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  439:u8g2_lib/u8g2_font.c **** #endif
  440:u8g2_lib/u8g2_font.c ****     
  441:u8g2_lib/u8g2_font.c ****     /* draw foreground and background (if required) */
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 10
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 10
 
 
  442:u8g2_lib/u8g2_font.c ****     if ( is_foreground )
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  496:u8g2_lib/u8g2_font.c ****   
  497:u8g2_lib/u8g2_font.c ****   decode->glyph_width = u8g2_font_decode_get_unsigned_bits(decode, u8g2->font_info.bits_per_char_wi
  498:u8g2_lib/u8g2_font.c ****   decode->glyph_height = u8g2_font_decode_get_unsigned_bits(decode,u8g2->font_info.bits_per_char_he
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 11
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 11
 
 
  499:u8g2_lib/u8g2_font.c ****   
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  553:u8g2_lib/u8g2_font.c ****       x1 = x0;
  554:u8g2_lib/u8g2_font.c ****       y1 = y0;
  555:u8g2_lib/u8g2_font.c ****       
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 12
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 12
 
 
  556:u8g2_lib/u8g2_font.c **** #ifdef U8G2_WITH_FONT_ROTATION
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  610:u8g2_lib/u8g2_font.c **** 	break;
  611:u8g2_lib/u8g2_font.c ****     }
  612:u8g2_lib/u8g2_font.c ****     
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 13
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 13
 
 
  613:u8g2_lib/u8g2_font.c ****     /* restore the u8g2 draw color, because this is modified by the decode algo */
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  667:u8g2_lib/u8g2_font.c **** //    else
  668:u8g2_lib/u8g2_font.c **** //#endif 
  669:u8g2_lib/u8g2_font.c **** 
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 14
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 14
 
 
  670:u8g2_lib/u8g2_font.c ****     font += u8g2->font_info.start_pos_unicode;
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  724:u8g2_lib/u8g2_font.c ****     dx = u8g2_font_decode_glyph(u8g2, glyph_data);
  725:u8g2_lib/u8g2_font.c ****   }
  726:u8g2_lib/u8g2_font.c ****   return dx;
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 15
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 15
 
 
  727:u8g2_lib/u8g2_font.c **** }
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  781:u8g2_lib/u8g2_font.c ****       break;
  782:u8g2_lib/u8g2_font.c ****     case 3:
  783:u8g2_lib/u8g2_font.c ****       x += u8g2->font_calc_vref(u8g2);
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 16
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 16
 
 
  784:u8g2_lib/u8g2_font.c ****       break;
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  838:u8g2_lib/u8g2_font.c ****   }
  839:u8g2_lib/u8g2_font.c ****   return sum;
  840:u8g2_lib/u8g2_font.c **** }
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 17
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 17
 
 
  841:u8g2_lib/u8g2_font.c **** 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  895:u8g2_lib/u8g2_font.c ****       e_prev = e;
  896:u8g2_lib/u8g2_font.c **** 
  897:u8g2_lib/u8g2_font.c ****       u8g2_DrawGlyph(u8g2, x, y, e);
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 18
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 18
 
 
  898:u8g2_lib/u8g2_font.c ****       if ( to_left )
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  952:u8g2_lib/u8g2_font.c ****       if ( to_left )
  953:u8g2_lib/u8g2_font.c ****       {
  954:u8g2_lib/u8g2_font.c ****       }
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 19
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 19
 
 
  955:u8g2_lib/u8g2_font.c ****       else
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
 1009:u8g2_lib/u8g2_font.c **** 
 1010:u8g2_lib/u8g2_font.c **** void u8g2_SetFontRefHeightAll(u8g2_t *u8g2)
 1011:u8g2_lib/u8g2_font.c **** {
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 20
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 20
 
 
 1012:u8g2_lib/u8g2_font.c ****   u8g2->font_height_mode = U8G2_FONT_HEIGHT_MODE_ALL;
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  112              	.LFE33:
  114              		.section	.text.u8g2_font_calc_vref_top,"ax",%progbits
  115              		.align	2
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 21
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 21
 
 
  116              		.global	u8g2_font_calc_vref_top
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  151              		.cfi_startproc
  152              		@ args = 0, pretend = 0, frame = 0
  153              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 22
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 22
 
 
  154              		@ link register save eliminated.
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  202 0004 0D46     		mov	r5, r1
  134:u8g2_lib/u8g2_font.c ****   font_info->bbx_mode = u8g2_font_get_byte(font, 1);
  203              		.loc 1 134 0
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 23
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 23
 
 
  204 0006 0021     		movs	r1, #0
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  251              	.LVL34:
  252 0054 E071     		strb	r0, [r4, #7]
  144:u8g2_lib/u8g2_font.c ****   
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 24
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 24
 
 
  253              		.loc 1 144 0
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  300 00a4 E073     		strb	r0, [r4, #15]
  156:u8g2_lib/u8g2_font.c ****   
  301              		.loc 1 156 0
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 25
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 25
 
 
  302 00a6 1021     		movs	r1, #16
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  353              	.LVL49:
  354              	.L11:
  178:u8g2_lib/u8g2_font.c ****       break;
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 26
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 26
 
 
  355              		.loc 1 178 0
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  398 002e 38BD     		pop	{r3, r4, r5, pc}
  399              		.cfi_endproc
  400              	.LFE3:
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 27
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 27
 
 
  402              		.section	.text.u8g2_GetFontBBXWidth,"ax",%progbits
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  456              		@ link register save eliminated.
  457              	.LVL64:
  219:u8g2_lib/u8g2_font.c **** 
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 28
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 28
 
 
  458              		.loc 1 219 0
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  514              	.LFB9:
  238:u8g2_lib/u8g2_font.c ****   uint8_t val;
  515              		.loc 1 238 0
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 29
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 29
 
 
  516              		.cfi_startproc
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  562              	.LVL81:
  563 0026 E6B2     		uxtb	r6, r4
  564              	.LVL82:
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 30
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 30
 
 
  257:u8g2_lib/u8g2_font.c ****   }
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  615              		.loc 1 487 0
  616 0004 00F16005 		add	r5, r0, #96
  617              	.LVL91:
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 31
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 31
 
 
  488:u8g2_lib/u8g2_font.c ****   decode->decode_bit_pos = 0;
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  285:u8g2_lib/u8g2_font.c ****   d = 1;
  667              		.loc 1 285 0
  668 0004 FFF7FEFF 		bl	u8g2_font_decode_get_unsigned_bits
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 32
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 32
 
 
  669              	.LVL97:
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  304:u8g2_lib/u8g2_font.c ****       break;
  717              		.loc 1 304 0
  718 0012 0844     		add	r0, r0, r1
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 33
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 33
 
 
  719              	.LVL104:
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  767              	.LVL111:
  768 000e 80B2     		uxth	r0, r0
  769              	.LVL112:
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 34
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 34
 
 
  322:u8g2_lib/u8g2_font.c ****     case 1:
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  818              		.cfi_offset 7, -24
  819              		.cfi_offset 8, -20
  820              		.cfi_offset 9, -16
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 35
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 35
 
 
  821              		.cfi_offset 10, -12
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  866 003c 0291     		str	r1, [sp, #8]
  867 003e B6F86400 		ldrh	r0, [r6, #100]
  868 0042 FFF7FEFF 		bl	u8g2_add_vector_x
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 36
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 36
 
 
  869              	.LVL128:
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  915 0092 08D3     		bcc	.L45
  474:u8g2_lib/u8g2_font.c ****     lx = 0;
  916              		.loc 1 474 0
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 37
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 37
 
 
  917 0094 641B     		subs	r4, r4, r5
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  965              		.cfi_offset 5, -32
  966              		.cfi_offset 6, -28
  967              		.cfi_offset 7, -24
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 38
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 38
 
 
  968              		.cfi_offset 8, -20
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  1014 0044 7F42     		negs	r7, r7
  1015 0046 7FB2     		sxtb	r7, r7
  1016 0048 94F87080 		ldrb	r8, [r4, #112]	@ zero_extendqisi2
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 39
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 39
 
 
  1017 004c 4346     		mov	r3, r8
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  1064              		.loc 1 565 0
  1065 0094 0131     		adds	r1, r1, #1
  1066              	.LVL161:
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 40
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 40
 
 
  566:u8g2_lib/u8g2_font.c **** 	    y1 += decode->glyph_width;
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  1108              		.loc 1 576 0
  1109 00c4 0BE0     		b	.L51
  1110              	.LVL172:
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 41
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 41
 
 
  1111              	.L56:
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  1154 00f8 2846     		mov	r0, r5
  1155 00fa FFF7FEFF 		bl	u8g2_font_decode_get_unsigned_bits
  1156              	.LVL181:
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 42
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 42
 
 
  1157 00fe 8046     		mov	r8, r0
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  1205              		.section	.text.u8g2_font_get_glyph_data,"ax",%progbits
  1206              		.align	2
  1207              		.global	u8g2_font_get_glyph_data
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 43
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 43
 
 
  1208              		.thumb
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  648:u8g2_lib/u8g2_font.c ****       {
  1254              		.loc 1 648 0
  1255 0024 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 44
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 44
 
 
  1256 0026 9142     		cmp	r1, r2
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  1300              		.loc 1 684 0
  1301 0054 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
  1302              	.LVL204:
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 45
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 45
 
 
  686:u8g2_lib/u8g2_font.c ****   
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  1350              	.LVL212:
  1351 0000 10B5     		push	{r4, lr}
  1352              	.LCFI13:
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 46
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 46
 
 
  1353              		.cfi_def_cfa_offset 8
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
 1070:u8g2_lib/u8g2_font.c **** 
 1071:u8g2_lib/u8g2_font.c **** void u8g2_SetFont(u8g2_t *u8g2, const uint8_t  *font)
 1072:u8g2_lib/u8g2_font.c **** {
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 47
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 47
 
 
 1073:u8g2_lib/u8g2_font.c ****   if ( u8g2->font != font )
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  1423              		.loc 1 1098 0
  1424 001a 0134     		adds	r4, r4, #1
  1425              	.LVL224:
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 48
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 48
 
 
 1099:u8g2_lib/u8g2_font.c ****     if ( e != 0x0fffe )
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
 1125:u8g2_lib/u8g2_font.c ****   /* reset the total width to zero, this will be expanded during calculation */
 1126:u8g2_lib/u8g2_font.c ****   w = 0;
 1127:u8g2_lib/u8g2_font.c ****   dx = 0;
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 49
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 49
 
 
 1128:u8g2_lib/u8g2_font.c **** 
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
 1161:u8g2_lib/u8g2_font.c ****     return; 
 1162:u8g2_lib/u8g2_font.c ****   
 1163:u8g2_lib/u8g2_font.c ****   u8g2_font_setup_decode(u8g2, glyph_data);
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 50
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 50
 
 
  1477              		.loc 1 1163 0
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
 1180:u8g2_lib/u8g2_font.c **** 
 1181:u8g2_lib/u8g2_font.c **** static u8g2_uint_t u8g2_calculate_exact_string_width(u8g2_t *u8g2, const char *str)
 1182:u8g2_lib/u8g2_font.c **** {
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 51
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 51
 
 
  1517              		.loc 1 1182 0
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
 1203:u8g2_lib/u8g2_font.c ****   /* get the glyph information of the first char. This must be valid, because we already checked fo
 1204:u8g2_lib/u8g2_font.c ****   /* if *s is not inside the font, then the cached parameters of the glyph are all zero */
 1205:u8g2_lib/u8g2_font.c ****   u8g2_GetGlyphHorizontalProperties(u8g2, enc, &gw, &ox, &dx);  
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 52
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 52
 
 
  1551              		.loc 1 1205 0
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  1584 005e 0093     		str	r3, [sp]
  1585 0060 0DF10E03 		add	r3, sp, #14
  1586 0064 0DF10F02 		add	r2, sp, #15
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 53
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 53
 
 
  1587 0068 0146     		mov	r1, r0
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  1625              	.LVL256:
  1626              	.L93:
 1201:u8g2_lib/u8g2_font.c ****   
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 54
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 54
 
 
  1627              		.loc 1 1201 0
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  1673              		.section	.text.u8g2_GetGlyphWidth,"ax",%progbits
  1674              		.align	2
  1675              		.global	u8g2_GetGlyphWidth
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 55
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 55
 
 
  1676              		.thumb
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  1724              	.L101:
  744:u8g2_lib/u8g2_font.c ****   
  1725              		.loc 1 744 0
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 56
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 56
 
 
  1726 003a 0020     		movs	r0, #0
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  1775 0020 0CD0     		beq	.L105
 1136:u8g2_lib/u8g2_font.c ****     if ( e != 0x0fffe )
  1776              		.loc 1 1136 0
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 57
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 57
 
 
  1777 0022 0134     		adds	r4, r4, #1
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  1824 0056 00BF     		.section	.text.u8g2_SetFontMode,"ax",%progbits
  1825              		.align	2
  1826              		.global	u8g2_SetFontMode
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 58
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 58
 
 
  1827              		.thumb
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  1880 0018 0C       		.byte	(.L115-.L113)/2
  1881 0019 11       		.byte	(.L116-.L113)/2
  1882              		.p2align 1
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 59
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 59
 
 
  1883              	.L112:
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  1929 0046 2046     		mov	r0, r4
  1930 0048 FFF7FEFF 		bl	u8g2_font_draw_glyph
  1931              	.LVL300:
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 60
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 60
 
 
  790:u8g2_lib/u8g2_font.c **** 
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  1981              	.LVL305:
  805:u8g2_lib/u8g2_font.c ****     {
  1982              		.loc 1 805 0
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 61
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 61
 
 
  1983 0026 4FF6FE73 		movw	r3, #65534
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  2029              	.L127:
  822:u8g2_lib/u8g2_font.c **** 	  break;
  2030              		.loc 1 822 0
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 62
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 62
 
 
  2031 005c 361A     		subs	r6, r6, r0
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  2081              		.cfi_endproc
  2082              	.LFE23:
  2084              		.section	.text.u8g2_DrawUTF8,"ax",%progbits
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 63
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 63
 
 
  2085              		.align	2
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  2137              		.cfi_offset 8, -20
  2138              		.cfi_offset 9, -16
  2139              		.cfi_offset 10, -12
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 64
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 64
 
 
  2140              		.cfi_offset 11, -8
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  2185 0044 4846     		mov	r0, r9
  2186              	.LVL332:
  2187 0046 FFF7FEFF 		bl	u8g2_GetGlyphWidth
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 65
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 65
 
 
  2188              	.LVL333:
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  2235 008a 4846     		mov	r0, r9
  2236 008c FFF7FEFF 		bl	u8g2_DrawGlyph
  2237              	.LVL346:
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 66
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 66
 
 
  898:u8g2_lib/u8g2_font.c ****       {
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  2287              		.loc 1 914 0
  2288              		.cfi_startproc
  2289              		@ args = 8, pretend = 0, frame = 8
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 67
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 67
 
 
  2290              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  926:u8g2_lib/u8g2_font.c ****     if ( e != 0x0fffe )
  2338              		.loc 1 926 0
  2339 0032 0137     		adds	r7, r7, #1
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 68
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 68
 
 
  2340              	.LVL364:
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  940:u8g2_lib/u8g2_font.c ****       }
  2387              		.loc 1 940 0
  2388 0076 2D1A     		subs	r5, r5, r0
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 69
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 69
 
 
  2389              	.LVL377:
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  2438              		.global	u8g2_UpdateRefHeight
  2439              		.thumb
  2440              		.thumb_func
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 70
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 70
 
 
  2442              	u8g2_UpdateRefHeight:
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  2485              		.cfi_offset 5, -4
  991:u8g2_lib/u8g2_font.c ****       u8g2->font_ref_ascent = u8g2->font_info.max_char_height+u8g2->font_info.y_offset;
  2486              		.loc 1 991 0
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 71
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 71
 
 
  2487 003a 90F97E40 		ldrsb	r4, [r0, #126]
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  2536 000c 08BD     		pop	{r3, pc}
  2537              		.cfi_endproc
  2538              	.LFE28:
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 72
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 72
 
 
  2540 000e 00BF     		.section	.text.u8g2_SetFontRefHeightExtendedText,"ax",%progbits
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  2591              	.LVL394:
  2592 000c 08BD     		pop	{r3, pc}
  2593              		.cfi_endproc
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 73
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 73
 
 
  2594              	.LFE30:
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  2649              		.thumb
  2650              		.thumb_func
  2652              	u8g2_SetFontPosTop:
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 74
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 74
 
 
  2653              	.LFB36:
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  2706              		@ args = 0, pretend = 0, frame = 0
  2707              		@ frame_needed = 0, uses_anonymous_args = 0
  2708              	.LVL399:
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 75
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 75
 
 
 1073:u8g2_lib/u8g2_font.c ****   {
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  2759              		.cfi_offset 14, -4
 1110:u8g2_lib/u8g2_font.c ****   return u8g2_is_all_valid(u8g2, str);
  2760              		.loc 1 1110 0
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 76
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 76
 
 
  2761 0002 024B     		ldr	r3, .L189
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  2812              	.LFE44:
  2814 0022 00BF     		.section	.text.u8g2_GetStrWidth,"ax",%progbits
  2815              		.align	2
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 77
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 77
 
 
  2816              		.global	u8g2_GetStrWidth
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  2860 0000 08B5     		push	{r3, lr}
  2861              	.LCFI44:
  2862              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 78
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 78
 
 
  2863              		.cfi_offset 3, -8
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  2901              		.loc 1 1279 0
  2902 0006 FFF7FEFF 		bl	u8g2_string_width
  2903              	.LVL414:
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 79
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 79
 
 
 1280:u8g2_lib/u8g2_font.c **** }
@@ -4722,135 +4722,135 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 1
  2937              		.file 4 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\lib\\gcc\\arm-none-eabi\\5.4
  2938              		.file 5 "u8g2_lib/u8x8.h"
  2939              		.file 6 "u8g2_lib/u8g2.h"
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 80
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 80
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 u8g2_font.c
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:20     .text.u8g2_font_get_byte:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:24     .text.u8g2_font_get_byte:00000000 u8g2_font_get_byte
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:41     .text.u8g2_font_get_word:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:45     .text.u8g2_font_get_word:00000000 u8g2_font_get_word
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:71     .text.u8g2_font_calc_vref_font:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:76     .text.u8g2_font_calc_vref_font:00000000 u8g2_font_calc_vref_font
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:92     .text.u8g2_font_calc_vref_bottom:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:97     .text.u8g2_font_calc_vref_bottom:00000000 u8g2_font_calc_vref_bottom
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:115    .text.u8g2_font_calc_vref_top:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:120    .text.u8g2_font_calc_vref_top:00000000 u8g2_font_calc_vref_top
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:143    .text.u8g2_font_calc_vref_center:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:148    .text.u8g2_font_calc_vref_center:00000000 u8g2_font_calc_vref_center
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:182    .text.u8g2_read_font_info:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:187    .text.u8g2_read_font_info:00000000 u8g2_read_font_info
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:330    .text.u8g2_GetFontSize:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:335    .text.u8g2_GetFontSize:00000000 u8g2_GetFontSize
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:403    .text.u8g2_GetFontBBXWidth:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:408    .text.u8g2_GetFontBBXWidth:00000000 u8g2_GetFontBBXWidth
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:424    .text.u8g2_GetFontBBXHeight:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:429    .text.u8g2_GetFontBBXHeight:00000000 u8g2_GetFontBBXHeight
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:445    .text.u8g2_GetFontBBXOffX:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:450    .text.u8g2_GetFontBBXOffX:00000000 u8g2_GetFontBBXOffX
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:466    .text.u8g2_GetFontBBXOffY:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:471    .text.u8g2_GetFontBBXOffY:00000000 u8g2_GetFontBBXOffY
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:487    .text.u8g2_GetFontCapitalAHeight:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:492    .text.u8g2_GetFontCapitalAHeight:00000000 u8g2_GetFontCapitalAHeight
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:508    .text.u8g2_font_decode_get_unsigned_bits:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:513    .text.u8g2_font_decode_get_unsigned_bits:00000000 u8g2_font_decode_get_unsigned_bits
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:596    .text.u8g2_font_setup_decode:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:600    .text.u8g2_font_setup_decode:00000000 u8g2_font_setup_decode
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:649    .text.u8g2_font_decode_get_signed_bits:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:654    .text.u8g2_font_decode_get_signed_bits:00000000 u8g2_font_decode_get_signed_bits
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:688    .text.u8g2_add_vector_y:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:693    .text.u8g2_add_vector_y:00000000 u8g2_add_vector_y
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:744    .text.u8g2_add_vector_x:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:749    .text.u8g2_add_vector_x:00000000 u8g2_add_vector_x
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:800    .text.u8g2_font_decode_len:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:805    .text.u8g2_font_decode_len:00000000 u8g2_font_decode_len
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:949    .text.u8g2_font_decode_glyph:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:954    .text.u8g2_font_decode_glyph:00000000 u8g2_font_decode_glyph
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:1041   .text.u8g2_font_decode_glyph:0000007e $d
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:1045   .text.u8g2_font_decode_glyph:00000082 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:1206   .text.u8g2_font_get_glyph_data:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:1211   .text.u8g2_font_get_glyph_data:00000000 u8g2_font_get_glyph_data
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:1340   .text.u8g2_font_draw_glyph:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:1344   .text.u8g2_font_draw_glyph:00000000 u8g2_font_draw_glyph
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:1389   .text.u8g2_is_all_valid:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:1393   .text.u8g2_is_all_valid:00000000 u8g2_is_all_valid
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:1450   .text.u8g2_GetGlyphHorizontalProperties:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:1454   .text.u8g2_GetGlyphHorizontalProperties:00000000 u8g2_GetGlyphHorizontalProperties
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:1511   .text.u8g2_calculate_exact_string_width:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:1515   .text.u8g2_calculate_exact_string_width:00000000 u8g2_calculate_exact_string_width
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:1641   .text.u8g2_IsGlyph:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:1646   .text.u8g2_IsGlyph:00000000 u8g2_IsGlyph
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:1674   .text.u8g2_GetGlyphWidth:00000000 $t
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 81
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:20     .text.u8g2_font_get_byte:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:24     .text.u8g2_font_get_byte:00000000 u8g2_font_get_byte
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:41     .text.u8g2_font_get_word:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:45     .text.u8g2_font_get_word:00000000 u8g2_font_get_word
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:71     .text.u8g2_font_calc_vref_font:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:76     .text.u8g2_font_calc_vref_font:00000000 u8g2_font_calc_vref_font
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:92     .text.u8g2_font_calc_vref_bottom:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:97     .text.u8g2_font_calc_vref_bottom:00000000 u8g2_font_calc_vref_bottom
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:115    .text.u8g2_font_calc_vref_top:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:120    .text.u8g2_font_calc_vref_top:00000000 u8g2_font_calc_vref_top
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:143    .text.u8g2_font_calc_vref_center:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:148    .text.u8g2_font_calc_vref_center:00000000 u8g2_font_calc_vref_center
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:182    .text.u8g2_read_font_info:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:187    .text.u8g2_read_font_info:00000000 u8g2_read_font_info
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:330    .text.u8g2_GetFontSize:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:335    .text.u8g2_GetFontSize:00000000 u8g2_GetFontSize
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:403    .text.u8g2_GetFontBBXWidth:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:408    .text.u8g2_GetFontBBXWidth:00000000 u8g2_GetFontBBXWidth
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:424    .text.u8g2_GetFontBBXHeight:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:429    .text.u8g2_GetFontBBXHeight:00000000 u8g2_GetFontBBXHeight
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:445    .text.u8g2_GetFontBBXOffX:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:450    .text.u8g2_GetFontBBXOffX:00000000 u8g2_GetFontBBXOffX
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:466    .text.u8g2_GetFontBBXOffY:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:471    .text.u8g2_GetFontBBXOffY:00000000 u8g2_GetFontBBXOffY
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:487    .text.u8g2_GetFontCapitalAHeight:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:492    .text.u8g2_GetFontCapitalAHeight:00000000 u8g2_GetFontCapitalAHeight
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:508    .text.u8g2_font_decode_get_unsigned_bits:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:513    .text.u8g2_font_decode_get_unsigned_bits:00000000 u8g2_font_decode_get_unsigned_bits
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:596    .text.u8g2_font_setup_decode:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:600    .text.u8g2_font_setup_decode:00000000 u8g2_font_setup_decode
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:649    .text.u8g2_font_decode_get_signed_bits:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:654    .text.u8g2_font_decode_get_signed_bits:00000000 u8g2_font_decode_get_signed_bits
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:688    .text.u8g2_add_vector_y:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:693    .text.u8g2_add_vector_y:00000000 u8g2_add_vector_y
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:744    .text.u8g2_add_vector_x:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:749    .text.u8g2_add_vector_x:00000000 u8g2_add_vector_x
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:800    .text.u8g2_font_decode_len:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:805    .text.u8g2_font_decode_len:00000000 u8g2_font_decode_len
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:949    .text.u8g2_font_decode_glyph:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:954    .text.u8g2_font_decode_glyph:00000000 u8g2_font_decode_glyph
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:1041   .text.u8g2_font_decode_glyph:0000007e $d
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:1045   .text.u8g2_font_decode_glyph:00000082 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:1206   .text.u8g2_font_get_glyph_data:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:1211   .text.u8g2_font_get_glyph_data:00000000 u8g2_font_get_glyph_data
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:1340   .text.u8g2_font_draw_glyph:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:1344   .text.u8g2_font_draw_glyph:00000000 u8g2_font_draw_glyph
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:1389   .text.u8g2_is_all_valid:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:1393   .text.u8g2_is_all_valid:00000000 u8g2_is_all_valid
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:1450   .text.u8g2_GetGlyphHorizontalProperties:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:1454   .text.u8g2_GetGlyphHorizontalProperties:00000000 u8g2_GetGlyphHorizontalProperties
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:1511   .text.u8g2_calculate_exact_string_width:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:1515   .text.u8g2_calculate_exact_string_width:00000000 u8g2_calculate_exact_string_width
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:1641   .text.u8g2_IsGlyph:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:1646   .text.u8g2_IsGlyph:00000000 u8g2_IsGlyph
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:1674   .text.u8g2_GetGlyphWidth:00000000 $t
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 81
 
 
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:1679   .text.u8g2_GetGlyphWidth:00000000 u8g2_GetGlyphWidth
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:1734   .text.u8g2_string_width:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:1738   .text.u8g2_string_width:00000000 u8g2_string_width
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:1825   .text.u8g2_SetFontMode:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:1830   .text.u8g2_SetFontMode:00000000 u8g2_SetFontMode
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:1845   .text.u8g2_DrawGlyph:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:1850   .text.u8g2_DrawGlyph:00000000 u8g2_DrawGlyph
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:1878   .text.u8g2_DrawGlyph:00000016 $d
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:1882   .text.u8g2_DrawGlyph:0000001a $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:1938   .text.u8g2_draw_string:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:1942   .text.u8g2_draw_string:00000000 u8g2_draw_string
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2000   .text.u8g2_draw_string:00000046 $d
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2004   .text.u8g2_draw_string:0000004a $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2052   .text.u8g2_DrawStr:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2057   .text.u8g2_DrawStr:00000000 u8g2_DrawStr
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2080   .text.u8g2_DrawStr:0000000c $d
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2085   .text.u8g2_DrawUTF8:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2090   .text.u8g2_DrawUTF8:00000000 u8g2_DrawUTF8
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2113   .text.u8g2_DrawUTF8:0000000c $d
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2118   .text.u8g2_DrawExtendedUTF8:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2123   .text.u8g2_DrawExtendedUTF8:00000000 u8g2_DrawExtendedUTF8
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2275   .text.u8g2_DrawExtendedUTF8:000000b0 $d
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2280   .text.u8g2_DrawExtUTF8:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2285   .text.u8g2_DrawExtUTF8:00000000 u8g2_DrawExtUTF8
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2432   .text.u8g2_DrawExtUTF8:000000a4 $d
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2437   .text.u8g2_UpdateRefHeight:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2442   .text.u8g2_UpdateRefHeight:00000000 u8g2_UpdateRefHeight
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2513   .text.u8g2_SetFontRefHeightText:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2518   .text.u8g2_SetFontRefHeightText:00000000 u8g2_SetFontRefHeightText
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2541   .text.u8g2_SetFontRefHeightExtendedText:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2546   .text.u8g2_SetFontRefHeightExtendedText:00000000 u8g2_SetFontRefHeightExtendedText
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2569   .text.u8g2_SetFontRefHeightAll:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2574   .text.u8g2_SetFontRefHeightAll:00000000 u8g2_SetFontRefHeightAll
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2597   .text.u8g2_SetFontPosBaseline:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2602   .text.u8g2_SetFontPosBaseline:00000000 u8g2_SetFontPosBaseline
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2617   .text.u8g2_SetFontPosBaseline:00000008 $d
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2622   .text.u8g2_SetFontPosBottom:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2627   .text.u8g2_SetFontPosBottom:00000000 u8g2_SetFontPosBottom
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2642   .text.u8g2_SetFontPosBottom:00000008 $d
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2647   .text.u8g2_SetFontPosTop:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2652   .text.u8g2_SetFontPosTop:00000000 u8g2_SetFontPosTop
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2667   .text.u8g2_SetFontPosTop:00000008 $d
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2672   .text.u8g2_SetFontPosCenter:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2677   .text.u8g2_SetFontPosCenter:00000000 u8g2_SetFontPosCenter
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2692   .text.u8g2_SetFontPosCenter:00000008 $d
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2697   .text.u8g2_SetFont:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2702   .text.u8g2_SetFont:00000000 u8g2_SetFont
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2743   .text.u8g2_IsAllValidUTF8:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2748   .text.u8g2_IsAllValidUTF8:00000000 u8g2_IsAllValidUTF8
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2771   .text.u8g2_IsAllValidUTF8:0000000c $d
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2776   .text.u8g2_GetStrX:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2781   .text.u8g2_GetStrX:00000000 u8g2_GetStrX
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2815   .text.u8g2_GetStrWidth:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2820   .text.u8g2_GetStrWidth:00000000 u8g2_GetStrWidth
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2843   .text.u8g2_GetStrWidth:0000000c $d
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2848   .text.u8g2_GetExactStrWidth:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2853   .text.u8g2_GetExactStrWidth:00000000 u8g2_GetExactStrWidth
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccUGLc56.s 			page 82
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:1679   .text.u8g2_GetGlyphWidth:00000000 u8g2_GetGlyphWidth
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:1734   .text.u8g2_string_width:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:1738   .text.u8g2_string_width:00000000 u8g2_string_width
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:1825   .text.u8g2_SetFontMode:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:1830   .text.u8g2_SetFontMode:00000000 u8g2_SetFontMode
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:1845   .text.u8g2_DrawGlyph:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:1850   .text.u8g2_DrawGlyph:00000000 u8g2_DrawGlyph
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:1878   .text.u8g2_DrawGlyph:00000016 $d
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:1882   .text.u8g2_DrawGlyph:0000001a $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:1938   .text.u8g2_draw_string:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:1942   .text.u8g2_draw_string:00000000 u8g2_draw_string
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2000   .text.u8g2_draw_string:00000046 $d
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2004   .text.u8g2_draw_string:0000004a $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2052   .text.u8g2_DrawStr:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2057   .text.u8g2_DrawStr:00000000 u8g2_DrawStr
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2080   .text.u8g2_DrawStr:0000000c $d
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2085   .text.u8g2_DrawUTF8:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2090   .text.u8g2_DrawUTF8:00000000 u8g2_DrawUTF8
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2113   .text.u8g2_DrawUTF8:0000000c $d
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2118   .text.u8g2_DrawExtendedUTF8:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2123   .text.u8g2_DrawExtendedUTF8:00000000 u8g2_DrawExtendedUTF8
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2275   .text.u8g2_DrawExtendedUTF8:000000b0 $d
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2280   .text.u8g2_DrawExtUTF8:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2285   .text.u8g2_DrawExtUTF8:00000000 u8g2_DrawExtUTF8
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2432   .text.u8g2_DrawExtUTF8:000000a4 $d
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2437   .text.u8g2_UpdateRefHeight:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2442   .text.u8g2_UpdateRefHeight:00000000 u8g2_UpdateRefHeight
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2513   .text.u8g2_SetFontRefHeightText:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2518   .text.u8g2_SetFontRefHeightText:00000000 u8g2_SetFontRefHeightText
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2541   .text.u8g2_SetFontRefHeightExtendedText:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2546   .text.u8g2_SetFontRefHeightExtendedText:00000000 u8g2_SetFontRefHeightExtendedText
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2569   .text.u8g2_SetFontRefHeightAll:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2574   .text.u8g2_SetFontRefHeightAll:00000000 u8g2_SetFontRefHeightAll
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2597   .text.u8g2_SetFontPosBaseline:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2602   .text.u8g2_SetFontPosBaseline:00000000 u8g2_SetFontPosBaseline
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2617   .text.u8g2_SetFontPosBaseline:00000008 $d
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2622   .text.u8g2_SetFontPosBottom:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2627   .text.u8g2_SetFontPosBottom:00000000 u8g2_SetFontPosBottom
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2642   .text.u8g2_SetFontPosBottom:00000008 $d
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2647   .text.u8g2_SetFontPosTop:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2652   .text.u8g2_SetFontPosTop:00000000 u8g2_SetFontPosTop
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2667   .text.u8g2_SetFontPosTop:00000008 $d
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2672   .text.u8g2_SetFontPosCenter:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2677   .text.u8g2_SetFontPosCenter:00000000 u8g2_SetFontPosCenter
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2692   .text.u8g2_SetFontPosCenter:00000008 $d
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2697   .text.u8g2_SetFont:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2702   .text.u8g2_SetFont:00000000 u8g2_SetFont
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2743   .text.u8g2_IsAllValidUTF8:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2748   .text.u8g2_IsAllValidUTF8:00000000 u8g2_IsAllValidUTF8
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2771   .text.u8g2_IsAllValidUTF8:0000000c $d
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2776   .text.u8g2_GetStrX:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2781   .text.u8g2_GetStrX:00000000 u8g2_GetStrX
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2815   .text.u8g2_GetStrWidth:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2820   .text.u8g2_GetStrWidth:00000000 u8g2_GetStrWidth
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2843   .text.u8g2_GetStrWidth:0000000c $d
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2848   .text.u8g2_GetExactStrWidth:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2853   .text.u8g2_GetExactStrWidth:00000000 u8g2_GetExactStrWidth
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccBB0Kve.s 			page 82
 
 
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2876   .text.u8g2_GetExactStrWidth:0000000c $d
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2881   .text.u8g2_GetUTF8Width:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2886   .text.u8g2_GetUTF8Width:00000000 u8g2_GetUTF8Width
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2909   .text.u8g2_GetUTF8Width:0000000c $d
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2914   .text.u8g2_SetFontDirection:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccUGLc56.s:2919   .text.u8g2_SetFontDirection:00000000 u8g2_SetFontDirection
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2876   .text.u8g2_GetExactStrWidth:0000000c $d
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2881   .text.u8g2_GetUTF8Width:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2886   .text.u8g2_GetUTF8Width:00000000 u8g2_GetUTF8Width
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2909   .text.u8g2_GetUTF8Width:0000000c $d
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2914   .text.u8g2_SetFontDirection:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccBB0Kve.s:2919   .text.u8g2_SetFontDirection:00000000 u8g2_SetFontDirection
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS
