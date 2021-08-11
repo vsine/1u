@@ -32,7 +32,6 @@
   ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.  
 
 */
-
 #include "u8x8.h"
 
 #include <stdio.h>
