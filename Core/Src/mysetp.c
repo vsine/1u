@@ -42,7 +42,6 @@ void mysetp(){
            mydist+=2;
            else
            mydist+=1;
-   
            if (mydist>49)
              flag=0;
         }else{
