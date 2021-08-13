@@ -53,7 +53,6 @@ void mysetp(){
              flag=1;
         }
         u8g2_ClearBuffer(&u8g2);
-    
     }
     
     
