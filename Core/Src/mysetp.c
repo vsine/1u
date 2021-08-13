@@ -23,9 +23,7 @@ void mysetp(){
     HAL_TIM_Base_Start_IT(&htim2);//使能定时器中断
     while (1)
     {
-        
        // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
-     
         u8g2_SetFont(&u8g2, u8g2_font_6x13_tr  );
         u8g2_DrawCircle(&u8g2,64,mydist,10,U8G2_DRAW_ALL);
         u8g2_DrawStr(&u8g2,0,10,"Neotoxic");
