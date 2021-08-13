@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccWBPSvO.s 			page 1
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccR7wZs1.s 			page 1
 
 
    1              		.syntax unified
@@ -58,19 +58,19 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccWBPSvO.s 			page 1
   36              		.cfi_offset 14, -4
   37 0002 83B0     		sub	sp, sp, #12
   38              	.LCFI1:
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccWBPSvO.s 			page 2
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccR7wZs1.s 			page 2
 
 
   39              		.cfi_def_cfa_offset 16
   21:Core/Src/mysetp.c ****     //oledINIT(mhi2c);
   22:Core/Src/mysetp.c ****     u8g2Init(&u8g2);
   40              		.loc 1 22 0
-  41 0004 3548     		ldr	r0, .L10
+  41 0004 3648     		ldr	r0, .L10
   42 0006 FFF7FEFF 		bl	u8g2Init
   43              	.LVL0:
   23:Core/Src/mysetp.c ****     HAL_TIM_Base_Start_IT(&htim2);//使能定时器中断
   44              		.loc 1 23 0
-  45 000a 3548     		ldr	r0, .L10+4
+  45 000a 3648     		ldr	r0, .L10+4
   46 000c FFF7FEFF 		bl	HAL_TIM_Base_Start_IT
   47              	.LVL1:
   48              	.L8:
@@ -79,14 +79,14 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccWBPSvO.s 			page 1
   26:Core/Src/mysetp.c ****        // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
   27:Core/Src/mysetp.c ****         u8g2_SetFont(&u8g2, u8g2_font_6x13_tr  );
   49              		.loc 1 27 0
-  50 0010 324C     		ldr	r4, .L10
-  51 0012 3449     		ldr	r1, .L10+8
+  50 0010 334C     		ldr	r4, .L10
+  51 0012 3549     		ldr	r1, .L10+8
   52 0014 2046     		mov	r0, r4
   53 0016 FFF7FEFF 		bl	u8g2_SetFont
   54              	.LVL2:
   28:Core/Src/mysetp.c ****         u8g2_DrawCircle(&u8g2,64,mydist,10,U8G2_DRAW_ALL);
   55              		.loc 1 28 0
-  56 001a 334B     		ldr	r3, .L10+12
+  56 001a 344B     		ldr	r3, .L10+12
   57 001c 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
   58 001e 0F23     		movs	r3, #15
   59 0020 0093     		str	r3, [sp]
@@ -97,7 +97,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccWBPSvO.s 			page 1
   64              	.LVL3:
   29:Core/Src/mysetp.c ****         u8g2_DrawStr(&u8g2,0,10,"Neotoxic");
   65              		.loc 1 29 0
-  66 002c 2F4B     		ldr	r3, .L10+16
+  66 002c 304B     		ldr	r3, .L10+16
   67 002e 0A22     		movs	r2, #10
   68 0030 0021     		movs	r1, #0
   69 0032 2046     		mov	r0, r4
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccWBPSvO.s 			page 1
   82 0048 0095     		str	r5, [sp]
   83 004a 0A23     		movs	r3, #10
   84 004c 1422     		movs	r2, #20
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccWBPSvO.s 			page 3
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccR7wZs1.s 			page 3
 
 
   85 004e 1946     		mov	r1, r3
@@ -138,7 +138,7 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccWBPSvO.s 			page 1
   96              	.LVL8:
   35:Core/Src/mysetp.c ****         HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
   97              		.loc 1 35 0
-  98 0062 234C     		ldr	r4, .L10+20
+  98 0062 244C     		ldr	r4, .L10+20
   99 0064 0022     		movs	r2, #0
  100 0066 4FF48051 		mov	r1, #4096
  101 006a 2046     		mov	r0, r4
@@ -159,57 +159,57 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccWBPSvO.s 			page 1
   38:Core/Src/mysetp.c ****     
   39:Core/Src/mysetp.c ****         if (flag)
  114              		.loc 1 39 0
- 115 0082 1C4B     		ldr	r3, .L10+24
+ 115 0082 1D4B     		ldr	r3, .L10+24
  116 0084 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  117 0086 93B1     		cbz	r3, .L2
   40:Core/Src/mysetp.c ****         {
   41:Core/Src/mysetp.c ****            if (mydist>35)
  118              		.loc 1 41 0
- 119 0088 174B     		ldr	r3, .L10+12
+ 119 0088 184B     		ldr	r3, .L10+12
  120 008a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  121 008c 232B     		cmp	r3, #35
  122 008e 03D9     		bls	.L3
   42:Core/Src/mysetp.c ****            mydist+=2;
  123              		.loc 1 42 0
  124 0090 0233     		adds	r3, r3, #2
- 125 0092 154A     		ldr	r2, .L10+12
+ 125 0092 164A     		ldr	r2, .L10+12
  126 0094 1370     		strb	r3, [r2]
  127 0096 02E0     		b	.L4
  128              	.L3:
   43:Core/Src/mysetp.c ****            else
   44:Core/Src/mysetp.c ****            mydist+=1;
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccWBPSvO.s 			page 4
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccR7wZs1.s 			page 4
 
 
  129              		.loc 1 44 0
  130 0098 0133     		adds	r3, r3, #1
- 131 009a 134A     		ldr	r2, .L10+12
+ 131 009a 144A     		ldr	r2, .L10+12
  132 009c 1370     		strb	r3, [r2]
  133              	.L4:
   45:Core/Src/mysetp.c ****            if (mydist>49)
  134              		.loc 1 45 0
- 135 009e 124B     		ldr	r3, .L10+12
+ 135 009e 134B     		ldr	r3, .L10+12
  136 00a0 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  137 00a2 312B     		cmp	r3, #49
  138 00a4 15D9     		bls	.L5
   46:Core/Src/mysetp.c ****              flag=0;
  139              		.loc 1 46 0
  140 00a6 0022     		movs	r2, #0
- 141 00a8 124B     		ldr	r3, .L10+24
+ 141 00a8 134B     		ldr	r3, .L10+24
  142 00aa 1A70     		strb	r2, [r3]
  143 00ac 11E0     		b	.L5
  144              	.L2:
   47:Core/Src/mysetp.c ****         }else{
   48:Core/Src/mysetp.c ****         if (mydist>35)
  145              		.loc 1 48 0
- 146 00ae 0E4B     		ldr	r3, .L10+12
+ 146 00ae 0F4B     		ldr	r3, .L10+12
  147 00b0 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  148 00b2 232B     		cmp	r3, #35
  149 00b4 03D9     		bls	.L6
   49:Core/Src/mysetp.c ****            mydist-=2;
  150              		.loc 1 49 0
  151 00b6 023B     		subs	r3, r3, #2
- 152 00b8 0B4A     		ldr	r2, .L10+12
+ 152 00b8 0C4A     		ldr	r2, .L10+12
  153 00ba 1370     		strb	r3, [r2]
  154 00bc 02E0     		b	.L7
  155              	.L6:
@@ -217,384 +217,389 @@ ARM GAS  C:\Users\master\AppData\Local\Temp\ccWBPSvO.s 			page 1
   51:Core/Src/mysetp.c ****            mydist-=1;
  156              		.loc 1 51 0
  157 00be 013B     		subs	r3, r3, #1
- 158 00c0 094A     		ldr	r2, .L10+12
+ 158 00c0 0A4A     		ldr	r2, .L10+12
  159 00c2 1370     		strb	r3, [r2]
  160              	.L7:
   52:Core/Src/mysetp.c ****            if (mydist<21)
  161              		.loc 1 52 0
- 162 00c4 084B     		ldr	r3, .L10+12
+ 162 00c4 094B     		ldr	r3, .L10+12
  163 00c6 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  164 00c8 142B     		cmp	r3, #20
  165 00ca 02D8     		bhi	.L5
   53:Core/Src/mysetp.c ****              flag=1;
  166              		.loc 1 53 0
  167 00cc 0122     		movs	r2, #1
- 168 00ce 094B     		ldr	r3, .L10+24
+ 168 00ce 0A4B     		ldr	r3, .L10+24
  169 00d0 1A70     		strb	r2, [r3]
  170              	.L5:
   54:Core/Src/mysetp.c ****         }
   55:Core/Src/mysetp.c ****         u8g2_ClearBuffer(&u8g2);
  171              		.loc 1 55 0
- 172 00d2 0248     		ldr	r0, .L10
+ 172 00d2 0348     		ldr	r0, .L10
  173 00d4 FFF7FEFF 		bl	u8g2_ClearBuffer
  174              	.LVL12:
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccWBPSvO.s 			page 5
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccR7wZs1.s 			page 5
 
 
-  56:Core/Src/mysetp.c ****     }
+  56:Core/Src/mysetp.c ****         HAL_Delay(100);
  175              		.loc 1 56 0
- 176 00d8 9AE7     		b	.L8
- 177              	.L11:
- 178 00da 00BF     		.align	2
- 179              	.L10:
- 180 00dc 00000000 		.word	u8g2
- 181 00e0 00000000 		.word	htim2
- 182 00e4 00000000 		.word	u8g2_font_6x13_tr
- 183 00e8 00000000 		.word	.LANCHOR0
- 184 00ec 00000000 		.word	.LC0
- 185 00f0 000C0140 		.word	1073810432
- 186 00f4 00000000 		.word	.LANCHOR1
- 187              		.cfi_endproc
- 188              	.LFE66:
- 190              		.section	.text.fputc,"ax",%progbits
- 191              		.align	2
- 192              		.global	fputc
- 193              		.thumb
- 194              		.thumb_func
- 196              	fputc:
- 197              	.LFB67:
-  57:Core/Src/mysetp.c ****     
+ 176 00d8 6420     		movs	r0, #100
+ 177 00da FFF7FEFF 		bl	HAL_Delay
+ 178              	.LVL13:
+  57:Core/Src/mysetp.c ****     }
+ 179              		.loc 1 57 0
+ 180 00de 97E7     		b	.L8
+ 181              	.L11:
+ 182              		.align	2
+ 183              	.L10:
+ 184 00e0 00000000 		.word	u8g2
+ 185 00e4 00000000 		.word	htim2
+ 186 00e8 00000000 		.word	u8g2_font_6x13_tr
+ 187 00ec 00000000 		.word	.LANCHOR0
+ 188 00f0 00000000 		.word	.LC0
+ 189 00f4 000C0140 		.word	1073810432
+ 190 00f8 00000000 		.word	.LANCHOR1
+ 191              		.cfi_endproc
+ 192              	.LFE66:
+ 194              		.section	.text.fputc,"ax",%progbits
+ 195              		.align	2
+ 196              		.global	fputc
+ 197              		.thumb
+ 198              		.thumb_func
+ 200              	fputc:
+ 201              	.LFB67:
   58:Core/Src/mysetp.c ****     
   59:Core/Src/mysetp.c ****     
-  60:Core/Src/mysetp.c **** 
-  61:Core/Src/mysetp.c **** }
-  62:Core/Src/mysetp.c **** 
-  63:Core/Src/mysetp.c **** int fputc(int ch,FILE *f){
- 198              		.loc 1 63 0
- 199              		.cfi_startproc
- 200              		@ args = 0, pretend = 0, frame = 0
- 201              		@ frame_needed = 0, uses_anonymous_args = 0
- 202              		@ link register save eliminated.
- 203              	.LVL13:
-  64:Core/Src/mysetp.c ****     //HAL_UART_Transmit(&huart1,(uint8_t *)&ch,1,1000);
-  65:Core/Src/mysetp.c ****     //HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
-  66:Core/Src/mysetp.c ****     return (ch);
-  67:Core/Src/mysetp.c **** }
- 204              		.loc 1 67 0
- 205 0000 7047     		bx	lr
- 206              		.cfi_endproc
- 207              	.LFE67:
- 209 0002 00BF     		.section	.text.HAL_GPIO_EXTI_Callback,"ax",%progbits
- 210              		.align	2
- 211              		.global	HAL_GPIO_EXTI_Callback
- 212              		.thumb
- 213              		.thumb_func
- 215              	HAL_GPIO_EXTI_Callback:
- 216              	.LFB68:
-  68:Core/Src/mysetp.c **** 
+  60:Core/Src/mysetp.c ****     
+  61:Core/Src/mysetp.c **** 
+  62:Core/Src/mysetp.c **** }
+  63:Core/Src/mysetp.c **** 
+  64:Core/Src/mysetp.c **** int fputc(int ch,FILE *f){
+ 202              		.loc 1 64 0
+ 203              		.cfi_startproc
+ 204              		@ args = 0, pretend = 0, frame = 0
+ 205              		@ frame_needed = 0, uses_anonymous_args = 0
+ 206              		@ link register save eliminated.
+ 207              	.LVL14:
+  65:Core/Src/mysetp.c ****     //HAL_UART_Transmit(&huart1,(uint8_t *)&ch,1,1000);
+  66:Core/Src/mysetp.c ****     //HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_RESET);
+  67:Core/Src/mysetp.c ****     return (ch);
+  68:Core/Src/mysetp.c **** }
+ 208              		.loc 1 68 0
+ 209 0000 7047     		bx	lr
+ 210              		.cfi_endproc
+ 211              	.LFE67:
+ 213 0002 00BF     		.section	.text.HAL_GPIO_EXTI_Callback,"ax",%progbits
+ 214              		.align	2
+ 215              		.global	HAL_GPIO_EXTI_Callback
+ 216              		.thumb
+ 217              		.thumb_func
+ 219              	HAL_GPIO_EXTI_Callback:
+ 220              	.LFB68:
   69:Core/Src/mysetp.c **** 
   70:Core/Src/mysetp.c **** 
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccR7wZs1.s 			page 6
+
+
   71:Core/Src/mysetp.c **** 
-  72:Core/Src/mysetp.c **** void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-  73:Core/Src/mysetp.c **** {
- 217              		.loc 1 73 0
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccWBPSvO.s 			page 6
-
-
- 218              		.cfi_startproc
- 219              		@ args = 0, pretend = 0, frame = 0
- 220              		@ frame_needed = 0, uses_anonymous_args = 0
- 221              	.LVL14:
+  72:Core/Src/mysetp.c **** 
+  73:Core/Src/mysetp.c **** void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+  74:Core/Src/mysetp.c **** {
+ 221              		.loc 1 74 0
+ 222              		.cfi_startproc
+ 223              		@ args = 0, pretend = 0, frame = 0
+ 224              		@ frame_needed = 0, uses_anonymous_args = 0
+ 225              	.LVL15:
+  75:Core/Src/mysetp.c **** 	if(GPIO_Pin==GPIO_PIN_13)
+ 226              		.loc 1 75 0
+ 227 0000 B0F5005F 		cmp	r0, #8192
+ 228 0004 06D1     		bne	.L16
   74:Core/Src/mysetp.c **** 	if(GPIO_Pin==GPIO_PIN_13)
- 222              		.loc 1 74 0
- 223 0000 B0F5005F 		cmp	r0, #8192
- 224 0004 06D1     		bne	.L16
-  73:Core/Src/mysetp.c **** 	if(GPIO_Pin==GPIO_PIN_13)
- 225              		.loc 1 73 0
- 226 0006 08B5     		push	{r3, lr}
- 227              	.LCFI2:
- 228              		.cfi_def_cfa_offset 8
- 229              		.cfi_offset 3, -8
- 230              		.cfi_offset 14, -4
-  75:Core/Src/mysetp.c ****         HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_12); 
- 231              		.loc 1 75 0
- 232 0008 4FF48051 		mov	r1, #4096
- 233 000c 0248     		ldr	r0, .L17
- 234              	.LVL15:
- 235 000e FFF7FEFF 		bl	HAL_GPIO_TogglePin
- 236              	.LVL16:
- 237 0012 08BD     		pop	{r3, pc}
- 238              	.LVL17:
- 239              	.L16:
- 240              	.LCFI3:
- 241              		.cfi_def_cfa_offset 0
- 242              		.cfi_restore 3
- 243              		.cfi_restore 14
- 244 0014 7047     		bx	lr
- 245              	.L18:
- 246 0016 00BF     		.align	2
- 247              	.L17:
- 248 0018 000C0140 		.word	1073810432
- 249              		.cfi_endproc
- 250              	.LFE68:
- 252              		.section	.text.HAL_TIM_PeriodElapsedCallback,"ax",%progbits
- 253              		.align	2
- 254              		.global	HAL_TIM_PeriodElapsedCallback
- 255              		.thumb
- 256              		.thumb_func
- 258              	HAL_TIM_PeriodElapsedCallback:
- 259              	.LFB69:
-  76:Core/Src/mysetp.c **** 	
-  77:Core/Src/mysetp.c **** }
-  78:Core/Src/mysetp.c **** 
-  79:Core/Src/mysetp.c **** void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
-  80:Core/Src/mysetp.c **** {
- 260              		.loc 1 80 0
- 261              		.cfi_startproc
- 262              		@ args = 0, pretend = 0, frame = 0
- 263              		@ frame_needed = 0, uses_anonymous_args = 0
- 264              	.LVL18:
- 265 0000 08B5     		push	{r3, lr}
- 266              	.LCFI4:
- 267              		.cfi_def_cfa_offset 8
- 268              		.cfi_offset 3, -8
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccWBPSvO.s 			page 7
+ 229              		.loc 1 74 0
+ 230 0006 08B5     		push	{r3, lr}
+ 231              	.LCFI2:
+ 232              		.cfi_def_cfa_offset 8
+ 233              		.cfi_offset 3, -8
+ 234              		.cfi_offset 14, -4
+  76:Core/Src/mysetp.c ****         HAL_GPIO_TogglePin(GPIOB,GPIO_PIN_12); 
+ 235              		.loc 1 76 0
+ 236 0008 4FF48051 		mov	r1, #4096
+ 237 000c 0248     		ldr	r0, .L17
+ 238              	.LVL16:
+ 239 000e FFF7FEFF 		bl	HAL_GPIO_TogglePin
+ 240              	.LVL17:
+ 241 0012 08BD     		pop	{r3, pc}
+ 242              	.LVL18:
+ 243              	.L16:
+ 244              	.LCFI3:
+ 245              		.cfi_def_cfa_offset 0
+ 246              		.cfi_restore 3
+ 247              		.cfi_restore 14
+ 248 0014 7047     		bx	lr
+ 249              	.L18:
+ 250 0016 00BF     		.align	2
+ 251              	.L17:
+ 252 0018 000C0140 		.word	1073810432
+ 253              		.cfi_endproc
+ 254              	.LFE68:
+ 256              		.section	.text.HAL_TIM_PeriodElapsedCallback,"ax",%progbits
+ 257              		.align	2
+ 258              		.global	HAL_TIM_PeriodElapsedCallback
+ 259              		.thumb
+ 260              		.thumb_func
+ 262              	HAL_TIM_PeriodElapsedCallback:
+ 263              	.LFB69:
+  77:Core/Src/mysetp.c **** 	
+  78:Core/Src/mysetp.c **** }
+  79:Core/Src/mysetp.c **** 
+  80:Core/Src/mysetp.c **** void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+  81:Core/Src/mysetp.c **** {
+ 264              		.loc 1 81 0
+ 265              		.cfi_startproc
+ 266              		@ args = 0, pretend = 0, frame = 0
+ 267              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccR7wZs1.s 			page 7
 
 
- 269              		.cfi_offset 14, -4
-  81:Core/Src/mysetp.c ****  
-  82:Core/Src/mysetp.c ****   
-  83:Core/Src/mysetp.c ****  static unsigned char ledState = 0;  
-  84:Core/Src/mysetp.c **** if (htim==(&htim2))
- 270              		.loc 1 84 0
- 271 0002 0D4B     		ldr	r3, .L24
- 272 0004 8342     		cmp	r3, r0
- 273 0006 15D1     		bne	.L19
-  85:Core/Src/mysetp.c **** {
-  86:Core/Src/mysetp.c ****   if (ledState == 0)
- 274              		.loc 1 86 0
- 275 0008 0C4B     		ldr	r3, .L24+4
- 276 000a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 277 000c 33B9     		cbnz	r3, .L21
-  87:Core/Src/mysetp.c ****             HAL_GPIO_WritePin(GPIOB,GPIO_PIN_12,GPIO_PIN_RESET);
+ 268              	.LVL19:
+ 269 0000 08B5     		push	{r3, lr}
+ 270              	.LCFI4:
+ 271              		.cfi_def_cfa_offset 8
+ 272              		.cfi_offset 3, -8
+ 273              		.cfi_offset 14, -4
+  82:Core/Src/mysetp.c ****  
+  83:Core/Src/mysetp.c ****   
+  84:Core/Src/mysetp.c ****  static unsigned char ledState = 0;  
+  85:Core/Src/mysetp.c **** if (htim==(&htim2))
+ 274              		.loc 1 85 0
+ 275 0002 0D4B     		ldr	r3, .L24
+ 276 0004 8342     		cmp	r3, r0
+ 277 0006 15D1     		bne	.L19
+  86:Core/Src/mysetp.c **** {
+  87:Core/Src/mysetp.c ****   if (ledState == 0)
  278              		.loc 1 87 0
- 279 000e 0022     		movs	r2, #0
- 280 0010 4FF48051 		mov	r1, #4096
- 281 0014 0A48     		ldr	r0, .L24+8
- 282              	.LVL19:
- 283 0016 FFF7FEFF 		bl	HAL_GPIO_WritePin
- 284              	.LVL20:
- 285 001a 05E0     		b	.L22
- 286              	.LVL21:
- 287              	.L21:
-  88:Core/Src/mysetp.c ****         else
-  89:Core/Src/mysetp.c ****             HAL_GPIO_WritePin(GPIOB,GPIO_PIN_12,GPIO_PIN_SET);
- 288              		.loc 1 89 0
- 289 001c 0122     		movs	r2, #1
- 290 001e 4FF48051 		mov	r1, #4096
- 291 0022 0748     		ldr	r0, .L24+8
- 292              	.LVL22:
- 293 0024 FFF7FEFF 		bl	HAL_GPIO_WritePin
- 294              	.LVL23:
- 295              	.L22:
-  90:Core/Src/mysetp.c ****         ledState = !ledState;
- 296              		.loc 1 90 0
- 297 0028 044A     		ldr	r2, .L24+4
- 298 002a 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
- 299 002c B3FA83F3 		clz	r3, r3
- 300 0030 5B09     		lsrs	r3, r3, #5
- 301 0032 1370     		strb	r3, [r2]
- 302              	.L19:
- 303 0034 08BD     		pop	{r3, pc}
- 304              	.L25:
- 305 0036 00BF     		.align	2
- 306              	.L24:
- 307 0038 00000000 		.word	htim2
- 308 003c 00000000 		.word	.LANCHOR2
- 309 0040 000C0140 		.word	1073810432
- 310              		.cfi_endproc
- 311              	.LFE69:
- 313              		.global	flag
- 314              		.global	mydist
- 315              		.global	bmp
- 316              		.comm	u8g2,148,4
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccWBPSvO.s 			page 8
+ 279 0008 0C4B     		ldr	r3, .L24+4
+ 280 000a 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 281 000c 33B9     		cbnz	r3, .L21
+  88:Core/Src/mysetp.c ****             HAL_GPIO_WritePin(GPIOB,GPIO_PIN_12,GPIO_PIN_RESET);
+ 282              		.loc 1 88 0
+ 283 000e 0022     		movs	r2, #0
+ 284 0010 4FF48051 		mov	r1, #4096
+ 285 0014 0A48     		ldr	r0, .L24+8
+ 286              	.LVL20:
+ 287 0016 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 288              	.LVL21:
+ 289 001a 05E0     		b	.L22
+ 290              	.LVL22:
+ 291              	.L21:
+  89:Core/Src/mysetp.c ****         else
+  90:Core/Src/mysetp.c ****             HAL_GPIO_WritePin(GPIOB,GPIO_PIN_12,GPIO_PIN_SET);
+ 292              		.loc 1 90 0
+ 293 001c 0122     		movs	r2, #1
+ 294 001e 4FF48051 		mov	r1, #4096
+ 295 0022 0748     		ldr	r0, .L24+8
+ 296              	.LVL23:
+ 297 0024 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 298              	.LVL24:
+ 299              	.L22:
+  91:Core/Src/mysetp.c ****         ledState = !ledState;
+ 300              		.loc 1 91 0
+ 301 0028 044A     		ldr	r2, .L24+4
+ 302 002a 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 303 002c B3FA83F3 		clz	r3, r3
+ 304 0030 5B09     		lsrs	r3, r3, #5
+ 305 0032 1370     		strb	r3, [r2]
+ 306              	.L19:
+ 307 0034 08BD     		pop	{r3, pc}
+ 308              	.L25:
+ 309 0036 00BF     		.align	2
+ 310              	.L24:
+ 311 0038 00000000 		.word	htim2
+ 312 003c 00000000 		.word	.LANCHOR2
+ 313 0040 000C0140 		.word	1073810432
+ 314              		.cfi_endproc
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccR7wZs1.s 			page 8
 
 
- 317              		.global	dds
- 318              		.section	.bss.ledState.14562,"aw",%nobits
- 319              		.set	.LANCHOR2,. + 0
- 322              	ledState.14562:
- 323 0000 00       		.space	1
- 324              		.section	.data.mydist,"aw",%progbits
- 325              		.set	.LANCHOR0,. + 0
- 328              	mydist:
- 329 0000 28       		.byte	40
- 330              		.section	.data.bmp,"aw",%progbits
- 331              		.align	2
- 334              	bmp:
- 335 0000 F8       		.byte	-8
- 336 0001 0F       		.byte	15
- 337 0002 08       		.byte	8
- 338 0003 08       		.byte	8
- 339 0004 08       		.byte	8
- 340 0005 08       		.byte	8
- 341 0006 F8       		.byte	-8
- 342 0007 0F       		.byte	15
- 343 0008 08       		.byte	8
- 344 0009 08       		.byte	8
- 345 000a 08       		.byte	8
- 346 000b 08       		.byte	8
- 347 000c F8       		.byte	-8
- 348 000d 0F       		.byte	15
- 349 000e 00       		.byte	0
- 350 000f 00       		.byte	0
- 351 0010 FF       		.byte	-1
- 352 0011 7F       		.byte	127
- 353 0012 80       		.byte	-128
- 354 0013 00       		.byte	0
- 355 0014 88       		.byte	-120
- 356 0015 00       		.byte	0
- 357 0016 88       		.byte	-120
- 358 0017 1F       		.byte	31
- 359 0018 88       		.byte	-120
- 360 0019 00       		.byte	0
- 361 001a 94       		.byte	-108
- 362 001b 00       		.byte	0
- 363 001c A2       		.byte	-94
- 364 001d 00       		.byte	0
- 365 001e C1       		.byte	-63
- 366 001f 7F       		.byte	127
- 367 0020 40       		.byte	64
- 368 0021 00       		.byte	0
- 369 0022 40       		.byte	64
- 370 0023 00       		.byte	0
- 371 0024 E0       		.byte	-32
- 372 0025 0F       		.byte	15
- 373 0026 10       		.byte	16
- 374 0027 04       		.byte	4
- 375 0028 1C       		.byte	28
- 376 0029 02       		.byte	2
- 377 002a 20       		.byte	32
- 378 002b 01       		.byte	1
- 379 002c C0       		.byte	-64
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccWBPSvO.s 			page 9
+ 315              	.LFE69:
+ 317              		.global	flag
+ 318              		.global	mydist
+ 319              		.global	bmp
+ 320              		.comm	u8g2,148,4
+ 321              		.global	dds
+ 322              		.section	.bss.ledState.14562,"aw",%nobits
+ 323              		.set	.LANCHOR2,. + 0
+ 326              	ledState.14562:
+ 327 0000 00       		.space	1
+ 328              		.section	.data.mydist,"aw",%progbits
+ 329              		.set	.LANCHOR0,. + 0
+ 332              	mydist:
+ 333 0000 28       		.byte	40
+ 334              		.section	.data.bmp,"aw",%progbits
+ 335              		.align	2
+ 338              	bmp:
+ 339 0000 F8       		.byte	-8
+ 340 0001 0F       		.byte	15
+ 341 0002 08       		.byte	8
+ 342 0003 08       		.byte	8
+ 343 0004 08       		.byte	8
+ 344 0005 08       		.byte	8
+ 345 0006 F8       		.byte	-8
+ 346 0007 0F       		.byte	15
+ 347 0008 08       		.byte	8
+ 348 0009 08       		.byte	8
+ 349 000a 08       		.byte	8
+ 350 000b 08       		.byte	8
+ 351 000c F8       		.byte	-8
+ 352 000d 0F       		.byte	15
+ 353 000e 00       		.byte	0
+ 354 000f 00       		.byte	0
+ 355 0010 FF       		.byte	-1
+ 356 0011 7F       		.byte	127
+ 357 0012 80       		.byte	-128
+ 358 0013 00       		.byte	0
+ 359 0014 88       		.byte	-120
+ 360 0015 00       		.byte	0
+ 361 0016 88       		.byte	-120
+ 362 0017 1F       		.byte	31
+ 363 0018 88       		.byte	-120
+ 364 0019 00       		.byte	0
+ 365 001a 94       		.byte	-108
+ 366 001b 00       		.byte	0
+ 367 001c A2       		.byte	-94
+ 368 001d 00       		.byte	0
+ 369 001e C1       		.byte	-63
+ 370 001f 7F       		.byte	127
+ 371 0020 40       		.byte	64
+ 372 0021 00       		.byte	0
+ 373 0022 40       		.byte	64
+ 374 0023 00       		.byte	0
+ 375 0024 E0       		.byte	-32
+ 376 0025 0F       		.byte	15
+ 377 0026 10       		.byte	16
+ 378 0027 04       		.byte	4
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccR7wZs1.s 			page 9
 
 
- 380 002d 02       		.byte	2
- 381 002e 30       		.byte	48
- 382 002f 01       		.byte	1
- 383 0030 8E       		.byte	-114
- 384 0031 1F       		.byte	31
- 385 0032 40       		.byte	64
- 386 0033 10       		.byte	16
- 387 0034 30       		.byte	48
- 388 0035 08       		.byte	8
- 389 0036 4C       		.byte	76
- 390 0037 04       		.byte	4
- 391 0038 80       		.byte	-128
- 392 0039 02       		.byte	2
- 393 003a 80       		.byte	-128
- 394 003b 01       		.byte	1
- 395 003c 70       		.byte	112
- 396 003d 00       		.byte	0
- 397 003e 0E       		.byte	14
- 398 003f 00       		.byte	0
- 399 0040 80       		.byte	-128
- 400 0041 00       		.byte	0
- 401 0042 80       		.byte	-128
- 402 0043 00       		.byte	0
- 403 0044 80       		.byte	-128
- 404 0045 00       		.byte	0
- 405 0046 90       		.byte	-112
- 406 0047 04       		.byte	4
- 407 0048 90       		.byte	-112
- 408 0049 08       		.byte	8
- 409 004a 88       		.byte	-120
- 410 004b 10       		.byte	16
- 411 004c 88       		.byte	-120
- 412 004d 20       		.byte	32
- 413 004e 84       		.byte	-124
- 414 004f 28       		.byte	40
- 415 0050 82       		.byte	-126
- 416 0051 08       		.byte	8
- 417 0052 80       		.byte	-128
- 418 0053 04       		.byte	4
- 419 0054 00       		.byte	0
- 420 0055 02       		.byte	2
- 421 0056 00       		.byte	0
- 422 0057 01       		.byte	1
- 423 0058 80       		.byte	-128
- 424 0059 00       		.byte	0
- 425 005a 40       		.byte	64
- 426 005b 00       		.byte	0
- 427 005c 30       		.byte	48
- 428 005d 00       		.byte	0
- 429 005e 0E       		.byte	14
- 430 005f 00       		.byte	0
- 431              		.section	.data.flag,"aw",%progbits
- 432              		.set	.LANCHOR1,. + 0
- 435              	flag:
- 436 0000 01       		.byte	1
- 437              		.section	.rodata.str1.4,"aMS",%progbits,1
- 438              		.align	2
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccWBPSvO.s 			page 10
+ 379 0028 1C       		.byte	28
+ 380 0029 02       		.byte	2
+ 381 002a 20       		.byte	32
+ 382 002b 01       		.byte	1
+ 383 002c C0       		.byte	-64
+ 384 002d 02       		.byte	2
+ 385 002e 30       		.byte	48
+ 386 002f 01       		.byte	1
+ 387 0030 8E       		.byte	-114
+ 388 0031 1F       		.byte	31
+ 389 0032 40       		.byte	64
+ 390 0033 10       		.byte	16
+ 391 0034 30       		.byte	48
+ 392 0035 08       		.byte	8
+ 393 0036 4C       		.byte	76
+ 394 0037 04       		.byte	4
+ 395 0038 80       		.byte	-128
+ 396 0039 02       		.byte	2
+ 397 003a 80       		.byte	-128
+ 398 003b 01       		.byte	1
+ 399 003c 70       		.byte	112
+ 400 003d 00       		.byte	0
+ 401 003e 0E       		.byte	14
+ 402 003f 00       		.byte	0
+ 403 0040 80       		.byte	-128
+ 404 0041 00       		.byte	0
+ 405 0042 80       		.byte	-128
+ 406 0043 00       		.byte	0
+ 407 0044 80       		.byte	-128
+ 408 0045 00       		.byte	0
+ 409 0046 90       		.byte	-112
+ 410 0047 04       		.byte	4
+ 411 0048 90       		.byte	-112
+ 412 0049 08       		.byte	8
+ 413 004a 88       		.byte	-120
+ 414 004b 10       		.byte	16
+ 415 004c 88       		.byte	-120
+ 416 004d 20       		.byte	32
+ 417 004e 84       		.byte	-124
+ 418 004f 28       		.byte	40
+ 419 0050 82       		.byte	-126
+ 420 0051 08       		.byte	8
+ 421 0052 80       		.byte	-128
+ 422 0053 04       		.byte	4
+ 423 0054 00       		.byte	0
+ 424 0055 02       		.byte	2
+ 425 0056 00       		.byte	0
+ 426 0057 01       		.byte	1
+ 427 0058 80       		.byte	-128
+ 428 0059 00       		.byte	0
+ 429 005a 40       		.byte	64
+ 430 005b 00       		.byte	0
+ 431 005c 30       		.byte	48
+ 432 005d 00       		.byte	0
+ 433 005e 0E       		.byte	14
+ 434 005f 00       		.byte	0
+ 435              		.section	.data.flag,"aw",%progbits
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccR7wZs1.s 			page 10
 
 
- 439              	.LC0:
- 440 0000 4E656F74 		.ascii	"Neotoxic\000"
- 440      6F786963 
- 440      00
- 441              		.section	.data.dds,"aw",%progbits
+ 436              		.set	.LANCHOR1,. + 0
+ 439              	flag:
+ 440 0000 01       		.byte	1
+ 441              		.section	.rodata.str1.4,"aMS",%progbits,1
  442              		.align	2
- 445              	dds:
- 446 0000 0B       		.byte	11
- 447 0001 16       		.byte	22
- 448              		.text
- 449              	.Letext0:
- 450              		.file 2 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\mach
- 451              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\sys\
- 452              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
- 453              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
- 454              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
- 455              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
- 456              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
- 457              		.file 9 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\sys\
- 458              		.file 10 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\sys
- 459              		.file 11 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\lib\\gcc\\arm-none-eabi\\5.
- 460              		.file 12 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\sys
- 461              		.file 13 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\std
- 462              		.file 14 "u8g2_lib/u8x8.h"
- 463              		.file 15 "u8g2_lib/u8g2.h"
- 464              		.file 16 "Drivers/CMSIS/Include/core_cm3.h"
- 465              		.file 17 "Core/Inc/oled.h"
- 466              		.file 18 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
-ARM GAS  C:\Users\master\AppData\Local\Temp\ccWBPSvO.s 			page 11
+ 443              	.LC0:
+ 444 0000 4E656F74 		.ascii	"Neotoxic\000"
+ 444      6F786963 
+ 444      00
+ 445              		.section	.data.dds,"aw",%progbits
+ 446              		.align	2
+ 449              	dds:
+ 450 0000 0B       		.byte	11
+ 451 0001 16       		.byte	22
+ 452              		.text
+ 453              	.Letext0:
+ 454              		.file 2 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\mach
+ 455              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\sys\
+ 456              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 457              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 458              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
+ 459              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 460              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
+ 461              		.file 9 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\sys\
+ 462              		.file 10 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\sys
+ 463              		.file 11 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\lib\\gcc\\arm-none-eabi\\5.
+ 464              		.file 12 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\sys
+ 465              		.file 13 "c:\\program files (x86)\\gnu tools arm embedded\\5.4 2016q3\\arm-none-eabi\\include\\std
+ 466              		.file 14 "u8g2_lib/u8x8.h"
+ 467              		.file 15 "u8g2_lib/u8g2.h"
+ 468              		.file 16 "Drivers/CMSIS/Include/core_cm3.h"
+ 469              		.file 17 "Core/Inc/oled.h"
+ 470              		.file 18 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ARM GAS  C:\Users\master\AppData\Local\Temp\ccR7wZs1.s 			page 11
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 mysetp.c
-C:\Users\master\AppData\Local\Temp\ccWBPSvO.s:20     .text.mysetp:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccWBPSvO.s:25     .text.mysetp:00000000 mysetp
-C:\Users\master\AppData\Local\Temp\ccWBPSvO.s:180    .text.mysetp:000000dc $d
+C:\Users\master\AppData\Local\Temp\ccR7wZs1.s:20     .text.mysetp:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccR7wZs1.s:25     .text.mysetp:00000000 mysetp
+C:\Users\master\AppData\Local\Temp\ccR7wZs1.s:184    .text.mysetp:000000e0 $d
                             *COM*:00000094 u8g2
-C:\Users\master\AppData\Local\Temp\ccWBPSvO.s:191    .text.fputc:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccWBPSvO.s:196    .text.fputc:00000000 fputc
-C:\Users\master\AppData\Local\Temp\ccWBPSvO.s:210    .text.HAL_GPIO_EXTI_Callback:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccWBPSvO.s:215    .text.HAL_GPIO_EXTI_Callback:00000000 HAL_GPIO_EXTI_Callback
-C:\Users\master\AppData\Local\Temp\ccWBPSvO.s:248    .text.HAL_GPIO_EXTI_Callback:00000018 $d
-C:\Users\master\AppData\Local\Temp\ccWBPSvO.s:253    .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
-C:\Users\master\AppData\Local\Temp\ccWBPSvO.s:258    .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
-C:\Users\master\AppData\Local\Temp\ccWBPSvO.s:307    .text.HAL_TIM_PeriodElapsedCallback:00000038 $d
-C:\Users\master\AppData\Local\Temp\ccWBPSvO.s:435    .data.flag:00000000 flag
-C:\Users\master\AppData\Local\Temp\ccWBPSvO.s:328    .data.mydist:00000000 mydist
-C:\Users\master\AppData\Local\Temp\ccWBPSvO.s:334    .data.bmp:00000000 bmp
-C:\Users\master\AppData\Local\Temp\ccWBPSvO.s:445    .data.dds:00000000 dds
-C:\Users\master\AppData\Local\Temp\ccWBPSvO.s:322    .bss.ledState.14562:00000000 ledState.14562
-C:\Users\master\AppData\Local\Temp\ccWBPSvO.s:323    .bss.ledState.14562:00000000 $d
-C:\Users\master\AppData\Local\Temp\ccWBPSvO.s:331    .data.bmp:00000000 $d
-C:\Users\master\AppData\Local\Temp\ccWBPSvO.s:438    .rodata.str1.4:00000000 $d
-C:\Users\master\AppData\Local\Temp\ccWBPSvO.s:442    .data.dds:00000000 $d
+C:\Users\master\AppData\Local\Temp\ccR7wZs1.s:195    .text.fputc:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccR7wZs1.s:200    .text.fputc:00000000 fputc
+C:\Users\master\AppData\Local\Temp\ccR7wZs1.s:214    .text.HAL_GPIO_EXTI_Callback:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccR7wZs1.s:219    .text.HAL_GPIO_EXTI_Callback:00000000 HAL_GPIO_EXTI_Callback
+C:\Users\master\AppData\Local\Temp\ccR7wZs1.s:252    .text.HAL_GPIO_EXTI_Callback:00000018 $d
+C:\Users\master\AppData\Local\Temp\ccR7wZs1.s:257    .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
+C:\Users\master\AppData\Local\Temp\ccR7wZs1.s:262    .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
+C:\Users\master\AppData\Local\Temp\ccR7wZs1.s:311    .text.HAL_TIM_PeriodElapsedCallback:00000038 $d
+C:\Users\master\AppData\Local\Temp\ccR7wZs1.s:439    .data.flag:00000000 flag
+C:\Users\master\AppData\Local\Temp\ccR7wZs1.s:332    .data.mydist:00000000 mydist
+C:\Users\master\AppData\Local\Temp\ccR7wZs1.s:338    .data.bmp:00000000 bmp
+C:\Users\master\AppData\Local\Temp\ccR7wZs1.s:449    .data.dds:00000000 dds
+C:\Users\master\AppData\Local\Temp\ccR7wZs1.s:326    .bss.ledState.14562:00000000 ledState.14562
+C:\Users\master\AppData\Local\Temp\ccR7wZs1.s:327    .bss.ledState.14562:00000000 $d
+C:\Users\master\AppData\Local\Temp\ccR7wZs1.s:335    .data.bmp:00000000 $d
+C:\Users\master\AppData\Local\Temp\ccR7wZs1.s:442    .rodata.str1.4:00000000 $d
+C:\Users\master\AppData\Local\Temp\ccR7wZs1.s:446    .data.dds:00000000 $d
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS

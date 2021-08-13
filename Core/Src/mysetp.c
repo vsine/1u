@@ -53,6 +53,7 @@ void mysetp(){
              flag=1;
         }
         u8g2_ClearBuffer(&u8g2);
+        HAL_Delay(100);
     }
     
     
