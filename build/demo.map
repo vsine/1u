@@ -8460,41 +8460,41 @@ OUTPUT(build/demo.elf elf32-littlearm)
  .debug_ranges  0x00002c18      0x1f0 build/stm32f1xx_hal_uart.o
  .debug_ranges  0x00002e08       0x20 build/startup_stm32f103xb.o
 
-.debug_line     0x00000000     0xdcde
- .debug_line    0x00000000      0x364 build/mysetp.o
- .debug_line    0x00000364      0x279 build/oled.o
- .debug_line    0x000005dd      0x39d build/main.o
- .debug_line    0x0000097a      0x2f1 build/stm32f1xx_it.o
- .debug_line    0x00000c6b      0x2f2 build/stm32f1xx_hal_msp.o
- .debug_line    0x00000f5d     0x1b12 build/stm32f1xx_hal_tim.o
- .debug_line    0x00002a6f      0xcdf build/stm32f1xx_hal_tim_ex.o
- .debug_line    0x0000374e      0x3c9 build/stm32f1xx_hal.o
- .debug_line    0x00003b17      0x52f build/stm32f1xx_hal_rcc.o
- .debug_line    0x00004046      0x341 build/stm32f1xx_hal_gpio.o
- .debug_line    0x00004387      0x54c build/stm32f1xx_hal_dma.o
- .debug_line    0x000048d3      0x33e build/stm32f1xx_hal_cortex.o
- .debug_line    0x00004c11      0x1ac build/system_stm32f1xx.o
- .debug_line    0x00004dbd     0x17b6 build/stm32f1xx_hal_i2c.o
- .debug_line    0x00006573      0x2a0 build/u8g2_buffer.o
- .debug_line    0x00006813      0x2b5 build/u8g2_circle.o
- .debug_line    0x00006ac8      0xb1c build/u8g2_d_memory.o
- .debug_line    0x000075e4     0x3552 build/u8g2_d_setup.o
- .debug_line    0x0000ab36      0x674 build/u8g2_font.o
- .debug_line    0x0000b1aa      0x101 build/u8g2_fonts.o
- .debug_line    0x0000b2ab      0x1c3 build/u8g2_hvline.o
- .debug_line    0x0000b46e      0x153 build/u8g2_intersection.o
- .debug_line    0x0000b5c1      0x168 build/u8g2_line.o
- .debug_line    0x0000b729      0x183 build/u8g2_ll_hvline.o
- .debug_line    0x0000b8ac      0x367 build/u8g2_setup.o
- .debug_line    0x0000bc13      0x3ef build/u8x8_8x8.o
- .debug_line    0x0000c002      0x4ab build/u8x8_byte.o
- .debug_line    0x0000c4ad      0x4a3 build/u8x8_cad.o
- .debug_line    0x0000c950      0x23f build/u8x8_d_ssd1306_128x64_noname.o
- .debug_line    0x0000cb8f      0x215 build/u8x8_display.o
- .debug_line    0x0000cda4      0x11a build/u8x8_gpio.o
- .debug_line    0x0000cebe      0x160 build/u8x8_setup.o
- .debug_line    0x0000d01e      0xc4b build/stm32f1xx_hal_uart.o
- .debug_line    0x0000dc69       0x75 build/startup_stm32f103xb.o
+.debug_line     0x00000000     0xdcdb
+ .debug_line    0x00000000      0x361 build/mysetp.o
+ .debug_line    0x00000361      0x279 build/oled.o
+ .debug_line    0x000005da      0x39d build/main.o
+ .debug_line    0x00000977      0x2f1 build/stm32f1xx_it.o
+ .debug_line    0x00000c68      0x2f2 build/stm32f1xx_hal_msp.o
+ .debug_line    0x00000f5a     0x1b12 build/stm32f1xx_hal_tim.o
+ .debug_line    0x00002a6c      0xcdf build/stm32f1xx_hal_tim_ex.o
+ .debug_line    0x0000374b      0x3c9 build/stm32f1xx_hal.o
+ .debug_line    0x00003b14      0x52f build/stm32f1xx_hal_rcc.o
+ .debug_line    0x00004043      0x341 build/stm32f1xx_hal_gpio.o
+ .debug_line    0x00004384      0x54c build/stm32f1xx_hal_dma.o
+ .debug_line    0x000048d0      0x33e build/stm32f1xx_hal_cortex.o
+ .debug_line    0x00004c0e      0x1ac build/system_stm32f1xx.o
+ .debug_line    0x00004dba     0x17b6 build/stm32f1xx_hal_i2c.o
+ .debug_line    0x00006570      0x2a0 build/u8g2_buffer.o
+ .debug_line    0x00006810      0x2b5 build/u8g2_circle.o
+ .debug_line    0x00006ac5      0xb1c build/u8g2_d_memory.o
+ .debug_line    0x000075e1     0x3552 build/u8g2_d_setup.o
+ .debug_line    0x0000ab33      0x674 build/u8g2_font.o
+ .debug_line    0x0000b1a7      0x101 build/u8g2_fonts.o
+ .debug_line    0x0000b2a8      0x1c3 build/u8g2_hvline.o
+ .debug_line    0x0000b46b      0x153 build/u8g2_intersection.o
+ .debug_line    0x0000b5be      0x168 build/u8g2_line.o
+ .debug_line    0x0000b726      0x183 build/u8g2_ll_hvline.o
+ .debug_line    0x0000b8a9      0x367 build/u8g2_setup.o
+ .debug_line    0x0000bc10      0x3ef build/u8x8_8x8.o
+ .debug_line    0x0000bfff      0x4ab build/u8x8_byte.o
+ .debug_line    0x0000c4aa      0x4a3 build/u8x8_cad.o
+ .debug_line    0x0000c94d      0x23f build/u8x8_d_ssd1306_128x64_noname.o
+ .debug_line    0x0000cb8c      0x215 build/u8x8_display.o
+ .debug_line    0x0000cda1      0x11a build/u8x8_gpio.o
+ .debug_line    0x0000cebb      0x160 build/u8x8_setup.o
+ .debug_line    0x0000d01b      0xc4b build/stm32f1xx_hal_uart.o
+ .debug_line    0x0000dc66       0x75 build/startup_stm32f103xb.o
 
 .debug_str      0x00000000    0x15479
  .debug_str     0x00000000     0x10fe build/mysetp.o
