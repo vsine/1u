@@ -113,3 +113,7 @@ void u8g2Init(u8g2_t *u8g2)
     u8g2_SetPowerSave(u8g2, 0);                                                                   // 打开显示器
     u8g2_ClearBuffer(u8g2);
 }
+
+
+
+
