@@ -118,6 +118,7 @@ int main(void)
     //oledINIT(&hi2c1);
     //HAL_GPIO_WritePin(GPIOB, GPIO_PIN_12, GPIO_PIN_SET);
    mysetp();
+   
    while(1){}
   }
   /* USER CODE END 3 */
