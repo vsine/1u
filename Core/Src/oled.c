@@ -115,5 +115,3 @@ void u8g2Init(u8g2_t *u8g2)
 }
 
 
-
-
